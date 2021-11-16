@@ -13,7 +13,7 @@ public final class DBManager {
     public static final MAPlayerDAO player  = new MAPlayerDAO();
 //    public static final MATeamDAO team  = new MATeamDAO();
     public static final MAWorldSessionDAO worldSession  = new MAWorldSessionDAO();
-//    public static final MAEntityDAO entity  = new MAEntityDAO();
+    public static final MAEntityDAO entity  = new MAEntityDAO();
     public static final MATerrainChunkDAO terrainChunk  = new MATerrainChunkDAO();
     public static final MAGameSessionDAO gameSession  = new MAGameSessionDAO();
     public static final MATerrainIdentifierDAO terrainIdentifier  = new MATerrainIdentifierDAO();

@@ -7,11 +7,13 @@
 
 package com.nkasenides.minesweeper.server.grpc;
 
+import com.nkasenides.athlos.proto.Modifiable;
 import com.nkasenides.minesweeper.model.*;
 import com.nkasenides.minesweeper.persistence.DBManager;
 import com.nkasenides.minesweeper.proto.MAServiceProtoGrpc;
 
 import com.nkasenides.minesweeper.state.State;
+import com.nkasenides.minesweeper.state.WorldContext;
 import io.grpc.stub.StreamObserver;
 
 import com.nkasenides.minesweeper.proto.*;
@@ -21,6 +23,7 @@ import com.nkasenides.minesweeper.auth.*;
 import javax.activity.InvalidActivityException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Map;
 import java.util.UUID;
 import java.util.function.Consumer;
 
@@ -154,15 +157,41 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
     }    
     
     @Override    
-    public void getState(GetStateRequest request, StreamObserver<GetStateResponse> responseObserver) {    
-        super.getState(request, responseObserver);        
-        //TODO - Implement this service.        
+    public void getState(GetStateRequest request, StreamObserver<GetStateResponse> responseObserver) {
+        final MAWorldSession worldSession = DBManager.worldSession.get(request.getWorldSessionID());
+        if (worldSession == null) {
+            GetStateResponse response = GetStateResponse.newBuilder()
+                    .setStatus(GetStateResponse.Status.NO_SUCH_WORLD_SESSION)
+                    .setMessage("NO_SUCH_WORLD_SESSION")
+                    .build();
+            responseObserver.onNext(response);
+            return;
+        }
+
+        final MAWorld world = DBManager.world.get(worldSession.getWorldID());
+        if (world == null) {
+            GetStateResponse response = GetStateResponse.newBuilder()
+                    .setStatus(GetStateResponse.Status.NO_SUCH_WORLD_SESSION)
+                    .setMessage("INVALID_WORLD")
+                    .build();
+            responseObserver.onNext(response);
+            return;
+        }
+
+        final MAPartialStateProto partialStateSnapshot = State.forWorld(world.getId()).getPartialStateSnapshot(worldSession);
+
+        GetStateResponse response = GetStateResponse.newBuilder()
+                .setStatus(GetStateResponse.Status.OK)
+                .setMessage("OK")
+                .setPartialState(partialStateSnapshot)
+                .build();
+        responseObserver.onNext(response);
     }    
     
     @Override    
     public void subscribe(SubscribeRequest request, StreamObserver<SubscribeResponse> responseObserver) {    
-        super.subscribe(request, responseObserver);        
-        //TODO - Implement this service.        
+        super.subscribe(request, responseObserver);
+        //TODO - Implement this service.
     }    
     
     @Override    
@@ -237,13 +266,7 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
             responseObserver.onNext(response);
 
         }
-    }    
-    
-    @Override    
-    public void viewGame(ViewGameRequest request, StreamObserver<ViewGameResponse> responseObserver) {    
-        super.viewGame(request, responseObserver);        
-        //TODO - Implement this service.        
-    }    
+    }
     
     @Override    
     public void flag(FlagRequest request, StreamObserver<RevealResponse> responseObserver) {    
@@ -252,9 +275,68 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
     }    
     
     @Override    
-    public void reveal(RevealRequest request, StreamObserver<RevealResponse> responseObserver) {    
-        super.reveal(request, responseObserver);        
-        //TODO - Implement this service.        
+    public void reveal(RevealRequest request, StreamObserver<RevealResponse> responseObserver) {
+
+        final MAWorldSession worldSession = DBManager.worldSession.get(request.getWorldSessionID());
+        if (worldSession == null) {
+            RevealResponse response = RevealResponse.newBuilder()
+                    .setStatus(RevealResponse.Status.INVALID_WORLD_SESSION_ID)
+                    .setMessage("NO_SUCH_WORLD_SESSION")
+                    .build();
+            responseObserver.onNext(response);
+            return;
+        }
+
+        final MAWorld world = DBManager.world.get(worldSession.getWorldID());
+        if (world == null) {
+            RevealResponse response = RevealResponse.newBuilder()
+                    .setStatus(RevealResponse.Status.INVALID_GAME)
+                    .setMessage("INVALID_GAME")
+                    .build();
+            responseObserver.onNext(response);
+            return;
+        }
+
+        if (request.getPosition().getRow() >= world.getMaxRows()) {
+            RevealResponse response = RevealResponse.newBuilder()
+                    .setStatus(RevealResponse.Status.OTHER_ERROR)
+                    .setMessage("INVALID_POSITION_ROW")
+                    .build();
+            responseObserver.onNext(response);
+            return;
+        }
+
+        if (request.getPosition().getCol() >= world.getMaxCols()) {
+            RevealResponse response = RevealResponse.newBuilder()
+                    .setStatus(RevealResponse.Status.OTHER_ERROR)
+                    .setMessage("INVALID_POSITION_COL")
+                    .build();
+            responseObserver.onNext(response);
+            return;
+        }
+
+        final Map<String, MATerrainCellProto> terrain = State.forWorld(world.getId()).getTerrain(request.getPosition().toObject(), 16);
+        final MATerrainCell cell = terrain.get(request.getPosition().toHash()).toObject();
+
+        if (cell.getRevealState() != RevealState.COVERED_RevealState) {
+            if (request.getPosition().getCol() >= world.getMaxCols()) {
+                RevealResponse response = RevealResponse.newBuilder()
+                        .setStatus(RevealResponse.Status.CELL_ALREADY_REVEALED)
+                        .setMessage("CELL_ALREADY_REVEALED")
+                        .build();
+                responseObserver.onNext(response);
+                return;
+            }
+        }
+
+        if (cell.isIsMined()) {
+            cell.setRevealState(RevealState.REVEALED_MINE_RevealState);
+            //TODO - Create and call computeGameState()
+        }
+        else {
+            //TODO...
+        }
+
     }    
     
 }

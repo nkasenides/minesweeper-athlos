@@ -244,37 +244,6 @@ public final class MAServiceProtoGrpc {
     return getJoinGameMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<ViewGameRequest,
-      ViewGameResponse> getViewGameMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "ViewGame",
-      requestType = ViewGameRequest.class,
-      responseType = ViewGameResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<ViewGameRequest,
-      ViewGameResponse> getViewGameMethod() {
-    io.grpc.MethodDescriptor<ViewGameRequest, ViewGameResponse> getViewGameMethod;
-    if ((getViewGameMethod = MAServiceProtoGrpc.getViewGameMethod) == null) {
-      synchronized (MAServiceProtoGrpc.class) {
-        if ((getViewGameMethod = MAServiceProtoGrpc.getViewGameMethod) == null) {
-          MAServiceProtoGrpc.getViewGameMethod = getViewGameMethod =
-              io.grpc.MethodDescriptor.<ViewGameRequest, ViewGameResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ViewGame"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  ViewGameRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  ViewGameResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new MAServiceProtoMethodDescriptorSupplier("ViewGame"))
-              .build();
-        }
-      }
-    }
-    return getViewGameMethod;
-  }
-
   private static volatile io.grpc.MethodDescriptor<FlagRequest,
       RevealResponse> getFlagMethod;
 
@@ -436,13 +405,6 @@ public final class MAServiceProtoGrpc {
 
     /**
      */
-    public void viewGame(ViewGameRequest request,
-                         io.grpc.stub.StreamObserver<ViewGameResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getViewGameMethod(), responseObserver);
-    }
-
-    /**
-     */
     public void flag(FlagRequest request,
                      io.grpc.stub.StreamObserver<RevealResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getFlagMethod(), responseObserver);
@@ -506,13 +468,6 @@ public final class MAServiceProtoGrpc {
                 JoinGameRequest,
                 JoinGameResponse>(
                   this, METHODID_JOIN_GAME)))
-          .addMethod(
-            getViewGameMethod(),
-            asyncUnaryCall(
-              new MethodHandlers<
-                ViewGameRequest,
-                ViewGameResponse>(
-                  this, METHODID_VIEW_GAME)))
           .addMethod(
             getFlagMethod(),
             asyncUnaryCall(
@@ -603,14 +558,6 @@ public final class MAServiceProtoGrpc {
 
     /**
      */
-    public void viewGame(ViewGameRequest request,
-                         io.grpc.stub.StreamObserver<ViewGameResponse> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getViewGameMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
     public void flag(FlagRequest request,
                      io.grpc.stub.StreamObserver<RevealResponse> responseObserver) {
       asyncUnaryCall(
@@ -687,13 +634,6 @@ public final class MAServiceProtoGrpc {
     public JoinGameResponse joinGame(JoinGameRequest request) {
       return blockingUnaryCall(
           getChannel(), getJoinGameMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
-    public ViewGameResponse viewGame(ViewGameRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getViewGameMethod(), getCallOptions(), request);
     }
 
     /**
@@ -783,14 +723,6 @@ public final class MAServiceProtoGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<ViewGameResponse> viewGame(
-        ViewGameRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getViewGameMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
     public com.google.common.util.concurrent.ListenableFuture<RevealResponse> flag(
         FlagRequest request) {
       return futureUnaryCall(
@@ -813,9 +745,8 @@ public final class MAServiceProtoGrpc {
   private static final int METHODID_GET_STATE = 4;
   private static final int METHODID_SUBSCRIBE = 5;
   private static final int METHODID_JOIN_GAME = 6;
-  private static final int METHODID_VIEW_GAME = 7;
-  private static final int METHODID_FLAG = 8;
-  private static final int METHODID_REVEAL = 9;
+  private static final int METHODID_FLAG = 7;
+  private static final int METHODID_REVEAL = 8;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -861,10 +792,6 @@ public final class MAServiceProtoGrpc {
         case METHODID_JOIN_GAME:
           serviceImpl.joinGame((JoinGameRequest) request,
               (io.grpc.stub.StreamObserver<JoinGameResponse>) responseObserver);
-          break;
-        case METHODID_VIEW_GAME:
-          serviceImpl.viewGame((ViewGameRequest) request,
-              (io.grpc.stub.StreamObserver<ViewGameResponse>) responseObserver);
           break;
         case METHODID_FLAG:
           serviceImpl.flag((FlagRequest) request,
@@ -942,7 +869,6 @@ public final class MAServiceProtoGrpc {
               .addMethod(getGetStateMethod())
               .addMethod(getSubscribeMethod())
               .addMethod(getJoinGameMethod())
-              .addMethod(getViewGameMethod())
               .addMethod(getFlagMethod())
               .addMethod(getRevealMethod())
               .build();
