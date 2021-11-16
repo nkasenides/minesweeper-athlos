@@ -20,14 +20,14 @@ private static final long serialVersionUID = 0L;
     gameSessionID_ = "";
   }
 
-  @java.lang.Override
+  @Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
+  protected Object newInstance(
       UnusedPrivateParameter unused) {
     return new JoinGameRequest();
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -38,7 +38,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException();
     }
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -51,23 +51,23 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
 
             gameID_ = s;
             break;
           }
           case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
 
             gameSessionID_ = s;
             break;
           }
           case 26: {
-            com.nkasenides.minesweeper.proto.PartialStatePreferenceProto.Builder subBuilder = null;
+            PartialStatePreferenceProto.Builder subBuilder = null;
             if (partialStatePreference_ != null) {
               subBuilder = partialStatePreference_.toBuilder();
             }
-            partialStatePreference_ = input.readMessage(com.nkasenides.minesweeper.proto.PartialStatePreferenceProto.parser(), extensionRegistry);
+            partialStatePreference_ = input.readMessage(PartialStatePreferenceProto.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(partialStatePreference_);
               partialStatePreference_ = subBuilder.buildPartial();
@@ -96,32 +96,32 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.nkasenides.minesweeper.proto.MProto.internal_static_com_nkasenides_minesweeper_proto_JoinGameRequest_descriptor;
+    return MProto.internal_static_com_nkasenides_minesweeper_proto_JoinGameRequest_descriptor;
   }
 
-  @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  @Override
+  protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.nkasenides.minesweeper.proto.MProto.internal_static_com_nkasenides_minesweeper_proto_JoinGameRequest_fieldAccessorTable
+    return MProto.internal_static_com_nkasenides_minesweeper_proto_JoinGameRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.nkasenides.minesweeper.proto.JoinGameRequest.class, com.nkasenides.minesweeper.proto.JoinGameRequest.Builder.class);
+            JoinGameRequest.class, Builder.class);
   }
 
   public static final int GAMEID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object gameID_;
+  private volatile Object gameID_;
   /**
    * <code>string gameID = 1;</code>
    * @return The gameID.
    */
-  @java.lang.Override
-  public java.lang.String getGameID() {
-    java.lang.Object ref = gameID_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  @Override
+  public String getGameID() {
+    Object ref = gameID_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
       gameID_ = s;
       return s;
     }
@@ -130,14 +130,14 @@ private static final long serialVersionUID = 0L;
    * <code>string gameID = 1;</code>
    * @return The bytes for gameID.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.ByteString
       getGameIDBytes() {
-    java.lang.Object ref = gameID_;
-    if (ref instanceof java.lang.String) {
+    Object ref = gameID_;
+    if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       gameID_ = b;
       return b;
     } else {
@@ -146,20 +146,20 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int GAMESESSIONID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object gameSessionID_;
+  private volatile Object gameSessionID_;
   /**
    * <code>string gameSessionID = 2;</code>
    * @return The gameSessionID.
    */
-  @java.lang.Override
-  public java.lang.String getGameSessionID() {
-    java.lang.Object ref = gameSessionID_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  @Override
+  public String getGameSessionID() {
+    Object ref = gameSessionID_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
       gameSessionID_ = s;
       return s;
     }
@@ -168,14 +168,14 @@ private static final long serialVersionUID = 0L;
    * <code>string gameSessionID = 2;</code>
    * @return The bytes for gameSessionID.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.ByteString
       getGameSessionIDBytes() {
-    java.lang.Object ref = gameSessionID_;
-    if (ref instanceof java.lang.String) {
+    Object ref = gameSessionID_;
+    if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       gameSessionID_ = b;
       return b;
     } else {
@@ -184,12 +184,12 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PARTIALSTATEPREFERENCE_FIELD_NUMBER = 3;
-  private com.nkasenides.minesweeper.proto.PartialStatePreferenceProto partialStatePreference_;
+  private PartialStatePreferenceProto partialStatePreference_;
   /**
    * <code>.com.nkasenides.minesweeper.proto.PartialStatePreferenceProto partialStatePreference = 3;</code>
    * @return Whether the partialStatePreference field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasPartialStatePreference() {
     return partialStatePreference_ != null;
   }
@@ -197,20 +197,20 @@ private static final long serialVersionUID = 0L;
    * <code>.com.nkasenides.minesweeper.proto.PartialStatePreferenceProto partialStatePreference = 3;</code>
    * @return The partialStatePreference.
    */
-  @java.lang.Override
-  public com.nkasenides.minesweeper.proto.PartialStatePreferenceProto getPartialStatePreference() {
-    return partialStatePreference_ == null ? com.nkasenides.minesweeper.proto.PartialStatePreferenceProto.getDefaultInstance() : partialStatePreference_;
+  @Override
+  public PartialStatePreferenceProto getPartialStatePreference() {
+    return partialStatePreference_ == null ? PartialStatePreferenceProto.getDefaultInstance() : partialStatePreference_;
   }
   /**
    * <code>.com.nkasenides.minesweeper.proto.PartialStatePreferenceProto partialStatePreference = 3;</code>
    */
-  @java.lang.Override
-  public com.nkasenides.minesweeper.proto.PartialStatePreferenceProtoOrBuilder getPartialStatePreferenceOrBuilder() {
+  @Override
+  public PartialStatePreferenceProtoOrBuilder getPartialStatePreferenceOrBuilder() {
     return getPartialStatePreference();
   }
 
   private byte memoizedIsInitialized = -1;
-  @java.lang.Override
+  @Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -220,7 +220,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!getGameIDBytes().isEmpty()) {
@@ -235,7 +235,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
-  @java.lang.Override
+  @Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -256,15 +256,15 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.nkasenides.minesweeper.proto.JoinGameRequest)) {
+    if (!(obj instanceof JoinGameRequest)) {
       return super.equals(obj);
     }
-    com.nkasenides.minesweeper.proto.JoinGameRequest other = (com.nkasenides.minesweeper.proto.JoinGameRequest) obj;
+    JoinGameRequest other = (JoinGameRequest) obj;
 
     if (!getGameID()
         .equals(other.getGameID())) return false;
@@ -279,7 +279,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -299,69 +299,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.nkasenides.minesweeper.proto.JoinGameRequest parseFrom(
+  public static JoinGameRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.nkasenides.minesweeper.proto.JoinGameRequest parseFrom(
+  public static JoinGameRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.nkasenides.minesweeper.proto.JoinGameRequest parseFrom(
+  public static JoinGameRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.nkasenides.minesweeper.proto.JoinGameRequest parseFrom(
+  public static JoinGameRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.nkasenides.minesweeper.proto.JoinGameRequest parseFrom(byte[] data)
+  public static JoinGameRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.nkasenides.minesweeper.proto.JoinGameRequest parseFrom(
+  public static JoinGameRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.nkasenides.minesweeper.proto.JoinGameRequest parseFrom(java.io.InputStream input)
+  public static JoinGameRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.nkasenides.minesweeper.proto.JoinGameRequest parseFrom(
+  public static JoinGameRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.nkasenides.minesweeper.proto.JoinGameRequest parseDelimitedFrom(java.io.InputStream input)
+  public static JoinGameRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.nkasenides.minesweeper.proto.JoinGameRequest parseDelimitedFrom(
+  public static JoinGameRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.nkasenides.minesweeper.proto.JoinGameRequest parseFrom(
+  public static JoinGameRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.nkasenides.minesweeper.proto.JoinGameRequest parseFrom(
+  public static JoinGameRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -369,23 +369,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @java.lang.Override
+  @Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.nkasenides.minesweeper.proto.JoinGameRequest prototype) {
+  public static Builder newBuilder(JoinGameRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @java.lang.Override
+  @Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -395,18 +395,18 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:com.nkasenides.minesweeper.proto.JoinGameRequest)
-      com.nkasenides.minesweeper.proto.JoinGameRequestOrBuilder {
+      JoinGameRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.nkasenides.minesweeper.proto.MProto.internal_static_com_nkasenides_minesweeper_proto_JoinGameRequest_descriptor;
+      return MProto.internal_static_com_nkasenides_minesweeper_proto_JoinGameRequest_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.nkasenides.minesweeper.proto.MProto.internal_static_com_nkasenides_minesweeper_proto_JoinGameRequest_fieldAccessorTable
+      return MProto.internal_static_com_nkasenides_minesweeper_proto_JoinGameRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.nkasenides.minesweeper.proto.JoinGameRequest.class, com.nkasenides.minesweeper.proto.JoinGameRequest.Builder.class);
+              JoinGameRequest.class, Builder.class);
     }
 
     // Construct using com.nkasenides.minesweeper.proto.JoinGameRequest.newBuilder()
@@ -415,7 +415,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -424,7 +424,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
-    @java.lang.Override
+    @Override
     public Builder clear() {
       super.clear();
       gameID_ = "";
@@ -440,29 +440,29 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.nkasenides.minesweeper.proto.MProto.internal_static_com_nkasenides_minesweeper_proto_JoinGameRequest_descriptor;
+      return MProto.internal_static_com_nkasenides_minesweeper_proto_JoinGameRequest_descriptor;
     }
 
-    @java.lang.Override
-    public com.nkasenides.minesweeper.proto.JoinGameRequest getDefaultInstanceForType() {
-      return com.nkasenides.minesweeper.proto.JoinGameRequest.getDefaultInstance();
+    @Override
+    public JoinGameRequest getDefaultInstanceForType() {
+      return JoinGameRequest.getDefaultInstance();
     }
 
-    @java.lang.Override
-    public com.nkasenides.minesweeper.proto.JoinGameRequest build() {
-      com.nkasenides.minesweeper.proto.JoinGameRequest result = buildPartial();
+    @Override
+    public JoinGameRequest build() {
+      JoinGameRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    @java.lang.Override
-    public com.nkasenides.minesweeper.proto.JoinGameRequest buildPartial() {
-      com.nkasenides.minesweeper.proto.JoinGameRequest result = new com.nkasenides.minesweeper.proto.JoinGameRequest(this);
+    @Override
+    public JoinGameRequest buildPartial() {
+      JoinGameRequest result = new JoinGameRequest(this);
       result.gameID_ = gameID_;
       result.gameSessionID_ = gameSessionID_;
       if (partialStatePreferenceBuilder_ == null) {
@@ -474,50 +474,50 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public Builder clone() {
       return super.clone();
     }
-    @java.lang.Override
+    @Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.setField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-    @java.lang.Override
+    @Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-    @java.lang.Override
+    @Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        int index, Object value) {
       return super.setRepeatedField(field, index, value);
     }
-    @java.lang.Override
+    @Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.addRepeatedField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.nkasenides.minesweeper.proto.JoinGameRequest) {
-        return mergeFrom((com.nkasenides.minesweeper.proto.JoinGameRequest)other);
+      if (other instanceof JoinGameRequest) {
+        return mergeFrom((JoinGameRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.nkasenides.minesweeper.proto.JoinGameRequest other) {
-      if (other == com.nkasenides.minesweeper.proto.JoinGameRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(JoinGameRequest other) {
+      if (other == JoinGameRequest.getDefaultInstance()) return this;
       if (!other.getGameID().isEmpty()) {
         gameID_ = other.gameID_;
         onChanged();
@@ -534,21 +534,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.nkasenides.minesweeper.proto.JoinGameRequest parsedMessage = null;
+      JoinGameRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.nkasenides.minesweeper.proto.JoinGameRequest) e.getUnfinishedMessage();
+        parsedMessage = (JoinGameRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -558,21 +558,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object gameID_ = "";
+    private Object gameID_ = "";
     /**
      * <code>string gameID = 1;</code>
      * @return The gameID.
      */
-    public java.lang.String getGameID() {
-      java.lang.Object ref = gameID_;
-      if (!(ref instanceof java.lang.String)) {
+    public String getGameID() {
+      Object ref = gameID_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         gameID_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
@@ -581,11 +581,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getGameIDBytes() {
-      java.lang.Object ref = gameID_;
+      Object ref = gameID_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         gameID_ = b;
         return b;
       } else {
@@ -598,7 +598,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setGameID(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -634,21 +634,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object gameSessionID_ = "";
+    private Object gameSessionID_ = "";
     /**
      * <code>string gameSessionID = 2;</code>
      * @return The gameSessionID.
      */
-    public java.lang.String getGameSessionID() {
-      java.lang.Object ref = gameSessionID_;
-      if (!(ref instanceof java.lang.String)) {
+    public String getGameSessionID() {
+      Object ref = gameSessionID_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         gameSessionID_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
@@ -657,11 +657,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getGameSessionIDBytes() {
-      java.lang.Object ref = gameSessionID_;
+      Object ref = gameSessionID_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         gameSessionID_ = b;
         return b;
       } else {
@@ -674,7 +674,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setGameSessionID(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -710,9 +710,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.nkasenides.minesweeper.proto.PartialStatePreferenceProto partialStatePreference_;
+    private PartialStatePreferenceProto partialStatePreference_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.nkasenides.minesweeper.proto.PartialStatePreferenceProto, com.nkasenides.minesweeper.proto.PartialStatePreferenceProto.Builder, com.nkasenides.minesweeper.proto.PartialStatePreferenceProtoOrBuilder> partialStatePreferenceBuilder_;
+        PartialStatePreferenceProto, PartialStatePreferenceProto.Builder, PartialStatePreferenceProtoOrBuilder> partialStatePreferenceBuilder_;
     /**
      * <code>.com.nkasenides.minesweeper.proto.PartialStatePreferenceProto partialStatePreference = 3;</code>
      * @return Whether the partialStatePreference field is set.
@@ -724,9 +724,9 @@ private static final long serialVersionUID = 0L;
      * <code>.com.nkasenides.minesweeper.proto.PartialStatePreferenceProto partialStatePreference = 3;</code>
      * @return The partialStatePreference.
      */
-    public com.nkasenides.minesweeper.proto.PartialStatePreferenceProto getPartialStatePreference() {
+    public PartialStatePreferenceProto getPartialStatePreference() {
       if (partialStatePreferenceBuilder_ == null) {
-        return partialStatePreference_ == null ? com.nkasenides.minesweeper.proto.PartialStatePreferenceProto.getDefaultInstance() : partialStatePreference_;
+        return partialStatePreference_ == null ? PartialStatePreferenceProto.getDefaultInstance() : partialStatePreference_;
       } else {
         return partialStatePreferenceBuilder_.getMessage();
       }
@@ -734,7 +734,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.nkasenides.minesweeper.proto.PartialStatePreferenceProto partialStatePreference = 3;</code>
      */
-    public Builder setPartialStatePreference(com.nkasenides.minesweeper.proto.PartialStatePreferenceProto value) {
+    public Builder setPartialStatePreference(PartialStatePreferenceProto value) {
       if (partialStatePreferenceBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -751,7 +751,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.nkasenides.minesweeper.proto.PartialStatePreferenceProto partialStatePreference = 3;</code>
      */
     public Builder setPartialStatePreference(
-        com.nkasenides.minesweeper.proto.PartialStatePreferenceProto.Builder builderForValue) {
+        PartialStatePreferenceProto.Builder builderForValue) {
       if (partialStatePreferenceBuilder_ == null) {
         partialStatePreference_ = builderForValue.build();
         onChanged();
@@ -764,11 +764,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.nkasenides.minesweeper.proto.PartialStatePreferenceProto partialStatePreference = 3;</code>
      */
-    public Builder mergePartialStatePreference(com.nkasenides.minesweeper.proto.PartialStatePreferenceProto value) {
+    public Builder mergePartialStatePreference(PartialStatePreferenceProto value) {
       if (partialStatePreferenceBuilder_ == null) {
         if (partialStatePreference_ != null) {
           partialStatePreference_ =
-            com.nkasenides.minesweeper.proto.PartialStatePreferenceProto.newBuilder(partialStatePreference_).mergeFrom(value).buildPartial();
+            PartialStatePreferenceProto.newBuilder(partialStatePreference_).mergeFrom(value).buildPartial();
         } else {
           partialStatePreference_ = value;
         }
@@ -796,7 +796,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.nkasenides.minesweeper.proto.PartialStatePreferenceProto partialStatePreference = 3;</code>
      */
-    public com.nkasenides.minesweeper.proto.PartialStatePreferenceProto.Builder getPartialStatePreferenceBuilder() {
+    public PartialStatePreferenceProto.Builder getPartialStatePreferenceBuilder() {
       
       onChanged();
       return getPartialStatePreferenceFieldBuilder().getBuilder();
@@ -804,23 +804,23 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.nkasenides.minesweeper.proto.PartialStatePreferenceProto partialStatePreference = 3;</code>
      */
-    public com.nkasenides.minesweeper.proto.PartialStatePreferenceProtoOrBuilder getPartialStatePreferenceOrBuilder() {
+    public PartialStatePreferenceProtoOrBuilder getPartialStatePreferenceOrBuilder() {
       if (partialStatePreferenceBuilder_ != null) {
         return partialStatePreferenceBuilder_.getMessageOrBuilder();
       } else {
         return partialStatePreference_ == null ?
-            com.nkasenides.minesweeper.proto.PartialStatePreferenceProto.getDefaultInstance() : partialStatePreference_;
+            PartialStatePreferenceProto.getDefaultInstance() : partialStatePreference_;
       }
     }
     /**
      * <code>.com.nkasenides.minesweeper.proto.PartialStatePreferenceProto partialStatePreference = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.nkasenides.minesweeper.proto.PartialStatePreferenceProto, com.nkasenides.minesweeper.proto.PartialStatePreferenceProto.Builder, com.nkasenides.minesweeper.proto.PartialStatePreferenceProtoOrBuilder> 
+        PartialStatePreferenceProto, PartialStatePreferenceProto.Builder, PartialStatePreferenceProtoOrBuilder>
         getPartialStatePreferenceFieldBuilder() {
       if (partialStatePreferenceBuilder_ == null) {
         partialStatePreferenceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.nkasenides.minesweeper.proto.PartialStatePreferenceProto, com.nkasenides.minesweeper.proto.PartialStatePreferenceProto.Builder, com.nkasenides.minesweeper.proto.PartialStatePreferenceProtoOrBuilder>(
+            PartialStatePreferenceProto, PartialStatePreferenceProto.Builder, PartialStatePreferenceProtoOrBuilder>(
                 getPartialStatePreference(),
                 getParentForChildren(),
                 isClean());
@@ -828,13 +828,13 @@ private static final long serialVersionUID = 0L;
       }
       return partialStatePreferenceBuilder_;
     }
-    @java.lang.Override
+    @Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
-    @java.lang.Override
+    @Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -845,18 +845,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:com.nkasenides.minesweeper.proto.JoinGameRequest)
-  private static final com.nkasenides.minesweeper.proto.JoinGameRequest DEFAULT_INSTANCE;
+  private static final JoinGameRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.nkasenides.minesweeper.proto.JoinGameRequest();
+    DEFAULT_INSTANCE = new JoinGameRequest();
   }
 
-  public static com.nkasenides.minesweeper.proto.JoinGameRequest getDefaultInstance() {
+  public static JoinGameRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<JoinGameRequest>
       PARSER = new com.google.protobuf.AbstractParser<JoinGameRequest>() {
-    @java.lang.Override
+    @Override
     public JoinGameRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -869,13 +869,13 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Parser<JoinGameRequest> getParserForType() {
     return PARSER;
   }
 
-  @java.lang.Override
-  public com.nkasenides.minesweeper.proto.JoinGameRequest getDefaultInstanceForType() {
+  @Override
+  public JoinGameRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

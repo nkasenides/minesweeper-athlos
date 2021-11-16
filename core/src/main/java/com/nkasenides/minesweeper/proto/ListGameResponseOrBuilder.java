@@ -11,7 +11,7 @@ public interface ListGameResponseOrBuilder extends
    * <code>string message = 1;</code>
    * @return The message.
    */
-  java.lang.String getMessage();
+  String getMessage();
   /**
    * <code>string message = 1;</code>
    * @return The bytes for message.
@@ -28,5 +28,29 @@ public interface ListGameResponseOrBuilder extends
    * <code>.com.nkasenides.minesweeper.proto.ListGameResponse.Status status = 2;</code>
    * @return The status.
    */
-  com.nkasenides.minesweeper.proto.ListGameResponse.Status getStatus();
+  ListGameResponse.Status getStatus();
+
+  /**
+   * <code>repeated .com.nkasenides.minesweeper.proto.MAWorldProto worlds = 3;</code>
+   */
+  java.util.List<MAWorldProto>
+      getWorldsList();
+  /**
+   * <code>repeated .com.nkasenides.minesweeper.proto.MAWorldProto worlds = 3;</code>
+   */
+  MAWorldProto getWorlds(int index);
+  /**
+   * <code>repeated .com.nkasenides.minesweeper.proto.MAWorldProto worlds = 3;</code>
+   */
+  int getWorldsCount();
+  /**
+   * <code>repeated .com.nkasenides.minesweeper.proto.MAWorldProto worlds = 3;</code>
+   */
+  java.util.List<? extends MAWorldProtoOrBuilder>
+      getWorldsOrBuilderList();
+  /**
+   * <code>repeated .com.nkasenides.minesweeper.proto.MAWorldProto worlds = 3;</code>
+   */
+  MAWorldProtoOrBuilder getWorldsOrBuilder(
+      int index);
 }

@@ -11,7 +11,7 @@ public interface JoinGameResponseOrBuilder extends
    * <code>string message = 1;</code>
    * @return The message.
    */
-  java.lang.String getMessage();
+  String getMessage();
   /**
    * <code>string message = 1;</code>
    * @return The bytes for message.
@@ -28,5 +28,20 @@ public interface JoinGameResponseOrBuilder extends
    * <code>.com.nkasenides.minesweeper.proto.JoinGameResponse.Status status = 2;</code>
    * @return The status.
    */
-  com.nkasenides.minesweeper.proto.JoinGameResponse.Status getStatus();
+  JoinGameResponse.Status getStatus();
+
+  /**
+   * <code>.com.nkasenides.minesweeper.proto.MAWorldSessionProto worldSession = 3;</code>
+   * @return Whether the worldSession field is set.
+   */
+  boolean hasWorldSession();
+  /**
+   * <code>.com.nkasenides.minesweeper.proto.MAWorldSessionProto worldSession = 3;</code>
+   * @return The worldSession.
+   */
+  MAWorldSessionProto getWorldSession();
+  /**
+   * <code>.com.nkasenides.minesweeper.proto.MAWorldSessionProto worldSession = 3;</code>
+   */
+  MAWorldSessionProtoOrBuilder getWorldSessionOrBuilder();
 }

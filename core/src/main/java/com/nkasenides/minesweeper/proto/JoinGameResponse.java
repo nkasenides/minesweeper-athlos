@@ -20,14 +20,14 @@ private static final long serialVersionUID = 0L;
     status_ = 0;
   }
 
-  @java.lang.Override
+  @Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
+  protected Object newInstance(
       UnusedPrivateParameter unused) {
     return new JoinGameResponse();
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -38,7 +38,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException();
     }
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -51,7 +51,7 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
 
             message_ = s;
             break;
@@ -60,6 +60,19 @@ private static final long serialVersionUID = 0L;
             int rawValue = input.readEnum();
 
             status_ = rawValue;
+            break;
+          }
+          case 26: {
+            MAWorldSessionProto.Builder subBuilder = null;
+            if (worldSession_ != null) {
+              subBuilder = worldSession_.toBuilder();
+            }
+            worldSession_ = input.readMessage(MAWorldSessionProto.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(worldSession_);
+              worldSession_ = subBuilder.buildPartial();
+            }
+
             break;
           }
           default: {
@@ -83,15 +96,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.nkasenides.minesweeper.proto.MProto.internal_static_com_nkasenides_minesweeper_proto_JoinGameResponse_descriptor;
+    return MProto.internal_static_com_nkasenides_minesweeper_proto_JoinGameResponse_descriptor;
   }
 
-  @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  @Override
+  protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.nkasenides.minesweeper.proto.MProto.internal_static_com_nkasenides_minesweeper_proto_JoinGameResponse_fieldAccessorTable
+    return MProto.internal_static_com_nkasenides_minesweeper_proto_JoinGameResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.nkasenides.minesweeper.proto.JoinGameResponse.class, com.nkasenides.minesweeper.proto.JoinGameResponse.Builder.class);
+            JoinGameResponse.class, Builder.class);
   }
 
   /**
@@ -130,7 +143,7 @@ private static final long serialVersionUID = 0L;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
@@ -141,7 +154,7 @@ private static final long serialVersionUID = 0L;
      * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static Status valueOf(int value) {
       return forNumber(value);
     }
@@ -174,7 +187,7 @@ private static final long serialVersionUID = 0L;
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
+        throw new IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
@@ -185,7 +198,7 @@ private static final long serialVersionUID = 0L;
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.nkasenides.minesweeper.proto.JoinGameResponse.getDescriptor().getEnumTypes().get(0);
+      return JoinGameResponse.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final Status[] VALUES = values();
@@ -193,7 +206,7 @@ private static final long serialVersionUID = 0L;
     public static Status valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
@@ -212,20 +225,20 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int MESSAGE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object message_;
+  private volatile Object message_;
   /**
    * <code>string message = 1;</code>
    * @return The message.
    */
-  @java.lang.Override
-  public java.lang.String getMessage() {
-    java.lang.Object ref = message_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  @Override
+  public String getMessage() {
+    Object ref = message_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
       message_ = s;
       return s;
     }
@@ -234,14 +247,14 @@ private static final long serialVersionUID = 0L;
    * <code>string message = 1;</code>
    * @return The bytes for message.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.ByteString
       getMessageBytes() {
-    java.lang.Object ref = message_;
-    if (ref instanceof java.lang.String) {
+    Object ref = message_;
+    if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       message_ = b;
       return b;
     } else {
@@ -255,21 +268,47 @@ private static final long serialVersionUID = 0L;
    * <code>.com.nkasenides.minesweeper.proto.JoinGameResponse.Status status = 2;</code>
    * @return The enum numeric value on the wire for status.
    */
-  @java.lang.Override public int getStatusValue() {
+  @Override public int getStatusValue() {
     return status_;
   }
   /**
    * <code>.com.nkasenides.minesweeper.proto.JoinGameResponse.Status status = 2;</code>
    * @return The status.
    */
-  @java.lang.Override public com.nkasenides.minesweeper.proto.JoinGameResponse.Status getStatus() {
+  @Override public Status getStatus() {
     @SuppressWarnings("deprecation")
-    com.nkasenides.minesweeper.proto.JoinGameResponse.Status result = com.nkasenides.minesweeper.proto.JoinGameResponse.Status.valueOf(status_);
-    return result == null ? com.nkasenides.minesweeper.proto.JoinGameResponse.Status.UNRECOGNIZED : result;
+    Status result = Status.valueOf(status_);
+    return result == null ? Status.UNRECOGNIZED : result;
+  }
+
+  public static final int WORLDSESSION_FIELD_NUMBER = 3;
+  private MAWorldSessionProto worldSession_;
+  /**
+   * <code>.com.nkasenides.minesweeper.proto.MAWorldSessionProto worldSession = 3;</code>
+   * @return Whether the worldSession field is set.
+   */
+  @Override
+  public boolean hasWorldSession() {
+    return worldSession_ != null;
+  }
+  /**
+   * <code>.com.nkasenides.minesweeper.proto.MAWorldSessionProto worldSession = 3;</code>
+   * @return The worldSession.
+   */
+  @Override
+  public MAWorldSessionProto getWorldSession() {
+    return worldSession_ == null ? MAWorldSessionProto.getDefaultInstance() : worldSession_;
+  }
+  /**
+   * <code>.com.nkasenides.minesweeper.proto.MAWorldSessionProto worldSession = 3;</code>
+   */
+  @Override
+  public MAWorldSessionProtoOrBuilder getWorldSessionOrBuilder() {
+    return getWorldSession();
   }
 
   private byte memoizedIsInitialized = -1;
-  @java.lang.Override
+  @Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -279,19 +318,22 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!getMessageBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, message_);
     }
-    if (status_ != com.nkasenides.minesweeper.proto.JoinGameResponse.Status.CANNOT_JOIN.getNumber()) {
+    if (status_ != Status.CANNOT_JOIN.getNumber()) {
       output.writeEnum(2, status_);
+    }
+    if (worldSession_ != null) {
+      output.writeMessage(3, getWorldSession());
     }
     unknownFields.writeTo(output);
   }
 
-  @java.lang.Override
+  @Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -300,33 +342,42 @@ private static final long serialVersionUID = 0L;
     if (!getMessageBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, message_);
     }
-    if (status_ != com.nkasenides.minesweeper.proto.JoinGameResponse.Status.CANNOT_JOIN.getNumber()) {
+    if (status_ != Status.CANNOT_JOIN.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(2, status_);
+    }
+    if (worldSession_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, getWorldSession());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.nkasenides.minesweeper.proto.JoinGameResponse)) {
+    if (!(obj instanceof JoinGameResponse)) {
       return super.equals(obj);
     }
-    com.nkasenides.minesweeper.proto.JoinGameResponse other = (com.nkasenides.minesweeper.proto.JoinGameResponse) obj;
+    JoinGameResponse other = (JoinGameResponse) obj;
 
     if (!getMessage()
         .equals(other.getMessage())) return false;
     if (status_ != other.status_) return false;
+    if (hasWorldSession() != other.hasWorldSession()) return false;
+    if (hasWorldSession()) {
+      if (!getWorldSession()
+          .equals(other.getWorldSession())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -337,74 +388,78 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getMessage().hashCode();
     hash = (37 * hash) + STATUS_FIELD_NUMBER;
     hash = (53 * hash) + status_;
+    if (hasWorldSession()) {
+      hash = (37 * hash) + WORLDSESSION_FIELD_NUMBER;
+      hash = (53 * hash) + getWorldSession().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.nkasenides.minesweeper.proto.JoinGameResponse parseFrom(
+  public static JoinGameResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.nkasenides.minesweeper.proto.JoinGameResponse parseFrom(
+  public static JoinGameResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.nkasenides.minesweeper.proto.JoinGameResponse parseFrom(
+  public static JoinGameResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.nkasenides.minesweeper.proto.JoinGameResponse parseFrom(
+  public static JoinGameResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.nkasenides.minesweeper.proto.JoinGameResponse parseFrom(byte[] data)
+  public static JoinGameResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.nkasenides.minesweeper.proto.JoinGameResponse parseFrom(
+  public static JoinGameResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.nkasenides.minesweeper.proto.JoinGameResponse parseFrom(java.io.InputStream input)
+  public static JoinGameResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.nkasenides.minesweeper.proto.JoinGameResponse parseFrom(
+  public static JoinGameResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.nkasenides.minesweeper.proto.JoinGameResponse parseDelimitedFrom(java.io.InputStream input)
+  public static JoinGameResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.nkasenides.minesweeper.proto.JoinGameResponse parseDelimitedFrom(
+  public static JoinGameResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.nkasenides.minesweeper.proto.JoinGameResponse parseFrom(
+  public static JoinGameResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.nkasenides.minesweeper.proto.JoinGameResponse parseFrom(
+  public static JoinGameResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -412,23 +467,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @java.lang.Override
+  @Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.nkasenides.minesweeper.proto.JoinGameResponse prototype) {
+  public static Builder newBuilder(JoinGameResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @java.lang.Override
+  @Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -438,18 +493,18 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:com.nkasenides.minesweeper.proto.JoinGameResponse)
-      com.nkasenides.minesweeper.proto.JoinGameResponseOrBuilder {
+      JoinGameResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.nkasenides.minesweeper.proto.MProto.internal_static_com_nkasenides_minesweeper_proto_JoinGameResponse_descriptor;
+      return MProto.internal_static_com_nkasenides_minesweeper_proto_JoinGameResponse_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.nkasenides.minesweeper.proto.MProto.internal_static_com_nkasenides_minesweeper_proto_JoinGameResponse_fieldAccessorTable
+      return MProto.internal_static_com_nkasenides_minesweeper_proto_JoinGameResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.nkasenides.minesweeper.proto.JoinGameResponse.class, com.nkasenides.minesweeper.proto.JoinGameResponse.Builder.class);
+              JoinGameResponse.class, Builder.class);
     }
 
     // Construct using com.nkasenides.minesweeper.proto.JoinGameResponse.newBuilder()
@@ -458,7 +513,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -467,89 +522,100 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
-    @java.lang.Override
+    @Override
     public Builder clear() {
       super.clear();
       message_ = "";
 
       status_ = 0;
 
+      if (worldSessionBuilder_ == null) {
+        worldSession_ = null;
+      } else {
+        worldSession_ = null;
+        worldSessionBuilder_ = null;
+      }
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.nkasenides.minesweeper.proto.MProto.internal_static_com_nkasenides_minesweeper_proto_JoinGameResponse_descriptor;
+      return MProto.internal_static_com_nkasenides_minesweeper_proto_JoinGameResponse_descriptor;
     }
 
-    @java.lang.Override
-    public com.nkasenides.minesweeper.proto.JoinGameResponse getDefaultInstanceForType() {
-      return com.nkasenides.minesweeper.proto.JoinGameResponse.getDefaultInstance();
+    @Override
+    public JoinGameResponse getDefaultInstanceForType() {
+      return JoinGameResponse.getDefaultInstance();
     }
 
-    @java.lang.Override
-    public com.nkasenides.minesweeper.proto.JoinGameResponse build() {
-      com.nkasenides.minesweeper.proto.JoinGameResponse result = buildPartial();
+    @Override
+    public JoinGameResponse build() {
+      JoinGameResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    @java.lang.Override
-    public com.nkasenides.minesweeper.proto.JoinGameResponse buildPartial() {
-      com.nkasenides.minesweeper.proto.JoinGameResponse result = new com.nkasenides.minesweeper.proto.JoinGameResponse(this);
+    @Override
+    public JoinGameResponse buildPartial() {
+      JoinGameResponse result = new JoinGameResponse(this);
       result.message_ = message_;
       result.status_ = status_;
+      if (worldSessionBuilder_ == null) {
+        result.worldSession_ = worldSession_;
+      } else {
+        result.worldSession_ = worldSessionBuilder_.build();
+      }
       onBuilt();
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public Builder clone() {
       return super.clone();
     }
-    @java.lang.Override
+    @Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.setField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-    @java.lang.Override
+    @Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-    @java.lang.Override
+    @Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        int index, Object value) {
       return super.setRepeatedField(field, index, value);
     }
-    @java.lang.Override
+    @Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.addRepeatedField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.nkasenides.minesweeper.proto.JoinGameResponse) {
-        return mergeFrom((com.nkasenides.minesweeper.proto.JoinGameResponse)other);
+      if (other instanceof JoinGameResponse) {
+        return mergeFrom((JoinGameResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.nkasenides.minesweeper.proto.JoinGameResponse other) {
-      if (other == com.nkasenides.minesweeper.proto.JoinGameResponse.getDefaultInstance()) return this;
+    public Builder mergeFrom(JoinGameResponse other) {
+      if (other == JoinGameResponse.getDefaultInstance()) return this;
       if (!other.getMessage().isEmpty()) {
         message_ = other.message_;
         onChanged();
@@ -557,26 +623,29 @@ private static final long serialVersionUID = 0L;
       if (other.status_ != 0) {
         setStatusValue(other.getStatusValue());
       }
+      if (other.hasWorldSession()) {
+        mergeWorldSession(other.getWorldSession());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.nkasenides.minesweeper.proto.JoinGameResponse parsedMessage = null;
+      JoinGameResponse parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.nkasenides.minesweeper.proto.JoinGameResponse) e.getUnfinishedMessage();
+        parsedMessage = (JoinGameResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -586,21 +655,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object message_ = "";
+    private Object message_ = "";
     /**
      * <code>string message = 1;</code>
      * @return The message.
      */
-    public java.lang.String getMessage() {
-      java.lang.Object ref = message_;
-      if (!(ref instanceof java.lang.String)) {
+    public String getMessage() {
+      Object ref = message_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         message_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
@@ -609,11 +678,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getMessageBytes() {
-      java.lang.Object ref = message_;
+      Object ref = message_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         message_ = b;
         return b;
       } else {
@@ -626,7 +695,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setMessage(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -667,7 +736,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.nkasenides.minesweeper.proto.JoinGameResponse.Status status = 2;</code>
      * @return The enum numeric value on the wire for status.
      */
-    @java.lang.Override public int getStatusValue() {
+    @Override public int getStatusValue() {
       return status_;
     }
     /**
@@ -685,18 +754,18 @@ private static final long serialVersionUID = 0L;
      * <code>.com.nkasenides.minesweeper.proto.JoinGameResponse.Status status = 2;</code>
      * @return The status.
      */
-    @java.lang.Override
-    public com.nkasenides.minesweeper.proto.JoinGameResponse.Status getStatus() {
+    @Override
+    public Status getStatus() {
       @SuppressWarnings("deprecation")
-      com.nkasenides.minesweeper.proto.JoinGameResponse.Status result = com.nkasenides.minesweeper.proto.JoinGameResponse.Status.valueOf(status_);
-      return result == null ? com.nkasenides.minesweeper.proto.JoinGameResponse.Status.UNRECOGNIZED : result;
+      Status result = Status.valueOf(status_);
+      return result == null ? Status.UNRECOGNIZED : result;
     }
     /**
      * <code>.com.nkasenides.minesweeper.proto.JoinGameResponse.Status status = 2;</code>
      * @param value The status to set.
      * @return This builder for chaining.
      */
-    public Builder setStatus(com.nkasenides.minesweeper.proto.JoinGameResponse.Status value) {
+    public Builder setStatus(Status value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -715,13 +784,132 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
-    @java.lang.Override
+
+    private MAWorldSessionProto worldSession_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        MAWorldSessionProto, MAWorldSessionProto.Builder, MAWorldSessionProtoOrBuilder> worldSessionBuilder_;
+    /**
+     * <code>.com.nkasenides.minesweeper.proto.MAWorldSessionProto worldSession = 3;</code>
+     * @return Whether the worldSession field is set.
+     */
+    public boolean hasWorldSession() {
+      return worldSessionBuilder_ != null || worldSession_ != null;
+    }
+    /**
+     * <code>.com.nkasenides.minesweeper.proto.MAWorldSessionProto worldSession = 3;</code>
+     * @return The worldSession.
+     */
+    public MAWorldSessionProto getWorldSession() {
+      if (worldSessionBuilder_ == null) {
+        return worldSession_ == null ? MAWorldSessionProto.getDefaultInstance() : worldSession_;
+      } else {
+        return worldSessionBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.com.nkasenides.minesweeper.proto.MAWorldSessionProto worldSession = 3;</code>
+     */
+    public Builder setWorldSession(MAWorldSessionProto value) {
+      if (worldSessionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        worldSession_ = value;
+        onChanged();
+      } else {
+        worldSessionBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.com.nkasenides.minesweeper.proto.MAWorldSessionProto worldSession = 3;</code>
+     */
+    public Builder setWorldSession(
+        MAWorldSessionProto.Builder builderForValue) {
+      if (worldSessionBuilder_ == null) {
+        worldSession_ = builderForValue.build();
+        onChanged();
+      } else {
+        worldSessionBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.com.nkasenides.minesweeper.proto.MAWorldSessionProto worldSession = 3;</code>
+     */
+    public Builder mergeWorldSession(MAWorldSessionProto value) {
+      if (worldSessionBuilder_ == null) {
+        if (worldSession_ != null) {
+          worldSession_ =
+            MAWorldSessionProto.newBuilder(worldSession_).mergeFrom(value).buildPartial();
+        } else {
+          worldSession_ = value;
+        }
+        onChanged();
+      } else {
+        worldSessionBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.com.nkasenides.minesweeper.proto.MAWorldSessionProto worldSession = 3;</code>
+     */
+    public Builder clearWorldSession() {
+      if (worldSessionBuilder_ == null) {
+        worldSession_ = null;
+        onChanged();
+      } else {
+        worldSession_ = null;
+        worldSessionBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.com.nkasenides.minesweeper.proto.MAWorldSessionProto worldSession = 3;</code>
+     */
+    public MAWorldSessionProto.Builder getWorldSessionBuilder() {
+      
+      onChanged();
+      return getWorldSessionFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.com.nkasenides.minesweeper.proto.MAWorldSessionProto worldSession = 3;</code>
+     */
+    public MAWorldSessionProtoOrBuilder getWorldSessionOrBuilder() {
+      if (worldSessionBuilder_ != null) {
+        return worldSessionBuilder_.getMessageOrBuilder();
+      } else {
+        return worldSession_ == null ?
+            MAWorldSessionProto.getDefaultInstance() : worldSession_;
+      }
+    }
+    /**
+     * <code>.com.nkasenides.minesweeper.proto.MAWorldSessionProto worldSession = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        MAWorldSessionProto, MAWorldSessionProto.Builder, MAWorldSessionProtoOrBuilder>
+        getWorldSessionFieldBuilder() {
+      if (worldSessionBuilder_ == null) {
+        worldSessionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            MAWorldSessionProto, MAWorldSessionProto.Builder, MAWorldSessionProtoOrBuilder>(
+                getWorldSession(),
+                getParentForChildren(),
+                isClean());
+        worldSession_ = null;
+      }
+      return worldSessionBuilder_;
+    }
+    @Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
-    @java.lang.Override
+    @Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -732,18 +920,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:com.nkasenides.minesweeper.proto.JoinGameResponse)
-  private static final com.nkasenides.minesweeper.proto.JoinGameResponse DEFAULT_INSTANCE;
+  private static final JoinGameResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.nkasenides.minesweeper.proto.JoinGameResponse();
+    DEFAULT_INSTANCE = new JoinGameResponse();
   }
 
-  public static com.nkasenides.minesweeper.proto.JoinGameResponse getDefaultInstance() {
+  public static JoinGameResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<JoinGameResponse>
       PARSER = new com.google.protobuf.AbstractParser<JoinGameResponse>() {
-    @java.lang.Override
+    @Override
     public JoinGameResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -756,13 +944,13 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Parser<JoinGameResponse> getParserForType() {
     return PARSER;
   }
 
-  @java.lang.Override
-  public com.nkasenides.minesweeper.proto.JoinGameResponse getDefaultInstanceForType() {
+  @Override
+  public JoinGameResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

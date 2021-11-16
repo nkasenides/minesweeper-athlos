@@ -27,29 +27,29 @@ public final class MAServiceProtoGrpc {
   public static final String SERVICE_NAME = "com.nkasenides.minesweeper.proto.MAServiceProto";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<com.nkasenides.minesweeper.proto.StartGameRequest,
-      com.nkasenides.minesweeper.proto.StartGameResponse> getListGamesMethod;
+  private static volatile io.grpc.MethodDescriptor<ListGamesRequest,
+      ListGameResponse> getListGamesMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "ListGames",
-      requestType = com.nkasenides.minesweeper.proto.StartGameRequest.class,
-      responseType = com.nkasenides.minesweeper.proto.StartGameResponse.class,
+      requestType = ListGamesRequest.class,
+      responseType = ListGameResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.nkasenides.minesweeper.proto.StartGameRequest,
-      com.nkasenides.minesweeper.proto.StartGameResponse> getListGamesMethod() {
-    io.grpc.MethodDescriptor<com.nkasenides.minesweeper.proto.StartGameRequest, com.nkasenides.minesweeper.proto.StartGameResponse> getListGamesMethod;
+  public static io.grpc.MethodDescriptor<ListGamesRequest,
+      ListGameResponse> getListGamesMethod() {
+    io.grpc.MethodDescriptor<ListGamesRequest, ListGameResponse> getListGamesMethod;
     if ((getListGamesMethod = MAServiceProtoGrpc.getListGamesMethod) == null) {
       synchronized (MAServiceProtoGrpc.class) {
         if ((getListGamesMethod = MAServiceProtoGrpc.getListGamesMethod) == null) {
           MAServiceProtoGrpc.getListGamesMethod = getListGamesMethod =
-              io.grpc.MethodDescriptor.<com.nkasenides.minesweeper.proto.StartGameRequest, com.nkasenides.minesweeper.proto.StartGameResponse>newBuilder()
+              io.grpc.MethodDescriptor.<ListGamesRequest, ListGameResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListGames"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.nkasenides.minesweeper.proto.StartGameRequest.getDefaultInstance()))
+                  ListGamesRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.nkasenides.minesweeper.proto.StartGameResponse.getDefaultInstance()))
+                  ListGameResponse.getDefaultInstance()))
               .setSchemaDescriptor(new MAServiceProtoMethodDescriptorSupplier("ListGames"))
               .build();
         }
@@ -58,29 +58,29 @@ public final class MAServiceProtoGrpc {
     return getListGamesMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.nkasenides.minesweeper.proto.StartGameRequest,
-      com.nkasenides.minesweeper.proto.StartGameResponse> getStartGameMethod;
+  private static volatile io.grpc.MethodDescriptor<StartGameRequest,
+      StartGameResponse> getStartGameMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "StartGame",
-      requestType = com.nkasenides.minesweeper.proto.StartGameRequest.class,
-      responseType = com.nkasenides.minesweeper.proto.StartGameResponse.class,
+      requestType = StartGameRequest.class,
+      responseType = StartGameResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.nkasenides.minesweeper.proto.StartGameRequest,
-      com.nkasenides.minesweeper.proto.StartGameResponse> getStartGameMethod() {
-    io.grpc.MethodDescriptor<com.nkasenides.minesweeper.proto.StartGameRequest, com.nkasenides.minesweeper.proto.StartGameResponse> getStartGameMethod;
+  public static io.grpc.MethodDescriptor<StartGameRequest,
+      StartGameResponse> getStartGameMethod() {
+    io.grpc.MethodDescriptor<StartGameRequest, StartGameResponse> getStartGameMethod;
     if ((getStartGameMethod = MAServiceProtoGrpc.getStartGameMethod) == null) {
       synchronized (MAServiceProtoGrpc.class) {
         if ((getStartGameMethod = MAServiceProtoGrpc.getStartGameMethod) == null) {
           MAServiceProtoGrpc.getStartGameMethod = getStartGameMethod =
-              io.grpc.MethodDescriptor.<com.nkasenides.minesweeper.proto.StartGameRequest, com.nkasenides.minesweeper.proto.StartGameResponse>newBuilder()
+              io.grpc.MethodDescriptor.<StartGameRequest, StartGameResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "StartGame"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.nkasenides.minesweeper.proto.StartGameRequest.getDefaultInstance()))
+                  StartGameRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.nkasenides.minesweeper.proto.StartGameResponse.getDefaultInstance()))
+                  StartGameResponse.getDefaultInstance()))
               .setSchemaDescriptor(new MAServiceProtoMethodDescriptorSupplier("StartGame"))
               .build();
         }
@@ -89,29 +89,29 @@ public final class MAServiceProtoGrpc {
     return getStartGameMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.nkasenides.minesweeper.proto.MoveRequest,
-      com.nkasenides.minesweeper.proto.MoveResponse> getMoveMethod;
+  private static volatile io.grpc.MethodDescriptor<MoveRequest,
+      MoveResponse> getMoveMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "Move",
-      requestType = com.nkasenides.minesweeper.proto.MoveRequest.class,
-      responseType = com.nkasenides.minesweeper.proto.MoveResponse.class,
+      requestType = MoveRequest.class,
+      responseType = MoveResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.nkasenides.minesweeper.proto.MoveRequest,
-      com.nkasenides.minesweeper.proto.MoveResponse> getMoveMethod() {
-    io.grpc.MethodDescriptor<com.nkasenides.minesweeper.proto.MoveRequest, com.nkasenides.minesweeper.proto.MoveResponse> getMoveMethod;
+  public static io.grpc.MethodDescriptor<MoveRequest,
+      MoveResponse> getMoveMethod() {
+    io.grpc.MethodDescriptor<MoveRequest, MoveResponse> getMoveMethod;
     if ((getMoveMethod = MAServiceProtoGrpc.getMoveMethod) == null) {
       synchronized (MAServiceProtoGrpc.class) {
         if ((getMoveMethod = MAServiceProtoGrpc.getMoveMethod) == null) {
           MAServiceProtoGrpc.getMoveMethod = getMoveMethod =
-              io.grpc.MethodDescriptor.<com.nkasenides.minesweeper.proto.MoveRequest, com.nkasenides.minesweeper.proto.MoveResponse>newBuilder()
+              io.grpc.MethodDescriptor.<MoveRequest, MoveResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Move"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.nkasenides.minesweeper.proto.MoveRequest.getDefaultInstance()))
+                  MoveRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.nkasenides.minesweeper.proto.MoveResponse.getDefaultInstance()))
+                  MoveResponse.getDefaultInstance()))
               .setSchemaDescriptor(new MAServiceProtoMethodDescriptorSupplier("Move"))
               .build();
         }
@@ -120,29 +120,29 @@ public final class MAServiceProtoGrpc {
     return getMoveMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.nkasenides.minesweeper.proto.CreateGameRequest,
-      com.nkasenides.minesweeper.proto.CreateGameResponse> getCreateGameMethod;
+  private static volatile io.grpc.MethodDescriptor<CreateGameRequest,
+      CreateGameResponse> getCreateGameMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "CreateGame",
-      requestType = com.nkasenides.minesweeper.proto.CreateGameRequest.class,
-      responseType = com.nkasenides.minesweeper.proto.CreateGameResponse.class,
+      requestType = CreateGameRequest.class,
+      responseType = CreateGameResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.nkasenides.minesweeper.proto.CreateGameRequest,
-      com.nkasenides.minesweeper.proto.CreateGameResponse> getCreateGameMethod() {
-    io.grpc.MethodDescriptor<com.nkasenides.minesweeper.proto.CreateGameRequest, com.nkasenides.minesweeper.proto.CreateGameResponse> getCreateGameMethod;
+  public static io.grpc.MethodDescriptor<CreateGameRequest,
+      CreateGameResponse> getCreateGameMethod() {
+    io.grpc.MethodDescriptor<CreateGameRequest, CreateGameResponse> getCreateGameMethod;
     if ((getCreateGameMethod = MAServiceProtoGrpc.getCreateGameMethod) == null) {
       synchronized (MAServiceProtoGrpc.class) {
         if ((getCreateGameMethod = MAServiceProtoGrpc.getCreateGameMethod) == null) {
           MAServiceProtoGrpc.getCreateGameMethod = getCreateGameMethod =
-              io.grpc.MethodDescriptor.<com.nkasenides.minesweeper.proto.CreateGameRequest, com.nkasenides.minesweeper.proto.CreateGameResponse>newBuilder()
+              io.grpc.MethodDescriptor.<CreateGameRequest, CreateGameResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateGame"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.nkasenides.minesweeper.proto.CreateGameRequest.getDefaultInstance()))
+                  CreateGameRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.nkasenides.minesweeper.proto.CreateGameResponse.getDefaultInstance()))
+                  CreateGameResponse.getDefaultInstance()))
               .setSchemaDescriptor(new MAServiceProtoMethodDescriptorSupplier("CreateGame"))
               .build();
         }
@@ -151,29 +151,29 @@ public final class MAServiceProtoGrpc {
     return getCreateGameMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.nkasenides.minesweeper.proto.GetStateRequest,
-      com.nkasenides.minesweeper.proto.GetStateResponse> getGetStateMethod;
+  private static volatile io.grpc.MethodDescriptor<GetStateRequest,
+      GetStateResponse> getGetStateMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "GetState",
-      requestType = com.nkasenides.minesweeper.proto.GetStateRequest.class,
-      responseType = com.nkasenides.minesweeper.proto.GetStateResponse.class,
+      requestType = GetStateRequest.class,
+      responseType = GetStateResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.nkasenides.minesweeper.proto.GetStateRequest,
-      com.nkasenides.minesweeper.proto.GetStateResponse> getGetStateMethod() {
-    io.grpc.MethodDescriptor<com.nkasenides.minesweeper.proto.GetStateRequest, com.nkasenides.minesweeper.proto.GetStateResponse> getGetStateMethod;
+  public static io.grpc.MethodDescriptor<GetStateRequest,
+      GetStateResponse> getGetStateMethod() {
+    io.grpc.MethodDescriptor<GetStateRequest, GetStateResponse> getGetStateMethod;
     if ((getGetStateMethod = MAServiceProtoGrpc.getGetStateMethod) == null) {
       synchronized (MAServiceProtoGrpc.class) {
         if ((getGetStateMethod = MAServiceProtoGrpc.getGetStateMethod) == null) {
           MAServiceProtoGrpc.getGetStateMethod = getGetStateMethod =
-              io.grpc.MethodDescriptor.<com.nkasenides.minesweeper.proto.GetStateRequest, com.nkasenides.minesweeper.proto.GetStateResponse>newBuilder()
+              io.grpc.MethodDescriptor.<GetStateRequest, GetStateResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetState"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.nkasenides.minesweeper.proto.GetStateRequest.getDefaultInstance()))
+                  GetStateRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.nkasenides.minesweeper.proto.GetStateResponse.getDefaultInstance()))
+                  GetStateResponse.getDefaultInstance()))
               .setSchemaDescriptor(new MAServiceProtoMethodDescriptorSupplier("GetState"))
               .build();
         }
@@ -182,29 +182,29 @@ public final class MAServiceProtoGrpc {
     return getGetStateMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.nkasenides.minesweeper.proto.SubscribeRequest,
-      com.nkasenides.minesweeper.proto.SubscribeResponse> getSubscribeMethod;
+  private static volatile io.grpc.MethodDescriptor<SubscribeRequest,
+      SubscribeResponse> getSubscribeMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "Subscribe",
-      requestType = com.nkasenides.minesweeper.proto.SubscribeRequest.class,
-      responseType = com.nkasenides.minesweeper.proto.SubscribeResponse.class,
+      requestType = SubscribeRequest.class,
+      responseType = SubscribeResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.nkasenides.minesweeper.proto.SubscribeRequest,
-      com.nkasenides.minesweeper.proto.SubscribeResponse> getSubscribeMethod() {
-    io.grpc.MethodDescriptor<com.nkasenides.minesweeper.proto.SubscribeRequest, com.nkasenides.minesweeper.proto.SubscribeResponse> getSubscribeMethod;
+  public static io.grpc.MethodDescriptor<SubscribeRequest,
+      SubscribeResponse> getSubscribeMethod() {
+    io.grpc.MethodDescriptor<SubscribeRequest, SubscribeResponse> getSubscribeMethod;
     if ((getSubscribeMethod = MAServiceProtoGrpc.getSubscribeMethod) == null) {
       synchronized (MAServiceProtoGrpc.class) {
         if ((getSubscribeMethod = MAServiceProtoGrpc.getSubscribeMethod) == null) {
           MAServiceProtoGrpc.getSubscribeMethod = getSubscribeMethod =
-              io.grpc.MethodDescriptor.<com.nkasenides.minesweeper.proto.SubscribeRequest, com.nkasenides.minesweeper.proto.SubscribeResponse>newBuilder()
+              io.grpc.MethodDescriptor.<SubscribeRequest, SubscribeResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Subscribe"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.nkasenides.minesweeper.proto.SubscribeRequest.getDefaultInstance()))
+                  SubscribeRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.nkasenides.minesweeper.proto.SubscribeResponse.getDefaultInstance()))
+                  SubscribeResponse.getDefaultInstance()))
               .setSchemaDescriptor(new MAServiceProtoMethodDescriptorSupplier("Subscribe"))
               .build();
         }
@@ -213,29 +213,29 @@ public final class MAServiceProtoGrpc {
     return getSubscribeMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.nkasenides.minesweeper.proto.JoinGameRequest,
-      com.nkasenides.minesweeper.proto.JoinGameResponse> getJoinGameMethod;
+  private static volatile io.grpc.MethodDescriptor<JoinGameRequest,
+      JoinGameResponse> getJoinGameMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "JoinGame",
-      requestType = com.nkasenides.minesweeper.proto.JoinGameRequest.class,
-      responseType = com.nkasenides.minesweeper.proto.JoinGameResponse.class,
+      requestType = JoinGameRequest.class,
+      responseType = JoinGameResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.nkasenides.minesweeper.proto.JoinGameRequest,
-      com.nkasenides.minesweeper.proto.JoinGameResponse> getJoinGameMethod() {
-    io.grpc.MethodDescriptor<com.nkasenides.minesweeper.proto.JoinGameRequest, com.nkasenides.minesweeper.proto.JoinGameResponse> getJoinGameMethod;
+  public static io.grpc.MethodDescriptor<JoinGameRequest,
+      JoinGameResponse> getJoinGameMethod() {
+    io.grpc.MethodDescriptor<JoinGameRequest, JoinGameResponse> getJoinGameMethod;
     if ((getJoinGameMethod = MAServiceProtoGrpc.getJoinGameMethod) == null) {
       synchronized (MAServiceProtoGrpc.class) {
         if ((getJoinGameMethod = MAServiceProtoGrpc.getJoinGameMethod) == null) {
           MAServiceProtoGrpc.getJoinGameMethod = getJoinGameMethod =
-              io.grpc.MethodDescriptor.<com.nkasenides.minesweeper.proto.JoinGameRequest, com.nkasenides.minesweeper.proto.JoinGameResponse>newBuilder()
+              io.grpc.MethodDescriptor.<JoinGameRequest, JoinGameResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "JoinGame"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.nkasenides.minesweeper.proto.JoinGameRequest.getDefaultInstance()))
+                  JoinGameRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.nkasenides.minesweeper.proto.JoinGameResponse.getDefaultInstance()))
+                  JoinGameResponse.getDefaultInstance()))
               .setSchemaDescriptor(new MAServiceProtoMethodDescriptorSupplier("JoinGame"))
               .build();
         }
@@ -244,29 +244,29 @@ public final class MAServiceProtoGrpc {
     return getJoinGameMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.nkasenides.minesweeper.proto.ViewGameRequest,
-      com.nkasenides.minesweeper.proto.ViewGameResponse> getViewGameMethod;
+  private static volatile io.grpc.MethodDescriptor<ViewGameRequest,
+      ViewGameResponse> getViewGameMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "ViewGame",
-      requestType = com.nkasenides.minesweeper.proto.ViewGameRequest.class,
-      responseType = com.nkasenides.minesweeper.proto.ViewGameResponse.class,
+      requestType = ViewGameRequest.class,
+      responseType = ViewGameResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.nkasenides.minesweeper.proto.ViewGameRequest,
-      com.nkasenides.minesweeper.proto.ViewGameResponse> getViewGameMethod() {
-    io.grpc.MethodDescriptor<com.nkasenides.minesweeper.proto.ViewGameRequest, com.nkasenides.minesweeper.proto.ViewGameResponse> getViewGameMethod;
+  public static io.grpc.MethodDescriptor<ViewGameRequest,
+      ViewGameResponse> getViewGameMethod() {
+    io.grpc.MethodDescriptor<ViewGameRequest, ViewGameResponse> getViewGameMethod;
     if ((getViewGameMethod = MAServiceProtoGrpc.getViewGameMethod) == null) {
       synchronized (MAServiceProtoGrpc.class) {
         if ((getViewGameMethod = MAServiceProtoGrpc.getViewGameMethod) == null) {
           MAServiceProtoGrpc.getViewGameMethod = getViewGameMethod =
-              io.grpc.MethodDescriptor.<com.nkasenides.minesweeper.proto.ViewGameRequest, com.nkasenides.minesweeper.proto.ViewGameResponse>newBuilder()
+              io.grpc.MethodDescriptor.<ViewGameRequest, ViewGameResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ViewGame"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.nkasenides.minesweeper.proto.ViewGameRequest.getDefaultInstance()))
+                  ViewGameRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.nkasenides.minesweeper.proto.ViewGameResponse.getDefaultInstance()))
+                  ViewGameResponse.getDefaultInstance()))
               .setSchemaDescriptor(new MAServiceProtoMethodDescriptorSupplier("ViewGame"))
               .build();
         }
@@ -275,29 +275,29 @@ public final class MAServiceProtoGrpc {
     return getViewGameMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.nkasenides.minesweeper.proto.FlagRequest,
-      com.nkasenides.minesweeper.proto.RevealResponse> getFlagMethod;
+  private static volatile io.grpc.MethodDescriptor<FlagRequest,
+      RevealResponse> getFlagMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "Flag",
-      requestType = com.nkasenides.minesweeper.proto.FlagRequest.class,
-      responseType = com.nkasenides.minesweeper.proto.RevealResponse.class,
+      requestType = FlagRequest.class,
+      responseType = RevealResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.nkasenides.minesweeper.proto.FlagRequest,
-      com.nkasenides.minesweeper.proto.RevealResponse> getFlagMethod() {
-    io.grpc.MethodDescriptor<com.nkasenides.minesweeper.proto.FlagRequest, com.nkasenides.minesweeper.proto.RevealResponse> getFlagMethod;
+  public static io.grpc.MethodDescriptor<FlagRequest,
+      RevealResponse> getFlagMethod() {
+    io.grpc.MethodDescriptor<FlagRequest, RevealResponse> getFlagMethod;
     if ((getFlagMethod = MAServiceProtoGrpc.getFlagMethod) == null) {
       synchronized (MAServiceProtoGrpc.class) {
         if ((getFlagMethod = MAServiceProtoGrpc.getFlagMethod) == null) {
           MAServiceProtoGrpc.getFlagMethod = getFlagMethod =
-              io.grpc.MethodDescriptor.<com.nkasenides.minesweeper.proto.FlagRequest, com.nkasenides.minesweeper.proto.RevealResponse>newBuilder()
+              io.grpc.MethodDescriptor.<FlagRequest, RevealResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Flag"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.nkasenides.minesweeper.proto.FlagRequest.getDefaultInstance()))
+                  FlagRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.nkasenides.minesweeper.proto.RevealResponse.getDefaultInstance()))
+                  RevealResponse.getDefaultInstance()))
               .setSchemaDescriptor(new MAServiceProtoMethodDescriptorSupplier("Flag"))
               .build();
         }
@@ -306,29 +306,29 @@ public final class MAServiceProtoGrpc {
     return getFlagMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.nkasenides.minesweeper.proto.RevealRequest,
-      com.nkasenides.minesweeper.proto.RevealResponse> getRevealMethod;
+  private static volatile io.grpc.MethodDescriptor<RevealRequest,
+      RevealResponse> getRevealMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "Reveal",
-      requestType = com.nkasenides.minesweeper.proto.RevealRequest.class,
-      responseType = com.nkasenides.minesweeper.proto.RevealResponse.class,
+      requestType = RevealRequest.class,
+      responseType = RevealResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.nkasenides.minesweeper.proto.RevealRequest,
-      com.nkasenides.minesweeper.proto.RevealResponse> getRevealMethod() {
-    io.grpc.MethodDescriptor<com.nkasenides.minesweeper.proto.RevealRequest, com.nkasenides.minesweeper.proto.RevealResponse> getRevealMethod;
+  public static io.grpc.MethodDescriptor<RevealRequest,
+      RevealResponse> getRevealMethod() {
+    io.grpc.MethodDescriptor<RevealRequest, RevealResponse> getRevealMethod;
     if ((getRevealMethod = MAServiceProtoGrpc.getRevealMethod) == null) {
       synchronized (MAServiceProtoGrpc.class) {
         if ((getRevealMethod = MAServiceProtoGrpc.getRevealMethod) == null) {
           MAServiceProtoGrpc.getRevealMethod = getRevealMethod =
-              io.grpc.MethodDescriptor.<com.nkasenides.minesweeper.proto.RevealRequest, com.nkasenides.minesweeper.proto.RevealResponse>newBuilder()
+              io.grpc.MethodDescriptor.<RevealRequest, RevealResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Reveal"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.nkasenides.minesweeper.proto.RevealRequest.getDefaultInstance()))
+                  RevealRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.nkasenides.minesweeper.proto.RevealResponse.getDefaultInstance()))
+                  RevealResponse.getDefaultInstance()))
               .setSchemaDescriptor(new MAServiceProtoMethodDescriptorSupplier("Reveal"))
               .build();
         }
@@ -343,7 +343,7 @@ public final class MAServiceProtoGrpc {
   public static MAServiceProtoStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<MAServiceProtoStub> factory =
       new io.grpc.stub.AbstractStub.StubFactory<MAServiceProtoStub>() {
-        @java.lang.Override
+        @Override
         public MAServiceProtoStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
           return new MAServiceProtoStub(channel, callOptions);
         }
@@ -358,7 +358,7 @@ public final class MAServiceProtoGrpc {
       io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<MAServiceProtoBlockingStub> factory =
       new io.grpc.stub.AbstractStub.StubFactory<MAServiceProtoBlockingStub>() {
-        @java.lang.Override
+        @Override
         public MAServiceProtoBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
           return new MAServiceProtoBlockingStub(channel, callOptions);
         }
@@ -373,7 +373,7 @@ public final class MAServiceProtoGrpc {
       io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<MAServiceProtoFutureStub> factory =
       new io.grpc.stub.AbstractStub.StubFactory<MAServiceProtoFutureStub>() {
-        @java.lang.Override
+        @Override
         public MAServiceProtoFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
           return new MAServiceProtoFutureStub(channel, callOptions);
         }
@@ -387,145 +387,145 @@ public final class MAServiceProtoGrpc {
 
     /**
      */
-    public void listGames(com.nkasenides.minesweeper.proto.StartGameRequest request,
-        io.grpc.stub.StreamObserver<com.nkasenides.minesweeper.proto.StartGameResponse> responseObserver) {
+    public void listGames(ListGamesRequest request,
+                          io.grpc.stub.StreamObserver<ListGameResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getListGamesMethod(), responseObserver);
     }
 
     /**
      */
-    public void startGame(com.nkasenides.minesweeper.proto.StartGameRequest request,
-        io.grpc.stub.StreamObserver<com.nkasenides.minesweeper.proto.StartGameResponse> responseObserver) {
+    public void startGame(StartGameRequest request,
+                          io.grpc.stub.StreamObserver<StartGameResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getStartGameMethod(), responseObserver);
     }
 
     /**
      */
-    public void move(com.nkasenides.minesweeper.proto.MoveRequest request,
-        io.grpc.stub.StreamObserver<com.nkasenides.minesweeper.proto.MoveResponse> responseObserver) {
+    public void move(MoveRequest request,
+                     io.grpc.stub.StreamObserver<MoveResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getMoveMethod(), responseObserver);
     }
 
     /**
      */
-    public void createGame(com.nkasenides.minesweeper.proto.CreateGameRequest request,
-        io.grpc.stub.StreamObserver<com.nkasenides.minesweeper.proto.CreateGameResponse> responseObserver) {
+    public void createGame(CreateGameRequest request,
+                           io.grpc.stub.StreamObserver<CreateGameResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getCreateGameMethod(), responseObserver);
     }
 
     /**
      */
-    public void getState(com.nkasenides.minesweeper.proto.GetStateRequest request,
-        io.grpc.stub.StreamObserver<com.nkasenides.minesweeper.proto.GetStateResponse> responseObserver) {
+    public void getState(GetStateRequest request,
+                         io.grpc.stub.StreamObserver<GetStateResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getGetStateMethod(), responseObserver);
     }
 
     /**
      */
-    public void subscribe(com.nkasenides.minesweeper.proto.SubscribeRequest request,
-        io.grpc.stub.StreamObserver<com.nkasenides.minesweeper.proto.SubscribeResponse> responseObserver) {
+    public void subscribe(SubscribeRequest request,
+                          io.grpc.stub.StreamObserver<SubscribeResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getSubscribeMethod(), responseObserver);
     }
 
     /**
      */
-    public void joinGame(com.nkasenides.minesweeper.proto.JoinGameRequest request,
-        io.grpc.stub.StreamObserver<com.nkasenides.minesweeper.proto.JoinGameResponse> responseObserver) {
+    public void joinGame(JoinGameRequest request,
+                         io.grpc.stub.StreamObserver<JoinGameResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getJoinGameMethod(), responseObserver);
     }
 
     /**
      */
-    public void viewGame(com.nkasenides.minesweeper.proto.ViewGameRequest request,
-        io.grpc.stub.StreamObserver<com.nkasenides.minesweeper.proto.ViewGameResponse> responseObserver) {
+    public void viewGame(ViewGameRequest request,
+                         io.grpc.stub.StreamObserver<ViewGameResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getViewGameMethod(), responseObserver);
     }
 
     /**
      */
-    public void flag(com.nkasenides.minesweeper.proto.FlagRequest request,
-        io.grpc.stub.StreamObserver<com.nkasenides.minesweeper.proto.RevealResponse> responseObserver) {
+    public void flag(FlagRequest request,
+                     io.grpc.stub.StreamObserver<RevealResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getFlagMethod(), responseObserver);
     }
 
     /**
      */
-    public void reveal(com.nkasenides.minesweeper.proto.RevealRequest request,
-        io.grpc.stub.StreamObserver<com.nkasenides.minesweeper.proto.RevealResponse> responseObserver) {
+    public void reveal(RevealRequest request,
+                       io.grpc.stub.StreamObserver<RevealResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getRevealMethod(), responseObserver);
     }
 
-    @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
+    @Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getListGamesMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                com.nkasenides.minesweeper.proto.StartGameRequest,
-                com.nkasenides.minesweeper.proto.StartGameResponse>(
+                ListGamesRequest,
+                ListGameResponse>(
                   this, METHODID_LIST_GAMES)))
           .addMethod(
             getStartGameMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                com.nkasenides.minesweeper.proto.StartGameRequest,
-                com.nkasenides.minesweeper.proto.StartGameResponse>(
+                StartGameRequest,
+                StartGameResponse>(
                   this, METHODID_START_GAME)))
           .addMethod(
             getMoveMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                com.nkasenides.minesweeper.proto.MoveRequest,
-                com.nkasenides.minesweeper.proto.MoveResponse>(
+                MoveRequest,
+                MoveResponse>(
                   this, METHODID_MOVE)))
           .addMethod(
             getCreateGameMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                com.nkasenides.minesweeper.proto.CreateGameRequest,
-                com.nkasenides.minesweeper.proto.CreateGameResponse>(
+                CreateGameRequest,
+                CreateGameResponse>(
                   this, METHODID_CREATE_GAME)))
           .addMethod(
             getGetStateMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                com.nkasenides.minesweeper.proto.GetStateRequest,
-                com.nkasenides.minesweeper.proto.GetStateResponse>(
+                GetStateRequest,
+                GetStateResponse>(
                   this, METHODID_GET_STATE)))
           .addMethod(
             getSubscribeMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                com.nkasenides.minesweeper.proto.SubscribeRequest,
-                com.nkasenides.minesweeper.proto.SubscribeResponse>(
+                SubscribeRequest,
+                SubscribeResponse>(
                   this, METHODID_SUBSCRIBE)))
           .addMethod(
             getJoinGameMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                com.nkasenides.minesweeper.proto.JoinGameRequest,
-                com.nkasenides.minesweeper.proto.JoinGameResponse>(
+                JoinGameRequest,
+                JoinGameResponse>(
                   this, METHODID_JOIN_GAME)))
           .addMethod(
             getViewGameMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                com.nkasenides.minesweeper.proto.ViewGameRequest,
-                com.nkasenides.minesweeper.proto.ViewGameResponse>(
+                ViewGameRequest,
+                ViewGameResponse>(
                   this, METHODID_VIEW_GAME)))
           .addMethod(
             getFlagMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                com.nkasenides.minesweeper.proto.FlagRequest,
-                com.nkasenides.minesweeper.proto.RevealResponse>(
+                FlagRequest,
+                RevealResponse>(
                   this, METHODID_FLAG)))
           .addMethod(
             getRevealMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                com.nkasenides.minesweeper.proto.RevealRequest,
-                com.nkasenides.minesweeper.proto.RevealResponse>(
+                RevealRequest,
+                RevealResponse>(
                   this, METHODID_REVEAL)))
           .build();
     }
@@ -539,7 +539,7 @@ public final class MAServiceProtoGrpc {
       super(channel, callOptions);
     }
 
-    @java.lang.Override
+    @Override
     protected MAServiceProtoStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new MAServiceProtoStub(channel, callOptions);
@@ -547,80 +547,80 @@ public final class MAServiceProtoGrpc {
 
     /**
      */
-    public void listGames(com.nkasenides.minesweeper.proto.StartGameRequest request,
-        io.grpc.stub.StreamObserver<com.nkasenides.minesweeper.proto.StartGameResponse> responseObserver) {
+    public void listGames(ListGamesRequest request,
+                          io.grpc.stub.StreamObserver<ListGameResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getListGamesMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void startGame(com.nkasenides.minesweeper.proto.StartGameRequest request,
-        io.grpc.stub.StreamObserver<com.nkasenides.minesweeper.proto.StartGameResponse> responseObserver) {
+    public void startGame(StartGameRequest request,
+                          io.grpc.stub.StreamObserver<StartGameResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getStartGameMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void move(com.nkasenides.minesweeper.proto.MoveRequest request,
-        io.grpc.stub.StreamObserver<com.nkasenides.minesweeper.proto.MoveResponse> responseObserver) {
+    public void move(MoveRequest request,
+                     io.grpc.stub.StreamObserver<MoveResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getMoveMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void createGame(com.nkasenides.minesweeper.proto.CreateGameRequest request,
-        io.grpc.stub.StreamObserver<com.nkasenides.minesweeper.proto.CreateGameResponse> responseObserver) {
+    public void createGame(CreateGameRequest request,
+                           io.grpc.stub.StreamObserver<CreateGameResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getCreateGameMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void getState(com.nkasenides.minesweeper.proto.GetStateRequest request,
-        io.grpc.stub.StreamObserver<com.nkasenides.minesweeper.proto.GetStateResponse> responseObserver) {
+    public void getState(GetStateRequest request,
+                         io.grpc.stub.StreamObserver<GetStateResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getGetStateMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void subscribe(com.nkasenides.minesweeper.proto.SubscribeRequest request,
-        io.grpc.stub.StreamObserver<com.nkasenides.minesweeper.proto.SubscribeResponse> responseObserver) {
+    public void subscribe(SubscribeRequest request,
+                          io.grpc.stub.StreamObserver<SubscribeResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getSubscribeMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void joinGame(com.nkasenides.minesweeper.proto.JoinGameRequest request,
-        io.grpc.stub.StreamObserver<com.nkasenides.minesweeper.proto.JoinGameResponse> responseObserver) {
+    public void joinGame(JoinGameRequest request,
+                         io.grpc.stub.StreamObserver<JoinGameResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getJoinGameMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void viewGame(com.nkasenides.minesweeper.proto.ViewGameRequest request,
-        io.grpc.stub.StreamObserver<com.nkasenides.minesweeper.proto.ViewGameResponse> responseObserver) {
+    public void viewGame(ViewGameRequest request,
+                         io.grpc.stub.StreamObserver<ViewGameResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getViewGameMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void flag(com.nkasenides.minesweeper.proto.FlagRequest request,
-        io.grpc.stub.StreamObserver<com.nkasenides.minesweeper.proto.RevealResponse> responseObserver) {
+    public void flag(FlagRequest request,
+                     io.grpc.stub.StreamObserver<RevealResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getFlagMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void reveal(com.nkasenides.minesweeper.proto.RevealRequest request,
-        io.grpc.stub.StreamObserver<com.nkasenides.minesweeper.proto.RevealResponse> responseObserver) {
+    public void reveal(RevealRequest request,
+                       io.grpc.stub.StreamObserver<RevealResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getRevealMethod(), getCallOptions()), request, responseObserver);
     }
@@ -634,7 +634,7 @@ public final class MAServiceProtoGrpc {
       super(channel, callOptions);
     }
 
-    @java.lang.Override
+    @Override
     protected MAServiceProtoBlockingStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new MAServiceProtoBlockingStub(channel, callOptions);
@@ -642,70 +642,70 @@ public final class MAServiceProtoGrpc {
 
     /**
      */
-    public com.nkasenides.minesweeper.proto.StartGameResponse listGames(com.nkasenides.minesweeper.proto.StartGameRequest request) {
+    public ListGameResponse listGames(ListGamesRequest request) {
       return blockingUnaryCall(
           getChannel(), getListGamesMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.nkasenides.minesweeper.proto.StartGameResponse startGame(com.nkasenides.minesweeper.proto.StartGameRequest request) {
+    public StartGameResponse startGame(StartGameRequest request) {
       return blockingUnaryCall(
           getChannel(), getStartGameMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.nkasenides.minesweeper.proto.MoveResponse move(com.nkasenides.minesweeper.proto.MoveRequest request) {
+    public MoveResponse move(MoveRequest request) {
       return blockingUnaryCall(
           getChannel(), getMoveMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.nkasenides.minesweeper.proto.CreateGameResponse createGame(com.nkasenides.minesweeper.proto.CreateGameRequest request) {
+    public CreateGameResponse createGame(CreateGameRequest request) {
       return blockingUnaryCall(
           getChannel(), getCreateGameMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.nkasenides.minesweeper.proto.GetStateResponse getState(com.nkasenides.minesweeper.proto.GetStateRequest request) {
+    public GetStateResponse getState(GetStateRequest request) {
       return blockingUnaryCall(
           getChannel(), getGetStateMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.nkasenides.minesweeper.proto.SubscribeResponse subscribe(com.nkasenides.minesweeper.proto.SubscribeRequest request) {
+    public SubscribeResponse subscribe(SubscribeRequest request) {
       return blockingUnaryCall(
           getChannel(), getSubscribeMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.nkasenides.minesweeper.proto.JoinGameResponse joinGame(com.nkasenides.minesweeper.proto.JoinGameRequest request) {
+    public JoinGameResponse joinGame(JoinGameRequest request) {
       return blockingUnaryCall(
           getChannel(), getJoinGameMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.nkasenides.minesweeper.proto.ViewGameResponse viewGame(com.nkasenides.minesweeper.proto.ViewGameRequest request) {
+    public ViewGameResponse viewGame(ViewGameRequest request) {
       return blockingUnaryCall(
           getChannel(), getViewGameMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.nkasenides.minesweeper.proto.RevealResponse flag(com.nkasenides.minesweeper.proto.FlagRequest request) {
+    public RevealResponse flag(FlagRequest request) {
       return blockingUnaryCall(
           getChannel(), getFlagMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.nkasenides.minesweeper.proto.RevealResponse reveal(com.nkasenides.minesweeper.proto.RevealRequest request) {
+    public RevealResponse reveal(RevealRequest request) {
       return blockingUnaryCall(
           getChannel(), getRevealMethod(), getCallOptions(), request);
     }
@@ -719,7 +719,7 @@ public final class MAServiceProtoGrpc {
       super(channel, callOptions);
     }
 
-    @java.lang.Override
+    @Override
     protected MAServiceProtoFutureStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new MAServiceProtoFutureStub(channel, callOptions);
@@ -727,80 +727,80 @@ public final class MAServiceProtoGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.nkasenides.minesweeper.proto.StartGameResponse> listGames(
-        com.nkasenides.minesweeper.proto.StartGameRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<ListGameResponse> listGames(
+        ListGamesRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getListGamesMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.nkasenides.minesweeper.proto.StartGameResponse> startGame(
-        com.nkasenides.minesweeper.proto.StartGameRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<StartGameResponse> startGame(
+        StartGameRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getStartGameMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.nkasenides.minesweeper.proto.MoveResponse> move(
-        com.nkasenides.minesweeper.proto.MoveRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<MoveResponse> move(
+        MoveRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getMoveMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.nkasenides.minesweeper.proto.CreateGameResponse> createGame(
-        com.nkasenides.minesweeper.proto.CreateGameRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<CreateGameResponse> createGame(
+        CreateGameRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getCreateGameMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.nkasenides.minesweeper.proto.GetStateResponse> getState(
-        com.nkasenides.minesweeper.proto.GetStateRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<GetStateResponse> getState(
+        GetStateRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getGetStateMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.nkasenides.minesweeper.proto.SubscribeResponse> subscribe(
-        com.nkasenides.minesweeper.proto.SubscribeRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<SubscribeResponse> subscribe(
+        SubscribeRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getSubscribeMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.nkasenides.minesweeper.proto.JoinGameResponse> joinGame(
-        com.nkasenides.minesweeper.proto.JoinGameRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<JoinGameResponse> joinGame(
+        JoinGameRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getJoinGameMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.nkasenides.minesweeper.proto.ViewGameResponse> viewGame(
-        com.nkasenides.minesweeper.proto.ViewGameRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<ViewGameResponse> viewGame(
+        ViewGameRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getViewGameMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.nkasenides.minesweeper.proto.RevealResponse> flag(
-        com.nkasenides.minesweeper.proto.FlagRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<RevealResponse> flag(
+        FlagRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getFlagMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.nkasenides.minesweeper.proto.RevealResponse> reveal(
-        com.nkasenides.minesweeper.proto.RevealRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<RevealResponse> reveal(
+        RevealRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getRevealMethod(), getCallOptions()), request);
     }
@@ -830,57 +830,57 @@ public final class MAServiceProtoGrpc {
       this.methodId = methodId;
     }
 
-    @java.lang.Override
-    @java.lang.SuppressWarnings("unchecked")
+    @Override
+    @SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_LIST_GAMES:
-          serviceImpl.listGames((com.nkasenides.minesweeper.proto.StartGameRequest) request,
-              (io.grpc.stub.StreamObserver<com.nkasenides.minesweeper.proto.StartGameResponse>) responseObserver);
+          serviceImpl.listGames((ListGamesRequest) request,
+              (io.grpc.stub.StreamObserver<ListGameResponse>) responseObserver);
           break;
         case METHODID_START_GAME:
-          serviceImpl.startGame((com.nkasenides.minesweeper.proto.StartGameRequest) request,
-              (io.grpc.stub.StreamObserver<com.nkasenides.minesweeper.proto.StartGameResponse>) responseObserver);
+          serviceImpl.startGame((StartGameRequest) request,
+              (io.grpc.stub.StreamObserver<StartGameResponse>) responseObserver);
           break;
         case METHODID_MOVE:
-          serviceImpl.move((com.nkasenides.minesweeper.proto.MoveRequest) request,
-              (io.grpc.stub.StreamObserver<com.nkasenides.minesweeper.proto.MoveResponse>) responseObserver);
+          serviceImpl.move((MoveRequest) request,
+              (io.grpc.stub.StreamObserver<MoveResponse>) responseObserver);
           break;
         case METHODID_CREATE_GAME:
-          serviceImpl.createGame((com.nkasenides.minesweeper.proto.CreateGameRequest) request,
-              (io.grpc.stub.StreamObserver<com.nkasenides.minesweeper.proto.CreateGameResponse>) responseObserver);
+          serviceImpl.createGame((CreateGameRequest) request,
+              (io.grpc.stub.StreamObserver<CreateGameResponse>) responseObserver);
           break;
         case METHODID_GET_STATE:
-          serviceImpl.getState((com.nkasenides.minesweeper.proto.GetStateRequest) request,
-              (io.grpc.stub.StreamObserver<com.nkasenides.minesweeper.proto.GetStateResponse>) responseObserver);
+          serviceImpl.getState((GetStateRequest) request,
+              (io.grpc.stub.StreamObserver<GetStateResponse>) responseObserver);
           break;
         case METHODID_SUBSCRIBE:
-          serviceImpl.subscribe((com.nkasenides.minesweeper.proto.SubscribeRequest) request,
-              (io.grpc.stub.StreamObserver<com.nkasenides.minesweeper.proto.SubscribeResponse>) responseObserver);
+          serviceImpl.subscribe((SubscribeRequest) request,
+              (io.grpc.stub.StreamObserver<SubscribeResponse>) responseObserver);
           break;
         case METHODID_JOIN_GAME:
-          serviceImpl.joinGame((com.nkasenides.minesweeper.proto.JoinGameRequest) request,
-              (io.grpc.stub.StreamObserver<com.nkasenides.minesweeper.proto.JoinGameResponse>) responseObserver);
+          serviceImpl.joinGame((JoinGameRequest) request,
+              (io.grpc.stub.StreamObserver<JoinGameResponse>) responseObserver);
           break;
         case METHODID_VIEW_GAME:
-          serviceImpl.viewGame((com.nkasenides.minesweeper.proto.ViewGameRequest) request,
-              (io.grpc.stub.StreamObserver<com.nkasenides.minesweeper.proto.ViewGameResponse>) responseObserver);
+          serviceImpl.viewGame((ViewGameRequest) request,
+              (io.grpc.stub.StreamObserver<ViewGameResponse>) responseObserver);
           break;
         case METHODID_FLAG:
-          serviceImpl.flag((com.nkasenides.minesweeper.proto.FlagRequest) request,
-              (io.grpc.stub.StreamObserver<com.nkasenides.minesweeper.proto.RevealResponse>) responseObserver);
+          serviceImpl.flag((FlagRequest) request,
+              (io.grpc.stub.StreamObserver<RevealResponse>) responseObserver);
           break;
         case METHODID_REVEAL:
-          serviceImpl.reveal((com.nkasenides.minesweeper.proto.RevealRequest) request,
-              (io.grpc.stub.StreamObserver<com.nkasenides.minesweeper.proto.RevealResponse>) responseObserver);
+          serviceImpl.reveal((RevealRequest) request,
+              (io.grpc.stub.StreamObserver<RevealResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
       }
     }
 
-    @java.lang.Override
-    @java.lang.SuppressWarnings("unchecked")
+    @Override
+    @SuppressWarnings("unchecked")
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
@@ -894,12 +894,12 @@ public final class MAServiceProtoGrpc {
       implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
     MAServiceProtoBaseDescriptorSupplier() {}
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return com.nkasenides.minesweeper.proto.MProto.getDescriptor();
+      return MProto.getDescriptor();
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.ServiceDescriptor getServiceDescriptor() {
       return getFileDescriptor().findServiceByName("MAServiceProto");
     }
@@ -919,7 +919,7 @@ public final class MAServiceProtoGrpc {
       this.methodName = methodName;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.MethodDescriptor getMethodDescriptor() {
       return getServiceDescriptor().findMethodByName(methodName);
     }

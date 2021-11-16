@@ -11,7 +11,7 @@ public interface JoinGameRequestOrBuilder extends
    * <code>string gameID = 1;</code>
    * @return The gameID.
    */
-  java.lang.String getGameID();
+  String getGameID();
   /**
    * <code>string gameID = 1;</code>
    * @return The bytes for gameID.
@@ -23,7 +23,7 @@ public interface JoinGameRequestOrBuilder extends
    * <code>string gameSessionID = 2;</code>
    * @return The gameSessionID.
    */
-  java.lang.String getGameSessionID();
+  String getGameSessionID();
   /**
    * <code>string gameSessionID = 2;</code>
    * @return The bytes for gameSessionID.
@@ -40,9 +40,9 @@ public interface JoinGameRequestOrBuilder extends
    * <code>.com.nkasenides.minesweeper.proto.PartialStatePreferenceProto partialStatePreference = 3;</code>
    * @return The partialStatePreference.
    */
-  com.nkasenides.minesweeper.proto.PartialStatePreferenceProto getPartialStatePreference();
+  PartialStatePreferenceProto getPartialStatePreference();
   /**
    * <code>.com.nkasenides.minesweeper.proto.PartialStatePreferenceProto partialStatePreference = 3;</code>
    */
-  com.nkasenides.minesweeper.proto.PartialStatePreferenceProtoOrBuilder getPartialStatePreferenceOrBuilder();
+  PartialStatePreferenceProtoOrBuilder getPartialStatePreferenceOrBuilder();
 }
