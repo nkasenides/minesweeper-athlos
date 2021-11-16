@@ -1,0 +1,220 @@
+16-11-2021 12:56:17 DEBUG InternalLoggerFactory:45 - Using SLF4J as the default logging framework
+16-11-2021 12:56:17 DEBUG PlatformDependent:1015 - Platform: Windows
+16-11-2021 12:56:17 DEBUG PlatformDependent0:408 - -Dio.netty.noUnsafe: false
+16-11-2021 12:56:17 DEBUG PlatformDependent0:876 - Java version: 8
+16-11-2021 12:56:17 DEBUG PlatformDependent0:125 - sun.misc.Unsafe.theUnsafe: available
+16-11-2021 12:56:17 DEBUG PlatformDependent0:149 - sun.misc.Unsafe.copyMemory: available
+16-11-2021 12:56:17 DEBUG PlatformDependent0:187 - java.nio.Buffer.address: available
+16-11-2021 12:56:17 DEBUG PlatformDependent0:252 - direct buffer constructor: available
+16-11-2021 12:56:17 DEBUG PlatformDependent0:326 - java.nio.Bits.unaligned: available, true
+16-11-2021 12:56:17 DEBUG PlatformDependent0:391 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+16-11-2021 12:56:17 DEBUG PlatformDependent0:398 - java.nio.DirectByteBuffer.<init>(long, int): available
+16-11-2021 12:56:17 DEBUG PlatformDependent:1058 - sun.misc.Unsafe: available
+16-11-2021 12:56:17 DEBUG PlatformDependent:1177 - -Dio.netty.tmpdir: C:\Users\hfnov\AppData\Local\Temp (java.io.tmpdir)
+16-11-2021 12:56:17 DEBUG PlatformDependent:1256 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+16-11-2021 12:56:17 DEBUG PlatformDependent:177 - -Dio.netty.maxDirectMemory: 3791650816 bytes
+16-11-2021 12:56:17 DEBUG PlatformDependent:184 - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+16-11-2021 12:56:17 DEBUG CleanerJava6:92 - java.nio.ByteBuffer.cleaner(): available
+16-11-2021 12:56:17 DEBUG PlatformDependent:204 - -Dio.netty.noPreferDirect: false
+16-11-2021 12:56:18 DEBUG MultithreadEventLoopGroup:44 - -Dio.netty.eventLoopThreads: 16
+16-11-2021 12:56:18 DEBUG InternalThreadLocalMap:56 - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+16-11-2021 12:56:18 DEBUG InternalThreadLocalMap:59 - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+16-11-2021 12:56:18 DEBUG NioEventLoop:106 - -Dio.netty.noKeySetOptimization: false
+16-11-2021 12:56:18 DEBUG NioEventLoop:107 - -Dio.netty.selectorAutoRebuildThreshold: 512
+16-11-2021 12:56:18 DEBUG PlatformDependent:919 - org.jctools-core.MpscChunkedArrayQueue: available
+16-11-2021 12:56:19 DEBUG ResourceLeakDetector:130 - -Dio.grpc.netty.shaded.io.netty.leakDetection.level: simple
+16-11-2021 12:56:19 DEBUG ResourceLeakDetector:131 - -Dio.grpc.netty.shaded.io.netty.leakDetection.targetRecords: 4
+16-11-2021 12:56:19 DEBUG PooledByteBufAllocator:156 - -Dio.netty.allocator.numHeapArenas: 16
+16-11-2021 12:56:19 DEBUG PooledByteBufAllocator:157 - -Dio.netty.allocator.numDirectArenas: 16
+16-11-2021 12:56:19 DEBUG PooledByteBufAllocator:159 - -Dio.netty.allocator.pageSize: 8192
+16-11-2021 12:56:19 DEBUG PooledByteBufAllocator:164 - -Dio.netty.allocator.maxOrder: 11
+16-11-2021 12:56:19 DEBUG PooledByteBufAllocator:168 - -Dio.netty.allocator.chunkSize: 16777216
+16-11-2021 12:56:19 DEBUG PooledByteBufAllocator:169 - -Dio.netty.allocator.tinyCacheSize: 512
+16-11-2021 12:56:19 DEBUG PooledByteBufAllocator:170 - -Dio.netty.allocator.smallCacheSize: 256
+16-11-2021 12:56:19 DEBUG PooledByteBufAllocator:171 - -Dio.netty.allocator.normalCacheSize: 64
+16-11-2021 12:56:19 DEBUG PooledByteBufAllocator:172 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+16-11-2021 12:56:19 DEBUG PooledByteBufAllocator:173 - -Dio.netty.allocator.cacheTrimInterval: 8192
+16-11-2021 12:56:19 DEBUG PooledByteBufAllocator:174 - -Dio.netty.allocator.cacheTrimIntervalMillis: 0
+16-11-2021 12:56:19 DEBUG PooledByteBufAllocator:175 - -Dio.netty.allocator.useCacheForAllThreads: true
+16-11-2021 12:56:19 DEBUG PooledByteBufAllocator:176 - -Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+16-11-2021 12:56:19 DEBUG DefaultChannelId:79 - -Dio.netty.processId: 8072 (auto-detected)
+16-11-2021 12:56:19 DEBUG NetUtil:139 - -Djava.net.preferIPv4Stack: false
+16-11-2021 12:56:19 DEBUG NetUtil:140 - -Djava.net.preferIPv6Addresses: false
+16-11-2021 12:56:19 DEBUG NetUtil:224 - Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)
+16-11-2021 12:56:19 DEBUG NetUtil:289 - Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200
+16-11-2021 12:56:19 DEBUG DefaultChannelId:101 - -Dio.netty.machineId: 00:00:00:00:00:00:00:e0 (auto-detected)
+16-11-2021 12:56:19 DEBUG ByteBufUtil:86 - -Dio.netty.allocator.type: pooled
+16-11-2021 12:56:19 DEBUG ByteBufUtil:95 - -Dio.netty.threadLocalDirectBufferSize: 0
+16-11-2021 12:56:19 DEBUG ByteBufUtil:98 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+16-11-2021 12:56:19 INFO  MServer:130 - Server MServer started.
+16-11-2021 12:57:40 DEBUG InternalLoggerFactory:45 - Using SLF4J as the default logging framework
+16-11-2021 12:57:40 DEBUG PlatformDependent:1015 - Platform: Windows
+16-11-2021 12:57:40 DEBUG PlatformDependent0:408 - -Dio.netty.noUnsafe: false
+16-11-2021 12:57:40 DEBUG PlatformDependent0:876 - Java version: 8
+16-11-2021 12:57:40 DEBUG PlatformDependent0:125 - sun.misc.Unsafe.theUnsafe: available
+16-11-2021 12:57:40 DEBUG PlatformDependent0:149 - sun.misc.Unsafe.copyMemory: available
+16-11-2021 12:57:40 DEBUG PlatformDependent0:187 - java.nio.Buffer.address: available
+16-11-2021 12:57:40 DEBUG PlatformDependent0:252 - direct buffer constructor: available
+16-11-2021 12:57:40 DEBUG PlatformDependent0:326 - java.nio.Bits.unaligned: available, true
+16-11-2021 12:57:40 DEBUG PlatformDependent0:391 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+16-11-2021 12:57:40 DEBUG PlatformDependent0:398 - java.nio.DirectByteBuffer.<init>(long, int): available
+16-11-2021 12:57:40 DEBUG PlatformDependent:1058 - sun.misc.Unsafe: available
+16-11-2021 12:57:40 DEBUG PlatformDependent:1177 - -Dio.netty.tmpdir: C:\Users\hfnov\AppData\Local\Temp (java.io.tmpdir)
+16-11-2021 12:57:40 DEBUG PlatformDependent:1256 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+16-11-2021 12:57:40 DEBUG PlatformDependent:177 - -Dio.netty.maxDirectMemory: 3791650816 bytes
+16-11-2021 12:57:40 DEBUG PlatformDependent:184 - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+16-11-2021 12:57:40 DEBUG CleanerJava6:92 - java.nio.ByteBuffer.cleaner(): available
+16-11-2021 12:57:40 DEBUG PlatformDependent:204 - -Dio.netty.noPreferDirect: false
+16-11-2021 12:57:40 DEBUG MultithreadEventLoopGroup:44 - -Dio.netty.eventLoopThreads: 16
+16-11-2021 12:57:40 DEBUG InternalThreadLocalMap:56 - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+16-11-2021 12:57:40 DEBUG InternalThreadLocalMap:59 - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+16-11-2021 12:57:40 DEBUG NioEventLoop:106 - -Dio.netty.noKeySetOptimization: false
+16-11-2021 12:57:40 DEBUG NioEventLoop:107 - -Dio.netty.selectorAutoRebuildThreshold: 512
+16-11-2021 12:57:40 DEBUG PlatformDependent:919 - org.jctools-core.MpscChunkedArrayQueue: available
+16-11-2021 12:57:41 DEBUG ResourceLeakDetector:130 - -Dio.grpc.netty.shaded.io.netty.leakDetection.level: simple
+16-11-2021 12:57:41 DEBUG ResourceLeakDetector:131 - -Dio.grpc.netty.shaded.io.netty.leakDetection.targetRecords: 4
+16-11-2021 12:57:41 DEBUG PooledByteBufAllocator:156 - -Dio.netty.allocator.numHeapArenas: 16
+16-11-2021 12:57:41 DEBUG PooledByteBufAllocator:157 - -Dio.netty.allocator.numDirectArenas: 16
+16-11-2021 12:57:41 DEBUG PooledByteBufAllocator:159 - -Dio.netty.allocator.pageSize: 8192
+16-11-2021 12:57:41 DEBUG PooledByteBufAllocator:164 - -Dio.netty.allocator.maxOrder: 11
+16-11-2021 12:57:41 DEBUG PooledByteBufAllocator:168 - -Dio.netty.allocator.chunkSize: 16777216
+16-11-2021 12:57:41 DEBUG PooledByteBufAllocator:169 - -Dio.netty.allocator.tinyCacheSize: 512
+16-11-2021 12:57:41 DEBUG PooledByteBufAllocator:170 - -Dio.netty.allocator.smallCacheSize: 256
+16-11-2021 12:57:41 DEBUG PooledByteBufAllocator:171 - -Dio.netty.allocator.normalCacheSize: 64
+16-11-2021 12:57:41 DEBUG PooledByteBufAllocator:172 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+16-11-2021 12:57:41 DEBUG PooledByteBufAllocator:173 - -Dio.netty.allocator.cacheTrimInterval: 8192
+16-11-2021 12:57:41 DEBUG PooledByteBufAllocator:174 - -Dio.netty.allocator.cacheTrimIntervalMillis: 0
+16-11-2021 12:57:41 DEBUG PooledByteBufAllocator:175 - -Dio.netty.allocator.useCacheForAllThreads: true
+16-11-2021 12:57:41 DEBUG PooledByteBufAllocator:176 - -Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+16-11-2021 12:57:41 DEBUG DefaultChannelId:79 - -Dio.netty.processId: 2492 (auto-detected)
+16-11-2021 12:57:41 DEBUG NetUtil:139 - -Djava.net.preferIPv4Stack: false
+16-11-2021 12:57:41 DEBUG NetUtil:140 - -Djava.net.preferIPv6Addresses: false
+16-11-2021 12:57:41 DEBUG NetUtil:224 - Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)
+16-11-2021 12:57:41 DEBUG NetUtil:289 - Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200
+16-11-2021 12:57:41 DEBUG DefaultChannelId:101 - -Dio.netty.machineId: 00:00:00:00:00:00:00:e0 (auto-detected)
+16-11-2021 12:57:41 DEBUG ByteBufUtil:86 - -Dio.netty.allocator.type: pooled
+16-11-2021 12:57:41 DEBUG ByteBufUtil:95 - -Dio.netty.threadLocalDirectBufferSize: 0
+16-11-2021 12:57:41 DEBUG ByteBufUtil:98 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+16-11-2021 12:57:41 INFO  MServer:130 - Server MServer started.
+16-11-2021 12:58:31 DEBUG InternalLoggerFactory:45 - Using SLF4J as the default logging framework
+16-11-2021 12:58:31 DEBUG PlatformDependent:1015 - Platform: Windows
+16-11-2021 12:58:31 DEBUG PlatformDependent0:408 - -Dio.netty.noUnsafe: false
+16-11-2021 12:58:31 DEBUG PlatformDependent0:876 - Java version: 8
+16-11-2021 12:58:31 DEBUG PlatformDependent0:125 - sun.misc.Unsafe.theUnsafe: available
+16-11-2021 12:58:31 DEBUG PlatformDependent0:149 - sun.misc.Unsafe.copyMemory: available
+16-11-2021 12:58:31 DEBUG PlatformDependent0:187 - java.nio.Buffer.address: available
+16-11-2021 12:58:31 DEBUG PlatformDependent0:252 - direct buffer constructor: available
+16-11-2021 12:58:31 DEBUG PlatformDependent0:326 - java.nio.Bits.unaligned: available, true
+16-11-2021 12:58:31 DEBUG PlatformDependent0:391 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+16-11-2021 12:58:31 DEBUG PlatformDependent0:398 - java.nio.DirectByteBuffer.<init>(long, int): available
+16-11-2021 12:58:31 DEBUG PlatformDependent:1058 - sun.misc.Unsafe: available
+16-11-2021 12:58:31 DEBUG PlatformDependent:1177 - -Dio.netty.tmpdir: C:\Users\hfnov\AppData\Local\Temp (java.io.tmpdir)
+16-11-2021 12:58:31 DEBUG PlatformDependent:1256 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+16-11-2021 12:58:31 DEBUG PlatformDependent:177 - -Dio.netty.maxDirectMemory: 3791650816 bytes
+16-11-2021 12:58:31 DEBUG PlatformDependent:184 - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+16-11-2021 12:58:31 DEBUG CleanerJava6:92 - java.nio.ByteBuffer.cleaner(): available
+16-11-2021 12:58:31 DEBUG PlatformDependent:204 - -Dio.netty.noPreferDirect: false
+16-11-2021 12:58:31 DEBUG MultithreadEventLoopGroup:44 - -Dio.netty.eventLoopThreads: 16
+16-11-2021 12:58:31 DEBUG InternalThreadLocalMap:56 - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+16-11-2021 12:58:31 DEBUG InternalThreadLocalMap:59 - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+16-11-2021 12:58:31 DEBUG NioEventLoop:106 - -Dio.netty.noKeySetOptimization: false
+16-11-2021 12:58:31 DEBUG NioEventLoop:107 - -Dio.netty.selectorAutoRebuildThreshold: 512
+16-11-2021 12:58:31 DEBUG PlatformDependent:919 - org.jctools-core.MpscChunkedArrayQueue: available
+16-11-2021 12:59:01 DEBUG InternalLoggerFactory:45 - Using SLF4J as the default logging framework
+16-11-2021 12:59:01 DEBUG PlatformDependent:1015 - Platform: Windows
+16-11-2021 12:59:01 DEBUG PlatformDependent0:408 - -Dio.netty.noUnsafe: false
+16-11-2021 12:59:01 DEBUG PlatformDependent0:876 - Java version: 8
+16-11-2021 12:59:01 DEBUG PlatformDependent0:125 - sun.misc.Unsafe.theUnsafe: available
+16-11-2021 12:59:01 DEBUG PlatformDependent0:149 - sun.misc.Unsafe.copyMemory: available
+16-11-2021 12:59:01 DEBUG PlatformDependent0:187 - java.nio.Buffer.address: available
+16-11-2021 12:59:01 DEBUG PlatformDependent0:252 - direct buffer constructor: available
+16-11-2021 12:59:01 DEBUG PlatformDependent0:326 - java.nio.Bits.unaligned: available, true
+16-11-2021 12:59:01 DEBUG PlatformDependent0:391 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+16-11-2021 12:59:01 DEBUG PlatformDependent0:398 - java.nio.DirectByteBuffer.<init>(long, int): available
+16-11-2021 12:59:01 DEBUG PlatformDependent:1058 - sun.misc.Unsafe: available
+16-11-2021 12:59:01 DEBUG PlatformDependent:1177 - -Dio.netty.tmpdir: C:\Users\hfnov\AppData\Local\Temp (java.io.tmpdir)
+16-11-2021 12:59:01 DEBUG PlatformDependent:1256 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+16-11-2021 12:59:01 DEBUG PlatformDependent:177 - -Dio.netty.maxDirectMemory: 3791650816 bytes
+16-11-2021 12:59:01 DEBUG PlatformDependent:184 - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+16-11-2021 12:59:01 DEBUG CleanerJava6:92 - java.nio.ByteBuffer.cleaner(): available
+16-11-2021 12:59:01 DEBUG PlatformDependent:204 - -Dio.netty.noPreferDirect: false
+16-11-2021 12:59:02 DEBUG MultithreadEventLoopGroup:44 - -Dio.netty.eventLoopThreads: 16
+16-11-2021 12:59:02 DEBUG InternalThreadLocalMap:56 - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+16-11-2021 12:59:02 DEBUG InternalThreadLocalMap:59 - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+16-11-2021 12:59:02 DEBUG NioEventLoop:106 - -Dio.netty.noKeySetOptimization: false
+16-11-2021 12:59:02 DEBUG NioEventLoop:107 - -Dio.netty.selectorAutoRebuildThreshold: 512
+16-11-2021 12:59:02 DEBUG PlatformDependent:919 - org.jctools-core.MpscChunkedArrayQueue: available
+16-11-2021 12:59:02 DEBUG ResourceLeakDetector:130 - -Dio.grpc.netty.shaded.io.netty.leakDetection.level: simple
+16-11-2021 12:59:02 DEBUG ResourceLeakDetector:131 - -Dio.grpc.netty.shaded.io.netty.leakDetection.targetRecords: 4
+16-11-2021 12:59:02 DEBUG PooledByteBufAllocator:156 - -Dio.netty.allocator.numHeapArenas: 16
+16-11-2021 12:59:02 DEBUG PooledByteBufAllocator:157 - -Dio.netty.allocator.numDirectArenas: 16
+16-11-2021 12:59:02 DEBUG PooledByteBufAllocator:159 - -Dio.netty.allocator.pageSize: 8192
+16-11-2021 12:59:02 DEBUG PooledByteBufAllocator:164 - -Dio.netty.allocator.maxOrder: 11
+16-11-2021 12:59:02 DEBUG PooledByteBufAllocator:168 - -Dio.netty.allocator.chunkSize: 16777216
+16-11-2021 12:59:02 DEBUG PooledByteBufAllocator:169 - -Dio.netty.allocator.tinyCacheSize: 512
+16-11-2021 12:59:02 DEBUG PooledByteBufAllocator:170 - -Dio.netty.allocator.smallCacheSize: 256
+16-11-2021 12:59:02 DEBUG PooledByteBufAllocator:171 - -Dio.netty.allocator.normalCacheSize: 64
+16-11-2021 12:59:02 DEBUG PooledByteBufAllocator:172 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+16-11-2021 12:59:02 DEBUG PooledByteBufAllocator:173 - -Dio.netty.allocator.cacheTrimInterval: 8192
+16-11-2021 12:59:02 DEBUG PooledByteBufAllocator:174 - -Dio.netty.allocator.cacheTrimIntervalMillis: 0
+16-11-2021 12:59:02 DEBUG PooledByteBufAllocator:175 - -Dio.netty.allocator.useCacheForAllThreads: true
+16-11-2021 12:59:02 DEBUG PooledByteBufAllocator:176 - -Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+16-11-2021 12:59:02 DEBUG DefaultChannelId:79 - -Dio.netty.processId: 5268 (auto-detected)
+16-11-2021 12:59:02 DEBUG NetUtil:139 - -Djava.net.preferIPv4Stack: false
+16-11-2021 12:59:02 DEBUG NetUtil:140 - -Djava.net.preferIPv6Addresses: false
+16-11-2021 12:59:02 DEBUG NetUtil:224 - Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)
+16-11-2021 12:59:02 DEBUG NetUtil:289 - Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200
+16-11-2021 12:59:02 DEBUG DefaultChannelId:101 - -Dio.netty.machineId: 00:00:00:00:00:00:00:e0 (auto-detected)
+16-11-2021 12:59:02 DEBUG ByteBufUtil:86 - -Dio.netty.allocator.type: pooled
+16-11-2021 12:59:02 DEBUG ByteBufUtil:95 - -Dio.netty.threadLocalDirectBufferSize: 0
+16-11-2021 12:59:02 DEBUG ByteBufUtil:98 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+16-11-2021 12:59:02 INFO  MServer:130 - Server MServer started.
+16-11-2021 13:06:58 DEBUG InternalLoggerFactory:45 - Using SLF4J as the default logging framework
+16-11-2021 13:06:58 DEBUG PlatformDependent:1015 - Platform: Windows
+16-11-2021 13:06:58 DEBUG PlatformDependent0:408 - -Dio.netty.noUnsafe: false
+16-11-2021 13:06:58 DEBUG PlatformDependent0:876 - Java version: 8
+16-11-2021 13:06:58 DEBUG PlatformDependent0:125 - sun.misc.Unsafe.theUnsafe: available
+16-11-2021 13:06:58 DEBUG PlatformDependent0:149 - sun.misc.Unsafe.copyMemory: available
+16-11-2021 13:06:58 DEBUG PlatformDependent0:187 - java.nio.Buffer.address: available
+16-11-2021 13:06:58 DEBUG PlatformDependent0:252 - direct buffer constructor: available
+16-11-2021 13:06:58 DEBUG PlatformDependent0:326 - java.nio.Bits.unaligned: available, true
+16-11-2021 13:06:58 DEBUG PlatformDependent0:391 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+16-11-2021 13:06:58 DEBUG PlatformDependent0:398 - java.nio.DirectByteBuffer.<init>(long, int): available
+16-11-2021 13:06:58 DEBUG PlatformDependent:1058 - sun.misc.Unsafe: available
+16-11-2021 13:06:58 DEBUG PlatformDependent:1177 - -Dio.netty.tmpdir: C:\Users\hfnov\AppData\Local\Temp (java.io.tmpdir)
+16-11-2021 13:06:58 DEBUG PlatformDependent:1256 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+16-11-2021 13:06:58 DEBUG PlatformDependent:177 - -Dio.netty.maxDirectMemory: 3791650816 bytes
+16-11-2021 13:06:58 DEBUG PlatformDependent:184 - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+16-11-2021 13:06:58 DEBUG CleanerJava6:92 - java.nio.ByteBuffer.cleaner(): available
+16-11-2021 13:06:58 DEBUG PlatformDependent:204 - -Dio.netty.noPreferDirect: false
+16-11-2021 13:06:58 DEBUG MultithreadEventLoopGroup:44 - -Dio.netty.eventLoopThreads: 16
+16-11-2021 13:06:58 DEBUG InternalThreadLocalMap:56 - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+16-11-2021 13:06:58 DEBUG InternalThreadLocalMap:59 - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+16-11-2021 13:06:58 DEBUG NioEventLoop:106 - -Dio.netty.noKeySetOptimization: false
+16-11-2021 13:06:58 DEBUG NioEventLoop:107 - -Dio.netty.selectorAutoRebuildThreshold: 512
+16-11-2021 13:06:58 DEBUG PlatformDependent:919 - org.jctools-core.MpscChunkedArrayQueue: available
+16-11-2021 13:06:58 DEBUG ResourceLeakDetector:130 - -Dio.grpc.netty.shaded.io.netty.leakDetection.level: simple
+16-11-2021 13:06:58 DEBUG ResourceLeakDetector:131 - -Dio.grpc.netty.shaded.io.netty.leakDetection.targetRecords: 4
+16-11-2021 13:06:58 DEBUG PooledByteBufAllocator:156 - -Dio.netty.allocator.numHeapArenas: 16
+16-11-2021 13:06:58 DEBUG PooledByteBufAllocator:157 - -Dio.netty.allocator.numDirectArenas: 16
+16-11-2021 13:06:58 DEBUG PooledByteBufAllocator:159 - -Dio.netty.allocator.pageSize: 8192
+16-11-2021 13:06:58 DEBUG PooledByteBufAllocator:164 - -Dio.netty.allocator.maxOrder: 11
+16-11-2021 13:06:58 DEBUG PooledByteBufAllocator:168 - -Dio.netty.allocator.chunkSize: 16777216
+16-11-2021 13:06:58 DEBUG PooledByteBufAllocator:169 - -Dio.netty.allocator.tinyCacheSize: 512
+16-11-2021 13:06:58 DEBUG PooledByteBufAllocator:170 - -Dio.netty.allocator.smallCacheSize: 256
+16-11-2021 13:06:58 DEBUG PooledByteBufAllocator:171 - -Dio.netty.allocator.normalCacheSize: 64
+16-11-2021 13:06:58 DEBUG PooledByteBufAllocator:172 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+16-11-2021 13:06:58 DEBUG PooledByteBufAllocator:173 - -Dio.netty.allocator.cacheTrimInterval: 8192
+16-11-2021 13:06:58 DEBUG PooledByteBufAllocator:174 - -Dio.netty.allocator.cacheTrimIntervalMillis: 0
+16-11-2021 13:06:58 DEBUG PooledByteBufAllocator:175 - -Dio.netty.allocator.useCacheForAllThreads: true
+16-11-2021 13:06:58 DEBUG PooledByteBufAllocator:176 - -Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+16-11-2021 13:06:58 DEBUG DefaultChannelId:79 - -Dio.netty.processId: 6228 (auto-detected)
+16-11-2021 13:06:58 DEBUG NetUtil:139 - -Djava.net.preferIPv4Stack: false
+16-11-2021 13:06:58 DEBUG NetUtil:140 - -Djava.net.preferIPv6Addresses: false
+16-11-2021 13:06:58 DEBUG NetUtil:224 - Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)
+16-11-2021 13:06:58 DEBUG NetUtil:289 - Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200
+16-11-2021 13:06:59 DEBUG DefaultChannelId:101 - -Dio.netty.machineId: 00:00:00:00:00:00:00:e0 (auto-detected)
+16-11-2021 13:06:59 DEBUG ByteBufUtil:86 - -Dio.netty.allocator.type: pooled
+16-11-2021 13:06:59 DEBUG ByteBufUtil:95 - -Dio.netty.threadLocalDirectBufferSize: 0
+16-11-2021 13:06:59 DEBUG ByteBufUtil:98 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+16-11-2021 13:06:59 INFO  MServer:130 - Server MServer started.
