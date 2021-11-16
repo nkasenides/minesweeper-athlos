@@ -11,12 +11,15 @@ import com.nkasenides.minesweeper.model.*;
 import com.nkasenides.minesweeper.persistence.DBManager;
 import com.nkasenides.minesweeper.proto.MAServiceProtoGrpc;
 
+import com.nkasenides.minesweeper.state.State;
 import io.grpc.stub.StreamObserver;
 
 import com.nkasenides.minesweeper.proto.*;
 
 import com.nkasenides.minesweeper.auth.*;
 
+import javax.activity.InvalidActivityException;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.UUID;
 import java.util.function.Consumer;
@@ -36,20 +39,118 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
     }    
     
     @Override    
-    public void startGame(StartGameRequest request, StreamObserver<StartGameResponse> responseObserver) {    
+    public void startGame(StartGameRequest request, StreamObserver<StartGameResponse> responseObserver) {
+        throw new RuntimeException("/game/start is not implemented");
+        //NOT NEEDED
+    }    
+    
+    @Override    
+    public void move(MoveRequest request, StreamObserver<MoveResponse> responseObserver) {
+        final MAWorldSession worldSession = DBManager.worldSession.get(request.getWorldSessionID());
+        if (worldSession == null) {
+            MoveResponse response = MoveResponse.newBuilder()
+                    .setStatus(MoveResponse.Status.INVALID_WORLD_SESSION_ID)
+                    .setMessage("INVALID_WORLD_SESSION_ID")
+                    .build();
+            responseObserver.onNext(response);
+            return;
+        }
 
-    }    
+        final MAWorld world = DBManager.world.get(worldSession.getWorldID());
+        if (world == null) {
+            MoveResponse response = MoveResponse.newBuilder()
+                    .setStatus(MoveResponse.Status.INVALID_WORLD_SESSION_ID)
+                    .setMessage("INVALID_WORLD")
+                    .build();
+            responseObserver.onNext(response);
+            return;
+        }
+
+        final MatrixPositionProto movePosition = request.getMovePosition();
+        if (movePosition.getRow() >= world.getMaxRows()) {
+            MoveResponse response = MoveResponse.newBuilder()
+                    .setStatus(MoveResponse.Status.INVALID_MOVE)
+                    .setMessage("INVALID_MOVE_ROW")
+                    .build();
+            responseObserver.onNext(response);
+            return;
+        }
+
+        if (movePosition.getCol() >= world.getMaxCols()) {
+            MoveResponse response = MoveResponse.newBuilder()
+                    .setStatus(MoveResponse.Status.INVALID_MOVE)
+                    .setMessage("INVALID_MOVE_COL")
+                    .build();
+            responseObserver.onNext(response);
+            return;
+        }
+
+        worldSession.setCameraPosition(movePosition.toObject());
+        DBManager.worldSession.update(worldSession);
+
+        final MAPartialStateProto partialStateSnapshot = State.forWorld(world.getId()).getPartialStateSnapshot(worldSession);
+
+        MoveResponse response = MoveResponse.newBuilder()
+                .setStatus(MoveResponse.Status.OK)
+                .setMessage("OK")
+                .setPartialState(partialStateSnapshot)
+                .build();
+        responseObserver.onNext(response);
+    }
     
     @Override    
-    public void move(MoveRequest request, StreamObserver<MoveResponse> responseObserver) {    
-        super.move(request, responseObserver);        
-        //TODO - Implement this service.        
-    }    
-    
-    @Override    
-    public void createGame(CreateGameRequest request, StreamObserver<CreateGameResponse> responseObserver) {    
-        super.createGame(request, responseObserver);        
-        //TODO - Implement this service.        
+    public void createGame(CreateGameRequest request, StreamObserver<CreateGameResponse> responseObserver) {
+        //NEW
+        if (request.getMaxPlayers() < 1) {
+            CreateGameResponse response = CreateGameResponse.newBuilder()
+                    .setStatus(CreateGameResponse.Status.INVALID_GAME_SIZE)
+                    .setMessage("INVALID_MAX_PLAYERS")
+                    .build();
+            responseObserver.onNext(response);
+            return;
+        }
+
+        if (request.getWidth() < 5) {
+            CreateGameResponse response = CreateGameResponse.newBuilder()
+                    .setStatus(CreateGameResponse.Status.INVALID_GAME_SIZE)
+                    .setMessage("INVALID_WIDTH")
+                    .build();
+            responseObserver.onNext(response);
+            return;
+        }
+
+        if (request.getHeight() < 5) {
+            CreateGameResponse response = CreateGameResponse.newBuilder()
+                    .setStatus(CreateGameResponse.Status.INVALID_GAME_SIZE)
+                    .setMessage("INVALID_HEIGHT")
+                    .build();
+            responseObserver.onNext(response);
+            return;
+        }
+
+        String worldID = UUID.randomUUID().toString();
+
+        MAWorld world = new MAWorld();
+        world.setId(worldID);
+        world.setCreatedOn(System.currentTimeMillis());
+        world.setDifficulty(request.getDifficulty());
+        world.setChunkIDs(new ArrayList<>());
+        world.setHeightLimit(0);
+        world.setMaxCols(request.getWidth());
+        world.setMaxRows(request.getHeight());
+        world.setName(worldID);
+        world.setMaxPlayers(request.getMaxPlayers());
+        world.setOwnerID("");
+        world.setSeed(0);
+        world.setSubscribedSessionIDs(new ArrayList<>());
+        DBManager.world.create(world);
+
+        CreateGameResponse response = CreateGameResponse.newBuilder()
+                .setStatus(CreateGameResponse.Status.OK)
+                .setMessage("OK")
+                .build();
+        responseObserver.onNext(response);
+
     }    
     
     @Override    

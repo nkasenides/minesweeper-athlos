@@ -11,7 +11,7 @@ public interface RevealResponseOrBuilder extends
    * <code>string message = 1;</code>
    * @return The message.
    */
-  java.lang.String getMessage();
+  String getMessage();
   /**
    * <code>string message = 1;</code>
    * @return The bytes for message.
@@ -20,13 +20,28 @@ public interface RevealResponseOrBuilder extends
       getMessageBytes();
 
   /**
-   * <code>.com.nkasenides.minesweeper.proto.RevealResponse.Status status = 2;</code>
+   * <code>.com.nkasenides.minesweeper.proto.MAPartialStateProto partialState = 2;</code>
+   * @return Whether the partialState field is set.
+   */
+  boolean hasPartialState();
+  /**
+   * <code>.com.nkasenides.minesweeper.proto.MAPartialStateProto partialState = 2;</code>
+   * @return The partialState.
+   */
+  MAPartialStateProto getPartialState();
+  /**
+   * <code>.com.nkasenides.minesweeper.proto.MAPartialStateProto partialState = 2;</code>
+   */
+  MAPartialStateProtoOrBuilder getPartialStateOrBuilder();
+
+  /**
+   * <code>.com.nkasenides.minesweeper.proto.RevealResponse.Status status = 3;</code>
    * @return The enum numeric value on the wire for status.
    */
   int getStatusValue();
   /**
-   * <code>.com.nkasenides.minesweeper.proto.RevealResponse.Status status = 2;</code>
+   * <code>.com.nkasenides.minesweeper.proto.RevealResponse.Status status = 3;</code>
    * @return The status.
    */
-  com.nkasenides.minesweeper.proto.RevealResponse.Status getStatus();
+  RevealResponse.Status getStatus();
 }

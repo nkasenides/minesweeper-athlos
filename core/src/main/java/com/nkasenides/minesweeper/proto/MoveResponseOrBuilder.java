@@ -8,25 +8,40 @@ public interface MoveResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string message = 1;</code>
+   * <code>.com.nkasenides.minesweeper.proto.MAPartialStateProto partialState = 1;</code>
+   * @return Whether the partialState field is set.
+   */
+  boolean hasPartialState();
+  /**
+   * <code>.com.nkasenides.minesweeper.proto.MAPartialStateProto partialState = 1;</code>
+   * @return The partialState.
+   */
+  MAPartialStateProto getPartialState();
+  /**
+   * <code>.com.nkasenides.minesweeper.proto.MAPartialStateProto partialState = 1;</code>
+   */
+  MAPartialStateProtoOrBuilder getPartialStateOrBuilder();
+
+  /**
+   * <code>string message = 2;</code>
    * @return The message.
    */
-  java.lang.String getMessage();
+  String getMessage();
   /**
-   * <code>string message = 1;</code>
+   * <code>string message = 2;</code>
    * @return The bytes for message.
    */
   com.google.protobuf.ByteString
       getMessageBytes();
 
   /**
-   * <code>.com.nkasenides.minesweeper.proto.MoveResponse.Status status = 2;</code>
+   * <code>.com.nkasenides.minesweeper.proto.MoveResponse.Status status = 3;</code>
    * @return The enum numeric value on the wire for status.
    */
   int getStatusValue();
   /**
-   * <code>.com.nkasenides.minesweeper.proto.MoveResponse.Status status = 2;</code>
+   * <code>.com.nkasenides.minesweeper.proto.MoveResponse.Status status = 3;</code>
    * @return The status.
    */
-  com.nkasenides.minesweeper.proto.MoveResponse.Status getStatus();
+  MoveResponse.Status getStatus();
 }
