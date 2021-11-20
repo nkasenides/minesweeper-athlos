@@ -319,9 +319,94 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
     }
     
     @Override    
-    public void flag(FlagRequest request, StreamObserver<RevealResponse> responseObserver) {    
-        super.flag(request, responseObserver);        
-        //TODO - Implement this service.        
+    public void flag(FlagRequest request, StreamObserver<RevealResponse> responseObserver) {
+        final MAWorldSession worldSession = DBManager.worldSession.get(request.getWorldSessionID());
+        if (worldSession == null) {
+            RevealResponse response = RevealResponse.newBuilder()
+                    .setStatus(RevealResponse.Status.INVALID_WORLD_SESSION_ID)
+                    .setMessage("NO_SUCH_WORLD_SESSION")
+                    .build();
+            responseObserver.onNext(response);
+            return;
+        }
+
+        final MAWorld world = DBManager.world.get(worldSession.getWorldID());
+        if (world == null) {
+            RevealResponse response = RevealResponse.newBuilder()
+                    .setStatus(RevealResponse.Status.INVALID_GAME)
+                    .setMessage("INVALID_GAME")
+                    .build();
+            responseObserver.onNext(response);
+            return;
+        }
+
+        if (world.getState() != GameState.STARTED_GameState) {
+            RevealResponse response = RevealResponse.newBuilder()
+                    .setStatus(RevealResponse.Status.GAME_NOT_STARTED)
+                    .setMessage("GAME_NOT_STARTED")
+                    .build();
+            responseObserver.onNext(response);
+            return;
+        }
+
+        if (request.getPosition().getRow() >= world.getMaxRows()) {
+            RevealResponse response = RevealResponse.newBuilder()
+                    .setStatus(RevealResponse.Status.OTHER_ERROR)
+                    .setMessage("INVALID_POSITION_ROW")
+                    .build();
+            responseObserver.onNext(response);
+            return;
+        }
+
+        if (request.getPosition().getCol() >= world.getMaxCols()) {
+            RevealResponse response = RevealResponse.newBuilder()
+                    .setStatus(RevealResponse.Status.OTHER_ERROR)
+                    .setMessage("INVALID_POSITION_COL")
+                    .build();
+            responseObserver.onNext(response);
+            return;
+        }
+
+        //Get the entire state:
+        final Collection<MATerrainChunk> chunksCollection = DBManager.terrainChunk.listForWorld(world.getId());
+        HashMap<String, MATerrainChunk> chunks = new HashMap<>();
+        chunksCollection.forEach(maTerrainChunk -> chunks.put(maTerrainChunk.getId(), maTerrainChunk));
+
+        //Get the cell being revealed:
+        final MATerrainCell cell = retrieveCellFromChunks(chunks, request.getPosition().toObject());
+
+        if (cell.getRevealState() != RevealState.COVERED_RevealState) {
+            RevealResponse response = RevealResponse.newBuilder()
+                    .setStatus(RevealResponse.Status.CELL_ALREADY_REVEALED)
+                    .setMessage("CELL_ALREADY_REVEALED")
+                    .build();
+            responseObserver.onNext(response);
+            return;
+        }
+
+        doFlag(world, cell);
+
+        //Construct and send state update:
+        StateUpdateBuilder b = new StateUpdateBuilder();
+        for (MATerrainChunk aChunk : chunks.values()) {
+            for (MATerrainCell aCell : aChunk.getCells().values()){
+                b.addUpdatedTerrain(aCell);
+            }
+        }
+
+        try {
+            State.broadcastUpdate(b, world.getId());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        //Response:
+        RevealResponse response = RevealResponse.newBuilder()
+                .setStatus(RevealResponse.Status.OK)
+                .setMessage("OK")
+                .build();
+        responseObserver.onNext(response);
+
     }    
     
     @Override    
