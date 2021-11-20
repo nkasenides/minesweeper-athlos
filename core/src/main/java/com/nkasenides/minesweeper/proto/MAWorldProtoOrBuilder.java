@@ -8,71 +8,36 @@ public interface MAWorldProtoOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.com.nkasenides.minesweeper.proto.Difficulty difficulty = 1;</code>
-   * @return The enum numeric value on the wire for difficulty.
-   */
-  int getDifficultyValue();
-  /**
-   * <code>.com.nkasenides.minesweeper.proto.Difficulty difficulty = 1;</code>
-   * @return The difficulty.
-   */
-  com.nkasenides.minesweeper.proto.Difficulty getDifficulty();
-
-  /**
-   * <code>sint64 maxRows = 2;</code>
-   * @return The maxRows.
-   */
-  long getMaxRows();
-
-  /**
-   * <code>uint32 heightLimit = 3;</code>
-   * @return The heightLimit.
-   */
-  int getHeightLimit();
-
-  /**
-   * <code>uint32 maxPlayers = 4;</code>
+   * <code>uint32 maxPlayers = 1;</code>
    * @return The maxPlayers.
    */
   int getMaxPlayers();
 
   /**
-   * <code>sint64 seed = 5;</code>
+   * <code>sint64 seed = 2;</code>
    * @return The seed.
    */
   long getSeed();
 
   /**
-   * <code>string name = 6;</code>
-   * @return The name.
-   */
-  java.lang.String getName();
-  /**
-   * <code>string name = 6;</code>
-   * @return The bytes for name.
-   */
-  com.google.protobuf.ByteString
-      getNameBytes();
-
-  /**
-   * <code>repeated string chunkIDs = 7;</code>
+   * <code>repeated string chunkIDs = 3;</code>
    * @return A list containing the chunkIDs.
    */
-  java.util.List<java.lang.String>
+  java.util.List<String>
       getChunkIDsList();
   /**
-   * <code>repeated string chunkIDs = 7;</code>
+   * <code>repeated string chunkIDs = 3;</code>
    * @return The count of chunkIDs.
    */
   int getChunkIDsCount();
   /**
-   * <code>repeated string chunkIDs = 7;</code>
+   * <code>repeated string chunkIDs = 3;</code>
    * @param index The index of the element to return.
    * @return The chunkIDs at the given index.
    */
-  java.lang.String getChunkIDs(int index);
+  String getChunkIDs(int index);
   /**
-   * <code>repeated string chunkIDs = 7;</code>
+   * <code>repeated string chunkIDs = 3;</code>
    * @param index The index of the value to return.
    * @return The bytes of the chunkIDs at the given index.
    */
@@ -80,60 +45,106 @@ public interface MAWorldProtoOrBuilder extends
       getChunkIDsBytes(int index);
 
   /**
-   * <code>string id = 8;</code>
-   * @return The id.
-   */
-  java.lang.String getId();
-  /**
-   * <code>string id = 8;</code>
-   * @return The bytes for id.
-   */
-  com.google.protobuf.ByteString
-      getIdBytes();
-
-  /**
-   * <code>string ownerID = 9;</code>
+   * <code>string ownerID = 4;</code>
    * @return The ownerID.
    */
-  java.lang.String getOwnerID();
+  String getOwnerID();
   /**
-   * <code>string ownerID = 9;</code>
+   * <code>string ownerID = 4;</code>
    * @return The bytes for ownerID.
    */
   com.google.protobuf.ByteString
       getOwnerIDBytes();
 
   /**
-   * <code>uint64 createdOn = 10;</code>
+   * <code>uint64 createdOn = 5;</code>
    * @return The createdOn.
    */
   long getCreatedOn();
 
   /**
-   * <code>sint64 maxCols = 11;</code>
+   * <code>.com.nkasenides.minesweeper.proto.Difficulty difficulty = 6;</code>
+   * @return The enum numeric value on the wire for difficulty.
+   */
+  int getDifficultyValue();
+  /**
+   * <code>.com.nkasenides.minesweeper.proto.Difficulty difficulty = 6;</code>
+   * @return The difficulty.
+   */
+  Difficulty getDifficulty();
+
+  /**
+   * <code>sint64 maxRows = 7;</code>
+   * @return The maxRows.
+   */
+  long getMaxRows();
+
+  /**
+   * <code>uint32 heightLimit = 8;</code>
+   * @return The heightLimit.
+   */
+  int getHeightLimit();
+
+  /**
+   * <code>string name = 9;</code>
+   * @return The name.
+   */
+  String getName();
+  /**
+   * <code>string name = 9;</code>
+   * @return The bytes for name.
+   */
+  com.google.protobuf.ByteString
+      getNameBytes();
+
+  /**
+   * <code>string id = 10;</code>
+   * @return The id.
+   */
+  String getId();
+  /**
+   * <code>string id = 10;</code>
+   * @return The bytes for id.
+   */
+  com.google.protobuf.ByteString
+      getIdBytes();
+
+  /**
+   * <code>.com.nkasenides.minesweeper.proto.GameState state = 11;</code>
+   * @return The enum numeric value on the wire for state.
+   */
+  int getStateValue();
+  /**
+   * <code>.com.nkasenides.minesweeper.proto.GameState state = 11;</code>
+   * @return The state.
+   */
+  GameState getState();
+
+  /**
+   * <code>sint64 maxCols = 12;</code>
    * @return The maxCols.
    */
   long getMaxCols();
 
   /**
-   * <code>repeated string subscribedSessionIDs = 12;</code>
+   * <code>repeated string subscribedSessionIDs = 13;</code>
    * @return A list containing the subscribedSessionIDs.
    */
-  java.util.List<java.lang.String>
+  java.util.List<String>
       getSubscribedSessionIDsList();
   /**
-   * <code>repeated string subscribedSessionIDs = 12;</code>
+   * <code>repeated string subscribedSessionIDs = 13;</code>
    * @return The count of subscribedSessionIDs.
    */
   int getSubscribedSessionIDsCount();
   /**
-   * <code>repeated string subscribedSessionIDs = 12;</code>
+   * <code>repeated string subscribedSessionIDs = 13;</code>
    * @param index The index of the element to return.
    * @return The subscribedSessionIDs at the given index.
    */
-  java.lang.String getSubscribedSessionIDs(int index);
+  String getSubscribedSessionIDs(int index);
   /**
-   * <code>repeated string subscribedSessionIDs = 12;</code>
+   * <code>repeated string subscribedSessionIDs = 13;</code>
    * @param index The index of the value to return.
    * @return The bytes of the subscribedSessionIDs at the given index.
    */

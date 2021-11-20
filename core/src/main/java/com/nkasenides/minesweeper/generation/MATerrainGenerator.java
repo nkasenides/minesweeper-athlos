@@ -46,8 +46,9 @@ public class MATerrainGenerator extends TerrainGenerator<MAWorld, MATerrainChunk
 
         MATerrainChunk chunk = new MATerrainChunk();
         chunk.setWorldID(world.getId());
-        chunk.setId(UUID.randomUUID().toString());
-        chunk.setPosition(new MatrixPosition(chunkRow, chunkCol));
+        final MatrixPosition position = new MatrixPosition(chunkRow, chunkCol);
+        chunk.setId(position.toHash());
+        chunk.setPosition(position);
         HashMap<String, MATerrainCell> cells = new HashMap<>();
 
         for (int c = chunkStartCol; c <= chunkLastCol; c++) {

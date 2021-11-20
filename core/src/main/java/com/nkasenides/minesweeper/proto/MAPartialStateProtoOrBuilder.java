@@ -8,91 +8,108 @@ public interface MAPartialStateProtoOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MAEntityProto&gt; entities = 1;</code>
-   */
-  int getEntitiesCount();
-  /**
-   * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MAEntityProto&gt; entities = 1;</code>
-   */
-  boolean containsEntities(
-      java.lang.String key);
-  /**
-   * Use {@link #getEntitiesMap()} instead.
-   */
-  @java.lang.Deprecated
-  java.util.Map<java.lang.String, com.nkasenides.minesweeper.proto.MAEntityProto>
-  getEntities();
-  /**
-   * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MAEntityProto&gt; entities = 1;</code>
-   */
-  java.util.Map<java.lang.String, com.nkasenides.minesweeper.proto.MAEntityProto>
-  getEntitiesMap();
-  /**
-   * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MAEntityProto&gt; entities = 1;</code>
-   */
-
-  com.nkasenides.minesweeper.proto.MAEntityProto getEntitiesOrDefault(
-      java.lang.String key,
-      com.nkasenides.minesweeper.proto.MAEntityProto defaultValue);
-  /**
-   * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MAEntityProto&gt; entities = 1;</code>
-   */
-
-  com.nkasenides.minesweeper.proto.MAEntityProto getEntitiesOrThrow(
-      java.lang.String key);
-
-  /**
-   * <code>.com.nkasenides.minesweeper.proto.MAWorldSessionProto worldSession = 2;</code>
+   * <code>.com.nkasenides.minesweeper.proto.MAWorldSessionProto worldSession = 1;</code>
    * @return Whether the worldSession field is set.
    */
   boolean hasWorldSession();
   /**
-   * <code>.com.nkasenides.minesweeper.proto.MAWorldSessionProto worldSession = 2;</code>
+   * <code>.com.nkasenides.minesweeper.proto.MAWorldSessionProto worldSession = 1;</code>
    * @return The worldSession.
    */
-  com.nkasenides.minesweeper.proto.MAWorldSessionProto getWorldSession();
+  MAWorldSessionProto getWorldSession();
   /**
-   * <code>.com.nkasenides.minesweeper.proto.MAWorldSessionProto worldSession = 2;</code>
+   * <code>.com.nkasenides.minesweeper.proto.MAWorldSessionProto worldSession = 1;</code>
    */
-  com.nkasenides.minesweeper.proto.MAWorldSessionProtoOrBuilder getWorldSessionOrBuilder();
+  MAWorldSessionProtoOrBuilder getWorldSessionOrBuilder();
 
   /**
-   * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MATerrainCellProto&gt; terrain = 3;</code>
+   * <code>.com.nkasenides.minesweeper.proto.GameState gameState = 2;</code>
+   * @return The enum numeric value on the wire for gameState.
+   */
+  int getGameStateValue();
+  /**
+   * <code>.com.nkasenides.minesweeper.proto.GameState gameState = 2;</code>
+   * @return The gameState.
+   */
+  GameState getGameState();
+
+  /**
+   * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MAEntityProto&gt; entities = 3;</code>
+   */
+  int getEntitiesCount();
+  /**
+   * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MAEntityProto&gt; entities = 3;</code>
+   */
+  boolean containsEntities(
+      String key);
+  /**
+   * Use {@link #getEntitiesMap()} instead.
+   */
+  @Deprecated
+  java.util.Map<String, MAEntityProto>
+  getEntities();
+  /**
+   * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MAEntityProto&gt; entities = 3;</code>
+   */
+  java.util.Map<String, MAEntityProto>
+  getEntitiesMap();
+  /**
+   * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MAEntityProto&gt; entities = 3;</code>
+   */
+
+  MAEntityProto getEntitiesOrDefault(
+      String key,
+      MAEntityProto defaultValue);
+  /**
+   * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MAEntityProto&gt; entities = 3;</code>
+   */
+
+  MAEntityProto getEntitiesOrThrow(
+      String key);
+
+  /**
+   * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MATerrainCellProto&gt; terrain = 4;</code>
    */
   int getTerrainCount();
   /**
-   * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MATerrainCellProto&gt; terrain = 3;</code>
+   * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MATerrainCellProto&gt; terrain = 4;</code>
    */
   boolean containsTerrain(
-      java.lang.String key);
+      String key);
   /**
    * Use {@link #getTerrainMap()} instead.
    */
-  @java.lang.Deprecated
-  java.util.Map<java.lang.String, com.nkasenides.minesweeper.proto.MATerrainCellProto>
+  @Deprecated
+  java.util.Map<String, MATerrainCellProto>
   getTerrain();
   /**
-   * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MATerrainCellProto&gt; terrain = 3;</code>
+   * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MATerrainCellProto&gt; terrain = 4;</code>
    */
-  java.util.Map<java.lang.String, com.nkasenides.minesweeper.proto.MATerrainCellProto>
+  java.util.Map<String, MATerrainCellProto>
   getTerrainMap();
   /**
-   * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MATerrainCellProto&gt; terrain = 3;</code>
+   * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MATerrainCellProto&gt; terrain = 4;</code>
    */
 
-  com.nkasenides.minesweeper.proto.MATerrainCellProto getTerrainOrDefault(
-      java.lang.String key,
-      com.nkasenides.minesweeper.proto.MATerrainCellProto defaultValue);
+  MATerrainCellProto getTerrainOrDefault(
+      String key,
+      MATerrainCellProto defaultValue);
   /**
-   * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MATerrainCellProto&gt; terrain = 3;</code>
+   * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MATerrainCellProto&gt; terrain = 4;</code>
    */
 
-  com.nkasenides.minesweeper.proto.MATerrainCellProto getTerrainOrThrow(
-      java.lang.String key);
+  MATerrainCellProto getTerrainOrThrow(
+      String key);
 
   /**
-   * <code>uint64 timestamp = 4;</code>
+   * <code>uint64 timestamp = 5;</code>
    * @return The timestamp.
    */
   long getTimestamp();
+
+  /**
+   * <code>int32 points = 6;</code>
+   * @return The points.
+   */
+  int getPoints();
 }

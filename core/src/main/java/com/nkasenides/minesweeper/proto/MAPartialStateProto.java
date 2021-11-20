@@ -16,16 +16,17 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private MAPartialStateProto() {
+    gameState_ = 0;
   }
 
-  @java.lang.Override
+  @Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
+  protected Object newInstance(
       UnusedPrivateParameter unused) {
     return new MAPartialStateProto();
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -36,7 +37,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException();
     }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -50,24 +51,11 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              entities_ = com.google.protobuf.MapField.newMapField(
-                  EntitiesDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000001;
-            }
-            com.google.protobuf.MapEntry<java.lang.String, com.nkasenides.minesweeper.proto.MAEntityProto>
-            entities__ = input.readMessage(
-                EntitiesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-            entities_.getMutableMap().put(
-                entities__.getKey(), entities__.getValue());
-            break;
-          }
-          case 18: {
-            com.nkasenides.minesweeper.proto.MAWorldSessionProto.Builder subBuilder = null;
+            MAWorldSessionProto.Builder subBuilder = null;
             if (worldSession_ != null) {
               subBuilder = worldSession_.toBuilder();
             }
-            worldSession_ = input.readMessage(com.nkasenides.minesweeper.proto.MAWorldSessionProto.parser(), extensionRegistry);
+            worldSession_ = input.readMessage(MAWorldSessionProto.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(worldSession_);
               worldSession_ = subBuilder.buildPartial();
@@ -75,22 +63,46 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 16: {
+            int rawValue = input.readEnum();
+
+            gameState_ = rawValue;
+            break;
+          }
           case 26: {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              entities_ = com.google.protobuf.MapField.newMapField(
+                  EntitiesDefaultEntryHolder.defaultEntry);
+              mutable_bitField0_ |= 0x00000001;
+            }
+            com.google.protobuf.MapEntry<String, MAEntityProto>
+            entities__ = input.readMessage(
+                EntitiesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+            entities_.getMutableMap().put(
+                entities__.getKey(), entities__.getValue());
+            break;
+          }
+          case 34: {
             if (!((mutable_bitField0_ & 0x00000002) != 0)) {
               terrain_ = com.google.protobuf.MapField.newMapField(
                   TerrainDefaultEntryHolder.defaultEntry);
               mutable_bitField0_ |= 0x00000002;
             }
-            com.google.protobuf.MapEntry<java.lang.String, com.nkasenides.minesweeper.proto.MATerrainCellProto>
+            com.google.protobuf.MapEntry<String, MATerrainCellProto>
             terrain__ = input.readMessage(
                 TerrainDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
             terrain_.getMutableMap().put(
                 terrain__.getKey(), terrain__.getValue());
             break;
           }
-          case 32: {
+          case 40: {
 
             timestamp_ = input.readUInt64();
+            break;
+          }
+          case 48: {
+
+            points_ = input.readInt32();
             break;
           }
           default: {
@@ -114,46 +126,91 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.nkasenides.minesweeper.proto.MProto.internal_static_com_nkasenides_minesweeper_proto_MAPartialStateProto_descriptor;
+    return MProto.internal_static_com_nkasenides_minesweeper_proto_MAPartialStateProto_descriptor;
   }
 
   @SuppressWarnings({"rawtypes"})
-  @java.lang.Override
+  @Override
   protected com.google.protobuf.MapField internalGetMapField(
       int number) {
     switch (number) {
-      case 1:
-        return internalGetEntities();
       case 3:
+        return internalGetEntities();
+      case 4:
         return internalGetTerrain();
       default:
         throw new RuntimeException(
             "Invalid map field number: " + number);
     }
   }
-  @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  @Override
+  protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.nkasenides.minesweeper.proto.MProto.internal_static_com_nkasenides_minesweeper_proto_MAPartialStateProto_fieldAccessorTable
+    return MProto.internal_static_com_nkasenides_minesweeper_proto_MAPartialStateProto_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.nkasenides.minesweeper.proto.MAPartialStateProto.class, com.nkasenides.minesweeper.proto.MAPartialStateProto.Builder.class);
+            MAPartialStateProto.class, Builder.class);
   }
 
-  public static final int ENTITIES_FIELD_NUMBER = 1;
+  public static final int WORLDSESSION_FIELD_NUMBER = 1;
+  private MAWorldSessionProto worldSession_;
+  /**
+   * <code>.com.nkasenides.minesweeper.proto.MAWorldSessionProto worldSession = 1;</code>
+   * @return Whether the worldSession field is set.
+   */
+  @Override
+  public boolean hasWorldSession() {
+    return worldSession_ != null;
+  }
+  /**
+   * <code>.com.nkasenides.minesweeper.proto.MAWorldSessionProto worldSession = 1;</code>
+   * @return The worldSession.
+   */
+  @Override
+  public MAWorldSessionProto getWorldSession() {
+    return worldSession_ == null ? MAWorldSessionProto.getDefaultInstance() : worldSession_;
+  }
+  /**
+   * <code>.com.nkasenides.minesweeper.proto.MAWorldSessionProto worldSession = 1;</code>
+   */
+  @Override
+  public MAWorldSessionProtoOrBuilder getWorldSessionOrBuilder() {
+    return getWorldSession();
+  }
+
+  public static final int GAMESTATE_FIELD_NUMBER = 2;
+  private int gameState_;
+  /**
+   * <code>.com.nkasenides.minesweeper.proto.GameState gameState = 2;</code>
+   * @return The enum numeric value on the wire for gameState.
+   */
+  @Override public int getGameStateValue() {
+    return gameState_;
+  }
+  /**
+   * <code>.com.nkasenides.minesweeper.proto.GameState gameState = 2;</code>
+   * @return The gameState.
+   */
+  @Override public GameState getGameState() {
+    @SuppressWarnings("deprecation")
+    GameState result = GameState.valueOf(gameState_);
+    return result == null ? GameState.UNRECOGNIZED : result;
+  }
+
+  public static final int ENTITIES_FIELD_NUMBER = 3;
   private static final class EntitiesDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<
-        java.lang.String, com.nkasenides.minesweeper.proto.MAEntityProto> defaultEntry =
+        String, MAEntityProto> defaultEntry =
             com.google.protobuf.MapEntry
-            .<java.lang.String, com.nkasenides.minesweeper.proto.MAEntityProto>newDefaultInstance(
-                com.nkasenides.minesweeper.proto.MProto.internal_static_com_nkasenides_minesweeper_proto_MAPartialStateProto_EntitiesEntry_descriptor, 
+            .<String, MAEntityProto>newDefaultInstance(
+                MProto.internal_static_com_nkasenides_minesweeper_proto_MAPartialStateProto_EntitiesEntry_descriptor,
                 com.google.protobuf.WireFormat.FieldType.STRING,
                 "",
                 com.google.protobuf.WireFormat.FieldType.MESSAGE,
-                com.nkasenides.minesweeper.proto.MAEntityProto.getDefaultInstance());
+                MAEntityProto.getDefaultInstance());
   }
   private com.google.protobuf.MapField<
-      java.lang.String, com.nkasenides.minesweeper.proto.MAEntityProto> entities_;
-  private com.google.protobuf.MapField<java.lang.String, com.nkasenides.minesweeper.proto.MAEntityProto>
+      String, MAEntityProto> entities_;
+  private com.google.protobuf.MapField<String, MAEntityProto>
   internalGetEntities() {
     if (entities_ == null) {
       return com.google.protobuf.MapField.emptyMapField(
@@ -166,101 +223,75 @@ private static final long serialVersionUID = 0L;
     return internalGetEntities().getMap().size();
   }
   /**
-   * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MAEntityProto&gt; entities = 1;</code>
+   * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MAEntityProto&gt; entities = 3;</code>
    */
 
-  @java.lang.Override
+  @Override
   public boolean containsEntities(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+      String key) {
+    if (key == null) { throw new NullPointerException(); }
     return internalGetEntities().getMap().containsKey(key);
   }
   /**
    * Use {@link #getEntitiesMap()} instead.
    */
-  @java.lang.Override
-  @java.lang.Deprecated
-  public java.util.Map<java.lang.String, com.nkasenides.minesweeper.proto.MAEntityProto> getEntities() {
+  @Override
+  @Deprecated
+  public java.util.Map<String, MAEntityProto> getEntities() {
     return getEntitiesMap();
   }
   /**
-   * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MAEntityProto&gt; entities = 1;</code>
+   * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MAEntityProto&gt; entities = 3;</code>
    */
-  @java.lang.Override
+  @Override
 
-  public java.util.Map<java.lang.String, com.nkasenides.minesweeper.proto.MAEntityProto> getEntitiesMap() {
+  public java.util.Map<String, MAEntityProto> getEntitiesMap() {
     return internalGetEntities().getMap();
   }
   /**
-   * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MAEntityProto&gt; entities = 1;</code>
+   * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MAEntityProto&gt; entities = 3;</code>
    */
-  @java.lang.Override
+  @Override
 
-  public com.nkasenides.minesweeper.proto.MAEntityProto getEntitiesOrDefault(
-      java.lang.String key,
-      com.nkasenides.minesweeper.proto.MAEntityProto defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, com.nkasenides.minesweeper.proto.MAEntityProto> map =
+  public MAEntityProto getEntitiesOrDefault(
+      String key,
+      MAEntityProto defaultValue) {
+    if (key == null) { throw new NullPointerException(); }
+    java.util.Map<String, MAEntityProto> map =
         internalGetEntities().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
-   * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MAEntityProto&gt; entities = 1;</code>
+   * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MAEntityProto&gt; entities = 3;</code>
    */
-  @java.lang.Override
+  @Override
 
-  public com.nkasenides.minesweeper.proto.MAEntityProto getEntitiesOrThrow(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, com.nkasenides.minesweeper.proto.MAEntityProto> map =
+  public MAEntityProto getEntitiesOrThrow(
+      String key) {
+    if (key == null) { throw new NullPointerException(); }
+    java.util.Map<String, MAEntityProto> map =
         internalGetEntities().getMap();
     if (!map.containsKey(key)) {
-      throw new java.lang.IllegalArgumentException();
+      throw new IllegalArgumentException();
     }
     return map.get(key);
   }
 
-  public static final int WORLDSESSION_FIELD_NUMBER = 2;
-  private com.nkasenides.minesweeper.proto.MAWorldSessionProto worldSession_;
-  /**
-   * <code>.com.nkasenides.minesweeper.proto.MAWorldSessionProto worldSession = 2;</code>
-   * @return Whether the worldSession field is set.
-   */
-  @java.lang.Override
-  public boolean hasWorldSession() {
-    return worldSession_ != null;
-  }
-  /**
-   * <code>.com.nkasenides.minesweeper.proto.MAWorldSessionProto worldSession = 2;</code>
-   * @return The worldSession.
-   */
-  @java.lang.Override
-  public com.nkasenides.minesweeper.proto.MAWorldSessionProto getWorldSession() {
-    return worldSession_ == null ? com.nkasenides.minesweeper.proto.MAWorldSessionProto.getDefaultInstance() : worldSession_;
-  }
-  /**
-   * <code>.com.nkasenides.minesweeper.proto.MAWorldSessionProto worldSession = 2;</code>
-   */
-  @java.lang.Override
-  public com.nkasenides.minesweeper.proto.MAWorldSessionProtoOrBuilder getWorldSessionOrBuilder() {
-    return getWorldSession();
-  }
-
-  public static final int TERRAIN_FIELD_NUMBER = 3;
+  public static final int TERRAIN_FIELD_NUMBER = 4;
   private static final class TerrainDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<
-        java.lang.String, com.nkasenides.minesweeper.proto.MATerrainCellProto> defaultEntry =
+        String, MATerrainCellProto> defaultEntry =
             com.google.protobuf.MapEntry
-            .<java.lang.String, com.nkasenides.minesweeper.proto.MATerrainCellProto>newDefaultInstance(
-                com.nkasenides.minesweeper.proto.MProto.internal_static_com_nkasenides_minesweeper_proto_MAPartialStateProto_TerrainEntry_descriptor, 
+            .<String, MATerrainCellProto>newDefaultInstance(
+                MProto.internal_static_com_nkasenides_minesweeper_proto_MAPartialStateProto_TerrainEntry_descriptor,
                 com.google.protobuf.WireFormat.FieldType.STRING,
                 "",
                 com.google.protobuf.WireFormat.FieldType.MESSAGE,
-                com.nkasenides.minesweeper.proto.MATerrainCellProto.getDefaultInstance());
+                MATerrainCellProto.getDefaultInstance());
   }
   private com.google.protobuf.MapField<
-      java.lang.String, com.nkasenides.minesweeper.proto.MATerrainCellProto> terrain_;
-  private com.google.protobuf.MapField<java.lang.String, com.nkasenides.minesweeper.proto.MATerrainCellProto>
+      String, MATerrainCellProto> terrain_;
+  private com.google.protobuf.MapField<String, MATerrainCellProto>
   internalGetTerrain() {
     if (terrain_ == null) {
       return com.google.protobuf.MapField.emptyMapField(
@@ -273,73 +304,84 @@ private static final long serialVersionUID = 0L;
     return internalGetTerrain().getMap().size();
   }
   /**
-   * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MATerrainCellProto&gt; terrain = 3;</code>
+   * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MATerrainCellProto&gt; terrain = 4;</code>
    */
 
-  @java.lang.Override
+  @Override
   public boolean containsTerrain(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+      String key) {
+    if (key == null) { throw new NullPointerException(); }
     return internalGetTerrain().getMap().containsKey(key);
   }
   /**
    * Use {@link #getTerrainMap()} instead.
    */
-  @java.lang.Override
-  @java.lang.Deprecated
-  public java.util.Map<java.lang.String, com.nkasenides.minesweeper.proto.MATerrainCellProto> getTerrain() {
+  @Override
+  @Deprecated
+  public java.util.Map<String, MATerrainCellProto> getTerrain() {
     return getTerrainMap();
   }
   /**
-   * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MATerrainCellProto&gt; terrain = 3;</code>
+   * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MATerrainCellProto&gt; terrain = 4;</code>
    */
-  @java.lang.Override
+  @Override
 
-  public java.util.Map<java.lang.String, com.nkasenides.minesweeper.proto.MATerrainCellProto> getTerrainMap() {
+  public java.util.Map<String, MATerrainCellProto> getTerrainMap() {
     return internalGetTerrain().getMap();
   }
   /**
-   * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MATerrainCellProto&gt; terrain = 3;</code>
+   * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MATerrainCellProto&gt; terrain = 4;</code>
    */
-  @java.lang.Override
+  @Override
 
-  public com.nkasenides.minesweeper.proto.MATerrainCellProto getTerrainOrDefault(
-      java.lang.String key,
-      com.nkasenides.minesweeper.proto.MATerrainCellProto defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, com.nkasenides.minesweeper.proto.MATerrainCellProto> map =
+  public MATerrainCellProto getTerrainOrDefault(
+      String key,
+      MATerrainCellProto defaultValue) {
+    if (key == null) { throw new NullPointerException(); }
+    java.util.Map<String, MATerrainCellProto> map =
         internalGetTerrain().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
-   * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MATerrainCellProto&gt; terrain = 3;</code>
+   * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MATerrainCellProto&gt; terrain = 4;</code>
    */
-  @java.lang.Override
+  @Override
 
-  public com.nkasenides.minesweeper.proto.MATerrainCellProto getTerrainOrThrow(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, com.nkasenides.minesweeper.proto.MATerrainCellProto> map =
+  public MATerrainCellProto getTerrainOrThrow(
+      String key) {
+    if (key == null) { throw new NullPointerException(); }
+    java.util.Map<String, MATerrainCellProto> map =
         internalGetTerrain().getMap();
     if (!map.containsKey(key)) {
-      throw new java.lang.IllegalArgumentException();
+      throw new IllegalArgumentException();
     }
     return map.get(key);
   }
 
-  public static final int TIMESTAMP_FIELD_NUMBER = 4;
+  public static final int TIMESTAMP_FIELD_NUMBER = 5;
   private long timestamp_;
   /**
-   * <code>uint64 timestamp = 4;</code>
+   * <code>uint64 timestamp = 5;</code>
    * @return The timestamp.
    */
-  @java.lang.Override
+  @Override
   public long getTimestamp() {
     return timestamp_;
   }
 
+  public static final int POINTS_FIELD_NUMBER = 6;
+  private int points_;
+  /**
+   * <code>int32 points = 6;</code>
+   * @return The points.
+   */
+  @Override
+  public int getPoints() {
+    return points_;
+  }
+
   private byte memoizedIsInitialized = -1;
-  @java.lang.Override
+  @Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -349,108 +391,127 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    if (worldSession_ != null) {
+      output.writeMessage(1, getWorldSession());
+    }
+    if (gameState_ != GameState.ENDED_LOST_GameState.getNumber()) {
+      output.writeEnum(2, gameState_);
+    }
     com.google.protobuf.GeneratedMessageV3
       .serializeStringMapTo(
         output,
         internalGetEntities(),
         EntitiesDefaultEntryHolder.defaultEntry,
-        1);
-    if (worldSession_ != null) {
-      output.writeMessage(2, getWorldSession());
-    }
+        3);
     com.google.protobuf.GeneratedMessageV3
       .serializeStringMapTo(
         output,
         internalGetTerrain(),
         TerrainDefaultEntryHolder.defaultEntry,
-        3);
+        4);
     if (timestamp_ != 0L) {
-      output.writeUInt64(4, timestamp_);
+      output.writeUInt64(5, timestamp_);
+    }
+    if (points_ != 0) {
+      output.writeInt32(6, points_);
     }
     unknownFields.writeTo(output);
   }
 
-  @java.lang.Override
+  @Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
-    for (java.util.Map.Entry<java.lang.String, com.nkasenides.minesweeper.proto.MAEntityProto> entry
+    if (worldSession_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(1, getWorldSession());
+    }
+    if (gameState_ != GameState.ENDED_LOST_GameState.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(2, gameState_);
+    }
+    for (java.util.Map.Entry<String, MAEntityProto> entry
          : internalGetEntities().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, com.nkasenides.minesweeper.proto.MAEntityProto>
+      com.google.protobuf.MapEntry<String, MAEntityProto>
       entities__ = EntitiesDefaultEntryHolder.defaultEntry.newBuilderForType()
           .setKey(entry.getKey())
           .setValue(entry.getValue())
           .build();
       size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, entities__);
+          .computeMessageSize(3, entities__);
     }
-    if (worldSession_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getWorldSession());
-    }
-    for (java.util.Map.Entry<java.lang.String, com.nkasenides.minesweeper.proto.MATerrainCellProto> entry
+    for (java.util.Map.Entry<String, MATerrainCellProto> entry
          : internalGetTerrain().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, com.nkasenides.minesweeper.proto.MATerrainCellProto>
+      com.google.protobuf.MapEntry<String, MATerrainCellProto>
       terrain__ = TerrainDefaultEntryHolder.defaultEntry.newBuilderForType()
           .setKey(entry.getKey())
           .setValue(entry.getValue())
           .build();
       size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, terrain__);
+          .computeMessageSize(4, terrain__);
     }
     if (timestamp_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt64Size(4, timestamp_);
+        .computeUInt64Size(5, timestamp_);
+    }
+    if (points_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(6, points_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.nkasenides.minesweeper.proto.MAPartialStateProto)) {
+    if (!(obj instanceof MAPartialStateProto)) {
       return super.equals(obj);
     }
-    com.nkasenides.minesweeper.proto.MAPartialStateProto other = (com.nkasenides.minesweeper.proto.MAPartialStateProto) obj;
+    MAPartialStateProto other = (MAPartialStateProto) obj;
 
-    if (!internalGetEntities().equals(
-        other.internalGetEntities())) return false;
     if (hasWorldSession() != other.hasWorldSession()) return false;
     if (hasWorldSession()) {
       if (!getWorldSession()
           .equals(other.getWorldSession())) return false;
     }
+    if (gameState_ != other.gameState_) return false;
+    if (!internalGetEntities().equals(
+        other.internalGetEntities())) return false;
     if (!internalGetTerrain().equals(
         other.internalGetTerrain())) return false;
     if (getTimestamp()
         != other.getTimestamp()) return false;
+    if (getPoints()
+        != other.getPoints()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (!internalGetEntities().getMap().isEmpty()) {
-      hash = (37 * hash) + ENTITIES_FIELD_NUMBER;
-      hash = (53 * hash) + internalGetEntities().hashCode();
-    }
     if (hasWorldSession()) {
       hash = (37 * hash) + WORLDSESSION_FIELD_NUMBER;
       hash = (53 * hash) + getWorldSession().hashCode();
+    }
+    hash = (37 * hash) + GAMESTATE_FIELD_NUMBER;
+    hash = (53 * hash) + gameState_;
+    if (!internalGetEntities().getMap().isEmpty()) {
+      hash = (37 * hash) + ENTITIES_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetEntities().hashCode();
     }
     if (!internalGetTerrain().getMap().isEmpty()) {
       hash = (37 * hash) + TERRAIN_FIELD_NUMBER;
@@ -459,74 +520,76 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getTimestamp());
+    hash = (37 * hash) + POINTS_FIELD_NUMBER;
+    hash = (53 * hash) + getPoints();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.nkasenides.minesweeper.proto.MAPartialStateProto parseFrom(
+  public static MAPartialStateProto parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.nkasenides.minesweeper.proto.MAPartialStateProto parseFrom(
+  public static MAPartialStateProto parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.nkasenides.minesweeper.proto.MAPartialStateProto parseFrom(
+  public static MAPartialStateProto parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.nkasenides.minesweeper.proto.MAPartialStateProto parseFrom(
+  public static MAPartialStateProto parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.nkasenides.minesweeper.proto.MAPartialStateProto parseFrom(byte[] data)
+  public static MAPartialStateProto parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.nkasenides.minesweeper.proto.MAPartialStateProto parseFrom(
+  public static MAPartialStateProto parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.nkasenides.minesweeper.proto.MAPartialStateProto parseFrom(java.io.InputStream input)
+  public static MAPartialStateProto parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.nkasenides.minesweeper.proto.MAPartialStateProto parseFrom(
+  public static MAPartialStateProto parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.nkasenides.minesweeper.proto.MAPartialStateProto parseDelimitedFrom(java.io.InputStream input)
+  public static MAPartialStateProto parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.nkasenides.minesweeper.proto.MAPartialStateProto parseDelimitedFrom(
+  public static MAPartialStateProto parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.nkasenides.minesweeper.proto.MAPartialStateProto parseFrom(
+  public static MAPartialStateProto parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.nkasenides.minesweeper.proto.MAPartialStateProto parseFrom(
+  public static MAPartialStateProto parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -534,23 +597,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @java.lang.Override
+  @Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.nkasenides.minesweeper.proto.MAPartialStateProto prototype) {
+  public static Builder newBuilder(MAPartialStateProto prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @java.lang.Override
+  @Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -560,19 +623,19 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:com.nkasenides.minesweeper.proto.MAPartialStateProto)
-      com.nkasenides.minesweeper.proto.MAPartialStateProtoOrBuilder {
+      MAPartialStateProtoOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.nkasenides.minesweeper.proto.MProto.internal_static_com_nkasenides_minesweeper_proto_MAPartialStateProto_descriptor;
+      return MProto.internal_static_com_nkasenides_minesweeper_proto_MAPartialStateProto_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
-        case 1:
-          return internalGetEntities();
         case 3:
+          return internalGetEntities();
+        case 4:
           return internalGetTerrain();
         default:
           throw new RuntimeException(
@@ -583,21 +646,21 @@ private static final long serialVersionUID = 0L;
     protected com.google.protobuf.MapField internalGetMutableMapField(
         int number) {
       switch (number) {
-        case 1:
-          return internalGetMutableEntities();
         case 3:
+          return internalGetMutableEntities();
+        case 4:
           return internalGetMutableTerrain();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
       }
     }
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.nkasenides.minesweeper.proto.MProto.internal_static_com_nkasenides_minesweeper_proto_MAPartialStateProto_fieldAccessorTable
+      return MProto.internal_static_com_nkasenides_minesweeper_proto_MAPartialStateProto_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.nkasenides.minesweeper.proto.MAPartialStateProto.class, com.nkasenides.minesweeper.proto.MAPartialStateProto.Builder.class);
+              MAPartialStateProto.class, Builder.class);
     }
 
     // Construct using com.nkasenides.minesweeper.proto.MAPartialStateProto.newBuilder()
@@ -606,7 +669,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -615,134 +678,146 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
-    @java.lang.Override
+    @Override
     public Builder clear() {
       super.clear();
-      internalGetMutableEntities().clear();
       if (worldSessionBuilder_ == null) {
         worldSession_ = null;
       } else {
         worldSession_ = null;
         worldSessionBuilder_ = null;
       }
+      gameState_ = 0;
+
+      internalGetMutableEntities().clear();
       internalGetMutableTerrain().clear();
       timestamp_ = 0L;
+
+      points_ = 0;
 
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.nkasenides.minesweeper.proto.MProto.internal_static_com_nkasenides_minesweeper_proto_MAPartialStateProto_descriptor;
+      return MProto.internal_static_com_nkasenides_minesweeper_proto_MAPartialStateProto_descriptor;
     }
 
-    @java.lang.Override
-    public com.nkasenides.minesweeper.proto.MAPartialStateProto getDefaultInstanceForType() {
-      return com.nkasenides.minesweeper.proto.MAPartialStateProto.getDefaultInstance();
+    @Override
+    public MAPartialStateProto getDefaultInstanceForType() {
+      return MAPartialStateProto.getDefaultInstance();
     }
 
-    @java.lang.Override
-    public com.nkasenides.minesweeper.proto.MAPartialStateProto build() {
-      com.nkasenides.minesweeper.proto.MAPartialStateProto result = buildPartial();
+    @Override
+    public MAPartialStateProto build() {
+      MAPartialStateProto result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    @java.lang.Override
-    public com.nkasenides.minesweeper.proto.MAPartialStateProto buildPartial() {
-      com.nkasenides.minesweeper.proto.MAPartialStateProto result = new com.nkasenides.minesweeper.proto.MAPartialStateProto(this);
+    @Override
+    public MAPartialStateProto buildPartial() {
+      MAPartialStateProto result = new MAPartialStateProto(this);
       int from_bitField0_ = bitField0_;
-      result.entities_ = internalGetEntities();
-      result.entities_.makeImmutable();
       if (worldSessionBuilder_ == null) {
         result.worldSession_ = worldSession_;
       } else {
         result.worldSession_ = worldSessionBuilder_.build();
       }
+      result.gameState_ = gameState_;
+      result.entities_ = internalGetEntities();
+      result.entities_.makeImmutable();
       result.terrain_ = internalGetTerrain();
       result.terrain_.makeImmutable();
       result.timestamp_ = timestamp_;
+      result.points_ = points_;
       onBuilt();
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public Builder clone() {
       return super.clone();
     }
-    @java.lang.Override
+    @Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.setField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-    @java.lang.Override
+    @Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-    @java.lang.Override
+    @Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        int index, Object value) {
       return super.setRepeatedField(field, index, value);
     }
-    @java.lang.Override
+    @Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.addRepeatedField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.nkasenides.minesweeper.proto.MAPartialStateProto) {
-        return mergeFrom((com.nkasenides.minesweeper.proto.MAPartialStateProto)other);
+      if (other instanceof MAPartialStateProto) {
+        return mergeFrom((MAPartialStateProto)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.nkasenides.minesweeper.proto.MAPartialStateProto other) {
-      if (other == com.nkasenides.minesweeper.proto.MAPartialStateProto.getDefaultInstance()) return this;
-      internalGetMutableEntities().mergeFrom(
-          other.internalGetEntities());
+    public Builder mergeFrom(MAPartialStateProto other) {
+      if (other == MAPartialStateProto.getDefaultInstance()) return this;
       if (other.hasWorldSession()) {
         mergeWorldSession(other.getWorldSession());
       }
+      if (other.gameState_ != 0) {
+        setGameStateValue(other.getGameStateValue());
+      }
+      internalGetMutableEntities().mergeFrom(
+          other.internalGetEntities());
       internalGetMutableTerrain().mergeFrom(
           other.internalGetTerrain());
       if (other.getTimestamp() != 0L) {
         setTimestamp(other.getTimestamp());
+      }
+      if (other.getPoints() != 0) {
+        setPoints(other.getPoints());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.nkasenides.minesweeper.proto.MAPartialStateProto parsedMessage = null;
+      MAPartialStateProto parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.nkasenides.minesweeper.proto.MAPartialStateProto) e.getUnfinishedMessage();
+        parsedMessage = (MAPartialStateProto) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -753,9 +828,182 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
+    private MAWorldSessionProto worldSession_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        MAWorldSessionProto, MAWorldSessionProto.Builder, MAWorldSessionProtoOrBuilder> worldSessionBuilder_;
+    /**
+     * <code>.com.nkasenides.minesweeper.proto.MAWorldSessionProto worldSession = 1;</code>
+     * @return Whether the worldSession field is set.
+     */
+    public boolean hasWorldSession() {
+      return worldSessionBuilder_ != null || worldSession_ != null;
+    }
+    /**
+     * <code>.com.nkasenides.minesweeper.proto.MAWorldSessionProto worldSession = 1;</code>
+     * @return The worldSession.
+     */
+    public MAWorldSessionProto getWorldSession() {
+      if (worldSessionBuilder_ == null) {
+        return worldSession_ == null ? MAWorldSessionProto.getDefaultInstance() : worldSession_;
+      } else {
+        return worldSessionBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.com.nkasenides.minesweeper.proto.MAWorldSessionProto worldSession = 1;</code>
+     */
+    public Builder setWorldSession(MAWorldSessionProto value) {
+      if (worldSessionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        worldSession_ = value;
+        onChanged();
+      } else {
+        worldSessionBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.com.nkasenides.minesweeper.proto.MAWorldSessionProto worldSession = 1;</code>
+     */
+    public Builder setWorldSession(
+        MAWorldSessionProto.Builder builderForValue) {
+      if (worldSessionBuilder_ == null) {
+        worldSession_ = builderForValue.build();
+        onChanged();
+      } else {
+        worldSessionBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.com.nkasenides.minesweeper.proto.MAWorldSessionProto worldSession = 1;</code>
+     */
+    public Builder mergeWorldSession(MAWorldSessionProto value) {
+      if (worldSessionBuilder_ == null) {
+        if (worldSession_ != null) {
+          worldSession_ =
+            MAWorldSessionProto.newBuilder(worldSession_).mergeFrom(value).buildPartial();
+        } else {
+          worldSession_ = value;
+        }
+        onChanged();
+      } else {
+        worldSessionBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.com.nkasenides.minesweeper.proto.MAWorldSessionProto worldSession = 1;</code>
+     */
+    public Builder clearWorldSession() {
+      if (worldSessionBuilder_ == null) {
+        worldSession_ = null;
+        onChanged();
+      } else {
+        worldSession_ = null;
+        worldSessionBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.com.nkasenides.minesweeper.proto.MAWorldSessionProto worldSession = 1;</code>
+     */
+    public MAWorldSessionProto.Builder getWorldSessionBuilder() {
+      
+      onChanged();
+      return getWorldSessionFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.com.nkasenides.minesweeper.proto.MAWorldSessionProto worldSession = 1;</code>
+     */
+    public MAWorldSessionProtoOrBuilder getWorldSessionOrBuilder() {
+      if (worldSessionBuilder_ != null) {
+        return worldSessionBuilder_.getMessageOrBuilder();
+      } else {
+        return worldSession_ == null ?
+            MAWorldSessionProto.getDefaultInstance() : worldSession_;
+      }
+    }
+    /**
+     * <code>.com.nkasenides.minesweeper.proto.MAWorldSessionProto worldSession = 1;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        MAWorldSessionProto, MAWorldSessionProto.Builder, MAWorldSessionProtoOrBuilder>
+        getWorldSessionFieldBuilder() {
+      if (worldSessionBuilder_ == null) {
+        worldSessionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            MAWorldSessionProto, MAWorldSessionProto.Builder, MAWorldSessionProtoOrBuilder>(
+                getWorldSession(),
+                getParentForChildren(),
+                isClean());
+        worldSession_ = null;
+      }
+      return worldSessionBuilder_;
+    }
+
+    private int gameState_ = 0;
+    /**
+     * <code>.com.nkasenides.minesweeper.proto.GameState gameState = 2;</code>
+     * @return The enum numeric value on the wire for gameState.
+     */
+    @Override public int getGameStateValue() {
+      return gameState_;
+    }
+    /**
+     * <code>.com.nkasenides.minesweeper.proto.GameState gameState = 2;</code>
+     * @param value The enum numeric value on the wire for gameState to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGameStateValue(int value) {
+      
+      gameState_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.com.nkasenides.minesweeper.proto.GameState gameState = 2;</code>
+     * @return The gameState.
+     */
+    @Override
+    public GameState getGameState() {
+      @SuppressWarnings("deprecation")
+      GameState result = GameState.valueOf(gameState_);
+      return result == null ? GameState.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.com.nkasenides.minesweeper.proto.GameState gameState = 2;</code>
+     * @param value The gameState to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGameState(GameState value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      gameState_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.com.nkasenides.minesweeper.proto.GameState gameState = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearGameState() {
+      
+      gameState_ = 0;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.MapField<
-        java.lang.String, com.nkasenides.minesweeper.proto.MAEntityProto> entities_;
-    private com.google.protobuf.MapField<java.lang.String, com.nkasenides.minesweeper.proto.MAEntityProto>
+        String, MAEntityProto> entities_;
+    private com.google.protobuf.MapField<String, MAEntityProto>
     internalGetEntities() {
       if (entities_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
@@ -763,7 +1011,7 @@ private static final long serialVersionUID = 0L;
       }
       return entities_;
     }
-    private com.google.protobuf.MapField<java.lang.String, com.nkasenides.minesweeper.proto.MAEntityProto>
+    private com.google.protobuf.MapField<String, MAEntityProto>
     internalGetMutableEntities() {
       onChanged();;
       if (entities_ == null) {
@@ -780,56 +1028,56 @@ private static final long serialVersionUID = 0L;
       return internalGetEntities().getMap().size();
     }
     /**
-     * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MAEntityProto&gt; entities = 1;</code>
+     * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MAEntityProto&gt; entities = 3;</code>
      */
 
-    @java.lang.Override
+    @Override
     public boolean containsEntities(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+        String key) {
+      if (key == null) { throw new NullPointerException(); }
       return internalGetEntities().getMap().containsKey(key);
     }
     /**
      * Use {@link #getEntitiesMap()} instead.
      */
-    @java.lang.Override
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, com.nkasenides.minesweeper.proto.MAEntityProto> getEntities() {
+    @Override
+    @Deprecated
+    public java.util.Map<String, MAEntityProto> getEntities() {
       return getEntitiesMap();
     }
     /**
-     * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MAEntityProto&gt; entities = 1;</code>
+     * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MAEntityProto&gt; entities = 3;</code>
      */
-    @java.lang.Override
+    @Override
 
-    public java.util.Map<java.lang.String, com.nkasenides.minesweeper.proto.MAEntityProto> getEntitiesMap() {
+    public java.util.Map<String, MAEntityProto> getEntitiesMap() {
       return internalGetEntities().getMap();
     }
     /**
-     * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MAEntityProto&gt; entities = 1;</code>
+     * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MAEntityProto&gt; entities = 3;</code>
      */
-    @java.lang.Override
+    @Override
 
-    public com.nkasenides.minesweeper.proto.MAEntityProto getEntitiesOrDefault(
-        java.lang.String key,
-        com.nkasenides.minesweeper.proto.MAEntityProto defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, com.nkasenides.minesweeper.proto.MAEntityProto> map =
+    public MAEntityProto getEntitiesOrDefault(
+        String key,
+        MAEntityProto defaultValue) {
+      if (key == null) { throw new NullPointerException(); }
+      java.util.Map<String, MAEntityProto> map =
           internalGetEntities().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MAEntityProto&gt; entities = 1;</code>
+     * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MAEntityProto&gt; entities = 3;</code>
      */
-    @java.lang.Override
+    @Override
 
-    public com.nkasenides.minesweeper.proto.MAEntityProto getEntitiesOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, com.nkasenides.minesweeper.proto.MAEntityProto> map =
+    public MAEntityProto getEntitiesOrThrow(
+        String key) {
+      if (key == null) { throw new NullPointerException(); }
+      java.util.Map<String, MAEntityProto> map =
           internalGetEntities().getMap();
       if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
+        throw new IllegalArgumentException();
       }
       return map.get(key);
     }
@@ -840,12 +1088,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MAEntityProto&gt; entities = 1;</code>
+     * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MAEntityProto&gt; entities = 3;</code>
      */
 
     public Builder removeEntities(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+        String key) {
+      if (key == null) { throw new NullPointerException(); }
       internalGetMutableEntities().getMutableMap()
           .remove(key);
       return this;
@@ -853,156 +1101,37 @@ private static final long serialVersionUID = 0L;
     /**
      * Use alternate mutation accessors instead.
      */
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, com.nkasenides.minesweeper.proto.MAEntityProto>
+    @Deprecated
+    public java.util.Map<String, MAEntityProto>
     getMutableEntities() {
       return internalGetMutableEntities().getMutableMap();
     }
     /**
-     * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MAEntityProto&gt; entities = 1;</code>
+     * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MAEntityProto&gt; entities = 3;</code>
      */
     public Builder putEntities(
-        java.lang.String key,
-        com.nkasenides.minesweeper.proto.MAEntityProto value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
+        String key,
+        MAEntityProto value) {
+      if (key == null) { throw new NullPointerException(); }
+      if (value == null) { throw new NullPointerException(); }
       internalGetMutableEntities().getMutableMap()
           .put(key, value);
       return this;
     }
     /**
-     * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MAEntityProto&gt; entities = 1;</code>
+     * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MAEntityProto&gt; entities = 3;</code>
      */
 
     public Builder putAllEntities(
-        java.util.Map<java.lang.String, com.nkasenides.minesweeper.proto.MAEntityProto> values) {
+        java.util.Map<String, MAEntityProto> values) {
       internalGetMutableEntities().getMutableMap()
           .putAll(values);
       return this;
     }
 
-    private com.nkasenides.minesweeper.proto.MAWorldSessionProto worldSession_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.nkasenides.minesweeper.proto.MAWorldSessionProto, com.nkasenides.minesweeper.proto.MAWorldSessionProto.Builder, com.nkasenides.minesweeper.proto.MAWorldSessionProtoOrBuilder> worldSessionBuilder_;
-    /**
-     * <code>.com.nkasenides.minesweeper.proto.MAWorldSessionProto worldSession = 2;</code>
-     * @return Whether the worldSession field is set.
-     */
-    public boolean hasWorldSession() {
-      return worldSessionBuilder_ != null || worldSession_ != null;
-    }
-    /**
-     * <code>.com.nkasenides.minesweeper.proto.MAWorldSessionProto worldSession = 2;</code>
-     * @return The worldSession.
-     */
-    public com.nkasenides.minesweeper.proto.MAWorldSessionProto getWorldSession() {
-      if (worldSessionBuilder_ == null) {
-        return worldSession_ == null ? com.nkasenides.minesweeper.proto.MAWorldSessionProto.getDefaultInstance() : worldSession_;
-      } else {
-        return worldSessionBuilder_.getMessage();
-      }
-    }
-    /**
-     * <code>.com.nkasenides.minesweeper.proto.MAWorldSessionProto worldSession = 2;</code>
-     */
-    public Builder setWorldSession(com.nkasenides.minesweeper.proto.MAWorldSessionProto value) {
-      if (worldSessionBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        worldSession_ = value;
-        onChanged();
-      } else {
-        worldSessionBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.com.nkasenides.minesweeper.proto.MAWorldSessionProto worldSession = 2;</code>
-     */
-    public Builder setWorldSession(
-        com.nkasenides.minesweeper.proto.MAWorldSessionProto.Builder builderForValue) {
-      if (worldSessionBuilder_ == null) {
-        worldSession_ = builderForValue.build();
-        onChanged();
-      } else {
-        worldSessionBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <code>.com.nkasenides.minesweeper.proto.MAWorldSessionProto worldSession = 2;</code>
-     */
-    public Builder mergeWorldSession(com.nkasenides.minesweeper.proto.MAWorldSessionProto value) {
-      if (worldSessionBuilder_ == null) {
-        if (worldSession_ != null) {
-          worldSession_ =
-            com.nkasenides.minesweeper.proto.MAWorldSessionProto.newBuilder(worldSession_).mergeFrom(value).buildPartial();
-        } else {
-          worldSession_ = value;
-        }
-        onChanged();
-      } else {
-        worldSessionBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.com.nkasenides.minesweeper.proto.MAWorldSessionProto worldSession = 2;</code>
-     */
-    public Builder clearWorldSession() {
-      if (worldSessionBuilder_ == null) {
-        worldSession_ = null;
-        onChanged();
-      } else {
-        worldSession_ = null;
-        worldSessionBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <code>.com.nkasenides.minesweeper.proto.MAWorldSessionProto worldSession = 2;</code>
-     */
-    public com.nkasenides.minesweeper.proto.MAWorldSessionProto.Builder getWorldSessionBuilder() {
-      
-      onChanged();
-      return getWorldSessionFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>.com.nkasenides.minesweeper.proto.MAWorldSessionProto worldSession = 2;</code>
-     */
-    public com.nkasenides.minesweeper.proto.MAWorldSessionProtoOrBuilder getWorldSessionOrBuilder() {
-      if (worldSessionBuilder_ != null) {
-        return worldSessionBuilder_.getMessageOrBuilder();
-      } else {
-        return worldSession_ == null ?
-            com.nkasenides.minesweeper.proto.MAWorldSessionProto.getDefaultInstance() : worldSession_;
-      }
-    }
-    /**
-     * <code>.com.nkasenides.minesweeper.proto.MAWorldSessionProto worldSession = 2;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.nkasenides.minesweeper.proto.MAWorldSessionProto, com.nkasenides.minesweeper.proto.MAWorldSessionProto.Builder, com.nkasenides.minesweeper.proto.MAWorldSessionProtoOrBuilder> 
-        getWorldSessionFieldBuilder() {
-      if (worldSessionBuilder_ == null) {
-        worldSessionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.nkasenides.minesweeper.proto.MAWorldSessionProto, com.nkasenides.minesweeper.proto.MAWorldSessionProto.Builder, com.nkasenides.minesweeper.proto.MAWorldSessionProtoOrBuilder>(
-                getWorldSession(),
-                getParentForChildren(),
-                isClean());
-        worldSession_ = null;
-      }
-      return worldSessionBuilder_;
-    }
-
     private com.google.protobuf.MapField<
-        java.lang.String, com.nkasenides.minesweeper.proto.MATerrainCellProto> terrain_;
-    private com.google.protobuf.MapField<java.lang.String, com.nkasenides.minesweeper.proto.MATerrainCellProto>
+        String, MATerrainCellProto> terrain_;
+    private com.google.protobuf.MapField<String, MATerrainCellProto>
     internalGetTerrain() {
       if (terrain_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
@@ -1010,7 +1139,7 @@ private static final long serialVersionUID = 0L;
       }
       return terrain_;
     }
-    private com.google.protobuf.MapField<java.lang.String, com.nkasenides.minesweeper.proto.MATerrainCellProto>
+    private com.google.protobuf.MapField<String, MATerrainCellProto>
     internalGetMutableTerrain() {
       onChanged();;
       if (terrain_ == null) {
@@ -1027,56 +1156,56 @@ private static final long serialVersionUID = 0L;
       return internalGetTerrain().getMap().size();
     }
     /**
-     * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MATerrainCellProto&gt; terrain = 3;</code>
+     * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MATerrainCellProto&gt; terrain = 4;</code>
      */
 
-    @java.lang.Override
+    @Override
     public boolean containsTerrain(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+        String key) {
+      if (key == null) { throw new NullPointerException(); }
       return internalGetTerrain().getMap().containsKey(key);
     }
     /**
      * Use {@link #getTerrainMap()} instead.
      */
-    @java.lang.Override
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, com.nkasenides.minesweeper.proto.MATerrainCellProto> getTerrain() {
+    @Override
+    @Deprecated
+    public java.util.Map<String, MATerrainCellProto> getTerrain() {
       return getTerrainMap();
     }
     /**
-     * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MATerrainCellProto&gt; terrain = 3;</code>
+     * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MATerrainCellProto&gt; terrain = 4;</code>
      */
-    @java.lang.Override
+    @Override
 
-    public java.util.Map<java.lang.String, com.nkasenides.minesweeper.proto.MATerrainCellProto> getTerrainMap() {
+    public java.util.Map<String, MATerrainCellProto> getTerrainMap() {
       return internalGetTerrain().getMap();
     }
     /**
-     * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MATerrainCellProto&gt; terrain = 3;</code>
+     * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MATerrainCellProto&gt; terrain = 4;</code>
      */
-    @java.lang.Override
+    @Override
 
-    public com.nkasenides.minesweeper.proto.MATerrainCellProto getTerrainOrDefault(
-        java.lang.String key,
-        com.nkasenides.minesweeper.proto.MATerrainCellProto defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, com.nkasenides.minesweeper.proto.MATerrainCellProto> map =
+    public MATerrainCellProto getTerrainOrDefault(
+        String key,
+        MATerrainCellProto defaultValue) {
+      if (key == null) { throw new NullPointerException(); }
+      java.util.Map<String, MATerrainCellProto> map =
           internalGetTerrain().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MATerrainCellProto&gt; terrain = 3;</code>
+     * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MATerrainCellProto&gt; terrain = 4;</code>
      */
-    @java.lang.Override
+    @Override
 
-    public com.nkasenides.minesweeper.proto.MATerrainCellProto getTerrainOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, com.nkasenides.minesweeper.proto.MATerrainCellProto> map =
+    public MATerrainCellProto getTerrainOrThrow(
+        String key) {
+      if (key == null) { throw new NullPointerException(); }
+      java.util.Map<String, MATerrainCellProto> map =
           internalGetTerrain().getMap();
       if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
+        throw new IllegalArgumentException();
       }
       return map.get(key);
     }
@@ -1087,12 +1216,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MATerrainCellProto&gt; terrain = 3;</code>
+     * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MATerrainCellProto&gt; terrain = 4;</code>
      */
 
     public Builder removeTerrain(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+        String key) {
+      if (key == null) { throw new NullPointerException(); }
       internalGetMutableTerrain().getMutableMap()
           .remove(key);
       return this;
@@ -1100,29 +1229,29 @@ private static final long serialVersionUID = 0L;
     /**
      * Use alternate mutation accessors instead.
      */
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, com.nkasenides.minesweeper.proto.MATerrainCellProto>
+    @Deprecated
+    public java.util.Map<String, MATerrainCellProto>
     getMutableTerrain() {
       return internalGetMutableTerrain().getMutableMap();
     }
     /**
-     * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MATerrainCellProto&gt; terrain = 3;</code>
+     * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MATerrainCellProto&gt; terrain = 4;</code>
      */
     public Builder putTerrain(
-        java.lang.String key,
-        com.nkasenides.minesweeper.proto.MATerrainCellProto value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
+        String key,
+        MATerrainCellProto value) {
+      if (key == null) { throw new NullPointerException(); }
+      if (value == null) { throw new NullPointerException(); }
       internalGetMutableTerrain().getMutableMap()
           .put(key, value);
       return this;
     }
     /**
-     * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MATerrainCellProto&gt; terrain = 3;</code>
+     * <code>map&lt;string, .com.nkasenides.minesweeper.proto.MATerrainCellProto&gt; terrain = 4;</code>
      */
 
     public Builder putAllTerrain(
-        java.util.Map<java.lang.String, com.nkasenides.minesweeper.proto.MATerrainCellProto> values) {
+        java.util.Map<String, MATerrainCellProto> values) {
       internalGetMutableTerrain().getMutableMap()
           .putAll(values);
       return this;
@@ -1130,15 +1259,15 @@ private static final long serialVersionUID = 0L;
 
     private long timestamp_ ;
     /**
-     * <code>uint64 timestamp = 4;</code>
+     * <code>uint64 timestamp = 5;</code>
      * @return The timestamp.
      */
-    @java.lang.Override
+    @Override
     public long getTimestamp() {
       return timestamp_;
     }
     /**
-     * <code>uint64 timestamp = 4;</code>
+     * <code>uint64 timestamp = 5;</code>
      * @param value The timestamp to set.
      * @return This builder for chaining.
      */
@@ -1149,7 +1278,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>uint64 timestamp = 4;</code>
+     * <code>uint64 timestamp = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearTimestamp() {
@@ -1158,13 +1287,44 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
-    @java.lang.Override
+
+    private int points_ ;
+    /**
+     * <code>int32 points = 6;</code>
+     * @return The points.
+     */
+    @Override
+    public int getPoints() {
+      return points_;
+    }
+    /**
+     * <code>int32 points = 6;</code>
+     * @param value The points to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPoints(int value) {
+      
+      points_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int32 points = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPoints() {
+      
+      points_ = 0;
+      onChanged();
+      return this;
+    }
+    @Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
-    @java.lang.Override
+    @Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -1175,18 +1335,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:com.nkasenides.minesweeper.proto.MAPartialStateProto)
-  private static final com.nkasenides.minesweeper.proto.MAPartialStateProto DEFAULT_INSTANCE;
+  private static final MAPartialStateProto DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.nkasenides.minesweeper.proto.MAPartialStateProto();
+    DEFAULT_INSTANCE = new MAPartialStateProto();
   }
 
-  public static com.nkasenides.minesweeper.proto.MAPartialStateProto getDefaultInstance() {
+  public static MAPartialStateProto getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<MAPartialStateProto>
       PARSER = new com.google.protobuf.AbstractParser<MAPartialStateProto>() {
-    @java.lang.Override
+    @Override
     public MAPartialStateProto parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1199,13 +1359,13 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Parser<MAPartialStateProto> getParserForType() {
     return PARSER;
   }
 
-  @java.lang.Override
-  public com.nkasenides.minesweeper.proto.MAPartialStateProto getDefaultInstanceForType() {
+  @Override
+  public MAPartialStateProto getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 
