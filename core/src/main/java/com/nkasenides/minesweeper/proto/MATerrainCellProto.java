@@ -16,17 +16,18 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private MATerrainCellProto() {
+    id_ = "";
     revealState_ = 0;
   }
 
-  @java.lang.Override
+  @Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
+  protected Object newInstance(
       UnusedPrivateParameter unused) {
     return new MATerrainCellProto();
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -37,7 +38,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException();
     }
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -49,18 +50,12 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
-            int rawValue = input.readEnum();
-
-            revealState_ = rawValue;
-            break;
-          }
-          case 18: {
-            com.nkasenides.minesweeper.proto.MatrixPositionProto.Builder subBuilder = null;
+          case 10: {
+            MatrixPositionProto.Builder subBuilder = null;
             if (position_ != null) {
               subBuilder = position_.toBuilder();
             }
-            position_ = input.readMessage(com.nkasenides.minesweeper.proto.MatrixPositionProto.parser(), extensionRegistry);
+            position_ = input.readMessage(MatrixPositionProto.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(position_);
               position_ = subBuilder.buildPartial();
@@ -68,9 +63,21 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 18: {
+            String s = input.readStringRequireUtf8();
+
+            id_ = s;
+            break;
+          }
           case 24: {
 
             isMined_ = input.readBool();
+            break;
+          }
+          case 32: {
+            int rawValue = input.readEnum();
+
+            revealState_ = rawValue;
             break;
           }
           default: {
@@ -94,60 +101,79 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.nkasenides.minesweeper.proto.MProto.internal_static_com_nkasenides_minesweeper_proto_MATerrainCellProto_descriptor;
+    return MProto.internal_static_com_nkasenides_minesweeper_proto_MATerrainCellProto_descriptor;
   }
 
-  @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  @Override
+  protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.nkasenides.minesweeper.proto.MProto.internal_static_com_nkasenides_minesweeper_proto_MATerrainCellProto_fieldAccessorTable
+    return MProto.internal_static_com_nkasenides_minesweeper_proto_MATerrainCellProto_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.nkasenides.minesweeper.proto.MATerrainCellProto.class, com.nkasenides.minesweeper.proto.MATerrainCellProto.Builder.class);
+            MATerrainCellProto.class, Builder.class);
   }
 
-  public static final int REVEALSTATE_FIELD_NUMBER = 1;
-  private int revealState_;
+  public static final int POSITION_FIELD_NUMBER = 1;
+  private MatrixPositionProto position_;
   /**
-   * <code>.com.nkasenides.minesweeper.proto.RevealState revealState = 1;</code>
-   * @return The enum numeric value on the wire for revealState.
-   */
-  @java.lang.Override public int getRevealStateValue() {
-    return revealState_;
-  }
-  /**
-   * <code>.com.nkasenides.minesweeper.proto.RevealState revealState = 1;</code>
-   * @return The revealState.
-   */
-  @java.lang.Override public com.nkasenides.minesweeper.proto.RevealState getRevealState() {
-    @SuppressWarnings("deprecation")
-    com.nkasenides.minesweeper.proto.RevealState result = com.nkasenides.minesweeper.proto.RevealState.valueOf(revealState_);
-    return result == null ? com.nkasenides.minesweeper.proto.RevealState.UNRECOGNIZED : result;
-  }
-
-  public static final int POSITION_FIELD_NUMBER = 2;
-  private com.nkasenides.minesweeper.proto.MatrixPositionProto position_;
-  /**
-   * <code>.com.nkasenides.minesweeper.proto.MatrixPositionProto position = 2;</code>
+   * <code>.com.nkasenides.minesweeper.proto.MatrixPositionProto position = 1;</code>
    * @return Whether the position field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasPosition() {
     return position_ != null;
   }
   /**
-   * <code>.com.nkasenides.minesweeper.proto.MatrixPositionProto position = 2;</code>
+   * <code>.com.nkasenides.minesweeper.proto.MatrixPositionProto position = 1;</code>
    * @return The position.
    */
-  @java.lang.Override
-  public com.nkasenides.minesweeper.proto.MatrixPositionProto getPosition() {
-    return position_ == null ? com.nkasenides.minesweeper.proto.MatrixPositionProto.getDefaultInstance() : position_;
+  @Override
+  public MatrixPositionProto getPosition() {
+    return position_ == null ? MatrixPositionProto.getDefaultInstance() : position_;
   }
   /**
-   * <code>.com.nkasenides.minesweeper.proto.MatrixPositionProto position = 2;</code>
+   * <code>.com.nkasenides.minesweeper.proto.MatrixPositionProto position = 1;</code>
    */
-  @java.lang.Override
-  public com.nkasenides.minesweeper.proto.MatrixPositionProtoOrBuilder getPositionOrBuilder() {
+  @Override
+  public MatrixPositionProtoOrBuilder getPositionOrBuilder() {
     return getPosition();
+  }
+
+  public static final int ID_FIELD_NUMBER = 2;
+  private volatile Object id_;
+  /**
+   * <code>string id = 2;</code>
+   * @return The id.
+   */
+  @Override
+  public String getId() {
+    Object ref = id_;
+    if (ref instanceof String) {
+      return (String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      String s = bs.toStringUtf8();
+      id_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string id = 2;</code>
+   * @return The bytes for id.
+   */
+  @Override
+  public com.google.protobuf.ByteString
+      getIdBytes() {
+    Object ref = id_;
+    if (ref instanceof String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (String) ref);
+      id_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int ISMINED_FIELD_NUMBER = 3;
@@ -156,13 +182,32 @@ private static final long serialVersionUID = 0L;
    * <code>bool isMined = 3;</code>
    * @return The isMined.
    */
-  @java.lang.Override
+  @Override
   public boolean getIsMined() {
     return isMined_;
   }
 
+  public static final int REVEALSTATE_FIELD_NUMBER = 4;
+  private int revealState_;
+  /**
+   * <code>.com.nkasenides.minesweeper.proto.RevealState revealState = 4;</code>
+   * @return The enum numeric value on the wire for revealState.
+   */
+  @Override public int getRevealStateValue() {
+    return revealState_;
+  }
+  /**
+   * <code>.com.nkasenides.minesweeper.proto.RevealState revealState = 4;</code>
+   * @return The revealState.
+   */
+  @Override public RevealState getRevealState() {
+    @SuppressWarnings("deprecation")
+    RevealState result = RevealState.valueOf(revealState_);
+    return result == null ? RevealState.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
-  @java.lang.Override
+  @Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -172,150 +217,160 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (revealState_ != com.nkasenides.minesweeper.proto.RevealState.REVEALED_8_RevealState.getNumber()) {
-      output.writeEnum(1, revealState_);
-    }
     if (position_ != null) {
-      output.writeMessage(2, getPosition());
+      output.writeMessage(1, getPosition());
+    }
+    if (!getIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, id_);
     }
     if (isMined_ != false) {
       output.writeBool(3, isMined_);
     }
+    if (revealState_ != RevealState.REVEALED_8_RevealState.getNumber()) {
+      output.writeEnum(4, revealState_);
+    }
     unknownFields.writeTo(output);
   }
 
-  @java.lang.Override
+  @Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
-    if (revealState_ != com.nkasenides.minesweeper.proto.RevealState.REVEALED_8_RevealState.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(1, revealState_);
-    }
     if (position_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getPosition());
+        .computeMessageSize(1, getPosition());
+    }
+    if (!getIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, id_);
     }
     if (isMined_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(3, isMined_);
+    }
+    if (revealState_ != RevealState.REVEALED_8_RevealState.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(4, revealState_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.nkasenides.minesweeper.proto.MATerrainCellProto)) {
+    if (!(obj instanceof MATerrainCellProto)) {
       return super.equals(obj);
     }
-    com.nkasenides.minesweeper.proto.MATerrainCellProto other = (com.nkasenides.minesweeper.proto.MATerrainCellProto) obj;
+    MATerrainCellProto other = (MATerrainCellProto) obj;
 
-    if (revealState_ != other.revealState_) return false;
     if (hasPosition() != other.hasPosition()) return false;
     if (hasPosition()) {
       if (!getPosition()
           .equals(other.getPosition())) return false;
     }
+    if (!getId()
+        .equals(other.getId())) return false;
     if (getIsMined()
         != other.getIsMined()) return false;
+    if (revealState_ != other.revealState_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + REVEALSTATE_FIELD_NUMBER;
-    hash = (53 * hash) + revealState_;
     if (hasPosition()) {
       hash = (37 * hash) + POSITION_FIELD_NUMBER;
       hash = (53 * hash) + getPosition().hashCode();
     }
+    hash = (37 * hash) + ID_FIELD_NUMBER;
+    hash = (53 * hash) + getId().hashCode();
     hash = (37 * hash) + ISMINED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getIsMined());
+    hash = (37 * hash) + REVEALSTATE_FIELD_NUMBER;
+    hash = (53 * hash) + revealState_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.nkasenides.minesweeper.proto.MATerrainCellProto parseFrom(
+  public static MATerrainCellProto parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.nkasenides.minesweeper.proto.MATerrainCellProto parseFrom(
+  public static MATerrainCellProto parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.nkasenides.minesweeper.proto.MATerrainCellProto parseFrom(
+  public static MATerrainCellProto parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.nkasenides.minesweeper.proto.MATerrainCellProto parseFrom(
+  public static MATerrainCellProto parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.nkasenides.minesweeper.proto.MATerrainCellProto parseFrom(byte[] data)
+  public static MATerrainCellProto parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.nkasenides.minesweeper.proto.MATerrainCellProto parseFrom(
+  public static MATerrainCellProto parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.nkasenides.minesweeper.proto.MATerrainCellProto parseFrom(java.io.InputStream input)
+  public static MATerrainCellProto parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.nkasenides.minesweeper.proto.MATerrainCellProto parseFrom(
+  public static MATerrainCellProto parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.nkasenides.minesweeper.proto.MATerrainCellProto parseDelimitedFrom(java.io.InputStream input)
+  public static MATerrainCellProto parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.nkasenides.minesweeper.proto.MATerrainCellProto parseDelimitedFrom(
+  public static MATerrainCellProto parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.nkasenides.minesweeper.proto.MATerrainCellProto parseFrom(
+  public static MATerrainCellProto parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.nkasenides.minesweeper.proto.MATerrainCellProto parseFrom(
+  public static MATerrainCellProto parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -323,23 +378,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @java.lang.Override
+  @Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.nkasenides.minesweeper.proto.MATerrainCellProto prototype) {
+  public static Builder newBuilder(MATerrainCellProto prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @java.lang.Override
+  @Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -349,27 +404,28 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements com.nkasenides.athlos.model.ITerrainCell, com.nkasenides.athlos.proto.Modelable<com.nkasenides.minesweeper.model.MATerrainCell>, 
       // @@protoc_insertion_point(builder_implements:com.nkasenides.minesweeper.proto.MATerrainCellProto)
-      com.nkasenides.minesweeper.proto.MATerrainCellProtoOrBuilder {    @java.lang.Override    
+      MATerrainCellProtoOrBuilder {    @Override
     public com.nkasenides.minesweeper.model.MATerrainCell toObject() {    
         com.nkasenides.minesweeper.model.MATerrainCell item = new com.nkasenides.minesweeper.model.MATerrainCell();        
-        item.setRevealState(getRevealState());        
         item.setPosition(getPosition().toObject());        
+        item.setId(getId());        
         item.setIsMined(getIsMined());        
+        item.setRevealState(getRevealState());        
         return item;        
     }    
     
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.nkasenides.minesweeper.proto.MProto.internal_static_com_nkasenides_minesweeper_proto_MATerrainCellProto_descriptor;
+      return MProto.internal_static_com_nkasenides_minesweeper_proto_MATerrainCellProto_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.nkasenides.minesweeper.proto.MProto.internal_static_com_nkasenides_minesweeper_proto_MATerrainCellProto_fieldAccessorTable
+      return MProto.internal_static_com_nkasenides_minesweeper_proto_MATerrainCellProto_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.nkasenides.minesweeper.proto.MATerrainCellProto.class, com.nkasenides.minesweeper.proto.MATerrainCellProto.Builder.class);
+              MATerrainCellProto.class, Builder.class);
     }
 
     // Construct using com.nkasenides.minesweeper.proto.MATerrainCellProto.newBuilder()
@@ -378,7 +434,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -387,129 +443,136 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
-    @java.lang.Override
+    @Override
     public Builder clear() {
       super.clear();
-      revealState_ = 0;
-
       if (positionBuilder_ == null) {
         position_ = null;
       } else {
         position_ = null;
         positionBuilder_ = null;
       }
+      id_ = "";
+
       isMined_ = false;
+
+      revealState_ = 0;
 
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.nkasenides.minesweeper.proto.MProto.internal_static_com_nkasenides_minesweeper_proto_MATerrainCellProto_descriptor;
+      return MProto.internal_static_com_nkasenides_minesweeper_proto_MATerrainCellProto_descriptor;
     }
 
-    @java.lang.Override
-    public com.nkasenides.minesweeper.proto.MATerrainCellProto getDefaultInstanceForType() {
-      return com.nkasenides.minesweeper.proto.MATerrainCellProto.getDefaultInstance();
+    @Override
+    public MATerrainCellProto getDefaultInstanceForType() {
+      return MATerrainCellProto.getDefaultInstance();
     }
 
-    @java.lang.Override
-    public com.nkasenides.minesweeper.proto.MATerrainCellProto build() {
-      com.nkasenides.minesweeper.proto.MATerrainCellProto result = buildPartial();
+    @Override
+    public MATerrainCellProto build() {
+      MATerrainCellProto result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    @java.lang.Override
-    public com.nkasenides.minesweeper.proto.MATerrainCellProto buildPartial() {
-      com.nkasenides.minesweeper.proto.MATerrainCellProto result = new com.nkasenides.minesweeper.proto.MATerrainCellProto(this);
-      result.revealState_ = revealState_;
+    @Override
+    public MATerrainCellProto buildPartial() {
+      MATerrainCellProto result = new MATerrainCellProto(this);
       if (positionBuilder_ == null) {
         result.position_ = position_;
       } else {
         result.position_ = positionBuilder_.build();
       }
+      result.id_ = id_;
       result.isMined_ = isMined_;
+      result.revealState_ = revealState_;
       onBuilt();
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public Builder clone() {
       return super.clone();
     }
-    @java.lang.Override
+    @Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.setField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-    @java.lang.Override
+    @Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-    @java.lang.Override
+    @Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        int index, Object value) {
       return super.setRepeatedField(field, index, value);
     }
-    @java.lang.Override
+    @Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.addRepeatedField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.nkasenides.minesweeper.proto.MATerrainCellProto) {
-        return mergeFrom((com.nkasenides.minesweeper.proto.MATerrainCellProto)other);
+      if (other instanceof MATerrainCellProto) {
+        return mergeFrom((MATerrainCellProto)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.nkasenides.minesweeper.proto.MATerrainCellProto other) {
-      if (other == com.nkasenides.minesweeper.proto.MATerrainCellProto.getDefaultInstance()) return this;
-      if (other.revealState_ != 0) {
-        setRevealStateValue(other.getRevealStateValue());
-      }
+    public Builder mergeFrom(MATerrainCellProto other) {
+      if (other == MATerrainCellProto.getDefaultInstance()) return this;
       if (other.hasPosition()) {
         mergePosition(other.getPosition());
       }
+      if (!other.getId().isEmpty()) {
+        id_ = other.id_;
+        onChanged();
+      }
       if (other.getIsMined() != false) {
         setIsMined(other.getIsMined());
+      }
+      if (other.revealState_ != 0) {
+        setRevealStateValue(other.getRevealStateValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.nkasenides.minesweeper.proto.MATerrainCellProto parsedMessage = null;
+      MATerrainCellProto parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.nkasenides.minesweeper.proto.MATerrainCellProto) e.getUnfinishedMessage();
+        parsedMessage = (MATerrainCellProto) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -519,85 +582,31 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int revealState_ = 0;
-    /**
-     * <code>.com.nkasenides.minesweeper.proto.RevealState revealState = 1;</code>
-     * @return The enum numeric value on the wire for revealState.
-     */
-    @java.lang.Override public int getRevealStateValue() {
-      return revealState_;
-    }
-    /**
-     * <code>.com.nkasenides.minesweeper.proto.RevealState revealState = 1;</code>
-     * @param value The enum numeric value on the wire for revealState to set.
-     * @return This builder for chaining.
-     */
-    public Builder setRevealStateValue(int value) {
-      
-      revealState_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.com.nkasenides.minesweeper.proto.RevealState revealState = 1;</code>
-     * @return The revealState.
-     */
-    @java.lang.Override
-    public com.nkasenides.minesweeper.proto.RevealState getRevealState() {
-      @SuppressWarnings("deprecation")
-      com.nkasenides.minesweeper.proto.RevealState result = com.nkasenides.minesweeper.proto.RevealState.valueOf(revealState_);
-      return result == null ? com.nkasenides.minesweeper.proto.RevealState.UNRECOGNIZED : result;
-    }
-    /**
-     * <code>.com.nkasenides.minesweeper.proto.RevealState revealState = 1;</code>
-     * @param value The revealState to set.
-     * @return This builder for chaining.
-     */
-    public Builder setRevealState(com.nkasenides.minesweeper.proto.RevealState value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      
-      revealState_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.com.nkasenides.minesweeper.proto.RevealState revealState = 1;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearRevealState() {
-      
-      revealState_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private com.nkasenides.minesweeper.proto.MatrixPositionProto position_;
+    private MatrixPositionProto position_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.nkasenides.minesweeper.proto.MatrixPositionProto, com.nkasenides.minesweeper.proto.MatrixPositionProto.Builder, com.nkasenides.minesweeper.proto.MatrixPositionProtoOrBuilder> positionBuilder_;
+        MatrixPositionProto, MatrixPositionProto.Builder, MatrixPositionProtoOrBuilder> positionBuilder_;
     /**
-     * <code>.com.nkasenides.minesweeper.proto.MatrixPositionProto position = 2;</code>
+     * <code>.com.nkasenides.minesweeper.proto.MatrixPositionProto position = 1;</code>
      * @return Whether the position field is set.
      */
     public boolean hasPosition() {
       return positionBuilder_ != null || position_ != null;
     }
     /**
-     * <code>.com.nkasenides.minesweeper.proto.MatrixPositionProto position = 2;</code>
+     * <code>.com.nkasenides.minesweeper.proto.MatrixPositionProto position = 1;</code>
      * @return The position.
      */
-    public com.nkasenides.minesweeper.proto.MatrixPositionProto getPosition() {
+    public MatrixPositionProto getPosition() {
       if (positionBuilder_ == null) {
-        return position_ == null ? com.nkasenides.minesweeper.proto.MatrixPositionProto.getDefaultInstance() : position_;
+        return position_ == null ? MatrixPositionProto.getDefaultInstance() : position_;
       } else {
         return positionBuilder_.getMessage();
       }
     }
     /**
-     * <code>.com.nkasenides.minesweeper.proto.MatrixPositionProto position = 2;</code>
+     * <code>.com.nkasenides.minesweeper.proto.MatrixPositionProto position = 1;</code>
      */
-    public Builder setPosition(com.nkasenides.minesweeper.proto.MatrixPositionProto value) {
+    public Builder setPosition(MatrixPositionProto value) {
       if (positionBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -611,10 +620,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.nkasenides.minesweeper.proto.MatrixPositionProto position = 2;</code>
+     * <code>.com.nkasenides.minesweeper.proto.MatrixPositionProto position = 1;</code>
      */
     public Builder setPosition(
-        com.nkasenides.minesweeper.proto.MatrixPositionProto.Builder builderForValue) {
+        MatrixPositionProto.Builder builderForValue) {
       if (positionBuilder_ == null) {
         position_ = builderForValue.build();
         onChanged();
@@ -625,13 +634,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.nkasenides.minesweeper.proto.MatrixPositionProto position = 2;</code>
+     * <code>.com.nkasenides.minesweeper.proto.MatrixPositionProto position = 1;</code>
      */
-    public Builder mergePosition(com.nkasenides.minesweeper.proto.MatrixPositionProto value) {
+    public Builder mergePosition(MatrixPositionProto value) {
       if (positionBuilder_ == null) {
         if (position_ != null) {
           position_ =
-            com.nkasenides.minesweeper.proto.MatrixPositionProto.newBuilder(position_).mergeFrom(value).buildPartial();
+            MatrixPositionProto.newBuilder(position_).mergeFrom(value).buildPartial();
         } else {
           position_ = value;
         }
@@ -643,7 +652,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.nkasenides.minesweeper.proto.MatrixPositionProto position = 2;</code>
+     * <code>.com.nkasenides.minesweeper.proto.MatrixPositionProto position = 1;</code>
      */
     public Builder clearPosition() {
       if (positionBuilder_ == null) {
@@ -657,33 +666,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.com.nkasenides.minesweeper.proto.MatrixPositionProto position = 2;</code>
+     * <code>.com.nkasenides.minesweeper.proto.MatrixPositionProto position = 1;</code>
      */
-    public com.nkasenides.minesweeper.proto.MatrixPositionProto.Builder getPositionBuilder() {
+    public MatrixPositionProto.Builder getPositionBuilder() {
       
       onChanged();
       return getPositionFieldBuilder().getBuilder();
     }
     /**
-     * <code>.com.nkasenides.minesweeper.proto.MatrixPositionProto position = 2;</code>
+     * <code>.com.nkasenides.minesweeper.proto.MatrixPositionProto position = 1;</code>
      */
-    public com.nkasenides.minesweeper.proto.MatrixPositionProtoOrBuilder getPositionOrBuilder() {
+    public MatrixPositionProtoOrBuilder getPositionOrBuilder() {
       if (positionBuilder_ != null) {
         return positionBuilder_.getMessageOrBuilder();
       } else {
         return position_ == null ?
-            com.nkasenides.minesweeper.proto.MatrixPositionProto.getDefaultInstance() : position_;
+            MatrixPositionProto.getDefaultInstance() : position_;
       }
     }
     /**
-     * <code>.com.nkasenides.minesweeper.proto.MatrixPositionProto position = 2;</code>
+     * <code>.com.nkasenides.minesweeper.proto.MatrixPositionProto position = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.nkasenides.minesweeper.proto.MatrixPositionProto, com.nkasenides.minesweeper.proto.MatrixPositionProto.Builder, com.nkasenides.minesweeper.proto.MatrixPositionProtoOrBuilder> 
+        MatrixPositionProto, MatrixPositionProto.Builder, MatrixPositionProtoOrBuilder>
         getPositionFieldBuilder() {
       if (positionBuilder_ == null) {
         positionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.nkasenides.minesweeper.proto.MatrixPositionProto, com.nkasenides.minesweeper.proto.MatrixPositionProto.Builder, com.nkasenides.minesweeper.proto.MatrixPositionProtoOrBuilder>(
+            MatrixPositionProto, MatrixPositionProto.Builder, MatrixPositionProtoOrBuilder>(
                 getPosition(),
                 getParentForChildren(),
                 isClean());
@@ -692,12 +701,88 @@ private static final long serialVersionUID = 0L;
       return positionBuilder_;
     }
 
+    private Object id_ = "";
+    /**
+     * <code>string id = 2;</code>
+     * @return The id.
+     */
+    public String getId() {
+      Object ref = id_;
+      if (!(ref instanceof String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      } else {
+        return (String) ref;
+      }
+    }
+    /**
+     * <code>string id = 2;</code>
+     * @return The bytes for id.
+     */
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      Object ref = id_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string id = 2;</code>
+     * @param value The id to set.
+     * @return This builder for chaining.
+     */
+    public Builder setId(
+        String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      id_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string id = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearId() {
+      
+      id_ = getDefaultInstance().getId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string id = 2;</code>
+     * @param value The bytes for id to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      id_ = value;
+      onChanged();
+      return this;
+    }
+
     private boolean isMined_ ;
     /**
      * <code>bool isMined = 3;</code>
      * @return The isMined.
      */
-    @java.lang.Override
+    @Override
     public boolean getIsMined() {
       return isMined_;
     }
@@ -722,13 +807,67 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
-    @java.lang.Override
+
+    private int revealState_ = 0;
+    /**
+     * <code>.com.nkasenides.minesweeper.proto.RevealState revealState = 4;</code>
+     * @return The enum numeric value on the wire for revealState.
+     */
+    @Override public int getRevealStateValue() {
+      return revealState_;
+    }
+    /**
+     * <code>.com.nkasenides.minesweeper.proto.RevealState revealState = 4;</code>
+     * @param value The enum numeric value on the wire for revealState to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRevealStateValue(int value) {
+      
+      revealState_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.com.nkasenides.minesweeper.proto.RevealState revealState = 4;</code>
+     * @return The revealState.
+     */
+    @Override
+    public RevealState getRevealState() {
+      @SuppressWarnings("deprecation")
+      RevealState result = RevealState.valueOf(revealState_);
+      return result == null ? RevealState.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.com.nkasenides.minesweeper.proto.RevealState revealState = 4;</code>
+     * @param value The revealState to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRevealState(RevealState value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      revealState_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.com.nkasenides.minesweeper.proto.RevealState revealState = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRevealState() {
+      
+      revealState_ = 0;
+      onChanged();
+      return this;
+    }
+    @Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
-    @java.lang.Override
+    @Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -739,18 +878,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:com.nkasenides.minesweeper.proto.MATerrainCellProto)
-  private static final com.nkasenides.minesweeper.proto.MATerrainCellProto DEFAULT_INSTANCE;
+  private static final MATerrainCellProto DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.nkasenides.minesweeper.proto.MATerrainCellProto();
+    DEFAULT_INSTANCE = new MATerrainCellProto();
   }
 
-  public static com.nkasenides.minesweeper.proto.MATerrainCellProto getDefaultInstance() {
+  public static MATerrainCellProto getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<MATerrainCellProto>
       PARSER = new com.google.protobuf.AbstractParser<MATerrainCellProto>() {
-    @java.lang.Override
+    @Override
     public MATerrainCellProto parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -763,22 +902,23 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Parser<MATerrainCellProto> getParserForType() {
     return PARSER;
   }
 
-  @java.lang.Override
-  public com.nkasenides.minesweeper.proto.MATerrainCellProto getDefaultInstanceForType() {
+  @Override
+  public MATerrainCellProto getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 
-    @java.lang.Override    
+    @Override
     public com.nkasenides.minesweeper.model.MATerrainCell toObject() {    
         com.nkasenides.minesweeper.model.MATerrainCell item = new com.nkasenides.minesweeper.model.MATerrainCell();        
-        item.setRevealState(getRevealState());        
         item.setPosition(getPosition().toObject());        
+        item.setId(getId());        
         item.setIsMined(getIsMined());        
+        item.setRevealState(getRevealState());        
         return item;        
     }    
     

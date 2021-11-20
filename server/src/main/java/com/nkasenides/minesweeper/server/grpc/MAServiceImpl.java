@@ -14,6 +14,7 @@ import com.nkasenides.minesweeper.proto.MAServiceProtoGrpc;
 
 import com.nkasenides.minesweeper.state.State;
 import com.nkasenides.minesweeper.state.StateUpdateBuilder;
+import com.raylabz.objectis.Objectis;
 import com.sun.media.sound.MidiInDeviceProvider;
 import io.grpc.stub.StreamObserver;
 
@@ -129,6 +130,9 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
 
         String worldID = UUID.randomUUID().toString();
 
+        System.out.println("width: " + request.getWidth());
+        System.out.println("height: " + request.getHeight());
+
         //Create world:
         MAWorld world = new MAWorld();
         world.setId(worldID);
@@ -147,13 +151,33 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
         DBManager.world.create(world);
 
         //Generate board:
-        MATerrainGenerator generator = new MATerrainGenerator(world);
+        HashMap<String, MATerrainCell> cells = new HashMap<>();
+
         for (int row = 0; row < world.getMaxRows(); row++) {
             for (int col = 0; col < world.getMaxCols(); col++) {
-                final MATerrainChunk chunk = generator.generateChunk(row, col);
-                DBManager.terrainChunk.create(chunk);
+                MATerrainCell cell = new MATerrainCell();
+                final MatrixPosition position = new MatrixPosition(row, col);
+                cell.setPosition(position);
+                cell.setId(position.toHash());
+                cell.setRevealState(RevealState.COVERED_RevealState);
+                cell.setIsMined(false);
+                cells.put(position.toHash(), cell);
             }
         }
+
+        generateMines(world, cells);
+
+        for (MATerrainCell cell : cells.values()) {
+            Objectis.create(cell);
+            Objectis.collection(MATerrainCell.class, world.getId() + "_cells").add(cell);
+        }
+
+        //DEBUG ONLY:
+        final List<MATerrainCell> listOfCellsAdded = Objectis.collection(MATerrainCell.class, world.getId() + "_cells").list();
+        for (MATerrainCell cell : listOfCellsAdded) {
+            System.out.println(cell.getPosition().getRow() + "," + cell.getPosition().getCol() + "//  " + cell.isIsMined());
+        }
+
 
         CreateGameResponse response = CreateGameResponse.newBuilder()
                 .setStatus(CreateGameResponse.Status.OK)
@@ -829,6 +853,21 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
         return (count);
 
     }
-    
+
+    private void generateMines(MAWorld world, HashMap<String, MATerrainCell> cells) {
+        Random random = new Random();
+        final int numberOfMines = Math.round(world.getMaxRows() * world.getMaxCols() * world.getDifficulty().getMineRatio());
+        int generatedMines = 0;
+        do {
+            int randomRow = random.nextInt((int) world.getMaxRows());
+            int randomCol = random.nextInt((int) world.getMaxCols());
+            final MATerrainCell cell = cells.get(new MatrixPosition(randomRow, randomCol).toHash());
+            if (!cell.isIsMined()) {
+                cell.setIsMined(true);
+                generatedMines++;
+            }
+        } while (generatedMines < numberOfMines);
+    }
+
 }
 

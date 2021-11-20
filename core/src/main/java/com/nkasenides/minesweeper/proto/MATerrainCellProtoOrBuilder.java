@@ -8,34 +8,46 @@ public interface MATerrainCellProtoOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.com.nkasenides.minesweeper.proto.RevealState revealState = 1;</code>
-   * @return The enum numeric value on the wire for revealState.
-   */
-  int getRevealStateValue();
-  /**
-   * <code>.com.nkasenides.minesweeper.proto.RevealState revealState = 1;</code>
-   * @return The revealState.
-   */
-  com.nkasenides.minesweeper.proto.RevealState getRevealState();
-
-  /**
-   * <code>.com.nkasenides.minesweeper.proto.MatrixPositionProto position = 2;</code>
+   * <code>.com.nkasenides.minesweeper.proto.MatrixPositionProto position = 1;</code>
    * @return Whether the position field is set.
    */
   boolean hasPosition();
   /**
-   * <code>.com.nkasenides.minesweeper.proto.MatrixPositionProto position = 2;</code>
+   * <code>.com.nkasenides.minesweeper.proto.MatrixPositionProto position = 1;</code>
    * @return The position.
    */
-  com.nkasenides.minesweeper.proto.MatrixPositionProto getPosition();
+  MatrixPositionProto getPosition();
   /**
-   * <code>.com.nkasenides.minesweeper.proto.MatrixPositionProto position = 2;</code>
+   * <code>.com.nkasenides.minesweeper.proto.MatrixPositionProto position = 1;</code>
    */
-  com.nkasenides.minesweeper.proto.MatrixPositionProtoOrBuilder getPositionOrBuilder();
+  MatrixPositionProtoOrBuilder getPositionOrBuilder();
+
+  /**
+   * <code>string id = 2;</code>
+   * @return The id.
+   */
+  String getId();
+  /**
+   * <code>string id = 2;</code>
+   * @return The bytes for id.
+   */
+  com.google.protobuf.ByteString
+      getIdBytes();
 
   /**
    * <code>bool isMined = 3;</code>
    * @return The isMined.
    */
   boolean getIsMined();
+
+  /**
+   * <code>.com.nkasenides.minesweeper.proto.RevealState revealState = 4;</code>
+   * @return The enum numeric value on the wire for revealState.
+   */
+  int getRevealStateValue();
+  /**
+   * <code>.com.nkasenides.minesweeper.proto.RevealState revealState = 4;</code>
+   * @return The revealState.
+   */
+  RevealState getRevealState();
 }

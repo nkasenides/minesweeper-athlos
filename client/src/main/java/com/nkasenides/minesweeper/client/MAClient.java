@@ -22,6 +22,14 @@ public class MAClient extends DedicatedGameClient<MAPartialStateProto, MAGameSes
     public static void main(String[] args) {
         MAClient client = new MAClient("localhost", 25000);
         client.start();
+        MAStubManager a = new MAStubManager(client.mainChannel);
+        a.createGame.sendAndWait(CreateGameRequest.newBuilder()
+                        .setWidth(10)
+                        .setHeight(10)
+                        .setDifficulty(Difficulty.EASY_Difficulty)
+                        .setMaxPlayers(10)
+                .build()
+        );
     }
 
 

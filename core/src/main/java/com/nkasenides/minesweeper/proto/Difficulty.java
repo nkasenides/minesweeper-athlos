@@ -11,16 +11,16 @@ public enum Difficulty
   /**
    * <code>EASY_Difficulty = 0;</code>
    */
-  EASY_Difficulty(0),
+  EASY_Difficulty(0, 0.1f),
   /**
    * <code>MEDIUM_Difficulty = 1;</code>
    */
-  MEDIUM_Difficulty(1),
+  MEDIUM_Difficulty(1, 0.15f),
   /**
    * <code>HARD_Difficulty = 2;</code>
    */
-  HARD_Difficulty(2),
-  UNRECOGNIZED(-1),
+  HARD_Difficulty(2, 0.2f),
+  UNRECOGNIZED(-1, 0.0f),
   ;
 
   /**
@@ -112,9 +112,15 @@ public enum Difficulty
   }
 
   private final int value;
+  private final float mineRatio;
 
-  private Difficulty(int value) {
+  private Difficulty(int value, float mineRatio) {
     this.value = value;
+    this.mineRatio = mineRatio;
+  }
+
+  public float getMineRatio() {
+    return mineRatio;
   }
 
   // @@protoc_insertion_point(enum_scope:com.nkasenides.minesweeper.proto.Difficulty)

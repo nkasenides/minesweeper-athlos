@@ -7,14 +7,17 @@
 
 package com.nkasenides.minesweeper.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import com.nkasenides.athlos.proto.Transmittable;
 import com.nkasenides.athlos.proto.GenericTransmittable;
 import com.nkasenides.minesweeper.proto.*;
 import com.nkasenides.athlos.model.*;
+import com.raylabz.objectis.annotation.ObjectisObject;
 
-public class MAWorld implements IGrid4World, Transmittable<MAWorldProto.Builder> {
+@ObjectisObject
+public class MAWorld implements IGrid4World, Transmittable<MAWorldProto.Builder>, Serializable {
 
     public static final WorldType type = WorldType.TILE_HEX;
 

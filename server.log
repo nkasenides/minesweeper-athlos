@@ -218,3 +218,1116 @@
 16-11-2021 13:06:59 DEBUG ByteBufUtil:95 - -Dio.netty.threadLocalDirectBufferSize: 0
 16-11-2021 13:06:59 DEBUG ByteBufUtil:98 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
 16-11-2021 13:06:59 INFO  MServer:130 - Server MServer started.
+20-11-2021 15:09:30 DEBUG InternalLoggerFactory:45 - Using SLF4J as the default logging framework
+20-11-2021 15:09:30 DEBUG PlatformDependent:1015 - Platform: Windows
+20-11-2021 15:09:30 DEBUG PlatformDependent0:408 - -Dio.netty.noUnsafe: false
+20-11-2021 15:09:30 DEBUG PlatformDependent0:876 - Java version: 8
+20-11-2021 15:09:30 DEBUG PlatformDependent0:125 - sun.misc.Unsafe.theUnsafe: available
+20-11-2021 15:09:30 DEBUG PlatformDependent0:149 - sun.misc.Unsafe.copyMemory: available
+20-11-2021 15:09:30 DEBUG PlatformDependent0:187 - java.nio.Buffer.address: available
+20-11-2021 15:09:30 DEBUG PlatformDependent0:252 - direct buffer constructor: available
+20-11-2021 15:09:30 DEBUG PlatformDependent0:326 - java.nio.Bits.unaligned: available, true
+20-11-2021 15:09:30 DEBUG PlatformDependent0:391 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+20-11-2021 15:09:30 DEBUG PlatformDependent0:398 - java.nio.DirectByteBuffer.<init>(long, int): available
+20-11-2021 15:09:30 DEBUG PlatformDependent:1058 - sun.misc.Unsafe: available
+20-11-2021 15:09:30 DEBUG PlatformDependent:1177 - -Dio.netty.tmpdir: C:\Users\hfnov\AppData\Local\Temp (java.io.tmpdir)
+20-11-2021 15:09:30 DEBUG PlatformDependent:1256 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+20-11-2021 15:09:30 DEBUG PlatformDependent:177 - -Dio.netty.maxDirectMemory: 3791650816 bytes
+20-11-2021 15:09:30 DEBUG PlatformDependent:184 - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+20-11-2021 15:09:30 DEBUG CleanerJava6:92 - java.nio.ByteBuffer.cleaner(): available
+20-11-2021 15:09:30 DEBUG PlatformDependent:204 - -Dio.netty.noPreferDirect: false
+20-11-2021 15:09:30 DEBUG MultithreadEventLoopGroup:44 - -Dio.netty.eventLoopThreads: 16
+20-11-2021 15:09:30 DEBUG InternalThreadLocalMap:56 - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+20-11-2021 15:09:30 DEBUG InternalThreadLocalMap:59 - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+20-11-2021 15:09:30 DEBUG NioEventLoop:106 - -Dio.netty.noKeySetOptimization: false
+20-11-2021 15:09:30 DEBUG NioEventLoop:107 - -Dio.netty.selectorAutoRebuildThreshold: 512
+20-11-2021 15:09:31 DEBUG PlatformDependent:919 - org.jctools-core.MpscChunkedArrayQueue: available
+20-11-2021 15:09:31 DEBUG ResourceLeakDetector:130 - -Dio.grpc.netty.shaded.io.netty.leakDetection.level: simple
+20-11-2021 15:09:31 DEBUG ResourceLeakDetector:131 - -Dio.grpc.netty.shaded.io.netty.leakDetection.targetRecords: 4
+20-11-2021 15:09:31 DEBUG PooledByteBufAllocator:156 - -Dio.netty.allocator.numHeapArenas: 16
+20-11-2021 15:09:31 DEBUG PooledByteBufAllocator:157 - -Dio.netty.allocator.numDirectArenas: 16
+20-11-2021 15:09:31 DEBUG PooledByteBufAllocator:159 - -Dio.netty.allocator.pageSize: 8192
+20-11-2021 15:09:31 DEBUG PooledByteBufAllocator:164 - -Dio.netty.allocator.maxOrder: 11
+20-11-2021 15:09:31 DEBUG PooledByteBufAllocator:168 - -Dio.netty.allocator.chunkSize: 16777216
+20-11-2021 15:09:31 DEBUG PooledByteBufAllocator:169 - -Dio.netty.allocator.tinyCacheSize: 512
+20-11-2021 15:09:31 DEBUG PooledByteBufAllocator:170 - -Dio.netty.allocator.smallCacheSize: 256
+20-11-2021 15:09:31 DEBUG PooledByteBufAllocator:171 - -Dio.netty.allocator.normalCacheSize: 64
+20-11-2021 15:09:31 DEBUG PooledByteBufAllocator:172 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+20-11-2021 15:09:31 DEBUG PooledByteBufAllocator:173 - -Dio.netty.allocator.cacheTrimInterval: 8192
+20-11-2021 15:09:31 DEBUG PooledByteBufAllocator:174 - -Dio.netty.allocator.cacheTrimIntervalMillis: 0
+20-11-2021 15:09:31 DEBUG PooledByteBufAllocator:175 - -Dio.netty.allocator.useCacheForAllThreads: true
+20-11-2021 15:09:31 DEBUG PooledByteBufAllocator:176 - -Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+20-11-2021 15:09:31 DEBUG DefaultChannelId:79 - -Dio.netty.processId: 4628 (auto-detected)
+20-11-2021 15:09:31 DEBUG NetUtil:139 - -Djava.net.preferIPv4Stack: false
+20-11-2021 15:09:31 DEBUG NetUtil:140 - -Djava.net.preferIPv6Addresses: false
+20-11-2021 15:09:31 DEBUG NetUtil:224 - Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)
+20-11-2021 15:09:31 DEBUG NetUtil:289 - Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200
+20-11-2021 15:09:31 DEBUG DefaultChannelId:101 - -Dio.netty.machineId: 00:00:00:00:00:00:00:e0 (auto-detected)
+20-11-2021 15:09:31 DEBUG ByteBufUtil:86 - -Dio.netty.allocator.type: pooled
+20-11-2021 15:09:31 DEBUG ByteBufUtil:95 - -Dio.netty.threadLocalDirectBufferSize: 0
+20-11-2021 15:09:31 DEBUG ByteBufUtil:98 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+20-11-2021 15:09:31 INFO  MServer:130 - Server MServer started.
+20-11-2021 15:12:49 DEBUG InternalLoggerFactory:45 - Using SLF4J as the default logging framework
+20-11-2021 15:12:49 DEBUG PlatformDependent:1015 - Platform: Windows
+20-11-2021 15:12:49 DEBUG PlatformDependent0:408 - -Dio.netty.noUnsafe: false
+20-11-2021 15:12:49 DEBUG PlatformDependent0:876 - Java version: 8
+20-11-2021 15:12:49 DEBUG PlatformDependent0:125 - sun.misc.Unsafe.theUnsafe: available
+20-11-2021 15:12:49 DEBUG PlatformDependent0:149 - sun.misc.Unsafe.copyMemory: available
+20-11-2021 15:12:49 DEBUG PlatformDependent0:187 - java.nio.Buffer.address: available
+20-11-2021 15:12:49 DEBUG PlatformDependent0:252 - direct buffer constructor: available
+20-11-2021 15:12:49 DEBUG PlatformDependent0:326 - java.nio.Bits.unaligned: available, true
+20-11-2021 15:12:49 DEBUG PlatformDependent0:391 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+20-11-2021 15:12:49 DEBUG PlatformDependent0:398 - java.nio.DirectByteBuffer.<init>(long, int): available
+20-11-2021 15:12:49 DEBUG PlatformDependent:1058 - sun.misc.Unsafe: available
+20-11-2021 15:12:49 DEBUG PlatformDependent:1177 - -Dio.netty.tmpdir: C:\Users\hfnov\AppData\Local\Temp (java.io.tmpdir)
+20-11-2021 15:12:49 DEBUG PlatformDependent:1256 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+20-11-2021 15:12:49 DEBUG PlatformDependent:177 - -Dio.netty.maxDirectMemory: 3791650816 bytes
+20-11-2021 15:12:49 DEBUG PlatformDependent:184 - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+20-11-2021 15:12:49 DEBUG CleanerJava6:92 - java.nio.ByteBuffer.cleaner(): available
+20-11-2021 15:12:49 DEBUG PlatformDependent:204 - -Dio.netty.noPreferDirect: false
+20-11-2021 15:12:50 DEBUG MultithreadEventLoopGroup:44 - -Dio.netty.eventLoopThreads: 16
+20-11-2021 15:12:50 DEBUG InternalThreadLocalMap:56 - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+20-11-2021 15:12:50 DEBUG InternalThreadLocalMap:59 - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+20-11-2021 15:12:50 DEBUG NioEventLoop:106 - -Dio.netty.noKeySetOptimization: false
+20-11-2021 15:12:50 DEBUG NioEventLoop:107 - -Dio.netty.selectorAutoRebuildThreshold: 512
+20-11-2021 15:12:50 DEBUG PlatformDependent:919 - org.jctools-core.MpscChunkedArrayQueue: available
+20-11-2021 15:12:50 DEBUG ResourceLeakDetector:130 - -Dio.grpc.netty.shaded.io.netty.leakDetection.level: simple
+20-11-2021 15:12:50 DEBUG ResourceLeakDetector:131 - -Dio.grpc.netty.shaded.io.netty.leakDetection.targetRecords: 4
+20-11-2021 15:12:50 DEBUG PooledByteBufAllocator:156 - -Dio.netty.allocator.numHeapArenas: 16
+20-11-2021 15:12:50 DEBUG PooledByteBufAllocator:157 - -Dio.netty.allocator.numDirectArenas: 16
+20-11-2021 15:12:50 DEBUG PooledByteBufAllocator:159 - -Dio.netty.allocator.pageSize: 8192
+20-11-2021 15:12:50 DEBUG PooledByteBufAllocator:164 - -Dio.netty.allocator.maxOrder: 11
+20-11-2021 15:12:50 DEBUG PooledByteBufAllocator:168 - -Dio.netty.allocator.chunkSize: 16777216
+20-11-2021 15:12:50 DEBUG PooledByteBufAllocator:169 - -Dio.netty.allocator.tinyCacheSize: 512
+20-11-2021 15:12:50 DEBUG PooledByteBufAllocator:170 - -Dio.netty.allocator.smallCacheSize: 256
+20-11-2021 15:12:50 DEBUG PooledByteBufAllocator:171 - -Dio.netty.allocator.normalCacheSize: 64
+20-11-2021 15:12:50 DEBUG PooledByteBufAllocator:172 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+20-11-2021 15:12:50 DEBUG PooledByteBufAllocator:173 - -Dio.netty.allocator.cacheTrimInterval: 8192
+20-11-2021 15:12:50 DEBUG PooledByteBufAllocator:174 - -Dio.netty.allocator.cacheTrimIntervalMillis: 0
+20-11-2021 15:12:50 DEBUG PooledByteBufAllocator:175 - -Dio.netty.allocator.useCacheForAllThreads: true
+20-11-2021 15:12:50 DEBUG PooledByteBufAllocator:176 - -Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+20-11-2021 15:12:50 DEBUG DefaultChannelId:79 - -Dio.netty.processId: 19612 (auto-detected)
+20-11-2021 15:12:50 DEBUG NetUtil:139 - -Djava.net.preferIPv4Stack: false
+20-11-2021 15:12:50 DEBUG NetUtil:140 - -Djava.net.preferIPv6Addresses: false
+20-11-2021 15:12:50 DEBUG NetUtil:224 - Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)
+20-11-2021 15:12:50 DEBUG NetUtil:289 - Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200
+20-11-2021 15:12:51 DEBUG DefaultChannelId:101 - -Dio.netty.machineId: 00:00:00:00:00:00:00:e0 (auto-detected)
+20-11-2021 15:12:51 DEBUG ByteBufUtil:86 - -Dio.netty.allocator.type: pooled
+20-11-2021 15:12:51 DEBUG ByteBufUtil:95 - -Dio.netty.threadLocalDirectBufferSize: 0
+20-11-2021 15:12:51 DEBUG ByteBufUtil:98 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+20-11-2021 15:12:51 INFO  MServer:130 - Server MServer started.
+20-11-2021 15:16:21 DEBUG AbstractByteBuf:63 - -Dio.grpc.netty.shaded.io.netty.buffer.checkAccessible: true
+20-11-2021 15:16:21 DEBUG AbstractByteBuf:64 - -Dio.grpc.netty.shaded.io.netty.buffer.checkBounds: true
+20-11-2021 15:16:21 DEBUG ResourceLeakDetectorFactory:196 - Loaded default ResourceLeakDetector: io.grpc.netty.shaded.io.netty.util.ResourceLeakDetector@1ccd5a0c
+20-11-2021 15:16:22 DEBUG NettyServerHandler:214 - [id: 0x2d7d4e15, L:/127.0.0.1:25000 - R:/127.0.0.1:62241] OUTBOUND SETTINGS: ack=false settings={MAX_CONCURRENT_STREAMS=2147483647, INITIAL_WINDOW_SIZE=1048576, MAX_HEADER_LIST_SIZE=8192}
+20-11-2021 15:16:22 DEBUG Recycler:100 - -Dio.netty.recycler.maxCapacityPerThread: 4096
+20-11-2021 15:16:22 DEBUG Recycler:101 - -Dio.netty.recycler.maxSharedCapacityFactor: 2
+20-11-2021 15:16:22 DEBUG Recycler:102 - -Dio.netty.recycler.linkCapacity: 16
+20-11-2021 15:16:22 DEBUG Recycler:103 - -Dio.netty.recycler.ratio: 8
+20-11-2021 15:16:22 DEBUG Recycler:104 - -Dio.netty.recycler.delayedQueue.ratio: 8
+20-11-2021 15:16:22 DEBUG NettyServerHandler:214 - [id: 0x2d7d4e15, L:/127.0.0.1:25000 - R:/127.0.0.1:62241] OUTBOUND WINDOW_UPDATE: streamId=0 windowSizeIncrement=983041
+20-11-2021 15:16:22 DEBUG NettyServerHandler:214 - [id: 0x2d7d4e15, L:/127.0.0.1:25000 - R:/127.0.0.1:62241] INBOUND SETTINGS: ack=false settings={ENABLE_PUSH=0, MAX_CONCURRENT_STREAMS=0, INITIAL_WINDOW_SIZE=1048576, MAX_HEADER_LIST_SIZE=8192}
+20-11-2021 15:16:22 DEBUG NettyServerHandler:191 - [id: 0x2d7d4e15, L:/127.0.0.1:25000 - R:/127.0.0.1:62241] OUTBOUND SETTINGS: ack=true
+20-11-2021 15:16:22 DEBUG NettyServerHandler:214 - [id: 0x2d7d4e15, L:/127.0.0.1:25000 - R:/127.0.0.1:62241] INBOUND WINDOW_UPDATE: streamId=0 windowSizeIncrement=983041
+20-11-2021 15:16:22 DEBUG NettyServerHandler:191 - [id: 0x2d7d4e15, L:/127.0.0.1:25000 - R:/127.0.0.1:62241] INBOUND SETTINGS: ack=true
+20-11-2021 15:16:22 DEBUG NettyServerHandler:214 - [id: 0x2d7d4e15, L:/127.0.0.1:25000 - R:/127.0.0.1:62241] INBOUND HEADERS: streamId=3 headers=GrpcHttp2RequestHeaders[:path: /com.nkasenides.minesweeper.proto.MAServiceProto/CreateGame, :authority: localhost:25000, :method: POST, :scheme: http, te: trailers, content-type: application/grpc, user-agent: grpc-java-netty/1.34.0, grpc-accept-encoding: gzip] streamDependency=0 weight=16 exclusive=false padding=0 endStream=false
+20-11-2021 15:16:22 DEBUG NettyServerHandler:214 - [id: 0x2d7d4e15, L:/127.0.0.1:25000 - R:/127.0.0.1:62241] INBOUND DATA: streamId=3 padding=0 endStream=true length=11 bytes=0000000006100a180a200a
+20-11-2021 15:16:22 DEBUG NettyServerHandler:214 - [id: 0x2d7d4e15, L:/127.0.0.1:25000 - R:/127.0.0.1:62241] OUTBOUND PING: ack=false bytes=1234
+20-11-2021 15:16:22 DEBUG NettyServerHandler:214 - [id: 0x2d7d4e15, L:/127.0.0.1:25000 - R:/127.0.0.1:62241] INBOUND PING: ack=true bytes=1234
+20-11-2021 15:16:22 DEBUG NettyServerHandler:214 - [id: 0x2d7d4e15, L:/127.0.0.1:25000 - R:/127.0.0.1:62241] OUTBOUND HEADERS: streamId=3 headers=GrpcHttp2OutboundHeaders[:status: 200, content-type: application/grpc, grpc-status: 2] padding=0 endStream=true
+20-11-2021 15:16:22 DEBUG NettyServerHandler:214 - [id: 0x2d7d4e15, L:/127.0.0.1:25000 - R:/127.0.0.1:62241] INBOUND RST_STREAM: streamId=3 errorCode=8
+20-11-2021 15:19:42 DEBUG InternalLoggerFactory:45 - Using SLF4J as the default logging framework
+20-11-2021 15:19:42 DEBUG PlatformDependent:1015 - Platform: Windows
+20-11-2021 15:19:42 DEBUG PlatformDependent0:408 - -Dio.netty.noUnsafe: false
+20-11-2021 15:19:42 DEBUG PlatformDependent0:876 - Java version: 8
+20-11-2021 15:19:42 DEBUG PlatformDependent0:125 - sun.misc.Unsafe.theUnsafe: available
+20-11-2021 15:19:42 DEBUG PlatformDependent0:149 - sun.misc.Unsafe.copyMemory: available
+20-11-2021 15:19:42 DEBUG PlatformDependent0:187 - java.nio.Buffer.address: available
+20-11-2021 15:19:42 DEBUG PlatformDependent0:252 - direct buffer constructor: available
+20-11-2021 15:19:42 DEBUG PlatformDependent0:326 - java.nio.Bits.unaligned: available, true
+20-11-2021 15:19:42 DEBUG PlatformDependent0:391 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+20-11-2021 15:19:42 DEBUG PlatformDependent0:398 - java.nio.DirectByteBuffer.<init>(long, int): available
+20-11-2021 15:19:42 DEBUG PlatformDependent:1058 - sun.misc.Unsafe: available
+20-11-2021 15:19:42 DEBUG PlatformDependent:1177 - -Dio.netty.tmpdir: C:\Users\hfnov\AppData\Local\Temp (java.io.tmpdir)
+20-11-2021 15:19:42 DEBUG PlatformDependent:1256 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+20-11-2021 15:19:42 DEBUG PlatformDependent:177 - -Dio.netty.maxDirectMemory: 3791650816 bytes
+20-11-2021 15:19:42 DEBUG PlatformDependent:184 - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+20-11-2021 15:19:42 DEBUG CleanerJava6:92 - java.nio.ByteBuffer.cleaner(): available
+20-11-2021 15:19:42 DEBUG PlatformDependent:204 - -Dio.netty.noPreferDirect: false
+20-11-2021 15:19:43 DEBUG MultithreadEventLoopGroup:44 - -Dio.netty.eventLoopThreads: 16
+20-11-2021 15:19:43 DEBUG InternalThreadLocalMap:56 - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+20-11-2021 15:19:43 DEBUG InternalThreadLocalMap:59 - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+20-11-2021 15:19:43 DEBUG NioEventLoop:106 - -Dio.netty.noKeySetOptimization: false
+20-11-2021 15:19:43 DEBUG NioEventLoop:107 - -Dio.netty.selectorAutoRebuildThreshold: 512
+20-11-2021 15:19:43 DEBUG PlatformDependent:919 - org.jctools-core.MpscChunkedArrayQueue: available
+20-11-2021 15:19:43 DEBUG ResourceLeakDetector:130 - -Dio.grpc.netty.shaded.io.netty.leakDetection.level: simple
+20-11-2021 15:19:43 DEBUG ResourceLeakDetector:131 - -Dio.grpc.netty.shaded.io.netty.leakDetection.targetRecords: 4
+20-11-2021 15:19:43 DEBUG PooledByteBufAllocator:156 - -Dio.netty.allocator.numHeapArenas: 16
+20-11-2021 15:19:43 DEBUG PooledByteBufAllocator:157 - -Dio.netty.allocator.numDirectArenas: 16
+20-11-2021 15:19:43 DEBUG PooledByteBufAllocator:159 - -Dio.netty.allocator.pageSize: 8192
+20-11-2021 15:19:43 DEBUG PooledByteBufAllocator:164 - -Dio.netty.allocator.maxOrder: 11
+20-11-2021 15:19:43 DEBUG PooledByteBufAllocator:168 - -Dio.netty.allocator.chunkSize: 16777216
+20-11-2021 15:19:43 DEBUG PooledByteBufAllocator:169 - -Dio.netty.allocator.tinyCacheSize: 512
+20-11-2021 15:19:43 DEBUG PooledByteBufAllocator:170 - -Dio.netty.allocator.smallCacheSize: 256
+20-11-2021 15:19:43 DEBUG PooledByteBufAllocator:171 - -Dio.netty.allocator.normalCacheSize: 64
+20-11-2021 15:19:43 DEBUG PooledByteBufAllocator:172 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+20-11-2021 15:19:43 DEBUG PooledByteBufAllocator:173 - -Dio.netty.allocator.cacheTrimInterval: 8192
+20-11-2021 15:19:43 DEBUG PooledByteBufAllocator:174 - -Dio.netty.allocator.cacheTrimIntervalMillis: 0
+20-11-2021 15:19:43 DEBUG PooledByteBufAllocator:175 - -Dio.netty.allocator.useCacheForAllThreads: true
+20-11-2021 15:19:43 DEBUG PooledByteBufAllocator:176 - -Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+20-11-2021 15:19:43 DEBUG DefaultChannelId:79 - -Dio.netty.processId: 7052 (auto-detected)
+20-11-2021 15:19:43 DEBUG NetUtil:139 - -Djava.net.preferIPv4Stack: false
+20-11-2021 15:19:43 DEBUG NetUtil:140 - -Djava.net.preferIPv6Addresses: false
+20-11-2021 15:19:43 DEBUG NetUtil:224 - Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)
+20-11-2021 15:19:43 DEBUG NetUtil:289 - Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200
+20-11-2021 15:19:43 DEBUG DefaultChannelId:101 - -Dio.netty.machineId: 00:00:00:00:00:00:00:e0 (auto-detected)
+20-11-2021 15:19:43 DEBUG ByteBufUtil:86 - -Dio.netty.allocator.type: pooled
+20-11-2021 15:19:43 DEBUG ByteBufUtil:95 - -Dio.netty.threadLocalDirectBufferSize: 0
+20-11-2021 15:19:43 DEBUG ByteBufUtil:98 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+20-11-2021 15:19:43 INFO  MServer:130 - Server MServer started.
+20-11-2021 15:20:05 DEBUG AbstractByteBuf:63 - -Dio.grpc.netty.shaded.io.netty.buffer.checkAccessible: true
+20-11-2021 15:20:05 DEBUG AbstractByteBuf:64 - -Dio.grpc.netty.shaded.io.netty.buffer.checkBounds: true
+20-11-2021 15:20:05 DEBUG ResourceLeakDetectorFactory:196 - Loaded default ResourceLeakDetector: io.grpc.netty.shaded.io.netty.util.ResourceLeakDetector@1ac6c0fb
+20-11-2021 15:20:05 DEBUG NettyServerHandler:214 - [id: 0xdae24399, L:/127.0.0.1:25000 - R:/127.0.0.1:62303] OUTBOUND SETTINGS: ack=false settings={MAX_CONCURRENT_STREAMS=2147483647, INITIAL_WINDOW_SIZE=1048576, MAX_HEADER_LIST_SIZE=8192}
+20-11-2021 15:20:05 DEBUG Recycler:100 - -Dio.netty.recycler.maxCapacityPerThread: 4096
+20-11-2021 15:20:05 DEBUG Recycler:101 - -Dio.netty.recycler.maxSharedCapacityFactor: 2
+20-11-2021 15:20:05 DEBUG Recycler:102 - -Dio.netty.recycler.linkCapacity: 16
+20-11-2021 15:20:05 DEBUG Recycler:103 - -Dio.netty.recycler.ratio: 8
+20-11-2021 15:20:05 DEBUG Recycler:104 - -Dio.netty.recycler.delayedQueue.ratio: 8
+20-11-2021 15:20:05 DEBUG NettyServerHandler:214 - [id: 0xdae24399, L:/127.0.0.1:25000 - R:/127.0.0.1:62303] OUTBOUND WINDOW_UPDATE: streamId=0 windowSizeIncrement=983041
+20-11-2021 15:20:05 DEBUG NettyServerHandler:214 - [id: 0xdae24399, L:/127.0.0.1:25000 - R:/127.0.0.1:62303] INBOUND SETTINGS: ack=false settings={ENABLE_PUSH=0, MAX_CONCURRENT_STREAMS=0, INITIAL_WINDOW_SIZE=1048576, MAX_HEADER_LIST_SIZE=8192}
+20-11-2021 15:20:05 DEBUG NettyServerHandler:191 - [id: 0xdae24399, L:/127.0.0.1:25000 - R:/127.0.0.1:62303] OUTBOUND SETTINGS: ack=true
+20-11-2021 15:20:05 DEBUG NettyServerHandler:214 - [id: 0xdae24399, L:/127.0.0.1:25000 - R:/127.0.0.1:62303] INBOUND WINDOW_UPDATE: streamId=0 windowSizeIncrement=983041
+20-11-2021 15:20:05 DEBUG NettyServerHandler:191 - [id: 0xdae24399, L:/127.0.0.1:25000 - R:/127.0.0.1:62303] INBOUND SETTINGS: ack=true
+20-11-2021 15:20:05 DEBUG NettyServerHandler:214 - [id: 0xdae24399, L:/127.0.0.1:25000 - R:/127.0.0.1:62303] INBOUND HEADERS: streamId=3 headers=GrpcHttp2RequestHeaders[:path: /com.nkasenides.minesweeper.proto.MAServiceProto/CreateGame, :authority: localhost:25000, :method: POST, :scheme: http, te: trailers, content-type: application/grpc, user-agent: grpc-java-netty/1.34.0, grpc-accept-encoding: gzip] streamDependency=0 weight=16 exclusive=false padding=0 endStream=false
+20-11-2021 15:20:06 DEBUG NettyServerHandler:214 - [id: 0xdae24399, L:/127.0.0.1:25000 - R:/127.0.0.1:62303] INBOUND DATA: streamId=3 padding=0 endStream=true length=11 bytes=0000000006100a180a200a
+20-11-2021 15:20:06 DEBUG NettyServerHandler:214 - [id: 0xdae24399, L:/127.0.0.1:25000 - R:/127.0.0.1:62303] OUTBOUND PING: ack=false bytes=1234
+20-11-2021 15:20:06 DEBUG NettyServerHandler:214 - [id: 0xdae24399, L:/127.0.0.1:25000 - R:/127.0.0.1:62303] INBOUND PING: ack=true bytes=1234
+20-11-2021 15:20:06 DEBUG NettyServerHandler:214 - [id: 0xdae24399, L:/127.0.0.1:25000 - R:/127.0.0.1:62303] OUTBOUND HEADERS: streamId=3 headers=GrpcHttp2OutboundHeaders[:status: 200, content-type: application/grpc, grpc-status: 2] padding=0 endStream=true
+20-11-2021 15:20:06 DEBUG NettyServerHandler:214 - [id: 0xdae24399, L:/127.0.0.1:25000 - R:/127.0.0.1:62303] INBOUND RST_STREAM: streamId=3 errorCode=8
+20-11-2021 15:21:46 DEBUG NettyServerHandler:214 - [id: 0xdae24399, L:/127.0.0.1:25000 - R:/127.0.0.1:62303] OUTBOUND GO_AWAY: lastStreamId=3 errorCode=2 length=61 bytes=416e206578697374696e6720636f6e6e656374696f6e2077617320666f726369626c7920636c6f736564206279207468652072656d6f746520686f7374
+20-11-2021 15:21:46 DEBUG Http2ConnectionHandler:919 - [id: 0xdae24399, L:/127.0.0.1:25000 ! R:/127.0.0.1:62303] Sending GOAWAY failed: lastStreamId '3', errorCode '2', debugData 'An existing connection was forcibly closed by the remote host'. Forcing shutdown of the connection.
+java.io.IOException: An existing connection was forcibly closed by the remote host
+	at sun.nio.ch.SocketDispatcher.writev0(Native Method)
+	at sun.nio.ch.SocketDispatcher.writev(SocketDispatcher.java:55)
+	at sun.nio.ch.IOUtil.write(IOUtil.java:148)
+	at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:504)
+	at io.grpc.netty.shaded.io.netty.channel.socket.nio.NioSocketChannel.doWrite(NioSocketChannel.java:423)
+	at io.grpc.netty.shaded.io.netty.channel.AbstractChannel$AbstractUnsafe.flush0(AbstractChannel.java:930)
+	at io.grpc.netty.shaded.io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.flush0(AbstractNioChannel.java:354)
+	at io.grpc.netty.shaded.io.netty.channel.AbstractChannel$AbstractUnsafe.flush(AbstractChannel.java:897)
+	at io.grpc.netty.shaded.io.netty.channel.DefaultChannelPipeline$HeadContext.flush(DefaultChannelPipeline.java:1372)
+	at io.grpc.netty.shaded.io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:750)
+	at io.grpc.netty.shaded.io.netty.channel.AbstractChannelHandlerContext.invokeFlush(AbstractChannelHandlerContext.java:742)
+	at io.grpc.netty.shaded.io.netty.channel.AbstractChannelHandlerContext.flush(AbstractChannelHandlerContext.java:728)
+	at io.grpc.netty.shaded.io.netty.handler.codec.http2.Http2ConnectionHandler.onError(Http2ConnectionHandler.java:643)
+	at io.grpc.netty.shaded.io.grpc.netty.AbstractNettyHandler.exceptionCaught(AbstractNettyHandler.java:92)
+	at io.grpc.netty.shaded.io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:302)
+	at io.grpc.netty.shaded.io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:281)
+	at io.grpc.netty.shaded.io.netty.channel.AbstractChannelHandlerContext.fireExceptionCaught(AbstractChannelHandlerContext.java:273)
+	at io.grpc.netty.shaded.io.netty.channel.DefaultChannelPipeline$HeadContext.exceptionCaught(DefaultChannelPipeline.java:1377)
+	at io.grpc.netty.shaded.io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:302)
+	at io.grpc.netty.shaded.io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:281)
+	at io.grpc.netty.shaded.io.netty.channel.DefaultChannelPipeline.fireExceptionCaught(DefaultChannelPipeline.java:907)
+	at io.grpc.netty.shaded.io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.handleReadException(AbstractNioByteChannel.java:125)
+	at io.grpc.netty.shaded.io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:174)
+	at io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+	at io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.grpc.netty.shaded.io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.grpc.netty.shaded.io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.grpc.netty.shaded.io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+20-11-2021 15:21:49 DEBUG NettyServerHandler:214 - [id: 0x8aef236f, L:/127.0.0.1:25000 - R:/127.0.0.1:62333] OUTBOUND SETTINGS: ack=false settings={MAX_CONCURRENT_STREAMS=2147483647, INITIAL_WINDOW_SIZE=1048576, MAX_HEADER_LIST_SIZE=8192}
+20-11-2021 15:21:49 DEBUG NettyServerHandler:214 - [id: 0x8aef236f, L:/127.0.0.1:25000 - R:/127.0.0.1:62333] OUTBOUND WINDOW_UPDATE: streamId=0 windowSizeIncrement=983041
+20-11-2021 15:21:49 DEBUG NettyServerHandler:214 - [id: 0x8aef236f, L:/127.0.0.1:25000 - R:/127.0.0.1:62333] INBOUND SETTINGS: ack=false settings={ENABLE_PUSH=0, MAX_CONCURRENT_STREAMS=0, INITIAL_WINDOW_SIZE=1048576, MAX_HEADER_LIST_SIZE=8192}
+20-11-2021 15:21:49 DEBUG NettyServerHandler:191 - [id: 0x8aef236f, L:/127.0.0.1:25000 - R:/127.0.0.1:62333] OUTBOUND SETTINGS: ack=true
+20-11-2021 15:21:49 DEBUG NettyServerHandler:214 - [id: 0x8aef236f, L:/127.0.0.1:25000 - R:/127.0.0.1:62333] INBOUND WINDOW_UPDATE: streamId=0 windowSizeIncrement=983041
+20-11-2021 15:21:49 DEBUG NettyServerHandler:191 - [id: 0x8aef236f, L:/127.0.0.1:25000 - R:/127.0.0.1:62333] INBOUND SETTINGS: ack=true
+20-11-2021 15:21:49 DEBUG NettyServerHandler:214 - [id: 0x8aef236f, L:/127.0.0.1:25000 - R:/127.0.0.1:62333] INBOUND HEADERS: streamId=3 headers=GrpcHttp2RequestHeaders[:path: /com.nkasenides.minesweeper.proto.MAServiceProto/CreateGame, :authority: localhost:25000, :method: POST, :scheme: http, te: trailers, content-type: application/grpc, user-agent: grpc-java-netty/1.34.0, grpc-accept-encoding: gzip] streamDependency=0 weight=16 exclusive=false padding=0 endStream=false
+20-11-2021 15:21:49 DEBUG NettyServerHandler:214 - [id: 0x8aef236f, L:/127.0.0.1:25000 - R:/127.0.0.1:62333] INBOUND DATA: streamId=3 padding=0 endStream=true length=11 bytes=0000000006100a180a200a
+20-11-2021 15:21:49 DEBUG NettyServerHandler:214 - [id: 0x8aef236f, L:/127.0.0.1:25000 - R:/127.0.0.1:62333] OUTBOUND PING: ack=false bytes=1234
+20-11-2021 15:21:49 DEBUG NettyServerHandler:214 - [id: 0x8aef236f, L:/127.0.0.1:25000 - R:/127.0.0.1:62333] INBOUND PING: ack=true bytes=1234
+20-11-2021 15:21:49 DEBUG NettyServerHandler:214 - [id: 0x8aef236f, L:/127.0.0.1:25000 - R:/127.0.0.1:62333] OUTBOUND HEADERS: streamId=3 headers=GrpcHttp2OutboundHeaders[:status: 200, content-type: application/grpc, grpc-status: 2] padding=0 endStream=true
+20-11-2021 15:21:49 DEBUG NettyServerHandler:214 - [id: 0x8aef236f, L:/127.0.0.1:25000 - R:/127.0.0.1:62333] INBOUND RST_STREAM: streamId=3 errorCode=8
+20-11-2021 15:22:06 DEBUG InternalLoggerFactory:45 - Using SLF4J as the default logging framework
+20-11-2021 15:22:07 DEBUG PlatformDependent:1015 - Platform: Windows
+20-11-2021 15:22:07 DEBUG PlatformDependent0:408 - -Dio.netty.noUnsafe: false
+20-11-2021 15:22:07 DEBUG PlatformDependent0:876 - Java version: 8
+20-11-2021 15:22:07 DEBUG PlatformDependent0:125 - sun.misc.Unsafe.theUnsafe: available
+20-11-2021 15:22:07 DEBUG PlatformDependent0:149 - sun.misc.Unsafe.copyMemory: available
+20-11-2021 15:22:07 DEBUG PlatformDependent0:187 - java.nio.Buffer.address: available
+20-11-2021 15:22:07 DEBUG PlatformDependent0:252 - direct buffer constructor: available
+20-11-2021 15:22:07 DEBUG PlatformDependent0:326 - java.nio.Bits.unaligned: available, true
+20-11-2021 15:22:07 DEBUG PlatformDependent0:391 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+20-11-2021 15:22:07 DEBUG PlatformDependent0:398 - java.nio.DirectByteBuffer.<init>(long, int): available
+20-11-2021 15:22:07 DEBUG PlatformDependent:1058 - sun.misc.Unsafe: available
+20-11-2021 15:22:07 DEBUG PlatformDependent:1177 - -Dio.netty.tmpdir: C:\Users\hfnov\AppData\Local\Temp (java.io.tmpdir)
+20-11-2021 15:22:07 DEBUG PlatformDependent:1256 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+20-11-2021 15:22:07 DEBUG PlatformDependent:177 - -Dio.netty.maxDirectMemory: 3791650816 bytes
+20-11-2021 15:22:07 DEBUG PlatformDependent:184 - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+20-11-2021 15:22:07 DEBUG CleanerJava6:92 - java.nio.ByteBuffer.cleaner(): available
+20-11-2021 15:22:07 DEBUG PlatformDependent:204 - -Dio.netty.noPreferDirect: false
+20-11-2021 15:22:07 DEBUG MultithreadEventLoopGroup:44 - -Dio.netty.eventLoopThreads: 16
+20-11-2021 15:22:07 DEBUG InternalThreadLocalMap:56 - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+20-11-2021 15:22:07 DEBUG InternalThreadLocalMap:59 - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+20-11-2021 15:22:07 DEBUG NioEventLoop:106 - -Dio.netty.noKeySetOptimization: false
+20-11-2021 15:22:07 DEBUG NioEventLoop:107 - -Dio.netty.selectorAutoRebuildThreshold: 512
+20-11-2021 15:22:07 DEBUG PlatformDependent:919 - org.jctools-core.MpscChunkedArrayQueue: available
+20-11-2021 15:22:07 DEBUG ResourceLeakDetector:130 - -Dio.grpc.netty.shaded.io.netty.leakDetection.level: simple
+20-11-2021 15:22:07 DEBUG ResourceLeakDetector:131 - -Dio.grpc.netty.shaded.io.netty.leakDetection.targetRecords: 4
+20-11-2021 15:22:07 DEBUG PooledByteBufAllocator:156 - -Dio.netty.allocator.numHeapArenas: 16
+20-11-2021 15:22:07 DEBUG PooledByteBufAllocator:157 - -Dio.netty.allocator.numDirectArenas: 16
+20-11-2021 15:22:07 DEBUG PooledByteBufAllocator:159 - -Dio.netty.allocator.pageSize: 8192
+20-11-2021 15:22:07 DEBUG PooledByteBufAllocator:164 - -Dio.netty.allocator.maxOrder: 11
+20-11-2021 15:22:07 DEBUG PooledByteBufAllocator:168 - -Dio.netty.allocator.chunkSize: 16777216
+20-11-2021 15:22:07 DEBUG PooledByteBufAllocator:169 - -Dio.netty.allocator.tinyCacheSize: 512
+20-11-2021 15:22:07 DEBUG PooledByteBufAllocator:170 - -Dio.netty.allocator.smallCacheSize: 256
+20-11-2021 15:22:07 DEBUG PooledByteBufAllocator:171 - -Dio.netty.allocator.normalCacheSize: 64
+20-11-2021 15:22:07 DEBUG PooledByteBufAllocator:172 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+20-11-2021 15:22:07 DEBUG PooledByteBufAllocator:173 - -Dio.netty.allocator.cacheTrimInterval: 8192
+20-11-2021 15:22:07 DEBUG PooledByteBufAllocator:174 - -Dio.netty.allocator.cacheTrimIntervalMillis: 0
+20-11-2021 15:22:07 DEBUG PooledByteBufAllocator:175 - -Dio.netty.allocator.useCacheForAllThreads: true
+20-11-2021 15:22:07 DEBUG PooledByteBufAllocator:176 - -Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+20-11-2021 15:22:07 DEBUG DefaultChannelId:79 - -Dio.netty.processId: 8444 (auto-detected)
+20-11-2021 15:22:07 DEBUG NetUtil:139 - -Djava.net.preferIPv4Stack: false
+20-11-2021 15:22:07 DEBUG NetUtil:140 - -Djava.net.preferIPv6Addresses: false
+20-11-2021 15:22:07 DEBUG NetUtil:224 - Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)
+20-11-2021 15:22:07 DEBUG NetUtil:289 - Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200
+20-11-2021 15:22:08 DEBUG DefaultChannelId:101 - -Dio.netty.machineId: 00:00:00:00:00:00:00:e0 (auto-detected)
+20-11-2021 15:22:08 DEBUG ByteBufUtil:86 - -Dio.netty.allocator.type: pooled
+20-11-2021 15:22:08 DEBUG ByteBufUtil:95 - -Dio.netty.threadLocalDirectBufferSize: 0
+20-11-2021 15:22:08 DEBUG ByteBufUtil:98 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+20-11-2021 15:22:08 INFO  MServer:130 - Server MServer started.
+20-11-2021 15:23:37 DEBUG AbstractByteBuf:63 - -Dio.grpc.netty.shaded.io.netty.buffer.checkAccessible: true
+20-11-2021 15:23:37 DEBUG AbstractByteBuf:64 - -Dio.grpc.netty.shaded.io.netty.buffer.checkBounds: true
+20-11-2021 15:23:37 DEBUG ResourceLeakDetectorFactory:196 - Loaded default ResourceLeakDetector: io.grpc.netty.shaded.io.netty.util.ResourceLeakDetector@5010ab26
+20-11-2021 15:23:38 DEBUG NettyServerHandler:214 - [id: 0x8bdd1c27, L:/127.0.0.1:25000 - R:/127.0.0.1:58257] OUTBOUND SETTINGS: ack=false settings={MAX_CONCURRENT_STREAMS=2147483647, INITIAL_WINDOW_SIZE=1048576, MAX_HEADER_LIST_SIZE=8192}
+20-11-2021 15:23:38 DEBUG Recycler:100 - -Dio.netty.recycler.maxCapacityPerThread: 4096
+20-11-2021 15:23:38 DEBUG Recycler:101 - -Dio.netty.recycler.maxSharedCapacityFactor: 2
+20-11-2021 15:23:38 DEBUG Recycler:102 - -Dio.netty.recycler.linkCapacity: 16
+20-11-2021 15:23:38 DEBUG Recycler:103 - -Dio.netty.recycler.ratio: 8
+20-11-2021 15:23:38 DEBUG Recycler:104 - -Dio.netty.recycler.delayedQueue.ratio: 8
+20-11-2021 15:23:38 DEBUG NettyServerHandler:214 - [id: 0x8bdd1c27, L:/127.0.0.1:25000 - R:/127.0.0.1:58257] OUTBOUND WINDOW_UPDATE: streamId=0 windowSizeIncrement=983041
+20-11-2021 15:23:38 DEBUG NettyServerHandler:214 - [id: 0x8bdd1c27, L:/127.0.0.1:25000 - R:/127.0.0.1:58257] INBOUND SETTINGS: ack=false settings={ENABLE_PUSH=0, MAX_CONCURRENT_STREAMS=0, INITIAL_WINDOW_SIZE=1048576, MAX_HEADER_LIST_SIZE=8192}
+20-11-2021 15:23:38 DEBUG NettyServerHandler:191 - [id: 0x8bdd1c27, L:/127.0.0.1:25000 - R:/127.0.0.1:58257] OUTBOUND SETTINGS: ack=true
+20-11-2021 15:23:38 DEBUG NettyServerHandler:214 - [id: 0x8bdd1c27, L:/127.0.0.1:25000 - R:/127.0.0.1:58257] INBOUND WINDOW_UPDATE: streamId=0 windowSizeIncrement=983041
+20-11-2021 15:23:38 DEBUG NettyServerHandler:191 - [id: 0x8bdd1c27, L:/127.0.0.1:25000 - R:/127.0.0.1:58257] INBOUND SETTINGS: ack=true
+20-11-2021 15:23:38 DEBUG NettyServerHandler:214 - [id: 0x8bdd1c27, L:/127.0.0.1:25000 - R:/127.0.0.1:58257] INBOUND HEADERS: streamId=3 headers=GrpcHttp2RequestHeaders[:path: /com.nkasenides.minesweeper.proto.MAServiceProto/CreateGame, :authority: localhost:25000, :method: POST, :scheme: http, te: trailers, content-type: application/grpc, user-agent: grpc-java-netty/1.34.0, grpc-accept-encoding: gzip] streamDependency=0 weight=16 exclusive=false padding=0 endStream=false
+20-11-2021 15:23:38 DEBUG NettyServerHandler:214 - [id: 0x8bdd1c27, L:/127.0.0.1:25000 - R:/127.0.0.1:58257] INBOUND DATA: streamId=3 padding=0 endStream=true length=11 bytes=0000000006100a180a200a
+20-11-2021 15:23:38 DEBUG NettyServerHandler:214 - [id: 0x8bdd1c27, L:/127.0.0.1:25000 - R:/127.0.0.1:58257] OUTBOUND PING: ack=false bytes=1234
+20-11-2021 15:23:38 DEBUG NettyServerHandler:214 - [id: 0x8bdd1c27, L:/127.0.0.1:25000 - R:/127.0.0.1:58257] INBOUND PING: ack=true bytes=1234
+20-11-2021 15:23:38 DEBUG NettyServerHandler:214 - [id: 0x8bdd1c27, L:/127.0.0.1:25000 - R:/127.0.0.1:58257] OUTBOUND HEADERS: streamId=3 headers=GrpcHttp2OutboundHeaders[:status: 200, content-type: application/grpc, grpc-status: 2] padding=0 endStream=true
+20-11-2021 15:23:38 DEBUG NettyServerHandler:214 - [id: 0x8bdd1c27, L:/127.0.0.1:25000 - R:/127.0.0.1:58257] INBOUND RST_STREAM: streamId=3 errorCode=8
+20-11-2021 15:31:44 DEBUG InternalLoggerFactory:45 - Using SLF4J as the default logging framework
+20-11-2021 15:31:44 DEBUG PlatformDependent:1015 - Platform: Windows
+20-11-2021 15:31:44 DEBUG PlatformDependent0:408 - -Dio.netty.noUnsafe: false
+20-11-2021 15:31:44 DEBUG PlatformDependent0:876 - Java version: 8
+20-11-2021 15:31:44 DEBUG PlatformDependent0:125 - sun.misc.Unsafe.theUnsafe: available
+20-11-2021 15:31:44 DEBUG PlatformDependent0:149 - sun.misc.Unsafe.copyMemory: available
+20-11-2021 15:31:44 DEBUG PlatformDependent0:187 - java.nio.Buffer.address: available
+20-11-2021 15:31:44 DEBUG PlatformDependent0:252 - direct buffer constructor: available
+20-11-2021 15:31:44 DEBUG PlatformDependent0:326 - java.nio.Bits.unaligned: available, true
+20-11-2021 15:31:44 DEBUG PlatformDependent0:391 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+20-11-2021 15:31:44 DEBUG PlatformDependent0:398 - java.nio.DirectByteBuffer.<init>(long, int): available
+20-11-2021 15:31:44 DEBUG PlatformDependent:1058 - sun.misc.Unsafe: available
+20-11-2021 15:31:44 DEBUG PlatformDependent:1177 - -Dio.netty.tmpdir: C:\Users\hfnov\AppData\Local\Temp (java.io.tmpdir)
+20-11-2021 15:31:44 DEBUG PlatformDependent:1256 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+20-11-2021 15:31:44 DEBUG PlatformDependent:177 - -Dio.netty.maxDirectMemory: 3791650816 bytes
+20-11-2021 15:31:44 DEBUG PlatformDependent:184 - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+20-11-2021 15:31:44 DEBUG CleanerJava6:92 - java.nio.ByteBuffer.cleaner(): available
+20-11-2021 15:31:44 DEBUG PlatformDependent:204 - -Dio.netty.noPreferDirect: false
+20-11-2021 15:31:45 DEBUG MultithreadEventLoopGroup:44 - -Dio.netty.eventLoopThreads: 16
+20-11-2021 15:31:45 DEBUG InternalThreadLocalMap:56 - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+20-11-2021 15:31:45 DEBUG InternalThreadLocalMap:59 - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+20-11-2021 15:31:45 DEBUG NioEventLoop:106 - -Dio.netty.noKeySetOptimization: false
+20-11-2021 15:31:45 DEBUG NioEventLoop:107 - -Dio.netty.selectorAutoRebuildThreshold: 512
+20-11-2021 15:31:45 DEBUG PlatformDependent:919 - org.jctools-core.MpscChunkedArrayQueue: available
+20-11-2021 15:31:45 DEBUG ResourceLeakDetector:130 - -Dio.grpc.netty.shaded.io.netty.leakDetection.level: simple
+20-11-2021 15:31:45 DEBUG ResourceLeakDetector:131 - -Dio.grpc.netty.shaded.io.netty.leakDetection.targetRecords: 4
+20-11-2021 15:31:45 DEBUG PooledByteBufAllocator:156 - -Dio.netty.allocator.numHeapArenas: 16
+20-11-2021 15:31:45 DEBUG PooledByteBufAllocator:157 - -Dio.netty.allocator.numDirectArenas: 16
+20-11-2021 15:31:45 DEBUG PooledByteBufAllocator:159 - -Dio.netty.allocator.pageSize: 8192
+20-11-2021 15:31:45 DEBUG PooledByteBufAllocator:164 - -Dio.netty.allocator.maxOrder: 11
+20-11-2021 15:31:45 DEBUG PooledByteBufAllocator:168 - -Dio.netty.allocator.chunkSize: 16777216
+20-11-2021 15:31:45 DEBUG PooledByteBufAllocator:169 - -Dio.netty.allocator.tinyCacheSize: 512
+20-11-2021 15:31:45 DEBUG PooledByteBufAllocator:170 - -Dio.netty.allocator.smallCacheSize: 256
+20-11-2021 15:31:45 DEBUG PooledByteBufAllocator:171 - -Dio.netty.allocator.normalCacheSize: 64
+20-11-2021 15:31:45 DEBUG PooledByteBufAllocator:172 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+20-11-2021 15:31:45 DEBUG PooledByteBufAllocator:173 - -Dio.netty.allocator.cacheTrimInterval: 8192
+20-11-2021 15:31:45 DEBUG PooledByteBufAllocator:174 - -Dio.netty.allocator.cacheTrimIntervalMillis: 0
+20-11-2021 15:31:45 DEBUG PooledByteBufAllocator:175 - -Dio.netty.allocator.useCacheForAllThreads: true
+20-11-2021 15:31:45 DEBUG PooledByteBufAllocator:176 - -Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+20-11-2021 15:31:45 DEBUG DefaultChannelId:79 - -Dio.netty.processId: 11392 (auto-detected)
+20-11-2021 15:31:45 DEBUG NetUtil:139 - -Djava.net.preferIPv4Stack: false
+20-11-2021 15:31:45 DEBUG NetUtil:140 - -Djava.net.preferIPv6Addresses: false
+20-11-2021 15:31:45 DEBUG NetUtil:224 - Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)
+20-11-2021 15:31:45 DEBUG NetUtil:289 - Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200
+20-11-2021 15:31:45 DEBUG DefaultChannelId:101 - -Dio.netty.machineId: 00:00:00:00:00:00:00:e0 (auto-detected)
+20-11-2021 15:31:45 DEBUG ByteBufUtil:86 - -Dio.netty.allocator.type: pooled
+20-11-2021 15:31:45 DEBUG ByteBufUtil:95 - -Dio.netty.threadLocalDirectBufferSize: 0
+20-11-2021 15:31:45 DEBUG ByteBufUtil:98 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+20-11-2021 15:31:45 INFO  MServer:130 - Server MServer started.
+20-11-2021 15:33:03 DEBUG AbstractByteBuf:63 - -Dio.grpc.netty.shaded.io.netty.buffer.checkAccessible: true
+20-11-2021 15:33:03 DEBUG AbstractByteBuf:64 - -Dio.grpc.netty.shaded.io.netty.buffer.checkBounds: true
+20-11-2021 15:33:03 DEBUG ResourceLeakDetectorFactory:196 - Loaded default ResourceLeakDetector: io.grpc.netty.shaded.io.netty.util.ResourceLeakDetector@6b8db5b2
+20-11-2021 15:33:03 DEBUG NettyServerHandler:214 - [id: 0xd5d7b95e, L:/127.0.0.1:25000 - R:/127.0.0.1:52335] OUTBOUND SETTINGS: ack=false settings={MAX_CONCURRENT_STREAMS=2147483647, INITIAL_WINDOW_SIZE=1048576, MAX_HEADER_LIST_SIZE=8192}
+20-11-2021 15:33:03 DEBUG Recycler:100 - -Dio.netty.recycler.maxCapacityPerThread: 4096
+20-11-2021 15:33:03 DEBUG Recycler:101 - -Dio.netty.recycler.maxSharedCapacityFactor: 2
+20-11-2021 15:33:03 DEBUG Recycler:102 - -Dio.netty.recycler.linkCapacity: 16
+20-11-2021 15:33:03 DEBUG Recycler:103 - -Dio.netty.recycler.ratio: 8
+20-11-2021 15:33:03 DEBUG Recycler:104 - -Dio.netty.recycler.delayedQueue.ratio: 8
+20-11-2021 15:33:03 DEBUG NettyServerHandler:214 - [id: 0xd5d7b95e, L:/127.0.0.1:25000 - R:/127.0.0.1:52335] OUTBOUND WINDOW_UPDATE: streamId=0 windowSizeIncrement=983041
+20-11-2021 15:33:03 DEBUG NettyServerHandler:214 - [id: 0xd5d7b95e, L:/127.0.0.1:25000 - R:/127.0.0.1:52335] INBOUND SETTINGS: ack=false settings={ENABLE_PUSH=0, MAX_CONCURRENT_STREAMS=0, INITIAL_WINDOW_SIZE=1048576, MAX_HEADER_LIST_SIZE=8192}
+20-11-2021 15:33:03 DEBUG NettyServerHandler:191 - [id: 0xd5d7b95e, L:/127.0.0.1:25000 - R:/127.0.0.1:52335] OUTBOUND SETTINGS: ack=true
+20-11-2021 15:33:03 DEBUG NettyServerHandler:214 - [id: 0xd5d7b95e, L:/127.0.0.1:25000 - R:/127.0.0.1:52335] INBOUND WINDOW_UPDATE: streamId=0 windowSizeIncrement=983041
+20-11-2021 15:33:03 DEBUG NettyServerHandler:191 - [id: 0xd5d7b95e, L:/127.0.0.1:25000 - R:/127.0.0.1:52335] INBOUND SETTINGS: ack=true
+20-11-2021 15:33:03 DEBUG NettyServerHandler:214 - [id: 0xd5d7b95e, L:/127.0.0.1:25000 - R:/127.0.0.1:52335] INBOUND HEADERS: streamId=3 headers=GrpcHttp2RequestHeaders[:path: /com.nkasenides.minesweeper.proto.MAServiceProto/CreateGame, :authority: localhost:25000, :method: POST, :scheme: http, te: trailers, content-type: application/grpc, user-agent: grpc-java-netty/1.34.0, grpc-accept-encoding: gzip] streamDependency=0 weight=16 exclusive=false padding=0 endStream=false
+20-11-2021 15:33:03 DEBUG NettyServerHandler:214 - [id: 0xd5d7b95e, L:/127.0.0.1:25000 - R:/127.0.0.1:52335] INBOUND DATA: streamId=3 padding=0 endStream=true length=11 bytes=0000000006100a180a200a
+20-11-2021 15:33:03 DEBUG NettyServerHandler:214 - [id: 0xd5d7b95e, L:/127.0.0.1:25000 - R:/127.0.0.1:52335] OUTBOUND PING: ack=false bytes=1234
+20-11-2021 15:33:03 DEBUG NettyServerHandler:214 - [id: 0xd5d7b95e, L:/127.0.0.1:25000 - R:/127.0.0.1:52335] INBOUND PING: ack=true bytes=1234
+20-11-2021 15:33:03 DEBUG NettyServerHandler:214 - [id: 0xd5d7b95e, L:/127.0.0.1:25000 - R:/127.0.0.1:52335] OUTBOUND HEADERS: streamId=3 headers=GrpcHttp2OutboundHeaders[:status: 200, content-type: application/grpc, grpc-status: 2] padding=0 endStream=true
+20-11-2021 15:33:03 DEBUG NettyServerHandler:214 - [id: 0xd5d7b95e, L:/127.0.0.1:25000 - R:/127.0.0.1:52335] INBOUND RST_STREAM: streamId=3 errorCode=8
+20-11-2021 15:34:24 DEBUG InternalLoggerFactory:45 - Using SLF4J as the default logging framework
+20-11-2021 15:34:24 DEBUG PlatformDependent:1015 - Platform: Windows
+20-11-2021 15:34:24 DEBUG PlatformDependent0:408 - -Dio.netty.noUnsafe: false
+20-11-2021 15:34:24 DEBUG PlatformDependent0:876 - Java version: 8
+20-11-2021 15:34:24 DEBUG PlatformDependent0:125 - sun.misc.Unsafe.theUnsafe: available
+20-11-2021 15:34:24 DEBUG PlatformDependent0:149 - sun.misc.Unsafe.copyMemory: available
+20-11-2021 15:34:24 DEBUG PlatformDependent0:187 - java.nio.Buffer.address: available
+20-11-2021 15:34:24 DEBUG PlatformDependent0:252 - direct buffer constructor: available
+20-11-2021 15:34:24 DEBUG PlatformDependent0:326 - java.nio.Bits.unaligned: available, true
+20-11-2021 15:34:24 DEBUG PlatformDependent0:391 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+20-11-2021 15:34:24 DEBUG PlatformDependent0:398 - java.nio.DirectByteBuffer.<init>(long, int): available
+20-11-2021 15:34:24 DEBUG PlatformDependent:1058 - sun.misc.Unsafe: available
+20-11-2021 15:34:24 DEBUG PlatformDependent:1177 - -Dio.netty.tmpdir: C:\Users\hfnov\AppData\Local\Temp (java.io.tmpdir)
+20-11-2021 15:34:24 DEBUG PlatformDependent:1256 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+20-11-2021 15:34:24 DEBUG PlatformDependent:177 - -Dio.netty.maxDirectMemory: 3791650816 bytes
+20-11-2021 15:34:24 DEBUG PlatformDependent:184 - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+20-11-2021 15:34:24 DEBUG CleanerJava6:92 - java.nio.ByteBuffer.cleaner(): available
+20-11-2021 15:34:24 DEBUG PlatformDependent:204 - -Dio.netty.noPreferDirect: false
+20-11-2021 15:34:24 DEBUG MultithreadEventLoopGroup:44 - -Dio.netty.eventLoopThreads: 16
+20-11-2021 15:34:24 DEBUG InternalThreadLocalMap:56 - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+20-11-2021 15:34:24 DEBUG InternalThreadLocalMap:59 - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+20-11-2021 15:34:24 DEBUG NioEventLoop:106 - -Dio.netty.noKeySetOptimization: false
+20-11-2021 15:34:24 DEBUG NioEventLoop:107 - -Dio.netty.selectorAutoRebuildThreshold: 512
+20-11-2021 15:34:24 DEBUG PlatformDependent:919 - org.jctools-core.MpscChunkedArrayQueue: available
+20-11-2021 15:34:25 DEBUG ResourceLeakDetector:130 - -Dio.grpc.netty.shaded.io.netty.leakDetection.level: simple
+20-11-2021 15:34:25 DEBUG ResourceLeakDetector:131 - -Dio.grpc.netty.shaded.io.netty.leakDetection.targetRecords: 4
+20-11-2021 15:34:25 DEBUG PooledByteBufAllocator:156 - -Dio.netty.allocator.numHeapArenas: 16
+20-11-2021 15:34:25 DEBUG PooledByteBufAllocator:157 - -Dio.netty.allocator.numDirectArenas: 16
+20-11-2021 15:34:25 DEBUG PooledByteBufAllocator:159 - -Dio.netty.allocator.pageSize: 8192
+20-11-2021 15:34:25 DEBUG PooledByteBufAllocator:164 - -Dio.netty.allocator.maxOrder: 11
+20-11-2021 15:34:25 DEBUG PooledByteBufAllocator:168 - -Dio.netty.allocator.chunkSize: 16777216
+20-11-2021 15:34:25 DEBUG PooledByteBufAllocator:169 - -Dio.netty.allocator.tinyCacheSize: 512
+20-11-2021 15:34:25 DEBUG PooledByteBufAllocator:170 - -Dio.netty.allocator.smallCacheSize: 256
+20-11-2021 15:34:25 DEBUG PooledByteBufAllocator:171 - -Dio.netty.allocator.normalCacheSize: 64
+20-11-2021 15:34:25 DEBUG PooledByteBufAllocator:172 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+20-11-2021 15:34:25 DEBUG PooledByteBufAllocator:173 - -Dio.netty.allocator.cacheTrimInterval: 8192
+20-11-2021 15:34:25 DEBUG PooledByteBufAllocator:174 - -Dio.netty.allocator.cacheTrimIntervalMillis: 0
+20-11-2021 15:34:25 DEBUG PooledByteBufAllocator:175 - -Dio.netty.allocator.useCacheForAllThreads: true
+20-11-2021 15:34:25 DEBUG PooledByteBufAllocator:176 - -Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+20-11-2021 15:34:25 DEBUG DefaultChannelId:79 - -Dio.netty.processId: 6972 (auto-detected)
+20-11-2021 15:34:25 DEBUG NetUtil:139 - -Djava.net.preferIPv4Stack: false
+20-11-2021 15:34:25 DEBUG NetUtil:140 - -Djava.net.preferIPv6Addresses: false
+20-11-2021 15:34:25 DEBUG NetUtil:224 - Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)
+20-11-2021 15:34:25 DEBUG NetUtil:289 - Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200
+20-11-2021 15:34:25 DEBUG DefaultChannelId:101 - -Dio.netty.machineId: 00:00:00:00:00:00:00:e0 (auto-detected)
+20-11-2021 15:34:25 DEBUG ByteBufUtil:86 - -Dio.netty.allocator.type: pooled
+20-11-2021 15:34:25 DEBUG ByteBufUtil:95 - -Dio.netty.threadLocalDirectBufferSize: 0
+20-11-2021 15:34:25 DEBUG ByteBufUtil:98 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+20-11-2021 15:34:25 INFO  MServer:130 - Server MServer started.
+20-11-2021 15:34:28 DEBUG AbstractByteBuf:63 - -Dio.grpc.netty.shaded.io.netty.buffer.checkAccessible: true
+20-11-2021 15:34:28 DEBUG AbstractByteBuf:64 - -Dio.grpc.netty.shaded.io.netty.buffer.checkBounds: true
+20-11-2021 15:34:28 DEBUG ResourceLeakDetectorFactory:196 - Loaded default ResourceLeakDetector: io.grpc.netty.shaded.io.netty.util.ResourceLeakDetector@2bdf2c43
+20-11-2021 15:34:28 DEBUG NettyServerHandler:214 - [id: 0x7dae872d, L:/127.0.0.1:25000 - R:/127.0.0.1:52387] OUTBOUND SETTINGS: ack=false settings={MAX_CONCURRENT_STREAMS=2147483647, INITIAL_WINDOW_SIZE=1048576, MAX_HEADER_LIST_SIZE=8192}
+20-11-2021 15:34:28 DEBUG Recycler:100 - -Dio.netty.recycler.maxCapacityPerThread: 4096
+20-11-2021 15:34:28 DEBUG Recycler:101 - -Dio.netty.recycler.maxSharedCapacityFactor: 2
+20-11-2021 15:34:28 DEBUG Recycler:102 - -Dio.netty.recycler.linkCapacity: 16
+20-11-2021 15:34:28 DEBUG Recycler:103 - -Dio.netty.recycler.ratio: 8
+20-11-2021 15:34:28 DEBUG Recycler:104 - -Dio.netty.recycler.delayedQueue.ratio: 8
+20-11-2021 15:34:28 DEBUG NettyServerHandler:214 - [id: 0x7dae872d, L:/127.0.0.1:25000 - R:/127.0.0.1:52387] OUTBOUND WINDOW_UPDATE: streamId=0 windowSizeIncrement=983041
+20-11-2021 15:34:28 DEBUG NettyServerHandler:214 - [id: 0x7dae872d, L:/127.0.0.1:25000 - R:/127.0.0.1:52387] INBOUND SETTINGS: ack=false settings={ENABLE_PUSH=0, MAX_CONCURRENT_STREAMS=0, INITIAL_WINDOW_SIZE=1048576, MAX_HEADER_LIST_SIZE=8192}
+20-11-2021 15:34:28 DEBUG NettyServerHandler:191 - [id: 0x7dae872d, L:/127.0.0.1:25000 - R:/127.0.0.1:52387] OUTBOUND SETTINGS: ack=true
+20-11-2021 15:34:28 DEBUG NettyServerHandler:214 - [id: 0x7dae872d, L:/127.0.0.1:25000 - R:/127.0.0.1:52387] INBOUND WINDOW_UPDATE: streamId=0 windowSizeIncrement=983041
+20-11-2021 15:34:28 DEBUG NettyServerHandler:191 - [id: 0x7dae872d, L:/127.0.0.1:25000 - R:/127.0.0.1:52387] INBOUND SETTINGS: ack=true
+20-11-2021 15:34:28 DEBUG NettyServerHandler:214 - [id: 0x7dae872d, L:/127.0.0.1:25000 - R:/127.0.0.1:52387] INBOUND HEADERS: streamId=3 headers=GrpcHttp2RequestHeaders[:path: /com.nkasenides.minesweeper.proto.MAServiceProto/CreateGame, :authority: localhost:25000, :method: POST, :scheme: http, te: trailers, content-type: application/grpc, user-agent: grpc-java-netty/1.34.0, grpc-accept-encoding: gzip] streamDependency=0 weight=16 exclusive=false padding=0 endStream=false
+20-11-2021 15:34:28 DEBUG NettyServerHandler:214 - [id: 0x7dae872d, L:/127.0.0.1:25000 - R:/127.0.0.1:52387] INBOUND DATA: streamId=3 padding=0 endStream=true length=11 bytes=0000000006100a180a200a
+20-11-2021 15:34:28 DEBUG NettyServerHandler:214 - [id: 0x7dae872d, L:/127.0.0.1:25000 - R:/127.0.0.1:52387] OUTBOUND PING: ack=false bytes=1234
+20-11-2021 15:34:28 DEBUG NettyServerHandler:214 - [id: 0x7dae872d, L:/127.0.0.1:25000 - R:/127.0.0.1:52387] INBOUND PING: ack=true bytes=1234
+20-11-2021 15:34:28 DEBUG NettyServerHandler:214 - [id: 0x7dae872d, L:/127.0.0.1:25000 - R:/127.0.0.1:52387] OUTBOUND HEADERS: streamId=3 headers=GrpcHttp2OutboundHeaders[:status: 200, content-type: application/grpc, grpc-status: 2] padding=0 endStream=true
+20-11-2021 15:34:28 DEBUG NettyServerHandler:214 - [id: 0x7dae872d, L:/127.0.0.1:25000 - R:/127.0.0.1:52387] INBOUND RST_STREAM: streamId=3 errorCode=8
+20-11-2021 15:35:39 DEBUG InternalLoggerFactory:45 - Using SLF4J as the default logging framework
+20-11-2021 15:35:39 DEBUG PlatformDependent:1015 - Platform: Windows
+20-11-2021 15:35:39 DEBUG PlatformDependent0:408 - -Dio.netty.noUnsafe: false
+20-11-2021 15:35:39 DEBUG PlatformDependent0:876 - Java version: 8
+20-11-2021 15:35:39 DEBUG PlatformDependent0:125 - sun.misc.Unsafe.theUnsafe: available
+20-11-2021 15:35:39 DEBUG PlatformDependent0:149 - sun.misc.Unsafe.copyMemory: available
+20-11-2021 15:35:39 DEBUG PlatformDependent0:187 - java.nio.Buffer.address: available
+20-11-2021 15:35:39 DEBUG PlatformDependent0:252 - direct buffer constructor: available
+20-11-2021 15:35:39 DEBUG PlatformDependent0:326 - java.nio.Bits.unaligned: available, true
+20-11-2021 15:35:39 DEBUG PlatformDependent0:391 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+20-11-2021 15:35:39 DEBUG PlatformDependent0:398 - java.nio.DirectByteBuffer.<init>(long, int): available
+20-11-2021 15:35:39 DEBUG PlatformDependent:1058 - sun.misc.Unsafe: available
+20-11-2021 15:35:39 DEBUG PlatformDependent:1177 - -Dio.netty.tmpdir: C:\Users\hfnov\AppData\Local\Temp (java.io.tmpdir)
+20-11-2021 15:35:39 DEBUG PlatformDependent:1256 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+20-11-2021 15:35:39 DEBUG PlatformDependent:177 - -Dio.netty.maxDirectMemory: 3791650816 bytes
+20-11-2021 15:35:39 DEBUG PlatformDependent:184 - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+20-11-2021 15:35:39 DEBUG CleanerJava6:92 - java.nio.ByteBuffer.cleaner(): available
+20-11-2021 15:35:39 DEBUG PlatformDependent:204 - -Dio.netty.noPreferDirect: false
+20-11-2021 15:35:40 DEBUG MultithreadEventLoopGroup:44 - -Dio.netty.eventLoopThreads: 16
+20-11-2021 15:35:40 DEBUG InternalThreadLocalMap:56 - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+20-11-2021 15:35:40 DEBUG InternalThreadLocalMap:59 - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+20-11-2021 15:35:40 DEBUG NioEventLoop:106 - -Dio.netty.noKeySetOptimization: false
+20-11-2021 15:35:40 DEBUG NioEventLoop:107 - -Dio.netty.selectorAutoRebuildThreshold: 512
+20-11-2021 15:35:40 DEBUG PlatformDependent:919 - org.jctools-core.MpscChunkedArrayQueue: available
+20-11-2021 15:35:40 DEBUG ResourceLeakDetector:130 - -Dio.grpc.netty.shaded.io.netty.leakDetection.level: simple
+20-11-2021 15:35:40 DEBUG ResourceLeakDetector:131 - -Dio.grpc.netty.shaded.io.netty.leakDetection.targetRecords: 4
+20-11-2021 15:35:40 DEBUG PooledByteBufAllocator:156 - -Dio.netty.allocator.numHeapArenas: 16
+20-11-2021 15:35:40 DEBUG PooledByteBufAllocator:157 - -Dio.netty.allocator.numDirectArenas: 16
+20-11-2021 15:35:40 DEBUG PooledByteBufAllocator:159 - -Dio.netty.allocator.pageSize: 8192
+20-11-2021 15:35:40 DEBUG PooledByteBufAllocator:164 - -Dio.netty.allocator.maxOrder: 11
+20-11-2021 15:35:40 DEBUG PooledByteBufAllocator:168 - -Dio.netty.allocator.chunkSize: 16777216
+20-11-2021 15:35:40 DEBUG PooledByteBufAllocator:169 - -Dio.netty.allocator.tinyCacheSize: 512
+20-11-2021 15:35:40 DEBUG PooledByteBufAllocator:170 - -Dio.netty.allocator.smallCacheSize: 256
+20-11-2021 15:35:40 DEBUG PooledByteBufAllocator:171 - -Dio.netty.allocator.normalCacheSize: 64
+20-11-2021 15:35:40 DEBUG PooledByteBufAllocator:172 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+20-11-2021 15:35:40 DEBUG PooledByteBufAllocator:173 - -Dio.netty.allocator.cacheTrimInterval: 8192
+20-11-2021 15:35:40 DEBUG PooledByteBufAllocator:174 - -Dio.netty.allocator.cacheTrimIntervalMillis: 0
+20-11-2021 15:35:40 DEBUG PooledByteBufAllocator:175 - -Dio.netty.allocator.useCacheForAllThreads: true
+20-11-2021 15:35:40 DEBUG PooledByteBufAllocator:176 - -Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+20-11-2021 15:35:40 DEBUG DefaultChannelId:79 - -Dio.netty.processId: 11488 (auto-detected)
+20-11-2021 15:35:40 DEBUG NetUtil:139 - -Djava.net.preferIPv4Stack: false
+20-11-2021 15:35:40 DEBUG NetUtil:140 - -Djava.net.preferIPv6Addresses: false
+20-11-2021 15:35:40 DEBUG NetUtil:224 - Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)
+20-11-2021 15:35:40 DEBUG NetUtil:289 - Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200
+20-11-2021 15:35:40 DEBUG DefaultChannelId:101 - -Dio.netty.machineId: 00:00:00:00:00:00:00:e0 (auto-detected)
+20-11-2021 15:35:40 DEBUG ByteBufUtil:86 - -Dio.netty.allocator.type: pooled
+20-11-2021 15:35:40 DEBUG ByteBufUtil:95 - -Dio.netty.threadLocalDirectBufferSize: 0
+20-11-2021 15:35:40 DEBUG ByteBufUtil:98 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+20-11-2021 15:35:40 INFO  MServer:130 - Server MServer started.
+20-11-2021 15:35:53 DEBUG AbstractByteBuf:63 - -Dio.grpc.netty.shaded.io.netty.buffer.checkAccessible: true
+20-11-2021 15:35:53 DEBUG AbstractByteBuf:64 - -Dio.grpc.netty.shaded.io.netty.buffer.checkBounds: true
+20-11-2021 15:35:53 DEBUG ResourceLeakDetectorFactory:196 - Loaded default ResourceLeakDetector: io.grpc.netty.shaded.io.netty.util.ResourceLeakDetector@7f58daf6
+20-11-2021 15:35:53 DEBUG NettyServerHandler:214 - [id: 0x97deac99, L:/127.0.0.1:25000 - R:/127.0.0.1:52441] OUTBOUND SETTINGS: ack=false settings={MAX_CONCURRENT_STREAMS=2147483647, INITIAL_WINDOW_SIZE=1048576, MAX_HEADER_LIST_SIZE=8192}
+20-11-2021 15:35:53 DEBUG Recycler:100 - -Dio.netty.recycler.maxCapacityPerThread: 4096
+20-11-2021 15:35:53 DEBUG Recycler:101 - -Dio.netty.recycler.maxSharedCapacityFactor: 2
+20-11-2021 15:35:53 DEBUG Recycler:102 - -Dio.netty.recycler.linkCapacity: 16
+20-11-2021 15:35:53 DEBUG Recycler:103 - -Dio.netty.recycler.ratio: 8
+20-11-2021 15:35:53 DEBUG Recycler:104 - -Dio.netty.recycler.delayedQueue.ratio: 8
+20-11-2021 15:35:53 DEBUG NettyServerHandler:214 - [id: 0x97deac99, L:/127.0.0.1:25000 - R:/127.0.0.1:52441] OUTBOUND WINDOW_UPDATE: streamId=0 windowSizeIncrement=983041
+20-11-2021 15:35:53 DEBUG NettyServerHandler:214 - [id: 0x97deac99, L:/127.0.0.1:25000 - R:/127.0.0.1:52441] INBOUND SETTINGS: ack=false settings={ENABLE_PUSH=0, MAX_CONCURRENT_STREAMS=0, INITIAL_WINDOW_SIZE=1048576, MAX_HEADER_LIST_SIZE=8192}
+20-11-2021 15:35:53 DEBUG NettyServerHandler:191 - [id: 0x97deac99, L:/127.0.0.1:25000 - R:/127.0.0.1:52441] OUTBOUND SETTINGS: ack=true
+20-11-2021 15:35:53 DEBUG NettyServerHandler:214 - [id: 0x97deac99, L:/127.0.0.1:25000 - R:/127.0.0.1:52441] INBOUND WINDOW_UPDATE: streamId=0 windowSizeIncrement=983041
+20-11-2021 15:35:53 DEBUG NettyServerHandler:191 - [id: 0x97deac99, L:/127.0.0.1:25000 - R:/127.0.0.1:52441] INBOUND SETTINGS: ack=true
+20-11-2021 15:35:53 DEBUG NettyServerHandler:214 - [id: 0x97deac99, L:/127.0.0.1:25000 - R:/127.0.0.1:52441] INBOUND HEADERS: streamId=3 headers=GrpcHttp2RequestHeaders[:path: /com.nkasenides.minesweeper.proto.MAServiceProto/CreateGame, :authority: localhost:25000, :method: POST, :scheme: http, te: trailers, content-type: application/grpc, user-agent: grpc-java-netty/1.34.0, grpc-accept-encoding: gzip] streamDependency=0 weight=16 exclusive=false padding=0 endStream=false
+20-11-2021 15:35:53 DEBUG NettyServerHandler:214 - [id: 0x97deac99, L:/127.0.0.1:25000 - R:/127.0.0.1:52441] INBOUND DATA: streamId=3 padding=0 endStream=true length=11 bytes=0000000006100a180a200a
+20-11-2021 15:35:53 DEBUG NettyServerHandler:214 - [id: 0x97deac99, L:/127.0.0.1:25000 - R:/127.0.0.1:52441] OUTBOUND PING: ack=false bytes=1234
+20-11-2021 15:35:53 DEBUG NettyServerHandler:214 - [id: 0x97deac99, L:/127.0.0.1:25000 - R:/127.0.0.1:52441] INBOUND PING: ack=true bytes=1234
+20-11-2021 15:35:53 DEBUG NettyServerHandler:214 - [id: 0x97deac99, L:/127.0.0.1:25000 - R:/127.0.0.1:52441] OUTBOUND HEADERS: streamId=3 headers=GrpcHttp2OutboundHeaders[:status: 200, content-type: application/grpc, grpc-status: 2] padding=0 endStream=true
+20-11-2021 15:35:53 DEBUG NettyServerHandler:214 - [id: 0x97deac99, L:/127.0.0.1:25000 - R:/127.0.0.1:52441] INBOUND RST_STREAM: streamId=3 errorCode=8
+20-11-2021 15:41:01 DEBUG InternalLoggerFactory:45 - Using SLF4J as the default logging framework
+20-11-2021 15:41:01 DEBUG PlatformDependent:1015 - Platform: Windows
+20-11-2021 15:41:01 DEBUG PlatformDependent0:408 - -Dio.netty.noUnsafe: false
+20-11-2021 15:41:01 DEBUG PlatformDependent0:876 - Java version: 8
+20-11-2021 15:41:01 DEBUG PlatformDependent0:125 - sun.misc.Unsafe.theUnsafe: available
+20-11-2021 15:41:01 DEBUG PlatformDependent0:149 - sun.misc.Unsafe.copyMemory: available
+20-11-2021 15:41:01 DEBUG PlatformDependent0:187 - java.nio.Buffer.address: available
+20-11-2021 15:41:01 DEBUG PlatformDependent0:252 - direct buffer constructor: available
+20-11-2021 15:41:01 DEBUG PlatformDependent0:326 - java.nio.Bits.unaligned: available, true
+20-11-2021 15:41:01 DEBUG PlatformDependent0:391 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+20-11-2021 15:41:01 DEBUG PlatformDependent0:398 - java.nio.DirectByteBuffer.<init>(long, int): available
+20-11-2021 15:41:01 DEBUG PlatformDependent:1058 - sun.misc.Unsafe: available
+20-11-2021 15:41:01 DEBUG PlatformDependent:1177 - -Dio.netty.tmpdir: C:\Users\hfnov\AppData\Local\Temp (java.io.tmpdir)
+20-11-2021 15:41:01 DEBUG PlatformDependent:1256 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+20-11-2021 15:41:01 DEBUG PlatformDependent:177 - -Dio.netty.maxDirectMemory: 3791650816 bytes
+20-11-2021 15:41:01 DEBUG PlatformDependent:184 - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+20-11-2021 15:41:01 DEBUG CleanerJava6:92 - java.nio.ByteBuffer.cleaner(): available
+20-11-2021 15:41:01 DEBUG PlatformDependent:204 - -Dio.netty.noPreferDirect: false
+20-11-2021 15:41:01 DEBUG MultithreadEventLoopGroup:44 - -Dio.netty.eventLoopThreads: 16
+20-11-2021 15:41:01 DEBUG InternalThreadLocalMap:56 - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+20-11-2021 15:41:01 DEBUG InternalThreadLocalMap:59 - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+20-11-2021 15:41:01 DEBUG NioEventLoop:106 - -Dio.netty.noKeySetOptimization: false
+20-11-2021 15:41:01 DEBUG NioEventLoop:107 - -Dio.netty.selectorAutoRebuildThreshold: 512
+20-11-2021 15:41:01 DEBUG PlatformDependent:919 - org.jctools-core.MpscChunkedArrayQueue: available
+20-11-2021 15:41:02 DEBUG ResourceLeakDetector:130 - -Dio.grpc.netty.shaded.io.netty.leakDetection.level: simple
+20-11-2021 15:41:02 DEBUG ResourceLeakDetector:131 - -Dio.grpc.netty.shaded.io.netty.leakDetection.targetRecords: 4
+20-11-2021 15:41:02 DEBUG PooledByteBufAllocator:156 - -Dio.netty.allocator.numHeapArenas: 16
+20-11-2021 15:41:02 DEBUG PooledByteBufAllocator:157 - -Dio.netty.allocator.numDirectArenas: 16
+20-11-2021 15:41:02 DEBUG PooledByteBufAllocator:159 - -Dio.netty.allocator.pageSize: 8192
+20-11-2021 15:41:02 DEBUG PooledByteBufAllocator:164 - -Dio.netty.allocator.maxOrder: 11
+20-11-2021 15:41:02 DEBUG PooledByteBufAllocator:168 - -Dio.netty.allocator.chunkSize: 16777216
+20-11-2021 15:41:02 DEBUG PooledByteBufAllocator:169 - -Dio.netty.allocator.tinyCacheSize: 512
+20-11-2021 15:41:02 DEBUG PooledByteBufAllocator:170 - -Dio.netty.allocator.smallCacheSize: 256
+20-11-2021 15:41:02 DEBUG PooledByteBufAllocator:171 - -Dio.netty.allocator.normalCacheSize: 64
+20-11-2021 15:41:02 DEBUG PooledByteBufAllocator:172 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+20-11-2021 15:41:02 DEBUG PooledByteBufAllocator:173 - -Dio.netty.allocator.cacheTrimInterval: 8192
+20-11-2021 15:41:02 DEBUG PooledByteBufAllocator:174 - -Dio.netty.allocator.cacheTrimIntervalMillis: 0
+20-11-2021 15:41:02 DEBUG PooledByteBufAllocator:175 - -Dio.netty.allocator.useCacheForAllThreads: true
+20-11-2021 15:41:02 DEBUG PooledByteBufAllocator:176 - -Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+20-11-2021 15:41:02 DEBUG DefaultChannelId:79 - -Dio.netty.processId: 25776 (auto-detected)
+20-11-2021 15:41:02 DEBUG NetUtil:139 - -Djava.net.preferIPv4Stack: false
+20-11-2021 15:41:02 DEBUG NetUtil:140 - -Djava.net.preferIPv6Addresses: false
+20-11-2021 15:41:02 DEBUG NetUtil:224 - Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)
+20-11-2021 15:41:02 DEBUG NetUtil:289 - Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200
+20-11-2021 15:41:02 DEBUG DefaultChannelId:101 - -Dio.netty.machineId: 00:00:00:00:00:00:00:e0 (auto-detected)
+20-11-2021 15:41:02 DEBUG ByteBufUtil:86 - -Dio.netty.allocator.type: pooled
+20-11-2021 15:41:02 DEBUG ByteBufUtil:95 - -Dio.netty.threadLocalDirectBufferSize: 0
+20-11-2021 15:41:02 DEBUG ByteBufUtil:98 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+20-11-2021 15:41:02 INFO  MServer:130 - Server MServer started.
+20-11-2021 15:41:05 DEBUG AbstractByteBuf:63 - -Dio.grpc.netty.shaded.io.netty.buffer.checkAccessible: true
+20-11-2021 15:41:05 DEBUG AbstractByteBuf:64 - -Dio.grpc.netty.shaded.io.netty.buffer.checkBounds: true
+20-11-2021 15:41:05 DEBUG ResourceLeakDetectorFactory:196 - Loaded default ResourceLeakDetector: io.grpc.netty.shaded.io.netty.util.ResourceLeakDetector@7bb6c020
+20-11-2021 15:41:05 DEBUG NettyServerHandler:214 - [id: 0x76eb2e05, L:/127.0.0.1:25000 - R:/127.0.0.1:65408] OUTBOUND SETTINGS: ack=false settings={MAX_CONCURRENT_STREAMS=2147483647, INITIAL_WINDOW_SIZE=1048576, MAX_HEADER_LIST_SIZE=8192}
+20-11-2021 15:41:05 DEBUG Recycler:100 - -Dio.netty.recycler.maxCapacityPerThread: 4096
+20-11-2021 15:41:05 DEBUG Recycler:101 - -Dio.netty.recycler.maxSharedCapacityFactor: 2
+20-11-2021 15:41:05 DEBUG Recycler:102 - -Dio.netty.recycler.linkCapacity: 16
+20-11-2021 15:41:05 DEBUG Recycler:103 - -Dio.netty.recycler.ratio: 8
+20-11-2021 15:41:05 DEBUG Recycler:104 - -Dio.netty.recycler.delayedQueue.ratio: 8
+20-11-2021 15:41:05 DEBUG NettyServerHandler:214 - [id: 0x76eb2e05, L:/127.0.0.1:25000 - R:/127.0.0.1:65408] OUTBOUND WINDOW_UPDATE: streamId=0 windowSizeIncrement=983041
+20-11-2021 15:41:05 DEBUG NettyServerHandler:214 - [id: 0x76eb2e05, L:/127.0.0.1:25000 - R:/127.0.0.1:65408] INBOUND SETTINGS: ack=false settings={ENABLE_PUSH=0, MAX_CONCURRENT_STREAMS=0, INITIAL_WINDOW_SIZE=1048576, MAX_HEADER_LIST_SIZE=8192}
+20-11-2021 15:41:05 DEBUG NettyServerHandler:191 - [id: 0x76eb2e05, L:/127.0.0.1:25000 - R:/127.0.0.1:65408] OUTBOUND SETTINGS: ack=true
+20-11-2021 15:41:05 DEBUG NettyServerHandler:214 - [id: 0x76eb2e05, L:/127.0.0.1:25000 - R:/127.0.0.1:65408] INBOUND WINDOW_UPDATE: streamId=0 windowSizeIncrement=983041
+20-11-2021 15:41:05 DEBUG NettyServerHandler:191 - [id: 0x76eb2e05, L:/127.0.0.1:25000 - R:/127.0.0.1:65408] INBOUND SETTINGS: ack=true
+20-11-2021 15:41:05 DEBUG NettyServerHandler:214 - [id: 0x76eb2e05, L:/127.0.0.1:25000 - R:/127.0.0.1:65408] INBOUND HEADERS: streamId=3 headers=GrpcHttp2RequestHeaders[:path: /com.nkasenides.minesweeper.proto.MAServiceProto/CreateGame, :authority: localhost:25000, :method: POST, :scheme: http, te: trailers, content-type: application/grpc, user-agent: grpc-java-netty/1.34.0, grpc-accept-encoding: gzip] streamDependency=0 weight=16 exclusive=false padding=0 endStream=false
+20-11-2021 15:41:05 DEBUG NettyServerHandler:214 - [id: 0x76eb2e05, L:/127.0.0.1:25000 - R:/127.0.0.1:65408] INBOUND DATA: streamId=3 padding=0 endStream=true length=11 bytes=0000000006100a180a200a
+20-11-2021 15:41:05 DEBUG NettyServerHandler:214 - [id: 0x76eb2e05, L:/127.0.0.1:25000 - R:/127.0.0.1:65408] OUTBOUND PING: ack=false bytes=1234
+20-11-2021 15:41:05 DEBUG NettyServerHandler:214 - [id: 0x76eb2e05, L:/127.0.0.1:25000 - R:/127.0.0.1:65408] INBOUND PING: ack=true bytes=1234
+20-11-2021 15:41:05 DEBUG NettyServerHandler:214 - [id: 0x76eb2e05, L:/127.0.0.1:25000 - R:/127.0.0.1:65408] OUTBOUND HEADERS: streamId=3 headers=GrpcHttp2OutboundHeaders[:status: 200, content-type: application/grpc, grpc-status: 2] padding=0 endStream=true
+20-11-2021 15:41:05 DEBUG NettyServerHandler:214 - [id: 0x76eb2e05, L:/127.0.0.1:25000 - R:/127.0.0.1:65408] INBOUND RST_STREAM: streamId=3 errorCode=8
+20-11-2021 15:44:06 DEBUG InternalLoggerFactory:45 - Using SLF4J as the default logging framework
+20-11-2021 15:44:06 DEBUG PlatformDependent:1015 - Platform: Windows
+20-11-2021 15:44:06 DEBUG PlatformDependent0:408 - -Dio.netty.noUnsafe: false
+20-11-2021 15:44:06 DEBUG PlatformDependent0:876 - Java version: 8
+20-11-2021 15:44:06 DEBUG PlatformDependent0:125 - sun.misc.Unsafe.theUnsafe: available
+20-11-2021 15:44:06 DEBUG PlatformDependent0:149 - sun.misc.Unsafe.copyMemory: available
+20-11-2021 15:44:06 DEBUG PlatformDependent0:187 - java.nio.Buffer.address: available
+20-11-2021 15:44:06 DEBUG PlatformDependent0:252 - direct buffer constructor: available
+20-11-2021 15:44:06 DEBUG PlatformDependent0:326 - java.nio.Bits.unaligned: available, true
+20-11-2021 15:44:06 DEBUG PlatformDependent0:391 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+20-11-2021 15:44:06 DEBUG PlatformDependent0:398 - java.nio.DirectByteBuffer.<init>(long, int): available
+20-11-2021 15:44:06 DEBUG PlatformDependent:1058 - sun.misc.Unsafe: available
+20-11-2021 15:44:06 DEBUG PlatformDependent:1177 - -Dio.netty.tmpdir: C:\Users\hfnov\AppData\Local\Temp (java.io.tmpdir)
+20-11-2021 15:44:06 DEBUG PlatformDependent:1256 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+20-11-2021 15:44:06 DEBUG PlatformDependent:177 - -Dio.netty.maxDirectMemory: 3791650816 bytes
+20-11-2021 15:44:06 DEBUG PlatformDependent:184 - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+20-11-2021 15:44:06 DEBUG CleanerJava6:92 - java.nio.ByteBuffer.cleaner(): available
+20-11-2021 15:44:06 DEBUG PlatformDependent:204 - -Dio.netty.noPreferDirect: false
+20-11-2021 15:44:06 DEBUG MultithreadEventLoopGroup:44 - -Dio.netty.eventLoopThreads: 16
+20-11-2021 15:44:07 DEBUG InternalThreadLocalMap:56 - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+20-11-2021 15:44:07 DEBUG InternalThreadLocalMap:59 - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+20-11-2021 15:44:07 DEBUG NioEventLoop:106 - -Dio.netty.noKeySetOptimization: false
+20-11-2021 15:44:07 DEBUG NioEventLoop:107 - -Dio.netty.selectorAutoRebuildThreshold: 512
+20-11-2021 15:44:07 DEBUG PlatformDependent:919 - org.jctools-core.MpscChunkedArrayQueue: available
+20-11-2021 15:44:07 DEBUG ResourceLeakDetector:130 - -Dio.grpc.netty.shaded.io.netty.leakDetection.level: simple
+20-11-2021 15:44:07 DEBUG ResourceLeakDetector:131 - -Dio.grpc.netty.shaded.io.netty.leakDetection.targetRecords: 4
+20-11-2021 15:44:07 DEBUG PooledByteBufAllocator:156 - -Dio.netty.allocator.numHeapArenas: 16
+20-11-2021 15:44:07 DEBUG PooledByteBufAllocator:157 - -Dio.netty.allocator.numDirectArenas: 16
+20-11-2021 15:44:07 DEBUG PooledByteBufAllocator:159 - -Dio.netty.allocator.pageSize: 8192
+20-11-2021 15:44:07 DEBUG PooledByteBufAllocator:164 - -Dio.netty.allocator.maxOrder: 11
+20-11-2021 15:44:07 DEBUG PooledByteBufAllocator:168 - -Dio.netty.allocator.chunkSize: 16777216
+20-11-2021 15:44:07 DEBUG PooledByteBufAllocator:169 - -Dio.netty.allocator.tinyCacheSize: 512
+20-11-2021 15:44:07 DEBUG PooledByteBufAllocator:170 - -Dio.netty.allocator.smallCacheSize: 256
+20-11-2021 15:44:07 DEBUG PooledByteBufAllocator:171 - -Dio.netty.allocator.normalCacheSize: 64
+20-11-2021 15:44:07 DEBUG PooledByteBufAllocator:172 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+20-11-2021 15:44:07 DEBUG PooledByteBufAllocator:173 - -Dio.netty.allocator.cacheTrimInterval: 8192
+20-11-2021 15:44:07 DEBUG PooledByteBufAllocator:174 - -Dio.netty.allocator.cacheTrimIntervalMillis: 0
+20-11-2021 15:44:07 DEBUG PooledByteBufAllocator:175 - -Dio.netty.allocator.useCacheForAllThreads: true
+20-11-2021 15:44:07 DEBUG PooledByteBufAllocator:176 - -Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+20-11-2021 15:44:07 DEBUG DefaultChannelId:79 - -Dio.netty.processId: 16988 (auto-detected)
+20-11-2021 15:44:07 DEBUG NetUtil:139 - -Djava.net.preferIPv4Stack: false
+20-11-2021 15:44:07 DEBUG NetUtil:140 - -Djava.net.preferIPv6Addresses: false
+20-11-2021 15:44:07 DEBUG NetUtil:224 - Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)
+20-11-2021 15:44:07 DEBUG NetUtil:289 - Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200
+20-11-2021 15:44:07 DEBUG DefaultChannelId:101 - -Dio.netty.machineId: 00:00:00:00:00:00:00:e0 (auto-detected)
+20-11-2021 15:44:07 DEBUG ByteBufUtil:86 - -Dio.netty.allocator.type: pooled
+20-11-2021 15:44:07 DEBUG ByteBufUtil:95 - -Dio.netty.threadLocalDirectBufferSize: 0
+20-11-2021 15:44:07 DEBUG ByteBufUtil:98 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+20-11-2021 15:44:07 INFO  MServer:130 - Server MServer started.
+20-11-2021 15:44:23 DEBUG AbstractByteBuf:63 - -Dio.grpc.netty.shaded.io.netty.buffer.checkAccessible: true
+20-11-2021 15:44:23 DEBUG AbstractByteBuf:64 - -Dio.grpc.netty.shaded.io.netty.buffer.checkBounds: true
+20-11-2021 15:44:23 DEBUG ResourceLeakDetectorFactory:196 - Loaded default ResourceLeakDetector: io.grpc.netty.shaded.io.netty.util.ResourceLeakDetector@37136d96
+20-11-2021 15:44:23 DEBUG NettyServerHandler:214 - [id: 0x6467e8b0, L:/127.0.0.1:25000 - R:/127.0.0.1:65467] OUTBOUND SETTINGS: ack=false settings={MAX_CONCURRENT_STREAMS=2147483647, INITIAL_WINDOW_SIZE=1048576, MAX_HEADER_LIST_SIZE=8192}
+20-11-2021 15:44:23 DEBUG Recycler:100 - -Dio.netty.recycler.maxCapacityPerThread: 4096
+20-11-2021 15:44:23 DEBUG Recycler:101 - -Dio.netty.recycler.maxSharedCapacityFactor: 2
+20-11-2021 15:44:23 DEBUG Recycler:102 - -Dio.netty.recycler.linkCapacity: 16
+20-11-2021 15:44:23 DEBUG Recycler:103 - -Dio.netty.recycler.ratio: 8
+20-11-2021 15:44:23 DEBUG Recycler:104 - -Dio.netty.recycler.delayedQueue.ratio: 8
+20-11-2021 15:44:23 DEBUG NettyServerHandler:214 - [id: 0x6467e8b0, L:/127.0.0.1:25000 - R:/127.0.0.1:65467] OUTBOUND WINDOW_UPDATE: streamId=0 windowSizeIncrement=983041
+20-11-2021 15:44:23 DEBUG NettyServerHandler:214 - [id: 0x6467e8b0, L:/127.0.0.1:25000 - R:/127.0.0.1:65467] INBOUND SETTINGS: ack=false settings={ENABLE_PUSH=0, MAX_CONCURRENT_STREAMS=0, INITIAL_WINDOW_SIZE=1048576, MAX_HEADER_LIST_SIZE=8192}
+20-11-2021 15:44:23 DEBUG NettyServerHandler:191 - [id: 0x6467e8b0, L:/127.0.0.1:25000 - R:/127.0.0.1:65467] OUTBOUND SETTINGS: ack=true
+20-11-2021 15:44:23 DEBUG NettyServerHandler:214 - [id: 0x6467e8b0, L:/127.0.0.1:25000 - R:/127.0.0.1:65467] INBOUND WINDOW_UPDATE: streamId=0 windowSizeIncrement=983041
+20-11-2021 15:44:23 DEBUG NettyServerHandler:191 - [id: 0x6467e8b0, L:/127.0.0.1:25000 - R:/127.0.0.1:65467] INBOUND SETTINGS: ack=true
+20-11-2021 15:44:23 DEBUG NettyServerHandler:214 - [id: 0x6467e8b0, L:/127.0.0.1:25000 - R:/127.0.0.1:65467] INBOUND HEADERS: streamId=3 headers=GrpcHttp2RequestHeaders[:path: /com.nkasenides.minesweeper.proto.MAServiceProto/CreateGame, :authority: localhost:25000, :method: POST, :scheme: http, te: trailers, content-type: application/grpc, user-agent: grpc-java-netty/1.34.0, grpc-accept-encoding: gzip] streamDependency=0 weight=16 exclusive=false padding=0 endStream=false
+20-11-2021 15:44:23 DEBUG NettyServerHandler:214 - [id: 0x6467e8b0, L:/127.0.0.1:25000 - R:/127.0.0.1:65467] INBOUND DATA: streamId=3 padding=0 endStream=true length=11 bytes=0000000006100a180a200a
+20-11-2021 15:44:23 DEBUG NettyServerHandler:214 - [id: 0x6467e8b0, L:/127.0.0.1:25000 - R:/127.0.0.1:65467] OUTBOUND PING: ack=false bytes=1234
+20-11-2021 15:44:23 DEBUG NettyServerHandler:214 - [id: 0x6467e8b0, L:/127.0.0.1:25000 - R:/127.0.0.1:65467] INBOUND PING: ack=true bytes=1234
+20-11-2021 15:44:23 DEBUG NettyServerHandler:214 - [id: 0x6467e8b0, L:/127.0.0.1:25000 - R:/127.0.0.1:65467] OUTBOUND HEADERS: streamId=3 headers=GrpcHttp2OutboundHeaders[:status: 200, content-type: application/grpc, grpc-status: 2] padding=0 endStream=true
+20-11-2021 15:44:23 DEBUG NettyServerHandler:214 - [id: 0x6467e8b0, L:/127.0.0.1:25000 - R:/127.0.0.1:65467] INBOUND RST_STREAM: streamId=3 errorCode=8
+20-11-2021 16:14:28 DEBUG NettyServerHandler:214 - [id: 0x6467e8b0, L:/127.0.0.1:25000 - R:/127.0.0.1:65467] INBOUND GO_AWAY: lastStreamId=0 errorCode=0 length=0 bytes=
+20-11-2021 16:23:31 DEBUG InternalLoggerFactory:45 - Using SLF4J as the default logging framework
+20-11-2021 16:23:31 DEBUG PlatformDependent:1015 - Platform: Windows
+20-11-2021 16:23:31 DEBUG PlatformDependent0:408 - -Dio.netty.noUnsafe: false
+20-11-2021 16:23:31 DEBUG PlatformDependent0:876 - Java version: 8
+20-11-2021 16:23:31 DEBUG PlatformDependent0:125 - sun.misc.Unsafe.theUnsafe: available
+20-11-2021 16:23:31 DEBUG PlatformDependent0:149 - sun.misc.Unsafe.copyMemory: available
+20-11-2021 16:23:31 DEBUG PlatformDependent0:187 - java.nio.Buffer.address: available
+20-11-2021 16:23:31 DEBUG PlatformDependent0:252 - direct buffer constructor: available
+20-11-2021 16:23:31 DEBUG PlatformDependent0:326 - java.nio.Bits.unaligned: available, true
+20-11-2021 16:23:31 DEBUG PlatformDependent0:391 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+20-11-2021 16:23:31 DEBUG PlatformDependent0:398 - java.nio.DirectByteBuffer.<init>(long, int): available
+20-11-2021 16:23:31 DEBUG PlatformDependent:1058 - sun.misc.Unsafe: available
+20-11-2021 16:23:31 DEBUG PlatformDependent:1177 - -Dio.netty.tmpdir: C:\Users\hfnov\AppData\Local\Temp (java.io.tmpdir)
+20-11-2021 16:23:31 DEBUG PlatformDependent:1256 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+20-11-2021 16:23:31 DEBUG PlatformDependent:177 - -Dio.netty.maxDirectMemory: 3791650816 bytes
+20-11-2021 16:23:31 DEBUG PlatformDependent:184 - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+20-11-2021 16:23:31 DEBUG CleanerJava6:92 - java.nio.ByteBuffer.cleaner(): available
+20-11-2021 16:23:31 DEBUG PlatformDependent:204 - -Dio.netty.noPreferDirect: false
+20-11-2021 16:23:32 DEBUG MultithreadEventLoopGroup:44 - -Dio.netty.eventLoopThreads: 16
+20-11-2021 16:23:32 DEBUG InternalThreadLocalMap:56 - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+20-11-2021 16:23:32 DEBUG InternalThreadLocalMap:59 - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+20-11-2021 16:23:32 DEBUG NioEventLoop:106 - -Dio.netty.noKeySetOptimization: false
+20-11-2021 16:23:32 DEBUG NioEventLoop:107 - -Dio.netty.selectorAutoRebuildThreshold: 512
+20-11-2021 16:23:32 DEBUG PlatformDependent:919 - org.jctools-core.MpscChunkedArrayQueue: available
+20-11-2021 16:23:32 DEBUG ResourceLeakDetector:130 - -Dio.grpc.netty.shaded.io.netty.leakDetection.level: simple
+20-11-2021 16:23:32 DEBUG ResourceLeakDetector:131 - -Dio.grpc.netty.shaded.io.netty.leakDetection.targetRecords: 4
+20-11-2021 16:23:32 DEBUG PooledByteBufAllocator:156 - -Dio.netty.allocator.numHeapArenas: 16
+20-11-2021 16:23:32 DEBUG PooledByteBufAllocator:157 - -Dio.netty.allocator.numDirectArenas: 16
+20-11-2021 16:23:32 DEBUG PooledByteBufAllocator:159 - -Dio.netty.allocator.pageSize: 8192
+20-11-2021 16:23:32 DEBUG PooledByteBufAllocator:164 - -Dio.netty.allocator.maxOrder: 11
+20-11-2021 16:23:32 DEBUG PooledByteBufAllocator:168 - -Dio.netty.allocator.chunkSize: 16777216
+20-11-2021 16:23:32 DEBUG PooledByteBufAllocator:169 - -Dio.netty.allocator.tinyCacheSize: 512
+20-11-2021 16:23:32 DEBUG PooledByteBufAllocator:170 - -Dio.netty.allocator.smallCacheSize: 256
+20-11-2021 16:23:32 DEBUG PooledByteBufAllocator:171 - -Dio.netty.allocator.normalCacheSize: 64
+20-11-2021 16:23:32 DEBUG PooledByteBufAllocator:172 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+20-11-2021 16:23:32 DEBUG PooledByteBufAllocator:173 - -Dio.netty.allocator.cacheTrimInterval: 8192
+20-11-2021 16:23:32 DEBUG PooledByteBufAllocator:174 - -Dio.netty.allocator.cacheTrimIntervalMillis: 0
+20-11-2021 16:23:32 DEBUG PooledByteBufAllocator:175 - -Dio.netty.allocator.useCacheForAllThreads: true
+20-11-2021 16:23:32 DEBUG PooledByteBufAllocator:176 - -Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+20-11-2021 16:23:32 DEBUG DefaultChannelId:79 - -Dio.netty.processId: 27076 (auto-detected)
+20-11-2021 16:23:32 DEBUG NetUtil:139 - -Djava.net.preferIPv4Stack: false
+20-11-2021 16:23:32 DEBUG NetUtil:140 - -Djava.net.preferIPv6Addresses: false
+20-11-2021 16:23:32 DEBUG NetUtil:224 - Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)
+20-11-2021 16:23:32 DEBUG NetUtil:289 - Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200
+20-11-2021 16:23:32 DEBUG DefaultChannelId:101 - -Dio.netty.machineId: 00:00:00:00:00:00:00:e0 (auto-detected)
+20-11-2021 16:23:32 DEBUG ByteBufUtil:86 - -Dio.netty.allocator.type: pooled
+20-11-2021 16:23:32 DEBUG ByteBufUtil:95 - -Dio.netty.threadLocalDirectBufferSize: 0
+20-11-2021 16:23:32 DEBUG ByteBufUtil:98 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+20-11-2021 16:23:32 INFO  MServer:130 - Server MServer started.
+20-11-2021 16:23:38 DEBUG AbstractByteBuf:63 - -Dio.grpc.netty.shaded.io.netty.buffer.checkAccessible: true
+20-11-2021 16:23:38 DEBUG AbstractByteBuf:64 - -Dio.grpc.netty.shaded.io.netty.buffer.checkBounds: true
+20-11-2021 16:23:38 DEBUG ResourceLeakDetectorFactory:196 - Loaded default ResourceLeakDetector: io.grpc.netty.shaded.io.netty.util.ResourceLeakDetector@46c0bd7
+20-11-2021 16:23:38 DEBUG NettyServerHandler:214 - [id: 0xd2c450e6, L:/127.0.0.1:25000 - R:/127.0.0.1:49544] OUTBOUND SETTINGS: ack=false settings={MAX_CONCURRENT_STREAMS=2147483647, INITIAL_WINDOW_SIZE=1048576, MAX_HEADER_LIST_SIZE=8192}
+20-11-2021 16:23:38 DEBUG Recycler:100 - -Dio.netty.recycler.maxCapacityPerThread: 4096
+20-11-2021 16:23:38 DEBUG Recycler:101 - -Dio.netty.recycler.maxSharedCapacityFactor: 2
+20-11-2021 16:23:38 DEBUG Recycler:102 - -Dio.netty.recycler.linkCapacity: 16
+20-11-2021 16:23:38 DEBUG Recycler:103 - -Dio.netty.recycler.ratio: 8
+20-11-2021 16:23:38 DEBUG Recycler:104 - -Dio.netty.recycler.delayedQueue.ratio: 8
+20-11-2021 16:23:38 DEBUG NettyServerHandler:214 - [id: 0xd2c450e6, L:/127.0.0.1:25000 - R:/127.0.0.1:49544] OUTBOUND WINDOW_UPDATE: streamId=0 windowSizeIncrement=983041
+20-11-2021 16:23:38 DEBUG NettyServerHandler:214 - [id: 0xd2c450e6, L:/127.0.0.1:25000 - R:/127.0.0.1:49544] INBOUND SETTINGS: ack=false settings={ENABLE_PUSH=0, MAX_CONCURRENT_STREAMS=0, INITIAL_WINDOW_SIZE=1048576, MAX_HEADER_LIST_SIZE=8192}
+20-11-2021 16:23:38 DEBUG NettyServerHandler:191 - [id: 0xd2c450e6, L:/127.0.0.1:25000 - R:/127.0.0.1:49544] OUTBOUND SETTINGS: ack=true
+20-11-2021 16:23:38 DEBUG NettyServerHandler:214 - [id: 0xd2c450e6, L:/127.0.0.1:25000 - R:/127.0.0.1:49544] INBOUND WINDOW_UPDATE: streamId=0 windowSizeIncrement=983041
+20-11-2021 16:23:38 DEBUG NettyServerHandler:191 - [id: 0xd2c450e6, L:/127.0.0.1:25000 - R:/127.0.0.1:49544] INBOUND SETTINGS: ack=true
+20-11-2021 16:23:38 DEBUG NettyServerHandler:214 - [id: 0xd2c450e6, L:/127.0.0.1:25000 - R:/127.0.0.1:49544] INBOUND HEADERS: streamId=3 headers=GrpcHttp2RequestHeaders[:path: /com.nkasenides.minesweeper.proto.MAServiceProto/CreateGame, :authority: localhost:25000, :method: POST, :scheme: http, te: trailers, content-type: application/grpc, user-agent: grpc-java-netty/1.34.0, grpc-accept-encoding: gzip] streamDependency=0 weight=16 exclusive=false padding=0 endStream=false
+20-11-2021 16:23:38 DEBUG NettyServerHandler:214 - [id: 0xd2c450e6, L:/127.0.0.1:25000 - R:/127.0.0.1:49544] INBOUND DATA: streamId=3 padding=0 endStream=true length=11 bytes=0000000006100a180a200a
+20-11-2021 16:23:38 DEBUG NettyServerHandler:214 - [id: 0xd2c450e6, L:/127.0.0.1:25000 - R:/127.0.0.1:49544] OUTBOUND PING: ack=false bytes=1234
+20-11-2021 16:23:38 DEBUG NettyServerHandler:214 - [id: 0xd2c450e6, L:/127.0.0.1:25000 - R:/127.0.0.1:49544] INBOUND PING: ack=true bytes=1234
+20-11-2021 16:23:38 DEBUG NettyServerHandler:214 - [id: 0xd2c450e6, L:/127.0.0.1:25000 - R:/127.0.0.1:49544] OUTBOUND HEADERS: streamId=3 headers=GrpcHttp2OutboundHeaders[:status: 200, content-type: application/grpc, grpc-status: 2] padding=0 endStream=true
+20-11-2021 16:23:38 DEBUG NettyServerHandler:214 - [id: 0xd2c450e6, L:/127.0.0.1:25000 - R:/127.0.0.1:49544] INBOUND RST_STREAM: streamId=3 errorCode=8
+20-11-2021 16:26:11 DEBUG InternalLoggerFactory:45 - Using SLF4J as the default logging framework
+20-11-2021 16:26:11 DEBUG PlatformDependent:1015 - Platform: Windows
+20-11-2021 16:26:11 DEBUG PlatformDependent0:408 - -Dio.netty.noUnsafe: false
+20-11-2021 16:26:11 DEBUG PlatformDependent0:876 - Java version: 8
+20-11-2021 16:26:11 DEBUG PlatformDependent0:125 - sun.misc.Unsafe.theUnsafe: available
+20-11-2021 16:26:11 DEBUG PlatformDependent0:149 - sun.misc.Unsafe.copyMemory: available
+20-11-2021 16:26:11 DEBUG PlatformDependent0:187 - java.nio.Buffer.address: available
+20-11-2021 16:26:11 DEBUG PlatformDependent0:252 - direct buffer constructor: available
+20-11-2021 16:26:11 DEBUG PlatformDependent0:326 - java.nio.Bits.unaligned: available, true
+20-11-2021 16:26:11 DEBUG PlatformDependent0:391 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+20-11-2021 16:26:11 DEBUG PlatformDependent0:398 - java.nio.DirectByteBuffer.<init>(long, int): available
+20-11-2021 16:26:11 DEBUG PlatformDependent:1058 - sun.misc.Unsafe: available
+20-11-2021 16:26:11 DEBUG PlatformDependent:1177 - -Dio.netty.tmpdir: C:\Users\hfnov\AppData\Local\Temp (java.io.tmpdir)
+20-11-2021 16:26:11 DEBUG PlatformDependent:1256 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+20-11-2021 16:26:11 DEBUG PlatformDependent:177 - -Dio.netty.maxDirectMemory: 3791650816 bytes
+20-11-2021 16:26:11 DEBUG PlatformDependent:184 - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+20-11-2021 16:26:11 DEBUG CleanerJava6:92 - java.nio.ByteBuffer.cleaner(): available
+20-11-2021 16:26:11 DEBUG PlatformDependent:204 - -Dio.netty.noPreferDirect: false
+20-11-2021 16:26:12 DEBUG MultithreadEventLoopGroup:44 - -Dio.netty.eventLoopThreads: 16
+20-11-2021 16:26:12 DEBUG InternalThreadLocalMap:56 - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+20-11-2021 16:26:12 DEBUG InternalThreadLocalMap:59 - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+20-11-2021 16:26:12 DEBUG NioEventLoop:106 - -Dio.netty.noKeySetOptimization: false
+20-11-2021 16:26:12 DEBUG NioEventLoop:107 - -Dio.netty.selectorAutoRebuildThreshold: 512
+20-11-2021 16:26:12 DEBUG PlatformDependent:919 - org.jctools-core.MpscChunkedArrayQueue: available
+20-11-2021 16:26:12 DEBUG ResourceLeakDetector:130 - -Dio.grpc.netty.shaded.io.netty.leakDetection.level: simple
+20-11-2021 16:26:12 DEBUG ResourceLeakDetector:131 - -Dio.grpc.netty.shaded.io.netty.leakDetection.targetRecords: 4
+20-11-2021 16:26:12 DEBUG PooledByteBufAllocator:156 - -Dio.netty.allocator.numHeapArenas: 16
+20-11-2021 16:26:12 DEBUG PooledByteBufAllocator:157 - -Dio.netty.allocator.numDirectArenas: 16
+20-11-2021 16:26:12 DEBUG PooledByteBufAllocator:159 - -Dio.netty.allocator.pageSize: 8192
+20-11-2021 16:26:12 DEBUG PooledByteBufAllocator:164 - -Dio.netty.allocator.maxOrder: 11
+20-11-2021 16:26:12 DEBUG PooledByteBufAllocator:168 - -Dio.netty.allocator.chunkSize: 16777216
+20-11-2021 16:26:12 DEBUG PooledByteBufAllocator:169 - -Dio.netty.allocator.tinyCacheSize: 512
+20-11-2021 16:26:12 DEBUG PooledByteBufAllocator:170 - -Dio.netty.allocator.smallCacheSize: 256
+20-11-2021 16:26:12 DEBUG PooledByteBufAllocator:171 - -Dio.netty.allocator.normalCacheSize: 64
+20-11-2021 16:26:12 DEBUG PooledByteBufAllocator:172 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+20-11-2021 16:26:12 DEBUG PooledByteBufAllocator:173 - -Dio.netty.allocator.cacheTrimInterval: 8192
+20-11-2021 16:26:12 DEBUG PooledByteBufAllocator:174 - -Dio.netty.allocator.cacheTrimIntervalMillis: 0
+20-11-2021 16:26:12 DEBUG PooledByteBufAllocator:175 - -Dio.netty.allocator.useCacheForAllThreads: true
+20-11-2021 16:26:12 DEBUG PooledByteBufAllocator:176 - -Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+20-11-2021 16:26:12 DEBUG DefaultChannelId:79 - -Dio.netty.processId: 5512 (auto-detected)
+20-11-2021 16:26:12 DEBUG NetUtil:139 - -Djava.net.preferIPv4Stack: false
+20-11-2021 16:26:12 DEBUG NetUtil:140 - -Djava.net.preferIPv6Addresses: false
+20-11-2021 16:26:12 DEBUG NetUtil:224 - Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)
+20-11-2021 16:26:12 DEBUG NetUtil:289 - Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200
+20-11-2021 16:26:12 DEBUG DefaultChannelId:101 - -Dio.netty.machineId: 00:00:00:00:00:00:00:e0 (auto-detected)
+20-11-2021 16:26:13 DEBUG ByteBufUtil:86 - -Dio.netty.allocator.type: pooled
+20-11-2021 16:26:13 DEBUG ByteBufUtil:95 - -Dio.netty.threadLocalDirectBufferSize: 0
+20-11-2021 16:26:13 DEBUG ByteBufUtil:98 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+20-11-2021 16:26:13 INFO  MServer:130 - Server MServer started.
+20-11-2021 16:26:39 DEBUG InternalLoggerFactory:45 - Using SLF4J as the default logging framework
+20-11-2021 16:26:39 DEBUG PlatformDependent:1015 - Platform: Windows
+20-11-2021 16:26:39 DEBUG PlatformDependent0:408 - -Dio.netty.noUnsafe: false
+20-11-2021 16:26:39 DEBUG PlatformDependent0:876 - Java version: 8
+20-11-2021 16:26:39 DEBUG PlatformDependent0:125 - sun.misc.Unsafe.theUnsafe: available
+20-11-2021 16:26:39 DEBUG PlatformDependent0:149 - sun.misc.Unsafe.copyMemory: available
+20-11-2021 16:26:39 DEBUG PlatformDependent0:187 - java.nio.Buffer.address: available
+20-11-2021 16:26:39 DEBUG PlatformDependent0:252 - direct buffer constructor: available
+20-11-2021 16:26:39 DEBUG PlatformDependent0:326 - java.nio.Bits.unaligned: available, true
+20-11-2021 16:26:39 DEBUG PlatformDependent0:391 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+20-11-2021 16:26:39 DEBUG PlatformDependent0:398 - java.nio.DirectByteBuffer.<init>(long, int): available
+20-11-2021 16:26:39 DEBUG PlatformDependent:1058 - sun.misc.Unsafe: available
+20-11-2021 16:26:39 DEBUG PlatformDependent:1177 - -Dio.netty.tmpdir: C:\Users\hfnov\AppData\Local\Temp (java.io.tmpdir)
+20-11-2021 16:26:39 DEBUG PlatformDependent:1256 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+20-11-2021 16:26:39 DEBUG PlatformDependent:177 - -Dio.netty.maxDirectMemory: 3791650816 bytes
+20-11-2021 16:26:39 DEBUG PlatformDependent:184 - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+20-11-2021 16:26:39 DEBUG CleanerJava6:92 - java.nio.ByteBuffer.cleaner(): available
+20-11-2021 16:26:39 DEBUG PlatformDependent:204 - -Dio.netty.noPreferDirect: false
+20-11-2021 16:26:39 DEBUG MultithreadEventLoopGroup:44 - -Dio.netty.eventLoopThreads: 16
+20-11-2021 16:26:39 DEBUG InternalThreadLocalMap:56 - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+20-11-2021 16:26:39 DEBUG InternalThreadLocalMap:59 - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+20-11-2021 16:26:39 DEBUG NioEventLoop:106 - -Dio.netty.noKeySetOptimization: false
+20-11-2021 16:26:39 DEBUG NioEventLoop:107 - -Dio.netty.selectorAutoRebuildThreshold: 512
+20-11-2021 16:26:39 DEBUG PlatformDependent:919 - org.jctools-core.MpscChunkedArrayQueue: available
+20-11-2021 16:26:39 DEBUG ResourceLeakDetector:130 - -Dio.grpc.netty.shaded.io.netty.leakDetection.level: simple
+20-11-2021 16:26:39 DEBUG ResourceLeakDetector:131 - -Dio.grpc.netty.shaded.io.netty.leakDetection.targetRecords: 4
+20-11-2021 16:26:39 DEBUG PooledByteBufAllocator:156 - -Dio.netty.allocator.numHeapArenas: 16
+20-11-2021 16:26:39 DEBUG PooledByteBufAllocator:157 - -Dio.netty.allocator.numDirectArenas: 16
+20-11-2021 16:26:39 DEBUG PooledByteBufAllocator:159 - -Dio.netty.allocator.pageSize: 8192
+20-11-2021 16:26:39 DEBUG PooledByteBufAllocator:164 - -Dio.netty.allocator.maxOrder: 11
+20-11-2021 16:26:39 DEBUG PooledByteBufAllocator:168 - -Dio.netty.allocator.chunkSize: 16777216
+20-11-2021 16:26:39 DEBUG PooledByteBufAllocator:169 - -Dio.netty.allocator.tinyCacheSize: 512
+20-11-2021 16:26:39 DEBUG PooledByteBufAllocator:170 - -Dio.netty.allocator.smallCacheSize: 256
+20-11-2021 16:26:39 DEBUG PooledByteBufAllocator:171 - -Dio.netty.allocator.normalCacheSize: 64
+20-11-2021 16:26:39 DEBUG PooledByteBufAllocator:172 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+20-11-2021 16:26:39 DEBUG PooledByteBufAllocator:173 - -Dio.netty.allocator.cacheTrimInterval: 8192
+20-11-2021 16:26:39 DEBUG PooledByteBufAllocator:174 - -Dio.netty.allocator.cacheTrimIntervalMillis: 0
+20-11-2021 16:26:39 DEBUG PooledByteBufAllocator:175 - -Dio.netty.allocator.useCacheForAllThreads: true
+20-11-2021 16:26:39 DEBUG PooledByteBufAllocator:176 - -Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+20-11-2021 16:26:39 DEBUG DefaultChannelId:79 - -Dio.netty.processId: 26888 (auto-detected)
+20-11-2021 16:26:39 DEBUG NetUtil:139 - -Djava.net.preferIPv4Stack: false
+20-11-2021 16:26:39 DEBUG NetUtil:140 - -Djava.net.preferIPv6Addresses: false
+20-11-2021 16:26:40 DEBUG NetUtil:224 - Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)
+20-11-2021 16:26:40 DEBUG NetUtil:289 - Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200
+20-11-2021 16:26:40 DEBUG DefaultChannelId:101 - -Dio.netty.machineId: 00:00:00:00:00:00:00:e0 (auto-detected)
+20-11-2021 16:26:40 DEBUG ByteBufUtil:86 - -Dio.netty.allocator.type: pooled
+20-11-2021 16:26:40 DEBUG ByteBufUtil:95 - -Dio.netty.threadLocalDirectBufferSize: 0
+20-11-2021 16:26:40 DEBUG ByteBufUtil:98 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+20-11-2021 16:26:40 INFO  MServer:130 - Server MServer started.
+20-11-2021 16:26:55 DEBUG AbstractByteBuf:63 - -Dio.grpc.netty.shaded.io.netty.buffer.checkAccessible: true
+20-11-2021 16:26:55 DEBUG AbstractByteBuf:64 - -Dio.grpc.netty.shaded.io.netty.buffer.checkBounds: true
+20-11-2021 16:26:55 DEBUG ResourceLeakDetectorFactory:196 - Loaded default ResourceLeakDetector: io.grpc.netty.shaded.io.netty.util.ResourceLeakDetector@2b296441
+20-11-2021 16:26:55 DEBUG NettyServerHandler:214 - [id: 0x6e66d19e, L:/127.0.0.1:25000 - R:/127.0.0.1:49654] OUTBOUND SETTINGS: ack=false settings={MAX_CONCURRENT_STREAMS=2147483647, INITIAL_WINDOW_SIZE=1048576, MAX_HEADER_LIST_SIZE=8192}
+20-11-2021 16:26:55 DEBUG Recycler:100 - -Dio.netty.recycler.maxCapacityPerThread: 4096
+20-11-2021 16:26:55 DEBUG Recycler:101 - -Dio.netty.recycler.maxSharedCapacityFactor: 2
+20-11-2021 16:26:55 DEBUG Recycler:102 - -Dio.netty.recycler.linkCapacity: 16
+20-11-2021 16:26:55 DEBUG Recycler:103 - -Dio.netty.recycler.ratio: 8
+20-11-2021 16:26:55 DEBUG Recycler:104 - -Dio.netty.recycler.delayedQueue.ratio: 8
+20-11-2021 16:26:55 DEBUG NettyServerHandler:214 - [id: 0x6e66d19e, L:/127.0.0.1:25000 - R:/127.0.0.1:49654] OUTBOUND WINDOW_UPDATE: streamId=0 windowSizeIncrement=983041
+20-11-2021 16:26:55 DEBUG NettyServerHandler:214 - [id: 0x6e66d19e, L:/127.0.0.1:25000 - R:/127.0.0.1:49654] INBOUND SETTINGS: ack=false settings={ENABLE_PUSH=0, MAX_CONCURRENT_STREAMS=0, INITIAL_WINDOW_SIZE=1048576, MAX_HEADER_LIST_SIZE=8192}
+20-11-2021 16:26:55 DEBUG NettyServerHandler:191 - [id: 0x6e66d19e, L:/127.0.0.1:25000 - R:/127.0.0.1:49654] OUTBOUND SETTINGS: ack=true
+20-11-2021 16:26:55 DEBUG NettyServerHandler:214 - [id: 0x6e66d19e, L:/127.0.0.1:25000 - R:/127.0.0.1:49654] INBOUND WINDOW_UPDATE: streamId=0 windowSizeIncrement=983041
+20-11-2021 16:26:55 DEBUG NettyServerHandler:191 - [id: 0x6e66d19e, L:/127.0.0.1:25000 - R:/127.0.0.1:49654] INBOUND SETTINGS: ack=true
+20-11-2021 16:26:55 DEBUG NettyServerHandler:214 - [id: 0x6e66d19e, L:/127.0.0.1:25000 - R:/127.0.0.1:49654] INBOUND HEADERS: streamId=3 headers=GrpcHttp2RequestHeaders[:path: /com.nkasenides.minesweeper.proto.MAServiceProto/CreateGame, :authority: localhost:25000, :method: POST, :scheme: http, te: trailers, content-type: application/grpc, user-agent: grpc-java-netty/1.34.0, grpc-accept-encoding: gzip] streamDependency=0 weight=16 exclusive=false padding=0 endStream=false
+20-11-2021 16:26:55 DEBUG NettyServerHandler:214 - [id: 0x6e66d19e, L:/127.0.0.1:25000 - R:/127.0.0.1:49654] INBOUND DATA: streamId=3 padding=0 endStream=true length=11 bytes=0000000006100a180a200a
+20-11-2021 16:26:55 DEBUG NettyServerHandler:214 - [id: 0x6e66d19e, L:/127.0.0.1:25000 - R:/127.0.0.1:49654] OUTBOUND PING: ack=false bytes=1234
+20-11-2021 16:26:55 DEBUG NettyServerHandler:214 - [id: 0x6e66d19e, L:/127.0.0.1:25000 - R:/127.0.0.1:49654] INBOUND PING: ack=true bytes=1234
+20-11-2021 16:26:55 DEBUG NettyServerHandler:214 - [id: 0x6e66d19e, L:/127.0.0.1:25000 - R:/127.0.0.1:49654] OUTBOUND HEADERS: streamId=3 headers=GrpcHttp2OutboundHeaders[:status: 200, content-type: application/grpc, grpc-status: 2] padding=0 endStream=true
+20-11-2021 16:26:55 DEBUG NettyServerHandler:214 - [id: 0x6e66d19e, L:/127.0.0.1:25000 - R:/127.0.0.1:49654] INBOUND RST_STREAM: streamId=3 errorCode=8
+20-11-2021 16:30:35 DEBUG InternalLoggerFactory:45 - Using SLF4J as the default logging framework
+20-11-2021 16:30:35 DEBUG PlatformDependent:1015 - Platform: Windows
+20-11-2021 16:30:35 DEBUG PlatformDependent0:408 - -Dio.netty.noUnsafe: false
+20-11-2021 16:30:35 DEBUG PlatformDependent0:876 - Java version: 8
+20-11-2021 16:30:35 DEBUG PlatformDependent0:125 - sun.misc.Unsafe.theUnsafe: available
+20-11-2021 16:30:35 DEBUG PlatformDependent0:149 - sun.misc.Unsafe.copyMemory: available
+20-11-2021 16:30:35 DEBUG PlatformDependent0:187 - java.nio.Buffer.address: available
+20-11-2021 16:30:35 DEBUG PlatformDependent0:252 - direct buffer constructor: available
+20-11-2021 16:30:35 DEBUG PlatformDependent0:326 - java.nio.Bits.unaligned: available, true
+20-11-2021 16:30:35 DEBUG PlatformDependent0:391 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+20-11-2021 16:30:35 DEBUG PlatformDependent0:398 - java.nio.DirectByteBuffer.<init>(long, int): available
+20-11-2021 16:30:35 DEBUG PlatformDependent:1058 - sun.misc.Unsafe: available
+20-11-2021 16:30:35 DEBUG PlatformDependent:1177 - -Dio.netty.tmpdir: C:\Users\hfnov\AppData\Local\Temp (java.io.tmpdir)
+20-11-2021 16:30:35 DEBUG PlatformDependent:1256 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+20-11-2021 16:30:35 DEBUG PlatformDependent:177 - -Dio.netty.maxDirectMemory: 3791650816 bytes
+20-11-2021 16:30:35 DEBUG PlatformDependent:184 - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+20-11-2021 16:30:35 DEBUG CleanerJava6:92 - java.nio.ByteBuffer.cleaner(): available
+20-11-2021 16:30:35 DEBUG PlatformDependent:204 - -Dio.netty.noPreferDirect: false
+20-11-2021 16:30:35 DEBUG MultithreadEventLoopGroup:44 - -Dio.netty.eventLoopThreads: 16
+20-11-2021 16:30:35 DEBUG InternalThreadLocalMap:56 - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+20-11-2021 16:30:35 DEBUG InternalThreadLocalMap:59 - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+20-11-2021 16:30:35 DEBUG NioEventLoop:106 - -Dio.netty.noKeySetOptimization: false
+20-11-2021 16:30:35 DEBUG NioEventLoop:107 - -Dio.netty.selectorAutoRebuildThreshold: 512
+20-11-2021 16:30:35 DEBUG PlatformDependent:919 - org.jctools-core.MpscChunkedArrayQueue: available
+20-11-2021 16:30:36 DEBUG ResourceLeakDetector:130 - -Dio.grpc.netty.shaded.io.netty.leakDetection.level: simple
+20-11-2021 16:30:36 DEBUG ResourceLeakDetector:131 - -Dio.grpc.netty.shaded.io.netty.leakDetection.targetRecords: 4
+20-11-2021 16:30:36 DEBUG PooledByteBufAllocator:156 - -Dio.netty.allocator.numHeapArenas: 16
+20-11-2021 16:30:36 DEBUG PooledByteBufAllocator:157 - -Dio.netty.allocator.numDirectArenas: 16
+20-11-2021 16:30:36 DEBUG PooledByteBufAllocator:159 - -Dio.netty.allocator.pageSize: 8192
+20-11-2021 16:30:36 DEBUG PooledByteBufAllocator:164 - -Dio.netty.allocator.maxOrder: 11
+20-11-2021 16:30:36 DEBUG PooledByteBufAllocator:168 - -Dio.netty.allocator.chunkSize: 16777216
+20-11-2021 16:30:36 DEBUG PooledByteBufAllocator:169 - -Dio.netty.allocator.tinyCacheSize: 512
+20-11-2021 16:30:36 DEBUG PooledByteBufAllocator:170 - -Dio.netty.allocator.smallCacheSize: 256
+20-11-2021 16:30:36 DEBUG PooledByteBufAllocator:171 - -Dio.netty.allocator.normalCacheSize: 64
+20-11-2021 16:30:36 DEBUG PooledByteBufAllocator:172 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+20-11-2021 16:30:36 DEBUG PooledByteBufAllocator:173 - -Dio.netty.allocator.cacheTrimInterval: 8192
+20-11-2021 16:30:36 DEBUG PooledByteBufAllocator:174 - -Dio.netty.allocator.cacheTrimIntervalMillis: 0
+20-11-2021 16:30:36 DEBUG PooledByteBufAllocator:175 - -Dio.netty.allocator.useCacheForAllThreads: true
+20-11-2021 16:30:36 DEBUG PooledByteBufAllocator:176 - -Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+20-11-2021 16:30:36 DEBUG DefaultChannelId:79 - -Dio.netty.processId: 14256 (auto-detected)
+20-11-2021 16:30:36 DEBUG NetUtil:139 - -Djava.net.preferIPv4Stack: false
+20-11-2021 16:30:36 DEBUG NetUtil:140 - -Djava.net.preferIPv6Addresses: false
+20-11-2021 16:30:36 DEBUG NetUtil:224 - Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)
+20-11-2021 16:30:36 DEBUG NetUtil:289 - Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200
+20-11-2021 16:30:36 DEBUG DefaultChannelId:101 - -Dio.netty.machineId: 00:00:00:00:00:00:00:e0 (auto-detected)
+20-11-2021 16:30:36 DEBUG ByteBufUtil:86 - -Dio.netty.allocator.type: pooled
+20-11-2021 16:30:36 DEBUG ByteBufUtil:95 - -Dio.netty.threadLocalDirectBufferSize: 0
+20-11-2021 16:30:36 DEBUG ByteBufUtil:98 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+20-11-2021 16:30:36 INFO  MServer:130 - Server MServer started.
+20-11-2021 16:30:42 DEBUG AbstractByteBuf:63 - -Dio.grpc.netty.shaded.io.netty.buffer.checkAccessible: true
+20-11-2021 16:30:42 DEBUG AbstractByteBuf:64 - -Dio.grpc.netty.shaded.io.netty.buffer.checkBounds: true
+20-11-2021 16:30:42 DEBUG ResourceLeakDetectorFactory:196 - Loaded default ResourceLeakDetector: io.grpc.netty.shaded.io.netty.util.ResourceLeakDetector@2b296441
+20-11-2021 16:30:43 DEBUG NettyServerHandler:214 - [id: 0xc57868dc, L:/127.0.0.1:25000 - R:/127.0.0.1:49719] OUTBOUND SETTINGS: ack=false settings={MAX_CONCURRENT_STREAMS=2147483647, INITIAL_WINDOW_SIZE=1048576, MAX_HEADER_LIST_SIZE=8192}
+20-11-2021 16:30:43 DEBUG Recycler:100 - -Dio.netty.recycler.maxCapacityPerThread: 4096
+20-11-2021 16:30:43 DEBUG Recycler:101 - -Dio.netty.recycler.maxSharedCapacityFactor: 2
+20-11-2021 16:30:43 DEBUG Recycler:102 - -Dio.netty.recycler.linkCapacity: 16
+20-11-2021 16:30:43 DEBUG Recycler:103 - -Dio.netty.recycler.ratio: 8
+20-11-2021 16:30:43 DEBUG Recycler:104 - -Dio.netty.recycler.delayedQueue.ratio: 8
+20-11-2021 16:30:43 DEBUG NettyServerHandler:214 - [id: 0xc57868dc, L:/127.0.0.1:25000 - R:/127.0.0.1:49719] OUTBOUND WINDOW_UPDATE: streamId=0 windowSizeIncrement=983041
+20-11-2021 16:30:43 DEBUG NettyServerHandler:214 - [id: 0xc57868dc, L:/127.0.0.1:25000 - R:/127.0.0.1:49719] INBOUND SETTINGS: ack=false settings={ENABLE_PUSH=0, MAX_CONCURRENT_STREAMS=0, INITIAL_WINDOW_SIZE=1048576, MAX_HEADER_LIST_SIZE=8192}
+20-11-2021 16:30:43 DEBUG NettyServerHandler:191 - [id: 0xc57868dc, L:/127.0.0.1:25000 - R:/127.0.0.1:49719] OUTBOUND SETTINGS: ack=true
+20-11-2021 16:30:43 DEBUG NettyServerHandler:214 - [id: 0xc57868dc, L:/127.0.0.1:25000 - R:/127.0.0.1:49719] INBOUND WINDOW_UPDATE: streamId=0 windowSizeIncrement=983041
+20-11-2021 16:30:43 DEBUG NettyServerHandler:191 - [id: 0xc57868dc, L:/127.0.0.1:25000 - R:/127.0.0.1:49719] INBOUND SETTINGS: ack=true
+20-11-2021 16:30:43 DEBUG NettyServerHandler:214 - [id: 0xc57868dc, L:/127.0.0.1:25000 - R:/127.0.0.1:49719] INBOUND HEADERS: streamId=3 headers=GrpcHttp2RequestHeaders[:path: /com.nkasenides.minesweeper.proto.MAServiceProto/CreateGame, :authority: localhost:25000, :method: POST, :scheme: http, te: trailers, content-type: application/grpc, user-agent: grpc-java-netty/1.34.0, grpc-accept-encoding: gzip] streamDependency=0 weight=16 exclusive=false padding=0 endStream=false
+20-11-2021 16:30:43 DEBUG NettyServerHandler:214 - [id: 0xc57868dc, L:/127.0.0.1:25000 - R:/127.0.0.1:49719] INBOUND DATA: streamId=3 padding=0 endStream=true length=11 bytes=0000000006100a180a200a
+20-11-2021 16:30:43 DEBUG NettyServerHandler:214 - [id: 0xc57868dc, L:/127.0.0.1:25000 - R:/127.0.0.1:49719] OUTBOUND PING: ack=false bytes=1234
+20-11-2021 16:30:43 DEBUG NettyServerHandler:214 - [id: 0xc57868dc, L:/127.0.0.1:25000 - R:/127.0.0.1:49719] INBOUND PING: ack=true bytes=1234
+20-11-2021 16:30:43 DEBUG NettyServerHandler:214 - [id: 0xc57868dc, L:/127.0.0.1:25000 - R:/127.0.0.1:49719] OUTBOUND HEADERS: streamId=3 headers=GrpcHttp2OutboundHeaders[:status: 200, content-type: application/grpc, grpc-status: 2] padding=0 endStream=true
+20-11-2021 16:30:43 DEBUG NettyServerHandler:214 - [id: 0xc57868dc, L:/127.0.0.1:25000 - R:/127.0.0.1:49719] INBOUND RST_STREAM: streamId=3 errorCode=8
+20-11-2021 16:33:37 DEBUG InternalLoggerFactory:45 - Using SLF4J as the default logging framework
+20-11-2021 16:33:37 DEBUG PlatformDependent:1015 - Platform: Windows
+20-11-2021 16:33:37 DEBUG PlatformDependent0:408 - -Dio.netty.noUnsafe: false
+20-11-2021 16:33:37 DEBUG PlatformDependent0:876 - Java version: 8
+20-11-2021 16:33:37 DEBUG PlatformDependent0:125 - sun.misc.Unsafe.theUnsafe: available
+20-11-2021 16:33:37 DEBUG PlatformDependent0:149 - sun.misc.Unsafe.copyMemory: available
+20-11-2021 16:33:37 DEBUG PlatformDependent0:187 - java.nio.Buffer.address: available
+20-11-2021 16:33:37 DEBUG PlatformDependent0:252 - direct buffer constructor: available
+20-11-2021 16:33:37 DEBUG PlatformDependent0:326 - java.nio.Bits.unaligned: available, true
+20-11-2021 16:33:37 DEBUG PlatformDependent0:391 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+20-11-2021 16:33:37 DEBUG PlatformDependent0:398 - java.nio.DirectByteBuffer.<init>(long, int): available
+20-11-2021 16:33:37 DEBUG PlatformDependent:1058 - sun.misc.Unsafe: available
+20-11-2021 16:33:37 DEBUG PlatformDependent:1177 - -Dio.netty.tmpdir: C:\Users\hfnov\AppData\Local\Temp (java.io.tmpdir)
+20-11-2021 16:33:37 DEBUG PlatformDependent:1256 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+20-11-2021 16:33:37 DEBUG PlatformDependent:177 - -Dio.netty.maxDirectMemory: 3791650816 bytes
+20-11-2021 16:33:37 DEBUG PlatformDependent:184 - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+20-11-2021 16:33:37 DEBUG CleanerJava6:92 - java.nio.ByteBuffer.cleaner(): available
+20-11-2021 16:33:37 DEBUG PlatformDependent:204 - -Dio.netty.noPreferDirect: false
+20-11-2021 16:33:37 DEBUG MultithreadEventLoopGroup:44 - -Dio.netty.eventLoopThreads: 16
+20-11-2021 16:33:38 DEBUG InternalThreadLocalMap:56 - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+20-11-2021 16:33:38 DEBUG InternalThreadLocalMap:59 - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+20-11-2021 16:33:38 DEBUG NioEventLoop:106 - -Dio.netty.noKeySetOptimization: false
+20-11-2021 16:33:38 DEBUG NioEventLoop:107 - -Dio.netty.selectorAutoRebuildThreshold: 512
+20-11-2021 16:33:38 DEBUG PlatformDependent:919 - org.jctools-core.MpscChunkedArrayQueue: available
+20-11-2021 16:33:38 DEBUG ResourceLeakDetector:130 - -Dio.grpc.netty.shaded.io.netty.leakDetection.level: simple
+20-11-2021 16:33:38 DEBUG ResourceLeakDetector:131 - -Dio.grpc.netty.shaded.io.netty.leakDetection.targetRecords: 4
+20-11-2021 16:33:38 DEBUG PooledByteBufAllocator:156 - -Dio.netty.allocator.numHeapArenas: 16
+20-11-2021 16:33:38 DEBUG PooledByteBufAllocator:157 - -Dio.netty.allocator.numDirectArenas: 16
+20-11-2021 16:33:38 DEBUG PooledByteBufAllocator:159 - -Dio.netty.allocator.pageSize: 8192
+20-11-2021 16:33:38 DEBUG PooledByteBufAllocator:164 - -Dio.netty.allocator.maxOrder: 11
+20-11-2021 16:33:38 DEBUG PooledByteBufAllocator:168 - -Dio.netty.allocator.chunkSize: 16777216
+20-11-2021 16:33:38 DEBUG PooledByteBufAllocator:169 - -Dio.netty.allocator.tinyCacheSize: 512
+20-11-2021 16:33:38 DEBUG PooledByteBufAllocator:170 - -Dio.netty.allocator.smallCacheSize: 256
+20-11-2021 16:33:38 DEBUG PooledByteBufAllocator:171 - -Dio.netty.allocator.normalCacheSize: 64
+20-11-2021 16:33:38 DEBUG PooledByteBufAllocator:172 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+20-11-2021 16:33:38 DEBUG PooledByteBufAllocator:173 - -Dio.netty.allocator.cacheTrimInterval: 8192
+20-11-2021 16:33:38 DEBUG PooledByteBufAllocator:174 - -Dio.netty.allocator.cacheTrimIntervalMillis: 0
+20-11-2021 16:33:38 DEBUG PooledByteBufAllocator:175 - -Dio.netty.allocator.useCacheForAllThreads: true
+20-11-2021 16:33:38 DEBUG PooledByteBufAllocator:176 - -Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+20-11-2021 16:33:38 DEBUG DefaultChannelId:79 - -Dio.netty.processId: 18156 (auto-detected)
+20-11-2021 16:33:38 DEBUG NetUtil:139 - -Djava.net.preferIPv4Stack: false
+20-11-2021 16:33:38 DEBUG NetUtil:140 - -Djava.net.preferIPv6Addresses: false
+20-11-2021 16:33:38 DEBUG NetUtil:224 - Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)
+20-11-2021 16:33:38 DEBUG NetUtil:289 - Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200
+20-11-2021 16:33:38 DEBUG DefaultChannelId:101 - -Dio.netty.machineId: 00:00:00:00:00:00:00:e0 (auto-detected)
+20-11-2021 16:33:38 DEBUG ByteBufUtil:86 - -Dio.netty.allocator.type: pooled
+20-11-2021 16:33:38 DEBUG ByteBufUtil:95 - -Dio.netty.threadLocalDirectBufferSize: 0
+20-11-2021 16:33:38 DEBUG ByteBufUtil:98 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+20-11-2021 16:33:38 INFO  MServer:130 - Server MServer started.
+20-11-2021 16:33:42 DEBUG AbstractByteBuf:63 - -Dio.grpc.netty.shaded.io.netty.buffer.checkAccessible: true
+20-11-2021 16:33:42 DEBUG AbstractByteBuf:64 - -Dio.grpc.netty.shaded.io.netty.buffer.checkBounds: true
+20-11-2021 16:33:42 DEBUG ResourceLeakDetectorFactory:196 - Loaded default ResourceLeakDetector: io.grpc.netty.shaded.io.netty.util.ResourceLeakDetector@2b296441
+20-11-2021 16:33:42 DEBUG NettyServerHandler:214 - [id: 0x6b9db301, L:/127.0.0.1:25000 - R:/127.0.0.1:50115] OUTBOUND SETTINGS: ack=false settings={MAX_CONCURRENT_STREAMS=2147483647, INITIAL_WINDOW_SIZE=1048576, MAX_HEADER_LIST_SIZE=8192}
+20-11-2021 16:33:42 DEBUG Recycler:100 - -Dio.netty.recycler.maxCapacityPerThread: 4096
+20-11-2021 16:33:42 DEBUG Recycler:101 - -Dio.netty.recycler.maxSharedCapacityFactor: 2
+20-11-2021 16:33:42 DEBUG Recycler:102 - -Dio.netty.recycler.linkCapacity: 16
+20-11-2021 16:33:42 DEBUG Recycler:103 - -Dio.netty.recycler.ratio: 8
+20-11-2021 16:33:42 DEBUG Recycler:104 - -Dio.netty.recycler.delayedQueue.ratio: 8
+20-11-2021 16:33:42 DEBUG NettyServerHandler:214 - [id: 0x6b9db301, L:/127.0.0.1:25000 - R:/127.0.0.1:50115] OUTBOUND WINDOW_UPDATE: streamId=0 windowSizeIncrement=983041
+20-11-2021 16:33:42 DEBUG NettyServerHandler:214 - [id: 0x6b9db301, L:/127.0.0.1:25000 - R:/127.0.0.1:50115] INBOUND SETTINGS: ack=false settings={ENABLE_PUSH=0, MAX_CONCURRENT_STREAMS=0, INITIAL_WINDOW_SIZE=1048576, MAX_HEADER_LIST_SIZE=8192}
+20-11-2021 16:33:42 DEBUG NettyServerHandler:191 - [id: 0x6b9db301, L:/127.0.0.1:25000 - R:/127.0.0.1:50115] OUTBOUND SETTINGS: ack=true
+20-11-2021 16:33:42 DEBUG NettyServerHandler:214 - [id: 0x6b9db301, L:/127.0.0.1:25000 - R:/127.0.0.1:50115] INBOUND WINDOW_UPDATE: streamId=0 windowSizeIncrement=983041
+20-11-2021 16:33:42 DEBUG NettyServerHandler:191 - [id: 0x6b9db301, L:/127.0.0.1:25000 - R:/127.0.0.1:50115] INBOUND SETTINGS: ack=true
+20-11-2021 16:33:42 DEBUG NettyServerHandler:214 - [id: 0x6b9db301, L:/127.0.0.1:25000 - R:/127.0.0.1:50115] INBOUND HEADERS: streamId=3 headers=GrpcHttp2RequestHeaders[:path: /com.nkasenides.minesweeper.proto.MAServiceProto/CreateGame, :authority: localhost:25000, :method: POST, :scheme: http, te: trailers, content-type: application/grpc, user-agent: grpc-java-netty/1.34.0, grpc-accept-encoding: gzip] streamDependency=0 weight=16 exclusive=false padding=0 endStream=false
+20-11-2021 16:33:42 DEBUG NettyServerHandler:214 - [id: 0x6b9db301, L:/127.0.0.1:25000 - R:/127.0.0.1:50115] INBOUND DATA: streamId=3 padding=0 endStream=true length=11 bytes=0000000006100a180a200a
+20-11-2021 16:33:42 DEBUG NettyServerHandler:214 - [id: 0x6b9db301, L:/127.0.0.1:25000 - R:/127.0.0.1:50115] OUTBOUND PING: ack=false bytes=1234
+20-11-2021 16:33:42 DEBUG NettyServerHandler:214 - [id: 0x6b9db301, L:/127.0.0.1:25000 - R:/127.0.0.1:50115] INBOUND PING: ack=true bytes=1234
+20-11-2021 16:33:42 DEBUG NettyServerHandler:214 - [id: 0x6b9db301, L:/127.0.0.1:25000 - R:/127.0.0.1:50115] OUTBOUND HEADERS: streamId=3 headers=GrpcHttp2OutboundHeaders[:status: 200, content-type: application/grpc, grpc-status: 2] padding=0 endStream=true
+20-11-2021 16:33:42 DEBUG NettyServerHandler:214 - [id: 0x6b9db301, L:/127.0.0.1:25000 - R:/127.0.0.1:50115] INBOUND RST_STREAM: streamId=3 errorCode=8
+20-11-2021 16:33:55 DEBUG InternalLoggerFactory:45 - Using SLF4J as the default logging framework
+20-11-2021 16:33:55 DEBUG PlatformDependent:1015 - Platform: Windows
+20-11-2021 16:33:55 DEBUG PlatformDependent0:408 - -Dio.netty.noUnsafe: false
+20-11-2021 16:33:55 DEBUG PlatformDependent0:876 - Java version: 8
+20-11-2021 16:33:55 DEBUG PlatformDependent0:125 - sun.misc.Unsafe.theUnsafe: available
+20-11-2021 16:33:55 DEBUG PlatformDependent0:149 - sun.misc.Unsafe.copyMemory: available
+20-11-2021 16:33:55 DEBUG PlatformDependent0:187 - java.nio.Buffer.address: available
+20-11-2021 16:33:55 DEBUG PlatformDependent0:252 - direct buffer constructor: available
+20-11-2021 16:33:55 DEBUG PlatformDependent0:326 - java.nio.Bits.unaligned: available, true
+20-11-2021 16:33:55 DEBUG PlatformDependent0:391 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+20-11-2021 16:33:55 DEBUG PlatformDependent0:398 - java.nio.DirectByteBuffer.<init>(long, int): available
+20-11-2021 16:33:55 DEBUG PlatformDependent:1058 - sun.misc.Unsafe: available
+20-11-2021 16:33:55 DEBUG PlatformDependent:1177 - -Dio.netty.tmpdir: C:\Users\hfnov\AppData\Local\Temp (java.io.tmpdir)
+20-11-2021 16:33:55 DEBUG PlatformDependent:1256 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+20-11-2021 16:33:55 DEBUG PlatformDependent:177 - -Dio.netty.maxDirectMemory: 3791650816 bytes
+20-11-2021 16:33:55 DEBUG PlatformDependent:184 - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+20-11-2021 16:33:55 DEBUG CleanerJava6:92 - java.nio.ByteBuffer.cleaner(): available
+20-11-2021 16:33:55 DEBUG PlatformDependent:204 - -Dio.netty.noPreferDirect: false
+20-11-2021 16:33:56 DEBUG MultithreadEventLoopGroup:44 - -Dio.netty.eventLoopThreads: 16
+20-11-2021 16:33:56 DEBUG InternalThreadLocalMap:56 - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+20-11-2021 16:33:56 DEBUG InternalThreadLocalMap:59 - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+20-11-2021 16:33:56 DEBUG NioEventLoop:106 - -Dio.netty.noKeySetOptimization: false
+20-11-2021 16:33:56 DEBUG NioEventLoop:107 - -Dio.netty.selectorAutoRebuildThreshold: 512
+20-11-2021 16:33:56 DEBUG PlatformDependent:919 - org.jctools-core.MpscChunkedArrayQueue: available
+20-11-2021 16:33:56 DEBUG ResourceLeakDetector:130 - -Dio.grpc.netty.shaded.io.netty.leakDetection.level: simple
+20-11-2021 16:33:56 DEBUG ResourceLeakDetector:131 - -Dio.grpc.netty.shaded.io.netty.leakDetection.targetRecords: 4
+20-11-2021 16:33:56 DEBUG PooledByteBufAllocator:156 - -Dio.netty.allocator.numHeapArenas: 16
+20-11-2021 16:33:56 DEBUG PooledByteBufAllocator:157 - -Dio.netty.allocator.numDirectArenas: 16
+20-11-2021 16:33:56 DEBUG PooledByteBufAllocator:159 - -Dio.netty.allocator.pageSize: 8192
+20-11-2021 16:33:56 DEBUG PooledByteBufAllocator:164 - -Dio.netty.allocator.maxOrder: 11
+20-11-2021 16:33:56 DEBUG PooledByteBufAllocator:168 - -Dio.netty.allocator.chunkSize: 16777216
+20-11-2021 16:33:56 DEBUG PooledByteBufAllocator:169 - -Dio.netty.allocator.tinyCacheSize: 512
+20-11-2021 16:33:56 DEBUG PooledByteBufAllocator:170 - -Dio.netty.allocator.smallCacheSize: 256
+20-11-2021 16:33:56 DEBUG PooledByteBufAllocator:171 - -Dio.netty.allocator.normalCacheSize: 64
+20-11-2021 16:33:56 DEBUG PooledByteBufAllocator:172 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+20-11-2021 16:33:56 DEBUG PooledByteBufAllocator:173 - -Dio.netty.allocator.cacheTrimInterval: 8192
+20-11-2021 16:33:56 DEBUG PooledByteBufAllocator:174 - -Dio.netty.allocator.cacheTrimIntervalMillis: 0
+20-11-2021 16:33:56 DEBUG PooledByteBufAllocator:175 - -Dio.netty.allocator.useCacheForAllThreads: true
+20-11-2021 16:33:56 DEBUG PooledByteBufAllocator:176 - -Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+20-11-2021 16:33:56 DEBUG DefaultChannelId:79 - -Dio.netty.processId: 21320 (auto-detected)
+20-11-2021 16:33:56 DEBUG NetUtil:139 - -Djava.net.preferIPv4Stack: false
+20-11-2021 16:33:56 DEBUG NetUtil:140 - -Djava.net.preferIPv6Addresses: false
+20-11-2021 16:33:56 DEBUG NetUtil:224 - Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)
+20-11-2021 16:33:56 DEBUG NetUtil:289 - Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200
+20-11-2021 16:33:56 DEBUG DefaultChannelId:101 - -Dio.netty.machineId: 00:00:00:00:00:00:00:e0 (auto-detected)
+20-11-2021 16:33:56 DEBUG ByteBufUtil:86 - -Dio.netty.allocator.type: pooled
+20-11-2021 16:33:56 DEBUG ByteBufUtil:95 - -Dio.netty.threadLocalDirectBufferSize: 0
+20-11-2021 16:33:56 DEBUG ByteBufUtil:98 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+20-11-2021 16:33:56 INFO  MServer:130 - Server MServer started.
+20-11-2021 16:34:02 DEBUG AbstractByteBuf:63 - -Dio.grpc.netty.shaded.io.netty.buffer.checkAccessible: true
+20-11-2021 16:34:02 DEBUG AbstractByteBuf:64 - -Dio.grpc.netty.shaded.io.netty.buffer.checkBounds: true
+20-11-2021 16:34:02 DEBUG ResourceLeakDetectorFactory:196 - Loaded default ResourceLeakDetector: io.grpc.netty.shaded.io.netty.util.ResourceLeakDetector@53e9130c
+20-11-2021 16:34:02 DEBUG NettyServerHandler:214 - [id: 0x496a5640, L:/127.0.0.1:25000 - R:/127.0.0.1:50170] OUTBOUND SETTINGS: ack=false settings={MAX_CONCURRENT_STREAMS=2147483647, INITIAL_WINDOW_SIZE=1048576, MAX_HEADER_LIST_SIZE=8192}
+20-11-2021 16:34:02 DEBUG Recycler:100 - -Dio.netty.recycler.maxCapacityPerThread: 4096
+20-11-2021 16:34:02 DEBUG Recycler:101 - -Dio.netty.recycler.maxSharedCapacityFactor: 2
+20-11-2021 16:34:02 DEBUG Recycler:102 - -Dio.netty.recycler.linkCapacity: 16
+20-11-2021 16:34:02 DEBUG Recycler:103 - -Dio.netty.recycler.ratio: 8
+20-11-2021 16:34:02 DEBUG Recycler:104 - -Dio.netty.recycler.delayedQueue.ratio: 8
+20-11-2021 16:34:02 DEBUG NettyServerHandler:214 - [id: 0x496a5640, L:/127.0.0.1:25000 - R:/127.0.0.1:50170] OUTBOUND WINDOW_UPDATE: streamId=0 windowSizeIncrement=983041
+20-11-2021 16:34:02 DEBUG NettyServerHandler:214 - [id: 0x496a5640, L:/127.0.0.1:25000 - R:/127.0.0.1:50170] INBOUND SETTINGS: ack=false settings={ENABLE_PUSH=0, MAX_CONCURRENT_STREAMS=0, INITIAL_WINDOW_SIZE=1048576, MAX_HEADER_LIST_SIZE=8192}
+20-11-2021 16:34:02 DEBUG NettyServerHandler:191 - [id: 0x496a5640, L:/127.0.0.1:25000 - R:/127.0.0.1:50170] OUTBOUND SETTINGS: ack=true
+20-11-2021 16:34:02 DEBUG NettyServerHandler:214 - [id: 0x496a5640, L:/127.0.0.1:25000 - R:/127.0.0.1:50170] INBOUND WINDOW_UPDATE: streamId=0 windowSizeIncrement=983041
+20-11-2021 16:34:02 DEBUG NettyServerHandler:191 - [id: 0x496a5640, L:/127.0.0.1:25000 - R:/127.0.0.1:50170] INBOUND SETTINGS: ack=true
+20-11-2021 16:34:03 DEBUG NettyServerHandler:214 - [id: 0x496a5640, L:/127.0.0.1:25000 - R:/127.0.0.1:50170] INBOUND HEADERS: streamId=3 headers=GrpcHttp2RequestHeaders[:path: /com.nkasenides.minesweeper.proto.MAServiceProto/CreateGame, :authority: localhost:25000, :method: POST, :scheme: http, te: trailers, content-type: application/grpc, user-agent: grpc-java-netty/1.34.0, grpc-accept-encoding: gzip] streamDependency=0 weight=16 exclusive=false padding=0 endStream=false
+20-11-2021 16:34:03 DEBUG NettyServerHandler:214 - [id: 0x496a5640, L:/127.0.0.1:25000 - R:/127.0.0.1:50170] INBOUND DATA: streamId=3 padding=0 endStream=true length=11 bytes=0000000006100a180a200a
+20-11-2021 16:34:03 DEBUG NettyServerHandler:214 - [id: 0x496a5640, L:/127.0.0.1:25000 - R:/127.0.0.1:50170] OUTBOUND PING: ack=false bytes=1234
+20-11-2021 16:34:03 DEBUG NettyServerHandler:214 - [id: 0x496a5640, L:/127.0.0.1:25000 - R:/127.0.0.1:50170] INBOUND PING: ack=true bytes=1234
+20-11-2021 16:34:03 DEBUG NettyServerHandler:214 - [id: 0x496a5640, L:/127.0.0.1:25000 - R:/127.0.0.1:50170] OUTBOUND HEADERS: streamId=3 headers=GrpcHttp2OutboundHeaders[:status: 200, content-type: application/grpc, grpc-status: 2] padding=0 endStream=true
+20-11-2021 16:34:03 DEBUG NettyServerHandler:214 - [id: 0x496a5640, L:/127.0.0.1:25000 - R:/127.0.0.1:50170] INBOUND RST_STREAM: streamId=3 errorCode=8
+20-11-2021 16:36:21 DEBUG InternalLoggerFactory:45 - Using SLF4J as the default logging framework
+20-11-2021 16:36:21 DEBUG PlatformDependent:1015 - Platform: Windows
+20-11-2021 16:36:21 DEBUG PlatformDependent0:408 - -Dio.netty.noUnsafe: false
+20-11-2021 16:36:21 DEBUG PlatformDependent0:876 - Java version: 8
+20-11-2021 16:36:21 DEBUG PlatformDependent0:125 - sun.misc.Unsafe.theUnsafe: available
+20-11-2021 16:36:21 DEBUG PlatformDependent0:149 - sun.misc.Unsafe.copyMemory: available
+20-11-2021 16:36:21 DEBUG PlatformDependent0:187 - java.nio.Buffer.address: available
+20-11-2021 16:36:21 DEBUG PlatformDependent0:252 - direct buffer constructor: available
+20-11-2021 16:36:21 DEBUG PlatformDependent0:326 - java.nio.Bits.unaligned: available, true
+20-11-2021 16:36:21 DEBUG PlatformDependent0:391 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+20-11-2021 16:36:21 DEBUG PlatformDependent0:398 - java.nio.DirectByteBuffer.<init>(long, int): available
+20-11-2021 16:36:21 DEBUG PlatformDependent:1058 - sun.misc.Unsafe: available
+20-11-2021 16:36:21 DEBUG PlatformDependent:1177 - -Dio.netty.tmpdir: C:\Users\hfnov\AppData\Local\Temp (java.io.tmpdir)
+20-11-2021 16:36:21 DEBUG PlatformDependent:1256 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+20-11-2021 16:36:21 DEBUG PlatformDependent:177 - -Dio.netty.maxDirectMemory: 3791650816 bytes
+20-11-2021 16:36:21 DEBUG PlatformDependent:184 - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+20-11-2021 16:36:21 DEBUG CleanerJava6:92 - java.nio.ByteBuffer.cleaner(): available
+20-11-2021 16:36:21 DEBUG PlatformDependent:204 - -Dio.netty.noPreferDirect: false
+20-11-2021 16:36:21 DEBUG MultithreadEventLoopGroup:44 - -Dio.netty.eventLoopThreads: 16
+20-11-2021 16:36:21 DEBUG InternalThreadLocalMap:56 - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+20-11-2021 16:36:21 DEBUG InternalThreadLocalMap:59 - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+20-11-2021 16:36:21 DEBUG NioEventLoop:106 - -Dio.netty.noKeySetOptimization: false
+20-11-2021 16:36:21 DEBUG NioEventLoop:107 - -Dio.netty.selectorAutoRebuildThreshold: 512
+20-11-2021 16:36:21 DEBUG PlatformDependent:919 - org.jctools-core.MpscChunkedArrayQueue: available
+20-11-2021 16:36:21 DEBUG ResourceLeakDetector:130 - -Dio.grpc.netty.shaded.io.netty.leakDetection.level: simple
+20-11-2021 16:36:21 DEBUG ResourceLeakDetector:131 - -Dio.grpc.netty.shaded.io.netty.leakDetection.targetRecords: 4
+20-11-2021 16:36:21 DEBUG PooledByteBufAllocator:156 - -Dio.netty.allocator.numHeapArenas: 16
+20-11-2021 16:36:21 DEBUG PooledByteBufAllocator:157 - -Dio.netty.allocator.numDirectArenas: 16
+20-11-2021 16:36:21 DEBUG PooledByteBufAllocator:159 - -Dio.netty.allocator.pageSize: 8192
+20-11-2021 16:36:21 DEBUG PooledByteBufAllocator:164 - -Dio.netty.allocator.maxOrder: 11
+20-11-2021 16:36:21 DEBUG PooledByteBufAllocator:168 - -Dio.netty.allocator.chunkSize: 16777216
+20-11-2021 16:36:21 DEBUG PooledByteBufAllocator:169 - -Dio.netty.allocator.tinyCacheSize: 512
+20-11-2021 16:36:21 DEBUG PooledByteBufAllocator:170 - -Dio.netty.allocator.smallCacheSize: 256
+20-11-2021 16:36:21 DEBUG PooledByteBufAllocator:171 - -Dio.netty.allocator.normalCacheSize: 64
+20-11-2021 16:36:21 DEBUG PooledByteBufAllocator:172 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+20-11-2021 16:36:21 DEBUG PooledByteBufAllocator:173 - -Dio.netty.allocator.cacheTrimInterval: 8192
+20-11-2021 16:36:21 DEBUG PooledByteBufAllocator:174 - -Dio.netty.allocator.cacheTrimIntervalMillis: 0
+20-11-2021 16:36:21 DEBUG PooledByteBufAllocator:175 - -Dio.netty.allocator.useCacheForAllThreads: true
+20-11-2021 16:36:21 DEBUG PooledByteBufAllocator:176 - -Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+20-11-2021 16:36:21 DEBUG DefaultChannelId:79 - -Dio.netty.processId: 18116 (auto-detected)
+20-11-2021 16:36:21 DEBUG NetUtil:139 - -Djava.net.preferIPv4Stack: false
+20-11-2021 16:36:21 DEBUG NetUtil:140 - -Djava.net.preferIPv6Addresses: false
+20-11-2021 16:36:22 DEBUG NetUtil:224 - Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)
+20-11-2021 16:36:22 DEBUG NetUtil:289 - Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200
+20-11-2021 16:36:22 DEBUG DefaultChannelId:101 - -Dio.netty.machineId: 00:00:00:00:00:00:00:e0 (auto-detected)
+20-11-2021 16:36:22 DEBUG ByteBufUtil:86 - -Dio.netty.allocator.type: pooled
+20-11-2021 16:36:22 DEBUG ByteBufUtil:95 - -Dio.netty.threadLocalDirectBufferSize: 0
+20-11-2021 16:36:22 DEBUG ByteBufUtil:98 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+20-11-2021 16:36:22 INFO  MServer:130 - Server MServer started.
+20-11-2021 16:36:25 DEBUG AbstractByteBuf:63 - -Dio.grpc.netty.shaded.io.netty.buffer.checkAccessible: true
+20-11-2021 16:36:25 DEBUG AbstractByteBuf:64 - -Dio.grpc.netty.shaded.io.netty.buffer.checkBounds: true
+20-11-2021 16:36:25 DEBUG ResourceLeakDetectorFactory:196 - Loaded default ResourceLeakDetector: io.grpc.netty.shaded.io.netty.util.ResourceLeakDetector@46c0bd7
+20-11-2021 16:36:25 DEBUG NettyServerHandler:214 - [id: 0xe4f55c34, L:/127.0.0.1:25000 - R:/127.0.0.1:50227] OUTBOUND SETTINGS: ack=false settings={MAX_CONCURRENT_STREAMS=2147483647, INITIAL_WINDOW_SIZE=1048576, MAX_HEADER_LIST_SIZE=8192}
+20-11-2021 16:36:25 DEBUG Recycler:100 - -Dio.netty.recycler.maxCapacityPerThread: 4096
+20-11-2021 16:36:25 DEBUG Recycler:101 - -Dio.netty.recycler.maxSharedCapacityFactor: 2
+20-11-2021 16:36:25 DEBUG Recycler:102 - -Dio.netty.recycler.linkCapacity: 16
+20-11-2021 16:36:25 DEBUG Recycler:103 - -Dio.netty.recycler.ratio: 8
+20-11-2021 16:36:25 DEBUG Recycler:104 - -Dio.netty.recycler.delayedQueue.ratio: 8
+20-11-2021 16:36:25 DEBUG NettyServerHandler:214 - [id: 0xe4f55c34, L:/127.0.0.1:25000 - R:/127.0.0.1:50227] OUTBOUND WINDOW_UPDATE: streamId=0 windowSizeIncrement=983041
+20-11-2021 16:36:25 DEBUG NettyServerHandler:214 - [id: 0xe4f55c34, L:/127.0.0.1:25000 - R:/127.0.0.1:50227] INBOUND SETTINGS: ack=false settings={ENABLE_PUSH=0, MAX_CONCURRENT_STREAMS=0, INITIAL_WINDOW_SIZE=1048576, MAX_HEADER_LIST_SIZE=8192}
+20-11-2021 16:36:25 DEBUG NettyServerHandler:191 - [id: 0xe4f55c34, L:/127.0.0.1:25000 - R:/127.0.0.1:50227] OUTBOUND SETTINGS: ack=true
+20-11-2021 16:36:25 DEBUG NettyServerHandler:214 - [id: 0xe4f55c34, L:/127.0.0.1:25000 - R:/127.0.0.1:50227] INBOUND WINDOW_UPDATE: streamId=0 windowSizeIncrement=983041
+20-11-2021 16:36:25 DEBUG NettyServerHandler:191 - [id: 0xe4f55c34, L:/127.0.0.1:25000 - R:/127.0.0.1:50227] INBOUND SETTINGS: ack=true
+20-11-2021 16:36:25 DEBUG NettyServerHandler:214 - [id: 0xe4f55c34, L:/127.0.0.1:25000 - R:/127.0.0.1:50227] INBOUND HEADERS: streamId=3 headers=GrpcHttp2RequestHeaders[:path: /com.nkasenides.minesweeper.proto.MAServiceProto/CreateGame, :authority: localhost:25000, :method: POST, :scheme: http, te: trailers, content-type: application/grpc, user-agent: grpc-java-netty/1.34.0, grpc-accept-encoding: gzip] streamDependency=0 weight=16 exclusive=false padding=0 endStream=false
+20-11-2021 16:36:25 DEBUG NettyServerHandler:214 - [id: 0xe4f55c34, L:/127.0.0.1:25000 - R:/127.0.0.1:50227] INBOUND DATA: streamId=3 padding=0 endStream=true length=11 bytes=0000000006100a180a200a
+20-11-2021 16:36:25 DEBUG NettyServerHandler:214 - [id: 0xe4f55c34, L:/127.0.0.1:25000 - R:/127.0.0.1:50227] OUTBOUND PING: ack=false bytes=1234
+20-11-2021 16:36:25 DEBUG NettyServerHandler:214 - [id: 0xe4f55c34, L:/127.0.0.1:25000 - R:/127.0.0.1:50227] INBOUND PING: ack=true bytes=1234
+20-11-2021 16:36:26 DEBUG NettyServerHandler:214 - [id: 0xe4f55c34, L:/127.0.0.1:25000 - R:/127.0.0.1:50227] OUTBOUND HEADERS: streamId=3 headers=GrpcHttp2OutboundHeaders[:status: 200, content-type: application/grpc, grpc-encoding: identity, grpc-accept-encoding: gzip] padding=0 endStream=false
+20-11-2021 16:36:26 DEBUG NettyServerHandler:214 - [id: 0xe4f55c34, L:/127.0.0.1:25000 - R:/127.0.0.1:50227] OUTBOUND DATA: streamId=3 padding=0 endStream=false length=11 bytes=00000000060a024f4b1004
+20-11-2021 16:36:26 DEBUG NettyServerHandler:214 - [id: 0xe4f55c34, L:/127.0.0.1:25000 - R:/127.0.0.1:50227] INBOUND PING: ack=false bytes=1234
+20-11-2021 16:36:26 DEBUG NettyServerHandler:214 - [id: 0xe4f55c34, L:/127.0.0.1:25000 - R:/127.0.0.1:50227] OUTBOUND PING: ack=true bytes=1234

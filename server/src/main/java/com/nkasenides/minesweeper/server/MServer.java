@@ -38,9 +38,7 @@ public class MServer extends GameServer<
     }    
 
     @Override
-    protected void runInBackground() {
-        //TODO - Implement this method.
-    }
+    protected void runInBackground() { }
 
     public static void main(String[] args) {
         try {
@@ -57,12 +55,14 @@ public class MServer extends GameServer<
     public static void initializeObjectis() {
         JedisPool jedisPool = new JedisPool("localhost", 6379);
         Objectis.init(jedisPool);
+        Objectis.useMultithreading(false);
         try {
             Objectis.register(MAWorld.class);
             Objectis.register(MAWorldSession.class);
             Objectis.register(MAGameSession.class);
             Objectis.register(MAPlayer.class);
             Objectis.register(MATerrainChunk.class);
+            Objectis.register(MATerrainCell.class);
         } catch (ClassRegistrationException e) {
             e.printStackTrace();
         }
