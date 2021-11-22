@@ -35,6 +35,7 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
 
         worlds.forEach(maWorld -> response.addWorlds(maWorld.toProto().build()));
         responseObserver.onNext(response.build());
+        responseObserver.onCompleted();
     }    
     
     @Override    
@@ -53,6 +54,7 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
                     .setMessage("INVALID_WORLD_SESSION_ID")
                     .build();
             responseObserver.onNext(response);
+            responseObserver.onCompleted();
             return;
         }
 
@@ -63,6 +65,7 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
                     .setMessage("INVALID_WORLD")
                     .build();
             responseObserver.onNext(response);
+            responseObserver.onCompleted();
             return;
         }
 
@@ -73,6 +76,7 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
                     .setMessage("INVALID_MOVE_ROW")
                     .build();
             responseObserver.onNext(response);
+            responseObserver.onCompleted();
             return;
         }
 
@@ -82,6 +86,7 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
                     .setMessage("INVALID_MOVE_COL")
                     .build();
             responseObserver.onNext(response);
+            responseObserver.onCompleted();
             return;
         }
 
@@ -96,6 +101,7 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
                 .setPartialState(partialStateSnapshot)
                 .build();
         responseObserver.onNext(response);
+        responseObserver.onCompleted();
     }
     
     @Override    
@@ -107,6 +113,7 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
                     .setMessage("INVALID_MAX_PLAYERS")
                     .build();
             responseObserver.onNext(response);
+            responseObserver.onCompleted();
             return;
         }
 
@@ -116,6 +123,7 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
                     .setMessage("INVALID_WIDTH")
                     .build();
             responseObserver.onNext(response);
+            responseObserver.onCompleted();
             return;
         }
 
@@ -125,13 +133,11 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
                     .setMessage("INVALID_HEIGHT")
                     .build();
             responseObserver.onNext(response);
+            responseObserver.onCompleted();
             return;
         }
 
         String worldID = UUID.randomUUID().toString();
-
-        System.out.println("width: " + request.getWidth());
-        System.out.println("height: " + request.getHeight());
 
         //Create world:
         MAWorld world = new MAWorld();
@@ -172,18 +178,12 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
             Objectis.collection(MATerrainCell.class, world.getId() + "_cells").add(cell);
         }
 
-        //DEBUG ONLY:
-        final List<MATerrainCell> listOfCellsAdded = Objectis.collection(MATerrainCell.class, world.getId() + "_cells").list();
-        for (MATerrainCell cell : listOfCellsAdded) {
-            System.out.println(cell.getPosition().getRow() + "," + cell.getPosition().getCol() + "//  " + cell.isIsMined());
-        }
-
-
         CreateGameResponse response = CreateGameResponse.newBuilder()
                 .setStatus(CreateGameResponse.Status.OK)
                 .setMessage("OK")
                 .build();
         responseObserver.onNext(response);
+        responseObserver.onCompleted();
 
     }    
     
@@ -197,6 +197,7 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
                     .setMessage("NO_SUCH_WORLD_SESSION")
                     .build();
             responseObserver.onNext(response);
+            responseObserver.onCompleted();
             return;
         }
 
@@ -207,6 +208,7 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
                     .setMessage("INVALID_WORLD")
                     .build();
             responseObserver.onNext(response);
+            responseObserver.onCompleted();
             return;
         }
 
@@ -218,6 +220,7 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
                 .setPartialState(partialStateSnapshot)
                 .build();
         responseObserver.onNext(response);
+        responseObserver.onCompleted();
     }    
     
     @Override    
@@ -229,6 +232,7 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
                     .setMessage("INVALID_WORLD_SESSION_ID")
                     .build();
             responseObserver.onNext(response);
+            responseObserver.onCompleted();
             return;
         }
 
@@ -239,13 +243,13 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
                     .setMessage("INVALID_GAME_ID")
                     .build();
             responseObserver.onNext(response);
+            responseObserver.onCompleted();
             return;
         }
 
         State.forWorld(world.getId()).subscribe(worldSession, new StreamObserver<UpdateStateResponse>() {
             @Override
             public void onNext(UpdateStateResponse updateStateResponse) {
-                System.out.println(worldSession.getId() + " onNext()");
                 onCompleted();
             }
 
@@ -265,6 +269,7 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
                 .setMessage("OK")
                 .build();
         responseObserver.onNext(response);
+        responseObserver.onCompleted();
 
     }    
     
@@ -280,6 +285,7 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
                     .setMessage("INVALID_GAME_SESSION_ID")
                     .build();
             responseObserver.onNext(response);
+            responseObserver.onCompleted();
             return;
         }
 
@@ -291,6 +297,7 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
                     .setMessage("CANNOT_FIND_WORLD")
                     .build();
             responseObserver.onNext(response);
+            responseObserver.onCompleted();
             return;
         }
 
@@ -304,6 +311,7 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
                     .setMessage("MAX_PLAYERS_REACHED")
                     .build();
             responseObserver.onNext(response);
+            responseObserver.onCompleted();
             return;
         }
 
@@ -315,6 +323,7 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
                     .setWorldSession(playerWorldSession.toProto().build())
                     .build();
             responseObserver.onNext(response);
+            responseObserver.onCompleted();
         }
         else {
             final MAPlayer player = DBManager.player.get(gameSession.getPlayerID());
@@ -338,6 +347,7 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
                     .setWorldSession(playerWorldSession.toProto().build())
                     .build();
             responseObserver.onNext(response);
+            responseObserver.onCompleted();
 
         }
     }
@@ -351,6 +361,7 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
                     .setMessage("NO_SUCH_WORLD_SESSION")
                     .build();
             responseObserver.onNext(response);
+            responseObserver.onCompleted();
             return;
         }
 
@@ -361,6 +372,7 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
                     .setMessage("INVALID_GAME")
                     .build();
             responseObserver.onNext(response);
+            responseObserver.onCompleted();
             return;
         }
 
@@ -370,6 +382,7 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
                     .setMessage("GAME_NOT_STARTED")
                     .build();
             responseObserver.onNext(response);
+            responseObserver.onCompleted();
             return;
         }
 
@@ -378,7 +391,8 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
                     .setStatus(RevealResponse.Status.OTHER_ERROR)
                     .setMessage("INVALID_POSITION_ROW")
                     .build();
-            responseObserver.onNext(response);
+            responseObserver.onCompleted();
+            responseObserver.onCompleted();
             return;
         }
 
@@ -388,6 +402,7 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
                     .setMessage("INVALID_POSITION_COL")
                     .build();
             responseObserver.onNext(response);
+            responseObserver.onCompleted();
             return;
         }
 
@@ -405,6 +420,7 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
                     .setMessage("CELL_ALREADY_REVEALED")
                     .build();
             responseObserver.onNext(response);
+            responseObserver.onCompleted();
             return;
         }
 
@@ -430,6 +446,7 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
                 .setMessage("OK")
                 .build();
         responseObserver.onNext(response);
+        responseObserver.onCompleted();
 
     }    
     
@@ -443,6 +460,7 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
                     .setMessage("NO_SUCH_WORLD_SESSION")
                     .build();
             responseObserver.onNext(response);
+            responseObserver.onCompleted();
             return;
         }
 
@@ -453,6 +471,7 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
                     .setMessage("INVALID_GAME")
                     .build();
             responseObserver.onNext(response);
+            responseObserver.onCompleted();
             return;
         }
 
@@ -462,6 +481,7 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
                     .setMessage("GAME_NOT_STARTED")
                     .build();
             responseObserver.onNext(response);
+            responseObserver.onCompleted();
             return;
         }
 
@@ -471,6 +491,7 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
                     .setMessage("INVALID_POSITION_ROW")
                     .build();
             responseObserver.onNext(response);
+            responseObserver.onCompleted();
             return;
         }
 
@@ -480,6 +501,7 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
                     .setMessage("INVALID_POSITION_COL")
                     .build();
             responseObserver.onNext(response);
+            responseObserver.onCompleted();
             return;
         }
 
@@ -498,6 +520,7 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
                         .setMessage("CELL_ALREADY_REVEALED")
                         .build();
                 responseObserver.onNext(response);
+                responseObserver.onCompleted();
                 return;
             }
         }
@@ -546,6 +569,7 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
                 .setMessage("OK")
                 .build();
         responseObserver.onNext(response);
+        responseObserver.onCompleted();
     }
 
     //NEW

@@ -10,9 +10,12 @@ import com.nkasenides.minesweeper.model.*;
 import com.nkasenides.minesweeper.proto.*;
 import com.nkasenides.athlos.client.DedicatedGameClient;
 
+import java.util.ArrayList;
+
 
 public class MAClient extends DedicatedGameClient<MAPartialStateProto, MAGameSession, MAWorldSession, MAPlayer, MAWorld, MAEntityProto, MATerrainCellProto> {
 
+    public static ArrayList<MAWorld> listOfWorlds;
     public final MAStubManager stubs = new MAStubManager(mainChannel);
 
     public MAClient(String ipAddress, int PORT) {
@@ -23,13 +26,37 @@ public class MAClient extends DedicatedGameClient<MAPartialStateProto, MAGameSes
         MAClient client = new MAClient("localhost", 25000);
         client.start();
         MAStubManager a = new MAStubManager(client.mainChannel);
-        a.createGame.sendAndWait(CreateGameRequest.newBuilder()
-                        .setWidth(10)
-                        .setHeight(10)
-                        .setDifficulty(Difficulty.EASY_Difficulty)
-                        .setMaxPlayers(10)
+
+        //Create game:
+        final CreateGameResponse createGameResponse = a.createGame.sendAndWait(CreateGameRequest.newBuilder()
+                .setWidth(10)
+                .setHeight(10)
+                .setDifficulty(Difficulty.EASY_Difficulty)
+                .setMaxPlayers(10)
                 .build()
         );
+        System.out.println(createGameResponse.getMessage());
+
+        //List all games:
+        final ListGameResponse listGameResponse = a.listGames.sendAndWait(ListGamesRequest.newBuilder()
+                .build()
+        );
+        if (listGameResponse.getStatus() == ListGameResponse.Status.OK) {
+            System.out.println("list ok");
+            MAClient.listOfWorlds = new ArrayList<>();
+            for (MAWorldProto world : listGameResponse.getWorldsList()) {
+                MAClient.listOfWorlds.add(world.toObject());
+            }
+        }
+        else {
+            System.err.println(createGameResponse.getMessage());
+        }
+
+        System.out.println("Worlds: ");
+        for (MAWorld world : listOfWorlds) {
+            System.out.println(world.getName() + " (" + world.getMaxRows() + ", " + world.getMaxCols() + ")");
+        }
+
     }
 
 

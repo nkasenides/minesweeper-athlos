@@ -227,7 +227,7 @@ public final class MProto {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
+    String[] descriptorData = {
       "\n\022Proto/MProto.proto\022 com.nkasenides.min" +
       "esweeper.proto\"<\n\033PartialStatePreference" +
       "Proto\022\r\n\005width\030\001 \001(\005\022\016\n\006height\030\002 \001(\005\"I\n\020" +
@@ -257,226 +257,235 @@ public final class MProto {
       "to.MatrixPositionProto\022\020\n\010playerID\030\005 \001(\t" +
       "\022?\n\tdirection\030\006 \001(\0162,.com.nkasenides.min" +
       "esweeper.proto.Direction4\"\017\n\rMAActionPro" +
-      "to\"\262\001\n\022MATerrainCellProto\022B\n\013revealState" +
-      "\030\001 \001(\0162-.com.nkasenides.minesweeper.prot" +
-      "o.RevealState\022G\n\010position\030\002 \001(\01325.com.nk" +
-      "asenides.minesweeper.proto.MatrixPositio" +
-      "nProto\022\017\n\007isMined\030\003 \001(\010\"\275\001\n\022MAStateUpdat" +
-      "eProto\022K\n\014partialState\030\001 \001(\01325.com.nkase" +
-      "nides.minesweeper.proto.MAPartialStatePr" +
-      "oto\022\026\n\016worldSessionID\030\002 \001(\t\022\027\n\017removedEn" +
-      "tities\030\003 \003(\t\022\026\n\016removedTerrain\030\004 \003(\t\022\021\n\t" +
-      "timestamp\030\005 \001(\004\"\260\002\n\023MATerrainChunkProto\022" +
-      "\n\n\002id\030\001 \001(\t\022\017\n\007worldID\030\002 \001(\t\022G\n\010position" +
-      "\030\003 \001(\01325.com.nkasenides.minesweeper.prot" +
-      "o.MatrixPositionProto\022O\n\005cells\030\004 \003(\0132@.c" +
-      "om.nkasenides.minesweeper.proto.MATerrai" +
-      "nChunkProto.CellsEntry\032b\n\nCellsEntry\022\013\n\003" +
-      "key\030\001 \001(\t\022C\n\005value\030\002 \001(\01324.com.nkasenide" +
-      "s.minesweeper.proto.MATerrainCellProto:\002" +
-      "8\001\"\226\001\n\030MATerrainIdentifierProto\022\n\n\002id\030\001 " +
-      "\001(\t\022\017\n\007chunkID\030\002 \001(\t\022\017\n\007worldID\030\003 \001(\t\022L\n" +
-      "\rchunkPosition\030\004 \001(\01325.com.nkasenides.mi" +
-      "nesweeper.proto.MatrixPositionProto\"\351\003\n\023" +
-      "MAPartialStateProto\022U\n\010entities\030\001 \003(\0132C." +
-      "com.nkasenides.minesweeper.proto.MAParti" +
-      "alStateProto.EntitiesEntry\022K\n\014worldSessi" +
-      "on\030\002 \001(\01325.com.nkasenides.minesweeper.pr" +
-      "oto.MAWorldSessionProto\022S\n\007terrain\030\003 \003(\013" +
-      "2B.com.nkasenides.minesweeper.proto.MAPa" +
-      "rtialStateProto.TerrainEntry\022\021\n\ttimestam" +
-      "p\030\004 \001(\004\032`\n\rEntitiesEntry\022\013\n\003key\030\001 \001(\t\022>\n" +
-      "\005value\030\002 \001(\0132/.com.nkasenides.minesweepe" +
-      "r.proto.MAEntityProto:\0028\001\032d\n\014TerrainEntr" +
-      "y\022\013\n\003key\030\001 \001(\t\022C\n\005value\030\002 \001(\01324.com.nkas" +
-      "enides.minesweeper.proto.MATerrainCellPr" +
-      "oto:\0028\001\"\227\002\n\014MAWorldProto\022@\n\ndifficulty\030\001" +
-      " \001(\0162,.com.nkasenides.minesweeper.proto." +
-      "Difficulty\022\017\n\007maxRows\030\002 \001(\022\022\023\n\013heightLim" +
-      "it\030\003 \001(\r\022\022\n\nmaxPlayers\030\004 \001(\r\022\014\n\004seed\030\005 \001" +
-      "(\022\022\014\n\004name\030\006 \001(\t\022\020\n\010chunkIDs\030\007 \003(\t\022\n\n\002id" +
-      "\030\010 \001(\t\022\017\n\007ownerID\030\t \001(\t\022\021\n\tcreatedOn\030\n \001" +
-      "(\004\022\017\n\007maxCols\030\013 \001(\022\022\034\n\024subscribedSession" +
-      "IDs\030\014 \003(\t\"\352\006\n\007Request\022N\n\020startGameReques" +
-      "t\030\001 \001(\01322.com.nkasenides.minesweeper.pro" +
-      "to.StartGameRequestH\000\022D\n\013flagRequest\030\002 \001" +
-      "(\0132-.com.nkasenides.minesweeper.proto.Fl" +
-      "agRequestH\000\022N\n\020listGamesRequest\030\003 \001(\01322." +
-      "com.nkasenides.minesweeper.proto.ListGam" +
-      "esRequestH\000\022L\n\017getStateRequest\030\004 \001(\01321.c" +
-      "om.nkasenides.minesweeper.proto.GetState" +
-      "RequestH\000\022H\n\rrevealRequest\030\005 \001(\0132/.com.n" +
-      "kasenides.minesweeper.proto.RevealReques" +
-      "tH\000\022N\n\020subscribeRequest\030\006 \001(\01322.com.nkas" +
-      "enides.minesweeper.proto.SubscribeReques" +
-      "tH\000\022D\n\013moveRequest\030\007 \001(\0132-.com.nkasenide" +
-      "s.minesweeper.proto.MoveRequestH\000\022R\n\022upd" +
-      "ateStateRequest\030\010 \001(\01324.com.nkasenides.m" +
-      "inesweeper.proto.UpdateStateRequestH\000\022P\n" +
-      "\021createGameRequest\030\t \001(\01323.com.nkasenide" +
-      "s.minesweeper.proto.CreateGameRequestH\000\022" +
-      "L\n\017viewGameRequest\030\n \001(\01321.com.nkasenide" +
-      "s.minesweeper.proto.ViewGameRequestH\000\022L\n" +
-      "\017joinGameRequest\030\013 \001(\01321.com.nkasenides." +
-      "minesweeper.proto.JoinGameRequestH\000B\t\n\007r" +
-      "equest\"\"\n\020StartGameRequest\022\016\n\006gameID\030\001 \001" +
-      "(\t\"n\n\013FlagRequest\022\026\n\016worldSessionID\030\001 \001(" +
-      "\t\022G\n\010position\030\002 \001(\01325.com.nkasenides.min" +
-      "esweeper.proto.MatrixPositionProto\"\022\n\020Li" +
-      "stGamesRequest\")\n\017GetStateRequest\022\026\n\016wor" +
-      "ldSessionID\030\001 \001(\t\"p\n\rRevealRequest\022\026\n\016wo" +
-      "rldSessionID\030\001 \001(\t\022G\n\010position\030\002 \001(\01325.c" +
-      "om.nkasenides.minesweeper.proto.MatrixPo" +
-      "sitionProto\"q\n\020SubscribeRequest\022\016\n\006gameI" +
-      "D\030\001 \001(\t\022\032\n\022partialStateHeight\030\002 \001(\005\022\026\n\016w" +
-      "orldSessionID\030\003 \001(\t\022\031\n\021partialStateWidth" +
-      "\030\004 \001(\005\"r\n\013MoveRequest\022K\n\014movePosition\030\001 " +
+      "to\"\276\001\n\022MATerrainCellProto\022G\n\010position\030\001 " +
       "\001(\01325.com.nkasenides.minesweeper.proto.M" +
-      "atrixPositionProto\022\026\n\016worldSessionID\030\002 \001" +
-      "(\t\",\n\022UpdateStateRequest\022\026\n\016worldSession" +
-      "ID\030\001 \001(\t\"\210\001\n\021CreateGameRequest\022@\n\ndiffic" +
-      "ulty\030\001 \001(\0162,.com.nkasenides.minesweeper." +
-      "proto.Difficulty\022\r\n\005width\030\002 \001(\r\022\022\n\nmaxPl" +
-      "ayers\030\003 \001(\r\022\016\n\006height\030\004 \001(\r\"\246\001\n\017ViewGame" +
-      "Request\022\016\n\006gameID\030\001 \001(\t\022\032\n\022partialStateH" +
-      "eight\030\002 \001(\005\022\031\n\021partialStateWidth\030\003 \001(\005\022L" +
-      "\n\rstartPosition\030\004 \001(\01325.com.nkasenides.m" +
-      "inesweeper.proto.MatrixPositionProto\"\227\001\n" +
-      "\017JoinGameRequest\022\016\n\006gameID\030\001 \001(\t\022\025\n\rgame" +
-      "SessionID\030\002 \001(\t\022]\n\026partialStatePreferenc" +
-      "e\030\003 \001(\0132=.com.nkasenides.minesweeper.pro" +
-      "to.PartialStatePreferenceProto\"\270\006\n\010Respo" +
-      "nse\022P\n\021startGameResponse\030\001 \001(\01323.com.nka" +
-      "senides.minesweeper.proto.StartGameRespo" +
-      "nseH\000\022F\n\014moveResponse\030\002 \001(\0132..com.nkasen" +
-      "ides.minesweeper.proto.MoveResponseH\000\022N\n" +
-      "\020viewGameResponse\030\003 \001(\01322.com.nkasenides" +
-      ".minesweeper.proto.ViewGameResponseH\000\022N\n" +
-      "\020getStateResponse\030\004 \001(\01322.com.nkasenides" +
-      ".minesweeper.proto.GetStateResponseH\000\022J\n" +
-      "\016revealResponse\030\005 \001(\01320.com.nkasenides.m" +
-      "inesweeper.proto.RevealResponseH\000\022T\n\023upd" +
-      "ateStateResponse\030\006 \001(\01325.com.nkasenides." +
-      "minesweeper.proto.UpdateStateResponseH\000\022" +
-      "R\n\022createGameResponse\030\007 \001(\01324.com.nkasen" +
-      "ides.minesweeper.proto.CreateGameRespons" +
-      "eH\000\022N\n\020joinGameResponse\030\010 \001(\01322.com.nkas" +
-      "enides.minesweeper.proto.JoinGameRespons" +
-      "eH\000\022P\n\021subscribeResponse\030\t \001(\01323.com.nka" +
-      "senides.minesweeper.proto.SubscribeRespo" +
-      "nseH\000\022N\n\020listGameResponse\030\n \001(\01322.com.nk" +
-      "asenides.minesweeper.proto.ListGameRespo" +
-      "nseH\000B\n\n\010response\"\256\001\n\021StartGameResponse\022" +
-      "\017\n\007message\030\001 \001(\t\022J\n\006status\030\002 \001(\0162:.com.n" +
-      "kasenides.minesweeper.proto.StartGameRes" +
-      "ponse.Status\"<\n\006Status\022\023\n\017INVALID_GAME_I" +
-      "D\020\000\022\006\n\002OK\020\001\022\025\n\021CANNOT_START_GAME\020\002\"\332\001\n\014M" +
-      "oveResponse\022\017\n\007message\030\001 \001(\t\022E\n\006status\030\002" +
-      " \001(\01625.com.nkasenides.minesweeper.proto." +
-      "MoveResponse.Status\"r\n\006Status\022\022\n\016GAME_NO" +
-      "T_FOUND\020\000\022\034\n\030INVALID_WORLD_SESSION_ID\020\001\022" +
-      "\020\n\014INVALID_MOVE\020\002\022\024\n\020GAME_NOT_STARTED\020\003\022" +
-      "\016\n\nGAME_ENDED\020\004\"\260\001\n\020ViewGameResponse\022\017\n\007" +
-      "message\030\001 \001(\t\022I\n\006status\030\002 \001(\01629.com.nkas" +
-      "enides.minesweeper.proto.ViewGameRespons" +
-      "e.Status\"@\n\006Status\022\031\n\025CANNOT_RETRIEVE_ST" +
-      "ATE\020\000\022\023\n\017INVALID_GAME_ID\020\001\022\006\n\002OK\020\002\"\272\002\n\020G" +
-      "etStateResponse\022K\n\014partialState\030\001 \001(\01325." +
-      "com.nkasenides.minesweeper.proto.MAParti" +
-      "alStateProto\022\017\n\007message\030\002 \001(\t\022I\n\006status\030" +
-      "\003 \001(\01629.com.nkasenides.minesweeper.proto" +
-      ".GetStateResponse.Status\"}\n\006Status\022\020\n\014SE" +
-      "RVER_ERROR\020\000\022\031\n\025NO_SUCH_WORLD_SESSION\020\001\022" +
-      "\020\n\014INVALID_DATA\020\002\022\022\n\016NOT_AUTHORIZED\020\003\022\030\n" +
-      "\024CANNOT_COMPOSE_STATE\020\004\022\006\n\002OK\020\005\"\377\001\n\016Reve" +
-      "alResponse\022\017\n\007message\030\001 \001(\t\022G\n\006status\030\002 " +
-      "\001(\01627.com.nkasenides.minesweeper.proto.R" +
-      "evealResponse.Status\"\222\001\n\006Status\022\034\n\030INVAL" +
-      "ID_WORLD_SESSION_ID\020\000\022\020\n\014INVALID_GAME\020\001\022" +
-      "\017\n\013OTHER_ERROR\020\002\022\024\n\020GAME_NOT_STARTED\020\003\022\016" +
-      "\n\nGAME_ENDED\020\004\022\006\n\002OK\020\005\022\031\n\025CELL_ALREADY_R" +
-      "EVEALED\020\006\"\276\002\n\023UpdateStateResponse\022\017\n\007mes" +
-      "sage\030\001 \001(\t\022I\n\013stateUpdate\030\002 \001(\01324.com.nk" +
-      "asenides.minesweeper.proto.MAStateUpdate" +
-      "Proto\022L\n\006status\030\003 \001(\0162<.com.nkasenides.m" +
-      "inesweeper.proto.UpdateStateResponse.Sta" +
-      "tus\"}\n\006Status\022\020\n\014SERVER_ERROR\020\000\022\031\n\025NO_SU" +
-      "CH_WORLD_SESSION\020\001\022\020\n\014INVALID_DATA\020\002\022\022\n\016" +
-      "NOT_AUTHORIZED\020\003\022\030\n\024CANNOT_COMPOSE_STATE" +
-      "\020\004\022\006\n\002OK\020\005\"\333\001\n\022CreateGameResponse\022\017\n\007mes" +
-      "sage\030\001 \001(\t\022K\n\006status\030\002 \001(\0162;.com.nkaseni" +
-      "des.minesweeper.proto.CreateGameResponse" +
-      ".Status\"g\n\006Status\022\020\n\014SERVER_ERROR\020\000\022\024\n\020I" +
-      "NVALID_PASSWORD\020\001\022\026\n\022INVALID_DIFFICULTY\020" +
-      "\002\022\025\n\021INVALID_GAME_SIZE\020\003\022\006\n\002OK\020\004\"\256\001\n\020Joi" +
-      "nGameResponse\022\017\n\007message\030\001 \001(\t\022I\n\006status" +
-      "\030\002 \001(\01629.com.nkasenides.minesweeper.prot" +
-      "o.JoinGameResponse.Status\">\n\006Status\022\017\n\013C" +
-      "ANNOT_JOIN\020\000\022\033\n\027INVALID_GAME_SESSION_ID\020" +
-      "\001\022\006\n\002OK\020\002\"\313\001\n\021SubscribeResponse\022\017\n\007messa" +
+      "atrixPositionProto\022\n\n\002id\030\002 \001(\t\022\017\n\007isMine" +
+      "d\030\003 \001(\010\022B\n\013revealState\030\004 \001(\0162-.com.nkase" +
+      "nides.minesweeper.proto.RevealState\"\275\001\n\022" +
+      "MAStateUpdateProto\022K\n\014partialState\030\001 \001(\013" +
+      "25.com.nkasenides.minesweeper.proto.MAPa" +
+      "rtialStateProto\022\026\n\016worldSessionID\030\002 \001(\t\022" +
+      "\027\n\017removedEntities\030\003 \003(\t\022\026\n\016removedTerra" +
+      "in\030\004 \003(\t\022\021\n\ttimestamp\030\005 \001(\004\"\260\002\n\023MATerrai" +
+      "nChunkProto\022\n\n\002id\030\001 \001(\t\022\017\n\007worldID\030\002 \001(\t" +
+      "\022G\n\010position\030\003 \001(\01325.com.nkasenides.mine" +
+      "sweeper.proto.MatrixPositionProto\022O\n\005cel" +
+      "ls\030\004 \003(\0132@.com.nkasenides.minesweeper.pr" +
+      "oto.MATerrainChunkProto.CellsEntry\032b\n\nCe" +
+      "llsEntry\022\013\n\003key\030\001 \001(\t\022C\n\005value\030\002 \001(\01324.c" +
+      "om.nkasenides.minesweeper.proto.MATerrai" +
+      "nCellProto:\0028\001\"\226\001\n\030MATerrainIdentifierPr" +
+      "oto\022\n\n\002id\030\001 \001(\t\022\017\n\007chunkID\030\002 \001(\t\022\017\n\007worl" +
+      "dID\030\003 \001(\t\022L\n\rchunkPosition\030\004 \001(\01325.com.n" +
+      "kasenides.minesweeper.proto.MatrixPositi" +
+      "onProto\"\271\004\n\023MAPartialStateProto\022U\n\010entit" +
+      "ies\030\001 \003(\0132C.com.nkasenides.minesweeper.p" +
+      "roto.MAPartialStateProto.EntitiesEntry\022K" +
+      "\n\014worldSession\030\002 \001(\01325.com.nkasenides.mi" +
+      "nesweeper.proto.MAWorldSessionProto\022>\n\tg" +
+      "ameState\030\003 \001(\0162+.com.nkasenides.mineswee" +
+      "per.proto.GameState\022S\n\007terrain\030\004 \003(\0132B.c" +
+      "om.nkasenides.minesweeper.proto.MAPartia" +
+      "lStateProto.TerrainEntry\022\021\n\ttimestamp\030\005 " +
+      "\001(\004\022\016\n\006points\030\006 \001(\005\032`\n\rEntitiesEntry\022\013\n\003" +
+      "key\030\001 \001(\t\022>\n\005value\030\002 \001(\0132/.com.nkasenide" +
+      "s.minesweeper.proto.MAEntityProto:\0028\001\032d\n" +
+      "\014TerrainEntry\022\013\n\003key\030\001 \001(\t\022C\n\005value\030\002 \001(" +
+      "\01324.com.nkasenides.minesweeper.proto.MAT" +
+      "errainCellProto:\0028\001\"\323\002\n\014MAWorldProto\022\022\n\n" +
+      "maxPlayers\030\001 \001(\r\022\014\n\004seed\030\002 \001(\022\022\020\n\010chunkI" +
+      "Ds\030\003 \003(\t\022\017\n\007ownerID\030\004 \001(\t\022\021\n\tcreatedOn\030\005" +
+      " \001(\004\022@\n\ndifficulty\030\006 \001(\0162,.com.nkasenide" +
+      "s.minesweeper.proto.Difficulty\022\017\n\007maxRow" +
+      "s\030\007 \001(\022\022\023\n\013heightLimit\030\010 \001(\r\022\014\n\004name\030\t \001" +
+      "(\t\022\n\n\002id\030\n \001(\t\022:\n\005state\030\013 \001(\0162+.com.nkas" +
+      "enides.minesweeper.proto.GameState\022\017\n\007ma" +
+      "xCols\030\014 \001(\022\022\034\n\024subscribedSessionIDs\030\r \003(" +
+      "\t\"\352\006\n\007Request\022N\n\020startGameRequest\030\001 \001(\0132" +
+      "2.com.nkasenides.minesweeper.proto.Start" +
+      "GameRequestH\000\022D\n\013flagRequest\030\002 \001(\0132-.com" +
+      ".nkasenides.minesweeper.proto.FlagReques" +
+      "tH\000\022N\n\020listGamesRequest\030\003 \001(\01322.com.nkas" +
+      "enides.minesweeper.proto.ListGamesReques" +
+      "tH\000\022L\n\017getStateRequest\030\004 \001(\01321.com.nkase" +
+      "nides.minesweeper.proto.GetStateRequestH" +
+      "\000\022H\n\rrevealRequest\030\005 \001(\0132/.com.nkasenide" +
+      "s.minesweeper.proto.RevealRequestH\000\022N\n\020s" +
+      "ubscribeRequest\030\006 \001(\01322.com.nkasenides.m" +
+      "inesweeper.proto.SubscribeRequestH\000\022D\n\013m" +
+      "oveRequest\030\007 \001(\0132-.com.nkasenides.minesw" +
+      "eeper.proto.MoveRequestH\000\022R\n\022updateState" +
+      "Request\030\010 \001(\01324.com.nkasenides.minesweep" +
+      "er.proto.UpdateStateRequestH\000\022P\n\021createG" +
+      "ameRequest\030\t \001(\01323.com.nkasenides.minesw" +
+      "eeper.proto.CreateGameRequestH\000\022L\n\017viewG" +
+      "ameRequest\030\n \001(\01321.com.nkasenides.minesw" +
+      "eeper.proto.ViewGameRequestH\000\022L\n\017joinGam" +
+      "eRequest\030\013 \001(\01321.com.nkasenides.mineswee" +
+      "per.proto.JoinGameRequestH\000B\t\n\007request\"\"" +
+      "\n\020StartGameRequest\022\016\n\006gameID\030\001 \001(\t\"n\n\013Fl" +
+      "agRequest\022\026\n\016worldSessionID\030\001 \001(\t\022G\n\010pos" +
+      "ition\030\002 \001(\01325.com.nkasenides.minesweeper" +
+      ".proto.MatrixPositionProto\"\022\n\020ListGamesR" +
+      "equest\")\n\017GetStateRequest\022\026\n\016worldSessio" +
+      "nID\030\001 \001(\t\"p\n\rRevealRequest\022\026\n\016worldSessi" +
+      "onID\030\001 \001(\t\022G\n\010position\030\002 \001(\01325.com.nkase" +
+      "nides.minesweeper.proto.MatrixPositionPr" +
+      "oto\"q\n\020SubscribeRequest\022\016\n\006gameID\030\001 \001(\t\022" +
+      "\032\n\022partialStateHeight\030\002 \001(\005\022\026\n\016worldSess" +
+      "ionID\030\003 \001(\t\022\031\n\021partialStateWidth\030\004 \001(\005\"r" +
+      "\n\013MoveRequest\022\026\n\016worldSessionID\030\001 \001(\t\022K\n" +
+      "\014movePosition\030\002 \001(\01325.com.nkasenides.min" +
+      "esweeper.proto.MatrixPositionProto\",\n\022Up" +
+      "dateStateRequest\022\026\n\016worldSessionID\030\001 \001(\t" +
+      "\"\210\001\n\021CreateGameRequest\022@\n\ndifficulty\030\001 \001" +
+      "(\0162,.com.nkasenides.minesweeper.proto.Di" +
+      "fficulty\022\022\n\nmaxPlayers\030\002 \001(\r\022\r\n\005width\030\003 " +
+      "\001(\r\022\016\n\006height\030\004 \001(\r\"\246\001\n\017ViewGameRequest\022" +
+      "\016\n\006gameID\030\001 \001(\t\022\032\n\022partialStateHeight\030\002 " +
+      "\001(\005\022\031\n\021partialStateWidth\030\003 \001(\005\022L\n\rstartP" +
+      "osition\030\004 \001(\01325.com.nkasenides.minesweep" +
+      "er.proto.MatrixPositionProto\"\227\001\n\017JoinGam" +
+      "eRequest\022\016\n\006gameID\030\001 \001(\t\022\025\n\rgameSessionI" +
+      "D\030\002 \001(\t\022]\n\026partialStatePreference\030\003 \001(\0132" +
+      "=.com.nkasenides.minesweeper.proto.Parti" +
+      "alStatePreferenceProto\"\270\006\n\010Response\022P\n\021s" +
+      "tartGameResponse\030\001 \001(\01323.com.nkasenides." +
+      "minesweeper.proto.StartGameResponseH\000\022F\n" +
+      "\014moveResponse\030\002 \001(\0132..com.nkasenides.min" +
+      "esweeper.proto.MoveResponseH\000\022N\n\020viewGam" +
+      "eResponse\030\003 \001(\01322.com.nkasenides.mineswe" +
+      "eper.proto.ViewGameResponseH\000\022N\n\020getStat" +
+      "eResponse\030\004 \001(\01322.com.nkasenides.mineswe" +
+      "eper.proto.GetStateResponseH\000\022J\n\016revealR" +
+      "esponse\030\005 \001(\01320.com.nkasenides.minesweep" +
+      "er.proto.RevealResponseH\000\022T\n\023updateState" +
+      "Response\030\006 \001(\01325.com.nkasenides.mineswee" +
+      "per.proto.UpdateStateResponseH\000\022R\n\022creat" +
+      "eGameResponse\030\007 \001(\01324.com.nkasenides.min" +
+      "esweeper.proto.CreateGameResponseH\000\022N\n\020j" +
+      "oinGameResponse\030\010 \001(\01322.com.nkasenides.m" +
+      "inesweeper.proto.JoinGameResponseH\000\022P\n\021s" +
+      "ubscribeResponse\030\t \001(\01323.com.nkasenides." +
+      "minesweeper.proto.SubscribeResponseH\000\022N\n" +
+      "\020listGameResponse\030\n \001(\01322.com.nkasenides" +
+      ".minesweeper.proto.ListGameResponseH\000B\n\n" +
+      "\010response\"\256\001\n\021StartGameResponse\022\017\n\007messa" +
       "ge\030\001 \001(\t\022J\n\006status\030\002 \001(\0162:.com.nkasenide" +
-      "s.minesweeper.proto.SubscribeResponse.St" +
-      "atus\"Y\n\006Status\022\034\n\030INVALID_WORLD_SESSION_" +
-      "ID\020\000\022\024\n\020CANNOT_SUBSCRIBE\020\001\022\023\n\017INVALID_GA" +
-      "ME_ID\020\002\022\006\n\002OK\020\003\"\200\001\n\020ListGameResponse\022\017\n\007" +
-      "message\030\001 \001(\t\022I\n\006status\030\002 \001(\01629.com.nkas" +
-      "enides.minesweeper.proto.ListGameRespons" +
-      "e.Status\"\020\n\006Status\022\006\n\002OK\020\000*M\n\nDifficulty" +
-      "\022\023\n\017EASY_Difficulty\020\000\022\025\n\021MEDIUM_Difficul" +
-      "ty\020\001\022\023\n\017HARD_Difficulty\020\002*\332\002\n\013RevealStat" +
-      "e\022\032\n\026REVEALED_8_RevealState\020\000\022\032\n\026REVEALE" +
-      "D_7_RevealState\020\001\022\027\n\023FLAGGED_RevealState" +
-      "\020\002\022\032\n\026REVEALED_4_RevealState\020\003\022\032\n\026REVEAL" +
-      "ED_3_RevealState\020\004\022\032\n\026REVEALED_6_RevealS" +
-      "tate\020\005\022\032\n\026REVEALED_5_RevealState\020\006\022\032\n\026RE" +
-      "VEALED_0_RevealState\020\007\022\027\n\023COVERED_Reveal" +
-      "State\020\010\022\032\n\026REVEALED_2_RevealState\020\t\022\032\n\026R" +
-      "EVEALED_1_RevealState\020\n\022\035\n\031REVEALED_MINE" +
-      "_RevealState\020\013*p\n\tGameState\022\030\n\024ENDED_LOS" +
-      "T_GameState\020\000\022\031\n\025NOT_STARTED_GameState\020\001" +
-      "\022\025\n\021STARTED_GameState\020\002\022\027\n\023ENDED_WON_Gam" +
-      "eState\020\003*6\n\nDirection4\022\t\n\005NORTH\020\000\022\010\n\004EAS" +
-      "T\020\001\022\t\n\005SOUTH\020\002\022\010\n\004WEST\020\003*d\n\nDirection6\022\n" +
-      "\n\006NORTH6\020\000\022\016\n\nNORTH_EAST\020\001\022\016\n\nSOUTH_EAST" +
-      "\020\002\022\n\n\006SOUTH6\020\003\022\016\n\nSOUTH_WEST\020\004\022\016\n\nNORTH_" +
-      "WEST\020\005*0\n\010Rotation\022\r\n\tCLOCKWISE\020\000\022\025\n\021COU" +
-      "NTER_CLOCKWISE\020\001*C\n\tMovement4\022\013\n\007FORWARD" +
-      "\020\000\022\014\n\010BACKWARD\020\001\022\014\n\010LEFTWARD\020\002\022\r\n\tRIGHTW" +
-      "ARD\020\003*t\n\tMovement6\022\014\n\010FORWARD6\020\000\022\021\n\rFORW" +
-      "ARD_RIGHT\020\001\022\022\n\016BACKWARD_RIGHT\020\002\022\r\n\tBACKW" +
-      "ARD6\020\003\022\021\n\rBACKWARD_LEFT\020\004\022\020\n\014FORWARD_LEF" +
-      "T\020\005*7\n\tWorldType\022\013\n\007UNIFORM\020\000\022\017\n\013TILE_SQ" +
-      "UARE\020\001\022\014\n\010TILE_HEX\020\0022\201\t\n\016MAServiceProto\022" +
-      "t\n\tListGames\0222.com.nkasenides.minesweepe" +
-      "r.proto.StartGameRequest\0323.com.nkasenide" +
-      "s.minesweeper.proto.StartGameResponse\022t\n" +
-      "\tStartGame\0222.com.nkasenides.minesweeper." +
-      "proto.StartGameRequest\0323.com.nkasenides." +
-      "minesweeper.proto.StartGameResponse\022e\n\004M" +
-      "ove\022-.com.nkasenides.minesweeper.proto.M" +
-      "oveRequest\032..com.nkasenides.minesweeper." +
-      "proto.MoveResponse\022w\n\nCreateGame\0223.com.n" +
-      "kasenides.minesweeper.proto.CreateGameRe" +
-      "quest\0324.com.nkasenides.minesweeper.proto" +
-      ".CreateGameResponse\022q\n\010GetState\0221.com.nk" +
-      "asenides.minesweeper.proto.GetStateReque" +
-      "st\0322.com.nkasenides.minesweeper.proto.Ge" +
-      "tStateResponse\022t\n\tSubscribe\0222.com.nkasen" +
-      "ides.minesweeper.proto.SubscribeRequest\032" +
-      "3.com.nkasenides.minesweeper.proto.Subsc" +
-      "ribeResponse\022q\n\010JoinGame\0221.com.nkasenide" +
-      "s.minesweeper.proto.JoinGameRequest\0322.co" +
-      "m.nkasenides.minesweeper.proto.JoinGameR" +
-      "esponse\022q\n\010ViewGame\0221.com.nkasenides.min" +
-      "esweeper.proto.ViewGameRequest\0322.com.nka" +
-      "senides.minesweeper.proto.ViewGameRespon" +
-      "se\022g\n\004Flag\022-.com.nkasenides.minesweeper." +
-      "proto.FlagRequest\0320.com.nkasenides.mines" +
-      "weeper.proto.RevealResponse\022k\n\006Reveal\022/." +
+      "s.minesweeper.proto.StartGameResponse.St" +
+      "atus\"<\n\006Status\022\023\n\017INVALID_GAME_ID\020\000\022\006\n\002O" +
+      "K\020\001\022\025\n\021CANNOT_START_GAME\020\002\"\257\002\n\014MoveRespo" +
+      "nse\022K\n\014partialState\030\001 \001(\01325.com.nkasenid" +
+      "es.minesweeper.proto.MAPartialStateProto" +
+      "\022\017\n\007message\030\002 \001(\t\022E\n\006status\030\003 \001(\01625.com." +
+      "nkasenides.minesweeper.proto.MoveRespons" +
+      "e.Status\"z\n\006Status\022\022\n\016GAME_NOT_FOUND\020\000\022\034" +
+      "\n\030INVALID_WORLD_SESSION_ID\020\001\022\020\n\014INVALID_" +
+      "MOVE\020\002\022\024\n\020GAME_NOT_STARTED\020\003\022\016\n\nGAME_END" +
+      "ED\020\004\022\006\n\002OK\020\005\"\260\001\n\020ViewGameResponse\022\017\n\007mes" +
+      "sage\030\001 \001(\t\022I\n\006status\030\002 \001(\01629.com.nkaseni" +
+      "des.minesweeper.proto.ViewGameResponse.S" +
+      "tatus\"@\n\006Status\022\031\n\025CANNOT_RETRIEVE_STATE" +
+      "\020\000\022\023\n\017INVALID_GAME_ID\020\001\022\006\n\002OK\020\002\"\272\002\n\020GetS" +
+      "tateResponse\022K\n\014partialState\030\001 \001(\01325.com" +
+      ".nkasenides.minesweeper.proto.MAPartialS" +
+      "tateProto\022\017\n\007message\030\002 \001(\t\022I\n\006status\030\003 \001" +
+      "(\01629.com.nkasenides.minesweeper.proto.Ge" +
+      "tStateResponse.Status\"}\n\006Status\022\020\n\014SERVE" +
+      "R_ERROR\020\000\022\031\n\025NO_SUCH_WORLD_SESSION\020\001\022\020\n\014" +
+      "INVALID_DATA\020\002\022\022\n\016NOT_AUTHORIZED\020\003\022\030\n\024CA" +
+      "NNOT_COMPOSE_STATE\020\004\022\006\n\002OK\020\005\"\314\002\n\016RevealR" +
+      "esponse\022K\n\014partialState\030\001 \001(\01325.com.nkas" +
+      "enides.minesweeper.proto.MAPartialStateP" +
+      "roto\022\017\n\007message\030\002 \001(\t\022G\n\006status\030\003 \001(\01627." +
       "com.nkasenides.minesweeper.proto.RevealR" +
-      "equest\0320.com.nkasenides.minesweeper.prot" +
-      "o.RevealResponseB,\n com.nkasenides.mines" +
-      "weeper.protoB\006MProtoP\001b\006proto3"
+      "esponse.Status\"\222\001\n\006Status\022\034\n\030INVALID_WOR" +
+      "LD_SESSION_ID\020\000\022\020\n\014INVALID_GAME\020\001\022\017\n\013OTH" +
+      "ER_ERROR\020\002\022\024\n\020GAME_NOT_STARTED\020\003\022\016\n\nGAME" +
+      "_ENDED\020\004\022\006\n\002OK\020\005\022\031\n\025CELL_ALREADY_REVEALE" +
+      "D\020\006\"\276\002\n\023UpdateStateResponse\022\017\n\007message\030\001" +
+      " \001(\t\022I\n\013stateUpdate\030\002 \001(\01324.com.nkasenid" +
+      "es.minesweeper.proto.MAStateUpdateProto\022" +
+      "L\n\006status\030\003 \001(\0162<.com.nkasenides.mineswe" +
+      "eper.proto.UpdateStateResponse.Status\"}\n" +
+      "\006Status\022\020\n\014SERVER_ERROR\020\000\022\031\n\025NO_SUCH_WOR" +
+      "LD_SESSION\020\001\022\020\n\014INVALID_DATA\020\002\022\022\n\016NOT_AU" +
+      "THORIZED\020\003\022\030\n\024CANNOT_COMPOSE_STATE\020\004\022\006\n\002" +
+      "OK\020\005\"\333\001\n\022CreateGameResponse\022\017\n\007message\030\001" +
+      " \001(\t\022K\n\006status\030\002 \001(\0162;.com.nkasenides.mi" +
+      "nesweeper.proto.CreateGameResponse.Statu" +
+      "s\"g\n\006Status\022\020\n\014SERVER_ERROR\020\000\022\024\n\020INVALID" +
+      "_PASSWORD\020\001\022\026\n\022INVALID_DIFFICULTY\020\002\022\025\n\021I" +
+      "NVALID_GAME_SIZE\020\003\022\006\n\002OK\020\004\"\373\001\n\020JoinGameR" +
+      "esponse\022K\n\014worldSession\030\001 \001(\01325.com.nkas" +
+      "enides.minesweeper.proto.MAWorldSessionP" +
+      "roto\022\017\n\007message\030\002 \001(\t\022I\n\006status\030\003 \001(\01629." +
+      "com.nkasenides.minesweeper.proto.JoinGam" +
+      "eResponse.Status\">\n\006Status\022\017\n\013CANNOT_JOI" +
+      "N\020\000\022\033\n\027INVALID_GAME_SESSION_ID\020\001\022\006\n\002OK\020\002" +
+      "\"\313\001\n\021SubscribeResponse\022\017\n\007message\030\001 \001(\t\022" +
+      "J\n\006status\030\002 \001(\0162:.com.nkasenides.mineswe" +
+      "eper.proto.SubscribeResponse.Status\"Y\n\006S" +
+      "tatus\022\034\n\030INVALID_WORLD_SESSION_ID\020\000\022\024\n\020C" +
+      "ANNOT_SUBSCRIBE\020\001\022\023\n\017INVALID_GAME_ID\020\002\022\006" +
+      "\n\002OK\020\003\"\300\001\n\020ListGameResponse\022>\n\006worlds\030\001 " +
+      "\003(\0132..com.nkasenides.minesweeper.proto.M" +
+      "AWorldProto\022\017\n\007message\030\002 \001(\t\022I\n\006status\030\003" +
+      " \001(\01629.com.nkasenides.minesweeper.proto." +
+      "ListGameResponse.Status\"\020\n\006Status\022\006\n\002OK\020" +
+      "\000*M\n\nDifficulty\022\023\n\017EASY_Difficulty\020\000\022\025\n\021" +
+      "MEDIUM_Difficulty\020\001\022\023\n\017HARD_Difficulty\020\002" +
+      "*\332\002\n\013RevealState\022\032\n\026REVEALED_8_RevealSta" +
+      "te\020\000\022\032\n\026REVEALED_7_RevealState\020\001\022\027\n\023FLAG" +
+      "GED_RevealState\020\002\022\032\n\026REVEALED_4_RevealSt" +
+      "ate\020\003\022\032\n\026REVEALED_3_RevealState\020\004\022\032\n\026REV" +
+      "EALED_6_RevealState\020\005\022\032\n\026REVEALED_5_Reve" +
+      "alState\020\006\022\032\n\026REVEALED_0_RevealState\020\007\022\027\n" +
+      "\023COVERED_RevealState\020\010\022\032\n\026REVEALED_2_Rev" +
+      "ealState\020\t\022\032\n\026REVEALED_1_RevealState\020\n\022\035" +
+      "\n\031REVEALED_MINE_RevealState\020\013*p\n\tGameSta" +
+      "te\022\030\n\024ENDED_LOST_GameState\020\000\022\031\n\025NOT_STAR" +
+      "TED_GameState\020\001\022\025\n\021STARTED_GameState\020\002\022\027" +
+      "\n\023ENDED_WON_GameState\020\003*6\n\nDirection4\022\t\n" +
+      "\005NORTH\020\000\022\010\n\004EAST\020\001\022\t\n\005SOUTH\020\002\022\010\n\004WEST\020\003*" +
+      "d\n\nDirection6\022\n\n\006NORTH6\020\000\022\016\n\nNORTH_EAST\020" +
+      "\001\022\016\n\nSOUTH_EAST\020\002\022\n\n\006SOUTH6\020\003\022\016\n\nSOUTH_W" +
+      "EST\020\004\022\016\n\nNORTH_WEST\020\005*0\n\010Rotation\022\r\n\tCLO" +
+      "CKWISE\020\000\022\025\n\021COUNTER_CLOCKWISE\020\001*C\n\tMovem" +
+      "ent4\022\013\n\007FORWARD\020\000\022\014\n\010BACKWARD\020\001\022\014\n\010LEFTW" +
+      "ARD\020\002\022\r\n\tRIGHTWARD\020\003*t\n\tMovement6\022\014\n\010FOR" +
+      "WARD6\020\000\022\021\n\rFORWARD_RIGHT\020\001\022\022\n\016BACKWARD_R" +
+      "IGHT\020\002\022\r\n\tBACKWARD6\020\003\022\021\n\rBACKWARD_LEFT\020\004" +
+      "\022\020\n\014FORWARD_LEFT\020\005*7\n\tWorldType\022\013\n\007UNIFO" +
+      "RM\020\000\022\017\n\013TILE_SQUARE\020\001\022\014\n\010TILE_HEX\020\0022\215\010\n\016" +
+      "MAServiceProto\022s\n\tListGames\0222.com.nkasen" +
+      "ides.minesweeper.proto.ListGamesRequest\032" +
+      "2.com.nkasenides.minesweeper.proto.ListG" +
+      "ameResponse\022t\n\tStartGame\0222.com.nkasenide" +
+      "s.minesweeper.proto.StartGameRequest\0323.c" +
+      "om.nkasenides.minesweeper.proto.StartGam" +
+      "eResponse\022e\n\004Move\022-.com.nkasenides.mines" +
+      "weeper.proto.MoveRequest\032..com.nkasenide" +
+      "s.minesweeper.proto.MoveResponse\022w\n\nCrea" +
+      "teGame\0223.com.nkasenides.minesweeper.prot" +
+      "o.CreateGameRequest\0324.com.nkasenides.min" +
+      "esweeper.proto.CreateGameResponse\022q\n\010Get" +
+      "State\0221.com.nkasenides.minesweeper.proto" +
+      ".GetStateRequest\0322.com.nkasenides.minesw" +
+      "eeper.proto.GetStateResponse\022t\n\tSubscrib" +
+      "e\0222.com.nkasenides.minesweeper.proto.Sub" +
+      "scribeRequest\0323.com.nkasenides.minesweep" +
+      "er.proto.SubscribeResponse\022q\n\010JoinGame\0221" +
+      ".com.nkasenides.minesweeper.proto.JoinGa" +
+      "meRequest\0322.com.nkasenides.minesweeper.p" +
+      "roto.JoinGameResponse\022g\n\004Flag\022-.com.nkas" +
+      "enides.minesweeper.proto.FlagRequest\0320.c" +
+      "om.nkasenides.minesweeper.proto.RevealRe" +
+      "sponse\022k\n\006Reveal\022/.com.nkasenides.minesw" +
+      "eeper.proto.RevealRequest\0320.com.nkasenid" +
+      "es.minesweeper.proto.RevealResponseB,\n c" +
+      "om.nkasenides.minesweeper.protoB\006MProtoP" +
+      "\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -487,247 +496,247 @@ public final class MProto {
     internal_static_com_nkasenides_minesweeper_proto_PartialStatePreferenceProto_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nkasenides_minesweeper_proto_PartialStatePreferenceProto_descriptor,
-        new java.lang.String[] { "Width", "Height", });
+        new String[] { "Width", "Height", });
     internal_static_com_nkasenides_minesweeper_proto_GeoPositionProto_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_com_nkasenides_minesweeper_proto_GeoPositionProto_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nkasenides_minesweeper_proto_GeoPositionProto_descriptor,
-        new java.lang.String[] { "X", "Y", "Z", "PositionHash", });
+        new String[] { "X", "Y", "Z", "PositionHash", });
     internal_static_com_nkasenides_minesweeper_proto_MatrixPositionProto_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_com_nkasenides_minesweeper_proto_MatrixPositionProto_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nkasenides_minesweeper_proto_MatrixPositionProto_descriptor,
-        new java.lang.String[] { "Row", "Col", "CellHash", "ChunkHash", });
+        new String[] { "Row", "Col", "CellHash", "ChunkHash", });
     internal_static_com_nkasenides_minesweeper_proto_MAGameSessionProto_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_com_nkasenides_minesweeper_proto_MAGameSessionProto_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nkasenides_minesweeper_proto_MAGameSessionProto_descriptor,
-        new java.lang.String[] { "IpAddress", "ExpiresOn", "Id", "CreatedOn", "PlayerID", });
+        new String[] { "IpAddress", "ExpiresOn", "Id", "CreatedOn", "PlayerID", });
     internal_static_com_nkasenides_minesweeper_proto_MAWorldSessionProto_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_com_nkasenides_minesweeper_proto_MAWorldSessionProto_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nkasenides_minesweeper_proto_MAWorldSessionProto_descriptor,
-        new java.lang.String[] { "PartialStatePreference", "WorldID", "PlayerName", "IpAddress", "CameraPosition", "ExpiresOn", "Id", "CreatedOn", "PlayerID", "Points", });
+        new String[] { "PartialStatePreference", "WorldID", "PlayerName", "IpAddress", "CameraPosition", "ExpiresOn", "Id", "CreatedOn", "PlayerID", "Points", });
     internal_static_com_nkasenides_minesweeper_proto_MAPlayerProto_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_com_nkasenides_minesweeper_proto_MAPlayerProto_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nkasenides_minesweeper_proto_MAPlayerProto_descriptor,
-        new java.lang.String[] { "Password", "TeamID", "Name", "Id", "CreatedOn", });
+        new String[] { "Password", "TeamID", "Name", "Id", "CreatedOn", });
     internal_static_com_nkasenides_minesweeper_proto_MATeamProto_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_com_nkasenides_minesweeper_proto_MATeamProto_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nkasenides_minesweeper_proto_MATeamProto_descriptor,
-        new java.lang.String[] { "Name", "Id", "OwnerID", "PlayerIDs", "PlayerLimit", });
+        new String[] { "Name", "Id", "OwnerID", "PlayerIDs", "PlayerLimit", });
     internal_static_com_nkasenides_minesweeper_proto_MAEntityProto_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_com_nkasenides_minesweeper_proto_MAEntityProto_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nkasenides_minesweeper_proto_MAEntityProto_descriptor,
-        new java.lang.String[] { "WorldID", "AreaOfInterest", "Id", "Position", "PlayerID", "Direction", });
+        new String[] { "WorldID", "AreaOfInterest", "Id", "Position", "PlayerID", "Direction", });
     internal_static_com_nkasenides_minesweeper_proto_MAActionProto_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_com_nkasenides_minesweeper_proto_MAActionProto_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nkasenides_minesweeper_proto_MAActionProto_descriptor,
-        new java.lang.String[] { });
+        new String[] { });
     internal_static_com_nkasenides_minesweeper_proto_MATerrainCellProto_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_com_nkasenides_minesweeper_proto_MATerrainCellProto_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nkasenides_minesweeper_proto_MATerrainCellProto_descriptor,
-        new java.lang.String[] { "RevealState", "Position", "IsMined", });
+        new String[] { "Position", "Id", "IsMined", "RevealState", });
     internal_static_com_nkasenides_minesweeper_proto_MAStateUpdateProto_descriptor =
       getDescriptor().getMessageTypes().get(10);
     internal_static_com_nkasenides_minesweeper_proto_MAStateUpdateProto_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nkasenides_minesweeper_proto_MAStateUpdateProto_descriptor,
-        new java.lang.String[] { "PartialState", "WorldSessionID", "RemovedEntities", "RemovedTerrain", "Timestamp", });
+        new String[] { "PartialState", "WorldSessionID", "RemovedEntities", "RemovedTerrain", "Timestamp", });
     internal_static_com_nkasenides_minesweeper_proto_MATerrainChunkProto_descriptor =
       getDescriptor().getMessageTypes().get(11);
     internal_static_com_nkasenides_minesweeper_proto_MATerrainChunkProto_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nkasenides_minesweeper_proto_MATerrainChunkProto_descriptor,
-        new java.lang.String[] { "Id", "WorldID", "Position", "Cells", });
+        new String[] { "Id", "WorldID", "Position", "Cells", });
     internal_static_com_nkasenides_minesweeper_proto_MATerrainChunkProto_CellsEntry_descriptor =
       internal_static_com_nkasenides_minesweeper_proto_MATerrainChunkProto_descriptor.getNestedTypes().get(0);
     internal_static_com_nkasenides_minesweeper_proto_MATerrainChunkProto_CellsEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nkasenides_minesweeper_proto_MATerrainChunkProto_CellsEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
+        new String[] { "Key", "Value", });
     internal_static_com_nkasenides_minesweeper_proto_MATerrainIdentifierProto_descriptor =
       getDescriptor().getMessageTypes().get(12);
     internal_static_com_nkasenides_minesweeper_proto_MATerrainIdentifierProto_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nkasenides_minesweeper_proto_MATerrainIdentifierProto_descriptor,
-        new java.lang.String[] { "Id", "ChunkID", "WorldID", "ChunkPosition", });
+        new String[] { "Id", "ChunkID", "WorldID", "ChunkPosition", });
     internal_static_com_nkasenides_minesweeper_proto_MAPartialStateProto_descriptor =
       getDescriptor().getMessageTypes().get(13);
     internal_static_com_nkasenides_minesweeper_proto_MAPartialStateProto_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nkasenides_minesweeper_proto_MAPartialStateProto_descriptor,
-        new java.lang.String[] { "Entities", "WorldSession", "Terrain", "Timestamp", });
+        new String[] { "Entities", "WorldSession", "GameState", "Terrain", "Timestamp", "Points", });
     internal_static_com_nkasenides_minesweeper_proto_MAPartialStateProto_EntitiesEntry_descriptor =
       internal_static_com_nkasenides_minesweeper_proto_MAPartialStateProto_descriptor.getNestedTypes().get(0);
     internal_static_com_nkasenides_minesweeper_proto_MAPartialStateProto_EntitiesEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nkasenides_minesweeper_proto_MAPartialStateProto_EntitiesEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
+        new String[] { "Key", "Value", });
     internal_static_com_nkasenides_minesweeper_proto_MAPartialStateProto_TerrainEntry_descriptor =
       internal_static_com_nkasenides_minesweeper_proto_MAPartialStateProto_descriptor.getNestedTypes().get(1);
     internal_static_com_nkasenides_minesweeper_proto_MAPartialStateProto_TerrainEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nkasenides_minesweeper_proto_MAPartialStateProto_TerrainEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
+        new String[] { "Key", "Value", });
     internal_static_com_nkasenides_minesweeper_proto_MAWorldProto_descriptor =
       getDescriptor().getMessageTypes().get(14);
     internal_static_com_nkasenides_minesweeper_proto_MAWorldProto_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nkasenides_minesweeper_proto_MAWorldProto_descriptor,
-        new java.lang.String[] { "Difficulty", "MaxRows", "HeightLimit", "MaxPlayers", "Seed", "Name", "ChunkIDs", "Id", "OwnerID", "CreatedOn", "MaxCols", "SubscribedSessionIDs", });
+        new String[] { "MaxPlayers", "Seed", "ChunkIDs", "OwnerID", "CreatedOn", "Difficulty", "MaxRows", "HeightLimit", "Name", "Id", "State", "MaxCols", "SubscribedSessionIDs", });
     internal_static_com_nkasenides_minesweeper_proto_Request_descriptor =
       getDescriptor().getMessageTypes().get(15);
     internal_static_com_nkasenides_minesweeper_proto_Request_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nkasenides_minesweeper_proto_Request_descriptor,
-        new java.lang.String[] { "StartGameRequest", "FlagRequest", "ListGamesRequest", "GetStateRequest", "RevealRequest", "SubscribeRequest", "MoveRequest", "UpdateStateRequest", "CreateGameRequest", "ViewGameRequest", "JoinGameRequest", "Request", });
+        new String[] { "StartGameRequest", "FlagRequest", "ListGamesRequest", "GetStateRequest", "RevealRequest", "SubscribeRequest", "MoveRequest", "UpdateStateRequest", "CreateGameRequest", "ViewGameRequest", "JoinGameRequest", "Request", });
     internal_static_com_nkasenides_minesweeper_proto_StartGameRequest_descriptor =
       getDescriptor().getMessageTypes().get(16);
     internal_static_com_nkasenides_minesweeper_proto_StartGameRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nkasenides_minesweeper_proto_StartGameRequest_descriptor,
-        new java.lang.String[] { "GameID", });
+        new String[] { "GameID", });
     internal_static_com_nkasenides_minesweeper_proto_FlagRequest_descriptor =
       getDescriptor().getMessageTypes().get(17);
     internal_static_com_nkasenides_minesweeper_proto_FlagRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nkasenides_minesweeper_proto_FlagRequest_descriptor,
-        new java.lang.String[] { "WorldSessionID", "Position", });
+        new String[] { "WorldSessionID", "Position", });
     internal_static_com_nkasenides_minesweeper_proto_ListGamesRequest_descriptor =
       getDescriptor().getMessageTypes().get(18);
     internal_static_com_nkasenides_minesweeper_proto_ListGamesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nkasenides_minesweeper_proto_ListGamesRequest_descriptor,
-        new java.lang.String[] { });
+        new String[] { });
     internal_static_com_nkasenides_minesweeper_proto_GetStateRequest_descriptor =
       getDescriptor().getMessageTypes().get(19);
     internal_static_com_nkasenides_minesweeper_proto_GetStateRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nkasenides_minesweeper_proto_GetStateRequest_descriptor,
-        new java.lang.String[] { "WorldSessionID", });
+        new String[] { "WorldSessionID", });
     internal_static_com_nkasenides_minesweeper_proto_RevealRequest_descriptor =
       getDescriptor().getMessageTypes().get(20);
     internal_static_com_nkasenides_minesweeper_proto_RevealRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nkasenides_minesweeper_proto_RevealRequest_descriptor,
-        new java.lang.String[] { "WorldSessionID", "Position", });
+        new String[] { "WorldSessionID", "Position", });
     internal_static_com_nkasenides_minesweeper_proto_SubscribeRequest_descriptor =
       getDescriptor().getMessageTypes().get(21);
     internal_static_com_nkasenides_minesweeper_proto_SubscribeRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nkasenides_minesweeper_proto_SubscribeRequest_descriptor,
-        new java.lang.String[] { "GameID", "PartialStateHeight", "WorldSessionID", "PartialStateWidth", });
+        new String[] { "GameID", "PartialStateHeight", "WorldSessionID", "PartialStateWidth", });
     internal_static_com_nkasenides_minesweeper_proto_MoveRequest_descriptor =
       getDescriptor().getMessageTypes().get(22);
     internal_static_com_nkasenides_minesweeper_proto_MoveRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nkasenides_minesweeper_proto_MoveRequest_descriptor,
-        new java.lang.String[] { "MovePosition", "WorldSessionID", });
+        new String[] { "WorldSessionID", "MovePosition", });
     internal_static_com_nkasenides_minesweeper_proto_UpdateStateRequest_descriptor =
       getDescriptor().getMessageTypes().get(23);
     internal_static_com_nkasenides_minesweeper_proto_UpdateStateRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nkasenides_minesweeper_proto_UpdateStateRequest_descriptor,
-        new java.lang.String[] { "WorldSessionID", });
+        new String[] { "WorldSessionID", });
     internal_static_com_nkasenides_minesweeper_proto_CreateGameRequest_descriptor =
       getDescriptor().getMessageTypes().get(24);
     internal_static_com_nkasenides_minesweeper_proto_CreateGameRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nkasenides_minesweeper_proto_CreateGameRequest_descriptor,
-        new java.lang.String[] { "Difficulty", "Width", "MaxPlayers", "Height", });
+        new String[] { "Difficulty", "MaxPlayers", "Width", "Height", });
     internal_static_com_nkasenides_minesweeper_proto_ViewGameRequest_descriptor =
       getDescriptor().getMessageTypes().get(25);
     internal_static_com_nkasenides_minesweeper_proto_ViewGameRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nkasenides_minesweeper_proto_ViewGameRequest_descriptor,
-        new java.lang.String[] { "GameID", "PartialStateHeight", "PartialStateWidth", "StartPosition", });
+        new String[] { "GameID", "PartialStateHeight", "PartialStateWidth", "StartPosition", });
     internal_static_com_nkasenides_minesweeper_proto_JoinGameRequest_descriptor =
       getDescriptor().getMessageTypes().get(26);
     internal_static_com_nkasenides_minesweeper_proto_JoinGameRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nkasenides_minesweeper_proto_JoinGameRequest_descriptor,
-        new java.lang.String[] { "GameID", "GameSessionID", "PartialStatePreference", });
+        new String[] { "GameID", "GameSessionID", "PartialStatePreference", });
     internal_static_com_nkasenides_minesweeper_proto_Response_descriptor =
       getDescriptor().getMessageTypes().get(27);
     internal_static_com_nkasenides_minesweeper_proto_Response_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nkasenides_minesweeper_proto_Response_descriptor,
-        new java.lang.String[] { "StartGameResponse", "MoveResponse", "ViewGameResponse", "GetStateResponse", "RevealResponse", "UpdateStateResponse", "CreateGameResponse", "JoinGameResponse", "SubscribeResponse", "ListGameResponse", "Response", });
+        new String[] { "StartGameResponse", "MoveResponse", "ViewGameResponse", "GetStateResponse", "RevealResponse", "UpdateStateResponse", "CreateGameResponse", "JoinGameResponse", "SubscribeResponse", "ListGameResponse", "Response", });
     internal_static_com_nkasenides_minesweeper_proto_StartGameResponse_descriptor =
       getDescriptor().getMessageTypes().get(28);
     internal_static_com_nkasenides_minesweeper_proto_StartGameResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nkasenides_minesweeper_proto_StartGameResponse_descriptor,
-        new java.lang.String[] { "Message", "Status", });
+        new String[] { "Message", "Status", });
     internal_static_com_nkasenides_minesweeper_proto_MoveResponse_descriptor =
       getDescriptor().getMessageTypes().get(29);
     internal_static_com_nkasenides_minesweeper_proto_MoveResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nkasenides_minesweeper_proto_MoveResponse_descriptor,
-        new java.lang.String[] { "Message", "Status", });
+        new String[] { "PartialState", "Message", "Status", });
     internal_static_com_nkasenides_minesweeper_proto_ViewGameResponse_descriptor =
       getDescriptor().getMessageTypes().get(30);
     internal_static_com_nkasenides_minesweeper_proto_ViewGameResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nkasenides_minesweeper_proto_ViewGameResponse_descriptor,
-        new java.lang.String[] { "Message", "Status", });
+        new String[] { "Message", "Status", });
     internal_static_com_nkasenides_minesweeper_proto_GetStateResponse_descriptor =
       getDescriptor().getMessageTypes().get(31);
     internal_static_com_nkasenides_minesweeper_proto_GetStateResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nkasenides_minesweeper_proto_GetStateResponse_descriptor,
-        new java.lang.String[] { "PartialState", "Message", "Status", });
+        new String[] { "PartialState", "Message", "Status", });
     internal_static_com_nkasenides_minesweeper_proto_RevealResponse_descriptor =
       getDescriptor().getMessageTypes().get(32);
     internal_static_com_nkasenides_minesweeper_proto_RevealResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nkasenides_minesweeper_proto_RevealResponse_descriptor,
-        new java.lang.String[] { "Message", "Status", });
+        new String[] { "PartialState", "Message", "Status", });
     internal_static_com_nkasenides_minesweeper_proto_UpdateStateResponse_descriptor =
       getDescriptor().getMessageTypes().get(33);
     internal_static_com_nkasenides_minesweeper_proto_UpdateStateResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nkasenides_minesweeper_proto_UpdateStateResponse_descriptor,
-        new java.lang.String[] { "Message", "StateUpdate", "Status", });
+        new String[] { "Message", "StateUpdate", "Status", });
     internal_static_com_nkasenides_minesweeper_proto_CreateGameResponse_descriptor =
       getDescriptor().getMessageTypes().get(34);
     internal_static_com_nkasenides_minesweeper_proto_CreateGameResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nkasenides_minesweeper_proto_CreateGameResponse_descriptor,
-        new java.lang.String[] { "Message", "Status", });
+        new String[] { "Message", "Status", });
     internal_static_com_nkasenides_minesweeper_proto_JoinGameResponse_descriptor =
       getDescriptor().getMessageTypes().get(35);
     internal_static_com_nkasenides_minesweeper_proto_JoinGameResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nkasenides_minesweeper_proto_JoinGameResponse_descriptor,
-        new java.lang.String[] { "Message", "Status", });
+        new String[] { "WorldSession", "Message", "Status", });
     internal_static_com_nkasenides_minesweeper_proto_SubscribeResponse_descriptor =
       getDescriptor().getMessageTypes().get(36);
     internal_static_com_nkasenides_minesweeper_proto_SubscribeResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nkasenides_minesweeper_proto_SubscribeResponse_descriptor,
-        new java.lang.String[] { "Message", "Status", });
+        new String[] { "Message", "Status", });
     internal_static_com_nkasenides_minesweeper_proto_ListGameResponse_descriptor =
       getDescriptor().getMessageTypes().get(37);
     internal_static_com_nkasenides_minesweeper_proto_ListGameResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nkasenides_minesweeper_proto_ListGameResponse_descriptor,
-        new java.lang.String[] { "Message", "Status", });
+        new String[] { "Worlds", "Message", "Status", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -47,7 +47,6 @@ public class CreateGame {
             }
 
             public void onReceive(CreateGameResponse response) {
-                System.out.println(response.getMessage());
             }
         });
     }

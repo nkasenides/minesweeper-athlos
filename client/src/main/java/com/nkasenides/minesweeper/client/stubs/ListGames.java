@@ -8,10 +8,15 @@
 package com.nkasenides.minesweeper.client.stubs;
 
 
+import com.nkasenides.minesweeper.client.MAClient;
+import com.nkasenides.minesweeper.model.MAWorld;
 import com.nkasenides.minesweeper.proto.*;
 import io.grpc.stub.StreamObserver;
+
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Collection;
+import java.util.function.Consumer;
 
 
 public class ListGames {
@@ -47,7 +52,6 @@ public class ListGames {
             }
 
             public void onReceive(ListGameResponse response) {
-                //TODO - Implement
             }
         });
     }
