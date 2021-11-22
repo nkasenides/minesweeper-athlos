@@ -16,6 +16,7 @@ import java.util.ArrayList;
 public class MAClient extends DedicatedGameClient<MAPartialStateProto, MAGameSession, MAWorldSession, MAPlayer, MAWorld, MAEntityProto, MATerrainCellProto> {
 
     public static ArrayList<MAWorld> listOfWorlds;
+    public static MAGameSession gameSession;
     public final MAStubManager stubs = new MAStubManager(mainChannel);
 
     public MAClient(String ipAddress, int PORT) {
@@ -25,10 +26,23 @@ public class MAClient extends DedicatedGameClient<MAPartialStateProto, MAGameSes
     public static void main(String[] args) {
         MAClient client = new MAClient("localhost", 25000);
         client.start();
-        MAStubManager a = new MAStubManager(client.mainChannel);
+        MAStubManager stubs = new MAStubManager(client.mainChannel);
+
+        ConnectResponse connectResponse = stubs.connect.sendAndWait(ConnectRequest.newBuilder()
+                        .setPlayerName("player1")
+                .build()
+        );
+        if (connectResponse.getStatus() == ConnectResponse.Status.OK) {
+            System.out.println("Connected to server, game session: " + connectResponse.getGameSession().getId());
+            gameSession = connectResponse.getGameSession().toObject();
+        }
+        else {
+            System.err.println("Error - could not connect to game server");
+            return;
+        }
 
         //Create game:
-        final CreateGameResponse createGameResponse = a.createGame.sendAndWait(CreateGameRequest.newBuilder()
+        final CreateGameResponse createGameResponse = stubs.createGame.sendAndWait(CreateGameRequest.newBuilder()
                 .setWidth(10)
                 .setHeight(10)
                 .setDifficulty(Difficulty.EASY_Difficulty)
@@ -38,7 +52,7 @@ public class MAClient extends DedicatedGameClient<MAPartialStateProto, MAGameSes
         System.out.println(createGameResponse.getMessage());
 
         //List all games:
-        final ListGameResponse listGameResponse = a.listGames.sendAndWait(ListGamesRequest.newBuilder()
+        final ListGameResponse listGameResponse = stubs.listGames.sendAndWait(ListGamesRequest.newBuilder()
                 .build()
         );
         if (listGameResponse.getStatus() == ListGameResponse.Status.OK) {
@@ -56,6 +70,23 @@ public class MAClient extends DedicatedGameClient<MAPartialStateProto, MAGameSes
         for (MAWorld world : listOfWorlds) {
             System.out.println(world.getName() + " (" + world.getMaxRows() + ", " + world.getMaxCols() + ")");
         }
+        if (listOfWorlds.isEmpty()) {
+            System.err.println("Error - no worlds to join!");
+            return;
+        }
+        System.out.println("Ok, joining first world by default...");
+
+        stubs.joinGame.sendAndWait(JoinGameRequest.newBuilder()
+                        .setGameSessionID(gameSession.getId())
+                        .setGameID(listOfWorlds.get(0).getId())
+                        .setPartialStatePreference(PartialStatePreferenceProto.newBuilder()
+                                .setHeight(10)
+                                .setWidth(10)
+                        )
+                        .setGameSessionID("x")
+                .build()
+        );
+
 
     }
 

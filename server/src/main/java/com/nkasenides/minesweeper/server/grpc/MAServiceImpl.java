@@ -25,7 +25,38 @@ import java.util.*;
 
 
 public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
-    @Override    
+
+    @Override
+    public void connect(ConnectRequest request, StreamObserver<ConnectResponse> responseObserver) {
+        if (request.getPlayerName().isEmpty()) {
+            ConnectResponse response = ConnectResponse.newBuilder()
+                    .setStatus(ConnectResponse.Status.INVALID_PLAYER_NAME)
+                    .setMessage("INVALID_PLAYER_NAME")
+                    .build();
+            responseObserver.onNext(response);
+            responseObserver.onCompleted();
+            return;
+        }
+        MAGameSession gameSession = new MAGameSession();
+        gameSession.setId(UUID.randomUUID().toString());
+        gameSession.setPlayerID(request.getPlayerName());
+        gameSession.setCreatedOn(System.currentTimeMillis());
+        gameSession.setExpiresOn(System.currentTimeMillis());
+        gameSession.setIpAddress("");
+        DBManager.gameSession.create(gameSession);
+
+        ConnectResponse response = ConnectResponse.newBuilder()
+                .setStatus(ConnectResponse.Status.OK)
+                .setGameSession(gameSession.toProto())
+                .setMessage("OK")
+                .build();
+
+        responseObserver.onNext(response);
+        responseObserver.onCompleted();
+
+    }
+
+    @Override
     public void listGames(ListGamesRequest request, StreamObserver<ListGameResponse> responseObserver) {
         //NEW
         final Collection<MAWorld> worlds = DBManager.world.list();
@@ -277,18 +308,6 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
     public void joinGame(JoinGameRequest request, StreamObserver<JoinGameResponse> responseObserver) {
         //NEW
 
-        //Check game session:
-        final MAGameSession gameSession = DBManager.gameSession.get(request.getGameSessionID());
-        if (gameSession == null) {
-            final JoinGameResponse response = JoinGameResponse.newBuilder()
-                    .setStatus(JoinGameResponse.Status.INVALID_GAME_SESSION_ID)
-                    .setMessage("INVALID_GAME_SESSION_ID")
-                    .build();
-            responseObserver.onNext(response);
-            responseObserver.onCompleted();
-            return;
-        }
-
         //Check world:
         final MAWorld world = DBManager.world.get(request.getGameID());
         if (world == null) {
@@ -302,6 +321,17 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
         }
 
         final PartialStatePreferenceProto partialStatePreference = request.getPartialStatePreference();
+
+        //Check game session:
+        final MAGameSession gameSession = DBManager.gameSession.get(request.getGameSessionID());
+        if (gameSession == null) {
+            final JoinGameResponse response = JoinGameResponse.newBuilder()
+                    .setStatus(JoinGameResponse.Status.INVALID_GAME_SESSION_ID)
+                    .setMessage("INVALID_GAME_SESSION_ID")
+                    .build();
+            responseObserver.onNext(response);
+            responseObserver.onCompleted();
+        }
 
         //Check max players:
         final Collection<MAWorldSession> worldSessionsForWorld = DBManager.worldSession.listForWorld(world.getId());

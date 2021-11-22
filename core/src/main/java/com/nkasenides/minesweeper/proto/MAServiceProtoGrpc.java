@@ -151,6 +151,37 @@ public final class MAServiceProtoGrpc {
     return getCreateGameMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<ConnectRequest,
+      ConnectResponse> getConnectMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "Connect",
+      requestType = ConnectRequest.class,
+      responseType = ConnectResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<ConnectRequest,
+      ConnectResponse> getConnectMethod() {
+    io.grpc.MethodDescriptor<ConnectRequest, ConnectResponse> getConnectMethod;
+    if ((getConnectMethod = MAServiceProtoGrpc.getConnectMethod) == null) {
+      synchronized (MAServiceProtoGrpc.class) {
+        if ((getConnectMethod = MAServiceProtoGrpc.getConnectMethod) == null) {
+          MAServiceProtoGrpc.getConnectMethod = getConnectMethod =
+              io.grpc.MethodDescriptor.<ConnectRequest, ConnectResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Connect"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  ConnectRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  ConnectResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new MAServiceProtoMethodDescriptorSupplier("Connect"))
+              .build();
+        }
+      }
+    }
+    return getConnectMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<GetStateRequest,
       GetStateResponse> getGetStateMethod;
 
@@ -384,6 +415,13 @@ public final class MAServiceProtoGrpc {
 
     /**
      */
+    public void connect(ConnectRequest request,
+                        io.grpc.stub.StreamObserver<ConnectResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getConnectMethod(), responseObserver);
+    }
+
+    /**
+     */
     public void getState(GetStateRequest request,
                          io.grpc.stub.StreamObserver<GetStateResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getGetStateMethod(), responseObserver);
@@ -447,6 +485,13 @@ public final class MAServiceProtoGrpc {
                 CreateGameRequest,
                 CreateGameResponse>(
                   this, METHODID_CREATE_GAME)))
+          .addMethod(
+            getConnectMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                ConnectRequest,
+                ConnectResponse>(
+                  this, METHODID_CONNECT)))
           .addMethod(
             getGetStateMethod(),
             asyncUnaryCall(
@@ -534,6 +579,14 @@ public final class MAServiceProtoGrpc {
 
     /**
      */
+    public void connect(ConnectRequest request,
+                        io.grpc.stub.StreamObserver<ConnectResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getConnectMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
     public void getState(GetStateRequest request,
                          io.grpc.stub.StreamObserver<GetStateResponse> responseObserver) {
       asyncUnaryCall(
@@ -613,6 +666,13 @@ public final class MAServiceProtoGrpc {
     public CreateGameResponse createGame(CreateGameRequest request) {
       return blockingUnaryCall(
           getChannel(), getCreateGameMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public ConnectResponse connect(ConnectRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getConnectMethod(), getCallOptions(), request);
     }
 
     /**
@@ -699,6 +759,14 @@ public final class MAServiceProtoGrpc {
 
     /**
      */
+    public com.google.common.util.concurrent.ListenableFuture<ConnectResponse> connect(
+        ConnectRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getConnectMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
     public com.google.common.util.concurrent.ListenableFuture<GetStateResponse> getState(
         GetStateRequest request) {
       return futureUnaryCall(
@@ -742,11 +810,12 @@ public final class MAServiceProtoGrpc {
   private static final int METHODID_START_GAME = 1;
   private static final int METHODID_MOVE = 2;
   private static final int METHODID_CREATE_GAME = 3;
-  private static final int METHODID_GET_STATE = 4;
-  private static final int METHODID_SUBSCRIBE = 5;
-  private static final int METHODID_JOIN_GAME = 6;
-  private static final int METHODID_FLAG = 7;
-  private static final int METHODID_REVEAL = 8;
+  private static final int METHODID_CONNECT = 4;
+  private static final int METHODID_GET_STATE = 5;
+  private static final int METHODID_SUBSCRIBE = 6;
+  private static final int METHODID_JOIN_GAME = 7;
+  private static final int METHODID_FLAG = 8;
+  private static final int METHODID_REVEAL = 9;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -780,6 +849,10 @@ public final class MAServiceProtoGrpc {
         case METHODID_CREATE_GAME:
           serviceImpl.createGame((CreateGameRequest) request,
               (io.grpc.stub.StreamObserver<CreateGameResponse>) responseObserver);
+          break;
+        case METHODID_CONNECT:
+          serviceImpl.connect((ConnectRequest) request,
+              (io.grpc.stub.StreamObserver<ConnectResponse>) responseObserver);
           break;
         case METHODID_GET_STATE:
           serviceImpl.getState((GetStateRequest) request,
@@ -866,6 +939,7 @@ public final class MAServiceProtoGrpc {
               .addMethod(getStartGameMethod())
               .addMethod(getMoveMethod())
               .addMethod(getCreateGameMethod())
+              .addMethod(getConnectMethod())
               .addMethod(getGetStateMethod())
               .addMethod(getSubscribeMethod())
               .addMethod(getJoinGameMethod())
