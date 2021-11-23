@@ -3437,3 +3437,302 @@ java.io.IOException: An existing connection was forcibly closed by the remote ho
 23-11-2021 11:10:29 DEBUG NettyServerHandler:214 - [id: 0x1939863c, L:/127.0.0.1:25000 - R:/127.0.0.1:65333] OUTBOUND HEADERS: streamId=13 headers=GrpcHttp2OutboundHeaders[grpc-status: 0] padding=0 endStream=true
 23-11-2021 11:10:29 DEBUG NettyServerHandler:214 - [id: 0x1939863c, L:/127.0.0.1:25000 - R:/127.0.0.1:65333] INBOUND PING: ack=false bytes=1234
 23-11-2021 11:10:29 DEBUG NettyServerHandler:214 - [id: 0x1939863c, L:/127.0.0.1:25000 - R:/127.0.0.1:65333] OUTBOUND PING: ack=true bytes=1234
+23-11-2021 11:41:42 DEBUG InternalLoggerFactory:45 - Using SLF4J as the default logging framework
+23-11-2021 11:41:42 DEBUG PlatformDependent:1015 - Platform: Windows
+23-11-2021 11:41:42 DEBUG PlatformDependent0:408 - -Dio.netty.noUnsafe: false
+23-11-2021 11:41:42 DEBUG PlatformDependent0:876 - Java version: 8
+23-11-2021 11:41:42 DEBUG PlatformDependent0:125 - sun.misc.Unsafe.theUnsafe: available
+23-11-2021 11:41:42 DEBUG PlatformDependent0:149 - sun.misc.Unsafe.copyMemory: available
+23-11-2021 11:41:42 DEBUG PlatformDependent0:187 - java.nio.Buffer.address: available
+23-11-2021 11:41:42 DEBUG PlatformDependent0:252 - direct buffer constructor: available
+23-11-2021 11:41:42 DEBUG PlatformDependent0:326 - java.nio.Bits.unaligned: available, true
+23-11-2021 11:41:42 DEBUG PlatformDependent0:391 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+23-11-2021 11:41:42 DEBUG PlatformDependent0:398 - java.nio.DirectByteBuffer.<init>(long, int): available
+23-11-2021 11:41:42 DEBUG PlatformDependent:1058 - sun.misc.Unsafe: available
+23-11-2021 11:41:42 DEBUG PlatformDependent:1177 - -Dio.netty.tmpdir: C:\Users\hfnov\AppData\Local\Temp (java.io.tmpdir)
+23-11-2021 11:41:42 DEBUG PlatformDependent:1256 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+23-11-2021 11:41:42 DEBUG PlatformDependent:177 - -Dio.netty.maxDirectMemory: 3791650816 bytes
+23-11-2021 11:41:42 DEBUG PlatformDependent:184 - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+23-11-2021 11:41:42 DEBUG CleanerJava6:92 - java.nio.ByteBuffer.cleaner(): available
+23-11-2021 11:41:42 DEBUG PlatformDependent:204 - -Dio.netty.noPreferDirect: false
+23-11-2021 11:41:42 DEBUG MultithreadEventLoopGroup:44 - -Dio.netty.eventLoopThreads: 16
+23-11-2021 11:41:42 DEBUG InternalThreadLocalMap:56 - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+23-11-2021 11:41:42 DEBUG InternalThreadLocalMap:59 - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+23-11-2021 11:41:42 DEBUG NioEventLoop:106 - -Dio.netty.noKeySetOptimization: false
+23-11-2021 11:41:42 DEBUG NioEventLoop:107 - -Dio.netty.selectorAutoRebuildThreshold: 512
+23-11-2021 11:41:42 DEBUG PlatformDependent:919 - org.jctools-core.MpscChunkedArrayQueue: available
+23-11-2021 11:41:42 DEBUG ResourceLeakDetector:130 - -Dio.grpc.netty.shaded.io.netty.leakDetection.level: simple
+23-11-2021 11:41:42 DEBUG ResourceLeakDetector:131 - -Dio.grpc.netty.shaded.io.netty.leakDetection.targetRecords: 4
+23-11-2021 11:41:42 DEBUG PooledByteBufAllocator:156 - -Dio.netty.allocator.numHeapArenas: 16
+23-11-2021 11:41:42 DEBUG PooledByteBufAllocator:157 - -Dio.netty.allocator.numDirectArenas: 16
+23-11-2021 11:41:42 DEBUG PooledByteBufAllocator:159 - -Dio.netty.allocator.pageSize: 8192
+23-11-2021 11:41:42 DEBUG PooledByteBufAllocator:164 - -Dio.netty.allocator.maxOrder: 11
+23-11-2021 11:41:42 DEBUG PooledByteBufAllocator:168 - -Dio.netty.allocator.chunkSize: 16777216
+23-11-2021 11:41:42 DEBUG PooledByteBufAllocator:169 - -Dio.netty.allocator.tinyCacheSize: 512
+23-11-2021 11:41:42 DEBUG PooledByteBufAllocator:170 - -Dio.netty.allocator.smallCacheSize: 256
+23-11-2021 11:41:42 DEBUG PooledByteBufAllocator:171 - -Dio.netty.allocator.normalCacheSize: 64
+23-11-2021 11:41:42 DEBUG PooledByteBufAllocator:172 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+23-11-2021 11:41:42 DEBUG PooledByteBufAllocator:173 - -Dio.netty.allocator.cacheTrimInterval: 8192
+23-11-2021 11:41:42 DEBUG PooledByteBufAllocator:174 - -Dio.netty.allocator.cacheTrimIntervalMillis: 0
+23-11-2021 11:41:42 DEBUG PooledByteBufAllocator:175 - -Dio.netty.allocator.useCacheForAllThreads: true
+23-11-2021 11:41:42 DEBUG PooledByteBufAllocator:176 - -Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+23-11-2021 11:41:43 DEBUG DefaultChannelId:79 - -Dio.netty.processId: 7000 (auto-detected)
+23-11-2021 11:41:43 DEBUG NetUtil:139 - -Djava.net.preferIPv4Stack: false
+23-11-2021 11:41:43 DEBUG NetUtil:140 - -Djava.net.preferIPv6Addresses: false
+23-11-2021 11:41:43 DEBUG NetUtil:224 - Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)
+23-11-2021 11:41:43 DEBUG NetUtil:289 - Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200
+23-11-2021 11:41:43 DEBUG DefaultChannelId:101 - -Dio.netty.machineId: 00:00:00:00:00:00:00:e0 (auto-detected)
+23-11-2021 11:41:43 DEBUG ByteBufUtil:86 - -Dio.netty.allocator.type: pooled
+23-11-2021 11:41:43 DEBUG ByteBufUtil:95 - -Dio.netty.threadLocalDirectBufferSize: 0
+23-11-2021 11:41:43 DEBUG ByteBufUtil:98 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+23-11-2021 11:41:43 INFO  MServer:130 - Server MServer started.
+23-11-2021 11:42:13 DEBUG InternalLoggerFactory:45 - Using SLF4J as the default logging framework
+23-11-2021 11:42:13 DEBUG PlatformDependent:1015 - Platform: Windows
+23-11-2021 11:42:13 DEBUG PlatformDependent0:408 - -Dio.netty.noUnsafe: false
+23-11-2021 11:42:13 DEBUG PlatformDependent0:876 - Java version: 8
+23-11-2021 11:42:13 DEBUG PlatformDependent0:125 - sun.misc.Unsafe.theUnsafe: available
+23-11-2021 11:42:13 DEBUG PlatformDependent0:149 - sun.misc.Unsafe.copyMemory: available
+23-11-2021 11:42:13 DEBUG PlatformDependent0:187 - java.nio.Buffer.address: available
+23-11-2021 11:42:13 DEBUG PlatformDependent0:252 - direct buffer constructor: available
+23-11-2021 11:42:13 DEBUG PlatformDependent0:326 - java.nio.Bits.unaligned: available, true
+23-11-2021 11:42:13 DEBUG PlatformDependent0:391 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+23-11-2021 11:42:13 DEBUG PlatformDependent0:398 - java.nio.DirectByteBuffer.<init>(long, int): available
+23-11-2021 11:42:13 DEBUG PlatformDependent:1058 - sun.misc.Unsafe: available
+23-11-2021 11:42:13 DEBUG PlatformDependent:1177 - -Dio.netty.tmpdir: C:\Users\hfnov\AppData\Local\Temp (java.io.tmpdir)
+23-11-2021 11:42:13 DEBUG PlatformDependent:1256 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+23-11-2021 11:42:13 DEBUG PlatformDependent:177 - -Dio.netty.maxDirectMemory: 3791650816 bytes
+23-11-2021 11:42:13 DEBUG PlatformDependent:184 - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+23-11-2021 11:42:13 DEBUG CleanerJava6:92 - java.nio.ByteBuffer.cleaner(): available
+23-11-2021 11:42:13 DEBUG PlatformDependent:204 - -Dio.netty.noPreferDirect: false
+23-11-2021 11:42:14 DEBUG MultithreadEventLoopGroup:44 - -Dio.netty.eventLoopThreads: 16
+23-11-2021 11:42:14 DEBUG InternalThreadLocalMap:56 - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+23-11-2021 11:42:14 DEBUG InternalThreadLocalMap:59 - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+23-11-2021 11:42:14 DEBUG NioEventLoop:106 - -Dio.netty.noKeySetOptimization: false
+23-11-2021 11:42:14 DEBUG NioEventLoop:107 - -Dio.netty.selectorAutoRebuildThreshold: 512
+23-11-2021 11:42:14 DEBUG PlatformDependent:919 - org.jctools-core.MpscChunkedArrayQueue: available
+23-11-2021 11:42:14 DEBUG ResourceLeakDetector:130 - -Dio.grpc.netty.shaded.io.netty.leakDetection.level: simple
+23-11-2021 11:42:14 DEBUG ResourceLeakDetector:131 - -Dio.grpc.netty.shaded.io.netty.leakDetection.targetRecords: 4
+23-11-2021 11:42:14 DEBUG PooledByteBufAllocator:156 - -Dio.netty.allocator.numHeapArenas: 16
+23-11-2021 11:42:14 DEBUG PooledByteBufAllocator:157 - -Dio.netty.allocator.numDirectArenas: 16
+23-11-2021 11:42:14 DEBUG PooledByteBufAllocator:159 - -Dio.netty.allocator.pageSize: 8192
+23-11-2021 11:42:14 DEBUG PooledByteBufAllocator:164 - -Dio.netty.allocator.maxOrder: 11
+23-11-2021 11:42:14 DEBUG PooledByteBufAllocator:168 - -Dio.netty.allocator.chunkSize: 16777216
+23-11-2021 11:42:14 DEBUG PooledByteBufAllocator:169 - -Dio.netty.allocator.tinyCacheSize: 512
+23-11-2021 11:42:14 DEBUG PooledByteBufAllocator:170 - -Dio.netty.allocator.smallCacheSize: 256
+23-11-2021 11:42:14 DEBUG PooledByteBufAllocator:171 - -Dio.netty.allocator.normalCacheSize: 64
+23-11-2021 11:42:14 DEBUG PooledByteBufAllocator:172 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+23-11-2021 11:42:14 DEBUG PooledByteBufAllocator:173 - -Dio.netty.allocator.cacheTrimInterval: 8192
+23-11-2021 11:42:14 DEBUG PooledByteBufAllocator:174 - -Dio.netty.allocator.cacheTrimIntervalMillis: 0
+23-11-2021 11:42:14 DEBUG PooledByteBufAllocator:175 - -Dio.netty.allocator.useCacheForAllThreads: true
+23-11-2021 11:42:14 DEBUG PooledByteBufAllocator:176 - -Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+23-11-2021 11:42:14 DEBUG DefaultChannelId:79 - -Dio.netty.processId: 4520 (auto-detected)
+23-11-2021 11:42:14 DEBUG NetUtil:139 - -Djava.net.preferIPv4Stack: false
+23-11-2021 11:42:14 DEBUG NetUtil:140 - -Djava.net.preferIPv6Addresses: false
+23-11-2021 11:42:14 DEBUG NetUtil:224 - Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)
+23-11-2021 11:42:14 DEBUG NetUtil:289 - Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200
+23-11-2021 11:42:14 DEBUG DefaultChannelId:101 - -Dio.netty.machineId: 00:00:00:00:00:00:00:e0 (auto-detected)
+23-11-2021 11:42:14 DEBUG ByteBufUtil:86 - -Dio.netty.allocator.type: pooled
+23-11-2021 11:42:14 DEBUG ByteBufUtil:95 - -Dio.netty.threadLocalDirectBufferSize: 0
+23-11-2021 11:42:14 DEBUG ByteBufUtil:98 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+23-11-2021 11:42:14 INFO  MServer:130 - Server MServer started.
+23-11-2021 11:42:18 DEBUG AbstractByteBuf:63 - -Dio.grpc.netty.shaded.io.netty.buffer.checkAccessible: true
+23-11-2021 11:42:18 DEBUG AbstractByteBuf:64 - -Dio.grpc.netty.shaded.io.netty.buffer.checkBounds: true
+23-11-2021 11:42:18 DEBUG ResourceLeakDetectorFactory:196 - Loaded default ResourceLeakDetector: io.grpc.netty.shaded.io.netty.util.ResourceLeakDetector@5d39c4ee
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] OUTBOUND SETTINGS: ack=false settings={MAX_CONCURRENT_STREAMS=2147483647, INITIAL_WINDOW_SIZE=1048576, MAX_HEADER_LIST_SIZE=8192}
+23-11-2021 11:42:18 DEBUG Recycler:100 - -Dio.netty.recycler.maxCapacityPerThread: 4096
+23-11-2021 11:42:18 DEBUG Recycler:101 - -Dio.netty.recycler.maxSharedCapacityFactor: 2
+23-11-2021 11:42:18 DEBUG Recycler:102 - -Dio.netty.recycler.linkCapacity: 16
+23-11-2021 11:42:18 DEBUG Recycler:103 - -Dio.netty.recycler.ratio: 8
+23-11-2021 11:42:18 DEBUG Recycler:104 - -Dio.netty.recycler.delayedQueue.ratio: 8
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] OUTBOUND WINDOW_UPDATE: streamId=0 windowSizeIncrement=983041
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] INBOUND SETTINGS: ack=false settings={ENABLE_PUSH=0, MAX_CONCURRENT_STREAMS=0, INITIAL_WINDOW_SIZE=1048576, MAX_HEADER_LIST_SIZE=8192}
+23-11-2021 11:42:18 DEBUG NettyServerHandler:191 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] OUTBOUND SETTINGS: ack=true
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] INBOUND WINDOW_UPDATE: streamId=0 windowSizeIncrement=983041
+23-11-2021 11:42:18 DEBUG NettyServerHandler:191 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] INBOUND SETTINGS: ack=true
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] INBOUND HEADERS: streamId=3 headers=GrpcHttp2RequestHeaders[:path: /com.nkasenides.minesweeper.proto.MAServiceProto/Connect, :authority: localhost:25000, :method: POST, :scheme: http, te: trailers, content-type: application/grpc, user-agent: grpc-java-netty/1.34.0, grpc-accept-encoding: gzip] streamDependency=0 weight=16 exclusive=false padding=0 endStream=false
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] INBOUND HEADERS: streamId=5 headers=GrpcHttp2RequestHeaders[:path: /com.nkasenides.minesweeper.proto.MAServiceProto/UpdateState, :authority: localhost:25000, :method: POST, :scheme: http, te: trailers, content-type: application/grpc, user-agent: grpc-java-netty/1.34.0, grpc-accept-encoding: gzip] streamDependency=0 weight=16 exclusive=false padding=0 endStream=false
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] INBOUND HEADERS: streamId=7 headers=GrpcHttp2RequestHeaders[:path: /com.nkasenides.minesweeper.proto.MAServiceProto/UpdateState, :authority: localhost:25000, :method: POST, :scheme: http, te: trailers, content-type: application/grpc, user-agent: grpc-java-netty/1.34.0, grpc-accept-encoding: gzip] streamDependency=0 weight=16 exclusive=false padding=0 endStream=false
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] INBOUND DATA: streamId=3 padding=0 endStream=true length=14 bytes=00000000090a07706c6179657231
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] OUTBOUND PING: ack=false bytes=1234
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] INBOUND PING: ack=true bytes=1234
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] OUTBOUND HEADERS: streamId=3 headers=GrpcHttp2OutboundHeaders[:status: 200, content-type: application/grpc, grpc-encoding: identity, grpc-accept-encoding: gzip] padding=0 endStream=false
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] OUTBOUND DATA: streamId=3 padding=0 endStream=false length=74 bytes=00000000450a024f4b123d10f4eab2e1d42f1a2435633736366437642d376336382d343638632d626332332d39663831666136343437343120f4eab2e1d42f2a...
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] OUTBOUND HEADERS: streamId=3 headers=GrpcHttp2OutboundHeaders[grpc-status: 0] padding=0 endStream=true
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] INBOUND PING: ack=false bytes=1234
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] OUTBOUND PING: ack=true bytes=1234
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] INBOUND HEADERS: streamId=9 headers=GrpcHttp2RequestHeaders[:path: /com.nkasenides.minesweeper.proto.MAServiceProto/CreateGame, :authority: localhost:25000, :method: POST, :scheme: http, te: trailers, content-type: application/grpc, user-agent: grpc-java-netty/1.34.0, grpc-accept-encoding: gzip] streamDependency=0 weight=16 exclusive=false padding=0 endStream=false
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] INBOUND DATA: streamId=9 padding=0 endStream=true length=11 bytes=0000000006100a180a200a
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] OUTBOUND PING: ack=false bytes=1234
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] INBOUND PING: ack=true bytes=1234
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] OUTBOUND HEADERS: streamId=9 headers=GrpcHttp2OutboundHeaders[:status: 200, content-type: application/grpc, grpc-encoding: identity, grpc-accept-encoding: gzip] padding=0 endStream=false
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] OUTBOUND DATA: streamId=9 padding=0 endStream=false length=11 bytes=00000000060a024f4b1004
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] OUTBOUND HEADERS: streamId=9 headers=GrpcHttp2OutboundHeaders[grpc-status: 0] padding=0 endStream=true
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] INBOUND PING: ack=false bytes=1234
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] OUTBOUND PING: ack=true bytes=1234
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] INBOUND HEADERS: streamId=11 headers=GrpcHttp2RequestHeaders[:path: /com.nkasenides.minesweeper.proto.MAServiceProto/ListGames, :authority: localhost:25000, :method: POST, :scheme: http, te: trailers, content-type: application/grpc, user-agent: grpc-java-netty/1.34.0, grpc-accept-encoding: gzip] streamDependency=0 weight=16 exclusive=false padding=0 endStream=false
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] INBOUND DATA: streamId=11 padding=0 endStream=true length=5 bytes=0000000000
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] OUTBOUND PING: ack=false bytes=1234
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] INBOUND PING: ack=true bytes=1234
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] OUTBOUND HEADERS: streamId=11 headers=GrpcHttp2OutboundHeaders[:status: 200, content-type: application/grpc, grpc-encoding: identity, grpc-accept-encoding: gzip] padding=0 endStream=false
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] OUTBOUND DATA: streamId=11 padding=0 endStream=false length=112 bytes=000000006b0a0c47414d45535f4c49535445441a5b080a28f4ebb2e1d42f38144a2438333939623362322d376433312d343937622d383336632d326332663436...
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] OUTBOUND HEADERS: streamId=11 headers=GrpcHttp2OutboundHeaders[grpc-status: 0] padding=0 endStream=true
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] INBOUND PING: ack=false bytes=1234
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] OUTBOUND PING: ack=true bytes=1234
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] INBOUND HEADERS: streamId=13 headers=GrpcHttp2RequestHeaders[:path: /com.nkasenides.minesweeper.proto.MAServiceProto/JoinGame, :authority: localhost:25000, :method: POST, :scheme: http, te: trailers, content-type: application/grpc, user-agent: grpc-java-netty/1.34.0, grpc-accept-encoding: gzip] streamDependency=0 weight=16 exclusive=false padding=0 endStream=false
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] INBOUND DATA: streamId=13 padding=0 endStream=true length=87 bytes=00000000520a2438333939623362322d376433312d343937622d383336632d326332663436303466303363122435633736366437642d376336382d343638632d...
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] OUTBOUND PING: ack=false bytes=1234
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] INBOUND PING: ack=true bytes=1234
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] OUTBOUND HEADERS: streamId=13 headers=GrpcHttp2OutboundHeaders[:status: 200, content-type: application/grpc, grpc-encoding: identity, grpc-accept-encoding: gzip] padding=0 endStream=false
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] OUTBOUND DATA: streamId=13 padding=0 endStream=false length=129 bytes=000000007c0a024f4b10021a740a04080a100a122438333939623362322d376433312d343937622d383336632d3263326634363034663033631a07706c617965...
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] OUTBOUND HEADERS: streamId=13 headers=GrpcHttp2OutboundHeaders[grpc-status: 0] padding=0 endStream=true
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] INBOUND PING: ack=false bytes=1234
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] OUTBOUND PING: ack=true bytes=1234
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] INBOUND HEADERS: streamId=15 headers=GrpcHttp2RequestHeaders[:path: /com.nkasenides.minesweeper.proto.MAServiceProto/GetState, :authority: localhost:25000, :method: POST, :scheme: http, te: trailers, content-type: application/grpc, user-agent: grpc-java-netty/1.34.0, grpc-accept-encoding: gzip] streamDependency=0 weight=16 exclusive=false padding=0 endStream=false
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] INBOUND DATA: streamId=15 padding=0 endStream=true length=43 bytes=00000000260a2438646430396537342d353134362d346466392d393435332d643164343037636565366639
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] OUTBOUND PING: ack=false bytes=1234
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] INBOUND PING: ack=true bytes=1234
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] OUTBOUND HEADERS: streamId=15 headers=GrpcHttp2OutboundHeaders[:status: 200, content-type: application/grpc, grpc-encoding: identity, grpc-accept-encoding: gzip] padding=0 endStream=false
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] OUTBOUND DATA: streamId=15 padding=0 endStream=false length=27722 bytes=0000006c450abbd8010a740a04080a100a122438333939623362322d376433312d343937622d383336632d3263326634363034663033631a07706c6179657231...
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] OUTBOUND HEADERS: streamId=15 headers=GrpcHttp2OutboundHeaders[grpc-status: 0] padding=0 endStream=true
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] INBOUND PING: ack=false bytes=1234
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] OUTBOUND PING: ack=true bytes=1234
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] INBOUND HEADERS: streamId=17 headers=GrpcHttp2RequestHeaders[:path: /com.nkasenides.minesweeper.proto.MAServiceProto/Subscribe, :authority: localhost:25000, :method: POST, :scheme: http, te: trailers, content-type: application/grpc, user-agent: grpc-java-netty/1.34.0, grpc-accept-encoding: gzip] streamDependency=0 weight=16 exclusive=false padding=0 endStream=false
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] INBOUND DATA: streamId=17 padding=0 endStream=true length=85 bytes=00000000500a2438333939623362322d376433312d343937622d383336632d326332663436303466303363100a1a2438646430396537342d353134362d346466...
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] OUTBOUND PING: ack=false bytes=1234
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] INBOUND PING: ack=true bytes=1234
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] OUTBOUND HEADERS: streamId=17 headers=GrpcHttp2OutboundHeaders[:status: 200, content-type: application/grpc, grpc-encoding: identity, grpc-accept-encoding: gzip] padding=0 endStream=false
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] OUTBOUND DATA: streamId=17 padding=0 endStream=false length=11 bytes=00000000060a024f4b1003
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] OUTBOUND HEADERS: streamId=17 headers=GrpcHttp2OutboundHeaders[grpc-status: 0] padding=0 endStream=true
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] INBOUND PING: ack=false bytes=1234
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] OUTBOUND PING: ack=true bytes=1234
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] INBOUND DATA: streamId=5 padding=0 endStream=false length=43 bytes=00000000260a2438646430396537342d353134362d346466392d393435332d643164343037636565366639
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] OUTBOUND PING: ack=false bytes=1234
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] INBOUND PING: ack=true bytes=1234
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] OUTBOUND HEADERS: streamId=5 headers=GrpcHttp2OutboundHeaders[:status: 200, content-type: application/grpc, grpc-status: 2] padding=0 endStream=true
+23-11-2021 11:42:18 DEBUG NettyServerHandler:214 - [id: 0xde006aef, L:/127.0.0.1:25000 - R:/127.0.0.1:49215] INBOUND RST_STREAM: streamId=5 errorCode=8
+23-11-2021 11:43:10 DEBUG InternalLoggerFactory:45 - Using SLF4J as the default logging framework
+23-11-2021 11:43:10 DEBUG PlatformDependent:1015 - Platform: Windows
+23-11-2021 11:43:10 DEBUG PlatformDependent0:408 - -Dio.netty.noUnsafe: false
+23-11-2021 11:43:10 DEBUG PlatformDependent0:876 - Java version: 8
+23-11-2021 11:43:10 DEBUG PlatformDependent0:125 - sun.misc.Unsafe.theUnsafe: available
+23-11-2021 11:43:10 DEBUG PlatformDependent0:149 - sun.misc.Unsafe.copyMemory: available
+23-11-2021 11:43:10 DEBUG PlatformDependent0:187 - java.nio.Buffer.address: available
+23-11-2021 11:43:10 DEBUG PlatformDependent0:252 - direct buffer constructor: available
+23-11-2021 11:43:10 DEBUG PlatformDependent0:326 - java.nio.Bits.unaligned: available, true
+23-11-2021 11:43:10 DEBUG PlatformDependent0:391 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+23-11-2021 11:43:10 DEBUG PlatformDependent0:398 - java.nio.DirectByteBuffer.<init>(long, int): available
+23-11-2021 11:43:10 DEBUG PlatformDependent:1058 - sun.misc.Unsafe: available
+23-11-2021 11:43:10 DEBUG PlatformDependent:1177 - -Dio.netty.tmpdir: C:\Users\hfnov\AppData\Local\Temp (java.io.tmpdir)
+23-11-2021 11:43:10 DEBUG PlatformDependent:1256 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+23-11-2021 11:43:10 DEBUG PlatformDependent:177 - -Dio.netty.maxDirectMemory: 3791650816 bytes
+23-11-2021 11:43:10 DEBUG PlatformDependent:184 - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+23-11-2021 11:43:10 DEBUG CleanerJava6:92 - java.nio.ByteBuffer.cleaner(): available
+23-11-2021 11:43:10 DEBUG PlatformDependent:204 - -Dio.netty.noPreferDirect: false
+23-11-2021 11:43:10 DEBUG MultithreadEventLoopGroup:44 - -Dio.netty.eventLoopThreads: 16
+23-11-2021 11:43:10 DEBUG InternalThreadLocalMap:56 - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+23-11-2021 11:43:10 DEBUG InternalThreadLocalMap:59 - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+23-11-2021 11:43:10 DEBUG NioEventLoop:106 - -Dio.netty.noKeySetOptimization: false
+23-11-2021 11:43:10 DEBUG NioEventLoop:107 - -Dio.netty.selectorAutoRebuildThreshold: 512
+23-11-2021 11:43:10 DEBUG PlatformDependent:919 - org.jctools-core.MpscChunkedArrayQueue: available
+23-11-2021 11:43:11 DEBUG ResourceLeakDetector:130 - -Dio.grpc.netty.shaded.io.netty.leakDetection.level: simple
+23-11-2021 11:43:11 DEBUG ResourceLeakDetector:131 - -Dio.grpc.netty.shaded.io.netty.leakDetection.targetRecords: 4
+23-11-2021 11:43:11 DEBUG PooledByteBufAllocator:156 - -Dio.netty.allocator.numHeapArenas: 16
+23-11-2021 11:43:11 DEBUG PooledByteBufAllocator:157 - -Dio.netty.allocator.numDirectArenas: 16
+23-11-2021 11:43:11 DEBUG PooledByteBufAllocator:159 - -Dio.netty.allocator.pageSize: 8192
+23-11-2021 11:43:11 DEBUG PooledByteBufAllocator:164 - -Dio.netty.allocator.maxOrder: 11
+23-11-2021 11:43:11 DEBUG PooledByteBufAllocator:168 - -Dio.netty.allocator.chunkSize: 16777216
+23-11-2021 11:43:11 DEBUG PooledByteBufAllocator:169 - -Dio.netty.allocator.tinyCacheSize: 512
+23-11-2021 11:43:11 DEBUG PooledByteBufAllocator:170 - -Dio.netty.allocator.smallCacheSize: 256
+23-11-2021 11:43:11 DEBUG PooledByteBufAllocator:171 - -Dio.netty.allocator.normalCacheSize: 64
+23-11-2021 11:43:11 DEBUG PooledByteBufAllocator:172 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+23-11-2021 11:43:11 DEBUG PooledByteBufAllocator:173 - -Dio.netty.allocator.cacheTrimInterval: 8192
+23-11-2021 11:43:11 DEBUG PooledByteBufAllocator:174 - -Dio.netty.allocator.cacheTrimIntervalMillis: 0
+23-11-2021 11:43:11 DEBUG PooledByteBufAllocator:175 - -Dio.netty.allocator.useCacheForAllThreads: true
+23-11-2021 11:43:11 DEBUG PooledByteBufAllocator:176 - -Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+23-11-2021 11:43:11 DEBUG DefaultChannelId:79 - -Dio.netty.processId: 17624 (auto-detected)
+23-11-2021 11:43:11 DEBUG NetUtil:139 - -Djava.net.preferIPv4Stack: false
+23-11-2021 11:43:11 DEBUG NetUtil:140 - -Djava.net.preferIPv6Addresses: false
+23-11-2021 11:43:11 DEBUG NetUtil:224 - Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)
+23-11-2021 11:43:11 DEBUG NetUtil:289 - Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200
+23-11-2021 11:43:11 DEBUG DefaultChannelId:101 - -Dio.netty.machineId: 00:00:00:00:00:00:00:e0 (auto-detected)
+23-11-2021 11:43:11 DEBUG ByteBufUtil:86 - -Dio.netty.allocator.type: pooled
+23-11-2021 11:43:11 DEBUG ByteBufUtil:95 - -Dio.netty.threadLocalDirectBufferSize: 0
+23-11-2021 11:43:11 DEBUG ByteBufUtil:98 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+23-11-2021 11:43:11 INFO  MServer:130 - Server MServer started.
+23-11-2021 11:43:14 DEBUG AbstractByteBuf:63 - -Dio.grpc.netty.shaded.io.netty.buffer.checkAccessible: true
+23-11-2021 11:43:14 DEBUG AbstractByteBuf:64 - -Dio.grpc.netty.shaded.io.netty.buffer.checkBounds: true
+23-11-2021 11:43:14 DEBUG ResourceLeakDetectorFactory:196 - Loaded default ResourceLeakDetector: io.grpc.netty.shaded.io.netty.util.ResourceLeakDetector@785ba30b
+23-11-2021 11:43:14 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] OUTBOUND SETTINGS: ack=false settings={MAX_CONCURRENT_STREAMS=2147483647, INITIAL_WINDOW_SIZE=1048576, MAX_HEADER_LIST_SIZE=8192}
+23-11-2021 11:43:14 DEBUG Recycler:100 - -Dio.netty.recycler.maxCapacityPerThread: 4096
+23-11-2021 11:43:14 DEBUG Recycler:101 - -Dio.netty.recycler.maxSharedCapacityFactor: 2
+23-11-2021 11:43:14 DEBUG Recycler:102 - -Dio.netty.recycler.linkCapacity: 16
+23-11-2021 11:43:14 DEBUG Recycler:103 - -Dio.netty.recycler.ratio: 8
+23-11-2021 11:43:14 DEBUG Recycler:104 - -Dio.netty.recycler.delayedQueue.ratio: 8
+23-11-2021 11:43:14 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] OUTBOUND WINDOW_UPDATE: streamId=0 windowSizeIncrement=983041
+23-11-2021 11:43:14 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] INBOUND SETTINGS: ack=false settings={ENABLE_PUSH=0, MAX_CONCURRENT_STREAMS=0, INITIAL_WINDOW_SIZE=1048576, MAX_HEADER_LIST_SIZE=8192}
+23-11-2021 11:43:14 DEBUG NettyServerHandler:191 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] OUTBOUND SETTINGS: ack=true
+23-11-2021 11:43:14 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] INBOUND WINDOW_UPDATE: streamId=0 windowSizeIncrement=983041
+23-11-2021 11:43:14 DEBUG NettyServerHandler:191 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] INBOUND SETTINGS: ack=true
+23-11-2021 11:43:14 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] INBOUND HEADERS: streamId=3 headers=GrpcHttp2RequestHeaders[:path: /com.nkasenides.minesweeper.proto.MAServiceProto/Connect, :authority: localhost:25000, :method: POST, :scheme: http, te: trailers, content-type: application/grpc, user-agent: grpc-java-netty/1.34.0, grpc-accept-encoding: gzip] streamDependency=0 weight=16 exclusive=false padding=0 endStream=false
+23-11-2021 11:43:14 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] INBOUND HEADERS: streamId=5 headers=GrpcHttp2RequestHeaders[:path: /com.nkasenides.minesweeper.proto.MAServiceProto/UpdateState, :authority: localhost:25000, :method: POST, :scheme: http, te: trailers, content-type: application/grpc, user-agent: grpc-java-netty/1.34.0, grpc-accept-encoding: gzip] streamDependency=0 weight=16 exclusive=false padding=0 endStream=false
+23-11-2021 11:43:14 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] INBOUND HEADERS: streamId=7 headers=GrpcHttp2RequestHeaders[:path: /com.nkasenides.minesweeper.proto.MAServiceProto/UpdateState, :authority: localhost:25000, :method: POST, :scheme: http, te: trailers, content-type: application/grpc, user-agent: grpc-java-netty/1.34.0, grpc-accept-encoding: gzip] streamDependency=0 weight=16 exclusive=false padding=0 endStream=false
+23-11-2021 11:43:14 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] INBOUND DATA: streamId=3 padding=0 endStream=true length=14 bytes=00000000090a07706c6179657231
+23-11-2021 11:43:14 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] OUTBOUND PING: ack=false bytes=1234
+23-11-2021 11:43:14 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] INBOUND PING: ack=true bytes=1234
+23-11-2021 11:43:14 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] OUTBOUND HEADERS: streamId=3 headers=GrpcHttp2OutboundHeaders[:status: 200, content-type: application/grpc, grpc-encoding: identity, grpc-accept-encoding: gzip] padding=0 endStream=false
+23-11-2021 11:43:14 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] OUTBOUND DATA: streamId=3 padding=0 endStream=false length=74 bytes=00000000450a024f4b123d10a1a4b6e1d42f1a2439623037653837362d306532322d346630662d613830642d66316133666236333932383020a1a4b6e1d42f2a...
+23-11-2021 11:43:14 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] OUTBOUND HEADERS: streamId=3 headers=GrpcHttp2OutboundHeaders[grpc-status: 0] padding=0 endStream=true
+23-11-2021 11:43:14 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] INBOUND PING: ack=false bytes=1234
+23-11-2021 11:43:14 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] OUTBOUND PING: ack=true bytes=1234
+23-11-2021 11:43:14 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] INBOUND HEADERS: streamId=9 headers=GrpcHttp2RequestHeaders[:path: /com.nkasenides.minesweeper.proto.MAServiceProto/CreateGame, :authority: localhost:25000, :method: POST, :scheme: http, te: trailers, content-type: application/grpc, user-agent: grpc-java-netty/1.34.0, grpc-accept-encoding: gzip] streamDependency=0 weight=16 exclusive=false padding=0 endStream=false
+23-11-2021 11:43:14 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] INBOUND DATA: streamId=9 padding=0 endStream=true length=11 bytes=0000000006100a180a200a
+23-11-2021 11:43:14 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] OUTBOUND PING: ack=false bytes=1234
+23-11-2021 11:43:14 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] INBOUND PING: ack=true bytes=1234
+23-11-2021 11:43:14 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] OUTBOUND HEADERS: streamId=9 headers=GrpcHttp2OutboundHeaders[:status: 200, content-type: application/grpc, grpc-encoding: identity, grpc-accept-encoding: gzip] padding=0 endStream=false
+23-11-2021 11:43:14 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] OUTBOUND DATA: streamId=9 padding=0 endStream=false length=11 bytes=00000000060a024f4b1004
+23-11-2021 11:43:14 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] OUTBOUND HEADERS: streamId=9 headers=GrpcHttp2OutboundHeaders[grpc-status: 0] padding=0 endStream=true
+23-11-2021 11:43:14 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] INBOUND PING: ack=false bytes=1234
+23-11-2021 11:43:14 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] OUTBOUND PING: ack=true bytes=1234
+23-11-2021 11:43:14 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] INBOUND HEADERS: streamId=11 headers=GrpcHttp2RequestHeaders[:path: /com.nkasenides.minesweeper.proto.MAServiceProto/ListGames, :authority: localhost:25000, :method: POST, :scheme: http, te: trailers, content-type: application/grpc, user-agent: grpc-java-netty/1.34.0, grpc-accept-encoding: gzip] streamDependency=0 weight=16 exclusive=false padding=0 endStream=false
+23-11-2021 11:43:14 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] INBOUND DATA: streamId=11 padding=0 endStream=true length=5 bytes=0000000000
+23-11-2021 11:43:14 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] OUTBOUND PING: ack=false bytes=1234
+23-11-2021 11:43:14 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] INBOUND PING: ack=true bytes=1234
+23-11-2021 11:43:14 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] OUTBOUND HEADERS: streamId=11 headers=GrpcHttp2OutboundHeaders[:status: 200, content-type: application/grpc, grpc-encoding: identity, grpc-accept-encoding: gzip] padding=0 endStream=false
+23-11-2021 11:43:14 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] OUTBOUND DATA: streamId=11 padding=0 endStream=false length=112 bytes=000000006b0a0c47414d45535f4c49535445441a5b080a2894a5b6e1d42f38144a2436323033343230352d343562322d346236392d623762312d373735396232...
+23-11-2021 11:43:14 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] OUTBOUND HEADERS: streamId=11 headers=GrpcHttp2OutboundHeaders[grpc-status: 0] padding=0 endStream=true
+23-11-2021 11:43:14 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] INBOUND PING: ack=false bytes=1234
+23-11-2021 11:43:14 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] OUTBOUND PING: ack=true bytes=1234
+23-11-2021 11:43:14 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] INBOUND HEADERS: streamId=13 headers=GrpcHttp2RequestHeaders[:path: /com.nkasenides.minesweeper.proto.MAServiceProto/JoinGame, :authority: localhost:25000, :method: POST, :scheme: http, te: trailers, content-type: application/grpc, user-agent: grpc-java-netty/1.34.0, grpc-accept-encoding: gzip] streamDependency=0 weight=16 exclusive=false padding=0 endStream=false
+23-11-2021 11:43:15 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] INBOUND DATA: streamId=13 padding=0 endStream=true length=87 bytes=00000000520a2436323033343230352d343562322d346236392d623762312d373735396232386166623431122439623037653837362d306532322d346630662d...
+23-11-2021 11:43:15 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] OUTBOUND PING: ack=false bytes=1234
+23-11-2021 11:43:15 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] INBOUND PING: ack=true bytes=1234
+23-11-2021 11:43:15 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] OUTBOUND HEADERS: streamId=13 headers=GrpcHttp2OutboundHeaders[:status: 200, content-type: application/grpc, grpc-encoding: identity, grpc-accept-encoding: gzip] padding=0 endStream=false
+23-11-2021 11:43:15 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] OUTBOUND DATA: streamId=13 padding=0 endStream=false length=129 bytes=000000007c0a024f4b10021a740a04080a100a122436323033343230352d343562322d346236392d623762312d3737353962323861666234311a07706c617965...
+23-11-2021 11:43:15 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] OUTBOUND HEADERS: streamId=13 headers=GrpcHttp2OutboundHeaders[grpc-status: 0] padding=0 endStream=true
+23-11-2021 11:43:15 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] INBOUND PING: ack=false bytes=1234
+23-11-2021 11:43:15 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] OUTBOUND PING: ack=true bytes=1234
+23-11-2021 11:43:15 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] INBOUND HEADERS: streamId=15 headers=GrpcHttp2RequestHeaders[:path: /com.nkasenides.minesweeper.proto.MAServiceProto/GetState, :authority: localhost:25000, :method: POST, :scheme: http, te: trailers, content-type: application/grpc, user-agent: grpc-java-netty/1.34.0, grpc-accept-encoding: gzip] streamDependency=0 weight=16 exclusive=false padding=0 endStream=false
+23-11-2021 11:43:15 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] INBOUND DATA: streamId=15 padding=0 endStream=true length=43 bytes=00000000260a2433616637376665392d656130372d343530622d626235662d616231376631353438653738
+23-11-2021 11:43:15 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] OUTBOUND PING: ack=false bytes=1234
+23-11-2021 11:43:15 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] INBOUND PING: ack=true bytes=1234
+23-11-2021 11:43:15 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] OUTBOUND HEADERS: streamId=15 headers=GrpcHttp2OutboundHeaders[:status: 200, content-type: application/grpc, grpc-encoding: identity, grpc-accept-encoding: gzip] padding=0 endStream=false
+23-11-2021 11:43:15 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] OUTBOUND DATA: streamId=15 padding=0 endStream=false length=27722 bytes=0000006c450abbd8010a740a04080a100a122436323033343230352d343562322d346236392d623762312d3737353962323861666234311a07706c6179657231...
+23-11-2021 11:43:15 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] OUTBOUND HEADERS: streamId=15 headers=GrpcHttp2OutboundHeaders[grpc-status: 0] padding=0 endStream=true
+23-11-2021 11:43:15 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] INBOUND PING: ack=false bytes=1234
+23-11-2021 11:43:15 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] OUTBOUND PING: ack=true bytes=1234
+23-11-2021 11:43:15 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] INBOUND HEADERS: streamId=17 headers=GrpcHttp2RequestHeaders[:path: /com.nkasenides.minesweeper.proto.MAServiceProto/Subscribe, :authority: localhost:25000, :method: POST, :scheme: http, te: trailers, content-type: application/grpc, user-agent: grpc-java-netty/1.34.0, grpc-accept-encoding: gzip] streamDependency=0 weight=16 exclusive=false padding=0 endStream=false
+23-11-2021 11:43:15 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] INBOUND DATA: streamId=17 padding=0 endStream=true length=85 bytes=00000000500a2436323033343230352d343562322d346236392d623762312d373735396232386166623431100a1a2433616637376665392d656130372d343530...
+23-11-2021 11:43:15 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] OUTBOUND PING: ack=false bytes=1234
+23-11-2021 11:43:15 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] INBOUND PING: ack=true bytes=1234
+23-11-2021 11:43:15 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] OUTBOUND HEADERS: streamId=17 headers=GrpcHttp2OutboundHeaders[:status: 200, content-type: application/grpc, grpc-encoding: identity, grpc-accept-encoding: gzip] padding=0 endStream=false
+23-11-2021 11:43:15 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] OUTBOUND DATA: streamId=17 padding=0 endStream=false length=11 bytes=00000000060a024f4b1003
+23-11-2021 11:43:15 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] OUTBOUND HEADERS: streamId=17 headers=GrpcHttp2OutboundHeaders[grpc-status: 0] padding=0 endStream=true
+23-11-2021 11:43:15 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] INBOUND PING: ack=false bytes=1234
+23-11-2021 11:43:15 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] OUTBOUND PING: ack=true bytes=1234
+23-11-2021 11:43:15 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] INBOUND DATA: streamId=7 padding=0 endStream=false length=43 bytes=00000000260a2433616637376665392d656130372d343530622d626235662d616231376631353438653738
+23-11-2021 11:43:15 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] OUTBOUND PING: ack=false bytes=1234
+23-11-2021 11:43:15 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] INBOUND PING: ack=true bytes=1234
+23-11-2021 11:43:15 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] OUTBOUND HEADERS: streamId=7 headers=GrpcHttp2OutboundHeaders[:status: 200, content-type: application/grpc, grpc-encoding: identity, grpc-accept-encoding: gzip] padding=0 endStream=false
+23-11-2021 11:43:15 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] OUTBOUND DATA: streamId=7 padding=0 endStream=false length=27771 bytes=0000006c760a024f4b12ecd8010abbd8010a740a04080a100a122436323033343230352d343562322d346236392d623762312d3737353962323861666234311a...
+23-11-2021 11:43:15 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] INBOUND PING: ack=false bytes=1234
+23-11-2021 11:43:15 DEBUG NettyServerHandler:214 - [id: 0x8e9197e9, L:/127.0.0.1:25000 - R:/127.0.0.1:49270] OUTBOUND PING: ack=true bytes=1234

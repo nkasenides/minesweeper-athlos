@@ -15,10 +15,12 @@ import com.nkasenides.athlos.server.GameServer;
 import com.raylabz.objectis.Objectis;
 import com.raylabz.objectis.exception.ClassRegistrationException;
 import io.grpc.BindableService;
+import io.grpc.stub.StreamObserver;
 import redis.clients.jedis.JedisPool;
 
 import java.io.IOException;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 
 public class MServer extends GameServer<
         MAPartialStateProto, MAGameSession, MAWorldSession,
@@ -27,6 +29,7 @@ public class MServer extends GameServer<
 
     public static final int PORT = 25000;
     public static final MServer instance;
+    public static LinkedHashSet<StreamObserver<UpdateStateResponse>> observers = new LinkedHashSet<>();
 
     static {
         HashSet<BindableService> services = new HashSet<>();

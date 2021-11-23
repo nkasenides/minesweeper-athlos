@@ -128,7 +128,11 @@ public class MAClient extends DedicatedGameClient<MAPartialStateProto, MAGameSes
         );
 
         if (subscribeResponse.getStatus() == SubscribeResponse.Status.OK) {
-            //TODO - connect to update state...
+            System.out.println("Subscribe ok");
+            stubs.updateState.send(UpdateStateRequest.newBuilder()
+                    .setWorldSessionID(worldSession.getId())
+                    .build()
+            );
         }
         else {
             System.err.println("Error - Could not subscribe " + subscribeResponse.getMessage());

@@ -213,6 +213,37 @@ public final class MAServiceProtoGrpc {
     return getGetStateMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<UpdateStateRequest,
+      UpdateStateResponse> getUpdateStateMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateState",
+      requestType = UpdateStateRequest.class,
+      responseType = UpdateStateResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+  public static io.grpc.MethodDescriptor<UpdateStateRequest,
+      UpdateStateResponse> getUpdateStateMethod() {
+    io.grpc.MethodDescriptor<UpdateStateRequest, UpdateStateResponse> getUpdateStateMethod;
+    if ((getUpdateStateMethod = MAServiceProtoGrpc.getUpdateStateMethod) == null) {
+      synchronized (MAServiceProtoGrpc.class) {
+        if ((getUpdateStateMethod = MAServiceProtoGrpc.getUpdateStateMethod) == null) {
+          MAServiceProtoGrpc.getUpdateStateMethod = getUpdateStateMethod =
+              io.grpc.MethodDescriptor.<UpdateStateRequest, UpdateStateResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateState"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  UpdateStateRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  UpdateStateResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new MAServiceProtoMethodDescriptorSupplier("UpdateState"))
+              .build();
+        }
+      }
+    }
+    return getUpdateStateMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<SubscribeRequest,
       SubscribeResponse> getSubscribeMethod;
 
@@ -429,6 +460,13 @@ public final class MAServiceProtoGrpc {
 
     /**
      */
+    public io.grpc.stub.StreamObserver<UpdateStateRequest> updateState(
+        io.grpc.stub.StreamObserver<UpdateStateResponse> responseObserver) {
+      return asyncUnimplementedStreamingCall(getUpdateStateMethod(), responseObserver);
+    }
+
+    /**
+     */
     public void subscribe(SubscribeRequest request,
                           io.grpc.stub.StreamObserver<SubscribeResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getSubscribeMethod(), responseObserver);
@@ -499,6 +537,13 @@ public final class MAServiceProtoGrpc {
                 GetStateRequest,
                 GetStateResponse>(
                   this, METHODID_GET_STATE)))
+          .addMethod(
+            getUpdateStateMethod(),
+            asyncBidiStreamingCall(
+              new MethodHandlers<
+                UpdateStateRequest,
+                UpdateStateResponse>(
+                  this, METHODID_UPDATE_STATE)))
           .addMethod(
             getSubscribeMethod(),
             asyncUnaryCall(
@@ -591,6 +636,14 @@ public final class MAServiceProtoGrpc {
                          io.grpc.stub.StreamObserver<GetStateResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getGetStateMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public io.grpc.stub.StreamObserver<UpdateStateRequest> updateState(
+        io.grpc.stub.StreamObserver<UpdateStateResponse> responseObserver) {
+      return asyncBidiStreamingCall(
+          getChannel().newCall(getUpdateStateMethod(), getCallOptions()), responseObserver);
     }
 
     /**
@@ -816,6 +869,7 @@ public final class MAServiceProtoGrpc {
   private static final int METHODID_JOIN_GAME = 7;
   private static final int METHODID_FLAG = 8;
   private static final int METHODID_REVEAL = 9;
+  private static final int METHODID_UPDATE_STATE = 10;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -884,6 +938,9 @@ public final class MAServiceProtoGrpc {
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_UPDATE_STATE:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.updateState(
+              (io.grpc.stub.StreamObserver<UpdateStateResponse>) responseObserver);
         default:
           throw new AssertionError();
       }
@@ -941,6 +998,7 @@ public final class MAServiceProtoGrpc {
               .addMethod(getCreateGameMethod())
               .addMethod(getConnectMethod())
               .addMethod(getGetStateMethod())
+              .addMethod(getUpdateStateMethod())
               .addMethod(getSubscribeMethod())
               .addMethod(getJoinGameMethod())
               .addMethod(getFlagMethod())

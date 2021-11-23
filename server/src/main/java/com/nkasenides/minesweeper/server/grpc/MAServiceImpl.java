@@ -12,6 +12,7 @@ import com.nkasenides.minesweeper.model.*;
 import com.nkasenides.minesweeper.persistence.DBManager;
 import com.nkasenides.minesweeper.proto.MAServiceProtoGrpc;
 
+import com.nkasenides.minesweeper.server.MServer;
 import com.nkasenides.minesweeper.state.State;
 import com.nkasenides.minesweeper.state.StateUpdateBuilder;
 import com.raylabz.objectis.Objectis;
@@ -613,6 +614,74 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
                 .build();
         responseObserver.onNext(response);
         responseObserver.onCompleted();
+    }
+
+    private static HashSet<String> subscribedWorldSessionIDs = new HashSet<>();
+
+    @Override
+    public StreamObserver<UpdateStateRequest> updateState(StreamObserver<UpdateStateResponse> responseObserver) {
+        return new StreamObserver<UpdateStateRequest>() {
+            @Override
+            public void onNext(UpdateStateRequest updateStateRequest) {
+                final MAWorldSession worldSession = DBManager.worldSession.get(updateStateRequest.getWorldSessionID());
+                if (worldSession != null) {
+
+                    if (!subscribedWorldSessionIDs.contains(worldSession.getId())) {
+                        MServer.observers.add(responseObserver);
+                        subscribedWorldSessionIDs.add(worldSession.getId());
+                        System.out.println("New player subscribed, " + worldSession.getId());
+                    }
+
+                    final MAWorld world = DBManager.world.get(worldSession.getWorldID());
+
+                    if (world == null) {
+                        return;
+                    }
+
+                    final List<MATerrainCell> cells = Objectis.collection(MATerrainCell.class, worldSession.getWorldID() + "_cells").list();
+                    HashMap<String, MATerrainCellProto> cellmap = new HashMap<>();
+                    for (MATerrainCell cell : cells) {
+                        cellmap.put(cell.getId(), cell.toProto().build());
+                    }
+
+
+                    MAPartialStateProto partialState = MAPartialStateProto.newBuilder()
+                            .setWorldSession(worldSession.toProto())
+                            .setPoints(worldSession.getPoints())
+                            .setTimestamp(System.currentTimeMillis())
+                            .setGameState(world.getState())
+                            .putAllTerrain(cellmap)
+                            .build();
+
+                    UpdateStateResponse response = UpdateStateResponse.newBuilder()
+                            .setStateUpdate(MAStateUpdateProto.newBuilder()
+                                    .setPartialState(partialState)
+                                    .setTimestamp(System.currentTimeMillis())
+                                    .setWorldSessionID(worldSession.getId())
+                                    .build()
+                            )
+                            .setStatus(UpdateStateResponse.Status.OK)
+                            .setMessage("OK")
+                            .build();
+
+                    MServer.observers.forEach(o -> {
+                        o.onNext(response);
+                    });
+
+                }
+            }
+
+            @Override
+            public void onError(Throwable throwable) {
+                MServer.observers.remove(responseObserver);
+            }
+
+            @Override
+            public void onCompleted() {
+                MServer.observers.remove(responseObserver);
+            }
+        };
+
     }
 
     //NEW

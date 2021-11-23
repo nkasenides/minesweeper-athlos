@@ -11,7 +11,7 @@ public interface UpdateStateResponseOrBuilder extends
    * <code>string message = 1;</code>
    * @return The message.
    */
-  java.lang.String getMessage();
+  String getMessage();
   /**
    * <code>string message = 1;</code>
    * @return The bytes for message.
@@ -28,11 +28,11 @@ public interface UpdateStateResponseOrBuilder extends
    * <code>.com.nkasenides.minesweeper.proto.MAStateUpdateProto stateUpdate = 2;</code>
    * @return The stateUpdate.
    */
-  com.nkasenides.minesweeper.proto.MAStateUpdateProto getStateUpdate();
+  MAStateUpdateProto getStateUpdate();
   /**
    * <code>.com.nkasenides.minesweeper.proto.MAStateUpdateProto stateUpdate = 2;</code>
    */
-  com.nkasenides.minesweeper.proto.MAStateUpdateProtoOrBuilder getStateUpdateOrBuilder();
+  MAStateUpdateProtoOrBuilder getStateUpdateOrBuilder();
 
   /**
    * <code>.com.nkasenides.minesweeper.proto.UpdateStateResponse.Status status = 3;</code>
@@ -43,5 +43,5 @@ public interface UpdateStateResponseOrBuilder extends
    * <code>.com.nkasenides.minesweeper.proto.UpdateStateResponse.Status status = 3;</code>
    * @return The status.
    */
-  com.nkasenides.minesweeper.proto.UpdateStateResponse.Status getStatus();
+  UpdateStateResponse.Status getStatus();
 }

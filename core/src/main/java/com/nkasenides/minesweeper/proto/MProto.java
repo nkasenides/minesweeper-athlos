@@ -417,98 +417,100 @@ public final class MProto {
       "Status\"\222\001\n\006Status\022\034\n\030INVALID_WORLD_SESSI" +
       "ON_ID\020\000\022\020\n\014INVALID_GAME\020\001\022\017\n\013OTHER_ERROR" +
       "\020\002\022\024\n\020GAME_NOT_STARTED\020\003\022\016\n\nGAME_ENDED\020\004" +
-      "\022\006\n\002OK\020\005\022\031\n\025CELL_ALREADY_REVEALED\020\006\"\276\002\n\023" +
+      "\022\006\n\002OK\020\005\022\031\n\025CELL_ALREADY_REVEALED\020\006\"\231\002\n\023" +
       "UpdateStateResponse\022\017\n\007message\030\001 \001(\t\022I\n\013" +
       "stateUpdate\030\002 \001(\01324.com.nkasenides.mines" +
       "weeper.proto.MAStateUpdateProto\022L\n\006statu" +
       "s\030\003 \001(\0162<.com.nkasenides.minesweeper.pro" +
-      "to.UpdateStateResponse.Status\"}\n\006Status\022" +
-      "\020\n\014SERVER_ERROR\020\000\022\031\n\025NO_SUCH_WORLD_SESSI" +
-      "ON\020\001\022\020\n\014INVALID_DATA\020\002\022\022\n\016NOT_AUTHORIZED" +
-      "\020\003\022\030\n\024CANNOT_COMPOSE_STATE\020\004\022\006\n\002OK\020\005\"\342\001\n" +
-      "\017ConnectResponse\022\017\n\007message\030\001 \001(\t\022I\n\013gam" +
-      "eSession\030\002 \001(\01324.com.nkasenides.mineswee" +
-      "per.proto.MAGameSessionProto\022H\n\006status\030\003" +
-      " \001(\01628.com.nkasenides.minesweeper.proto." +
-      "ConnectResponse.Status\")\n\006Status\022\027\n\023INVA" +
-      "LID_PLAYER_NAME\020\000\022\006\n\002OK\020\001\"\333\001\n\022CreateGame" +
-      "Response\022\017\n\007message\030\001 \001(\t\022K\n\006status\030\002 \001(" +
-      "\0162;.com.nkasenides.minesweeper.proto.Cre" +
-      "ateGameResponse.Status\"g\n\006Status\022\020\n\014SERV" +
-      "ER_ERROR\020\000\022\024\n\020INVALID_PASSWORD\020\001\022\026\n\022INVA" +
-      "LID_DIFFICULTY\020\002\022\025\n\021INVALID_GAME_SIZE\020\003\022" +
-      "\006\n\002OK\020\004\"\373\001\n\020JoinGameResponse\022K\n\014worldSes" +
-      "sion\030\001 \001(\01325.com.nkasenides.minesweeper." +
-      "proto.MAWorldSessionProto\022\017\n\007message\030\002 \001" +
-      "(\t\022I\n\006status\030\003 \001(\01629.com.nkasenides.mine" +
-      "sweeper.proto.JoinGameResponse.Status\">\n" +
-      "\006Status\022\017\n\013CANNOT_JOIN\020\000\022\033\n\027INVALID_GAME" +
-      "_SESSION_ID\020\001\022\006\n\002OK\020\002\"\313\001\n\021SubscribeRespo" +
-      "nse\022\017\n\007message\030\001 \001(\t\022J\n\006status\030\002 \001(\0162:.c" +
-      "om.nkasenides.minesweeper.proto.Subscrib" +
-      "eResponse.Status\"Y\n\006Status\022\034\n\030INVALID_WO" +
-      "RLD_SESSION_ID\020\000\022\024\n\020CANNOT_SUBSCRIBE\020\001\022\023" +
-      "\n\017INVALID_GAME_ID\020\002\022\006\n\002OK\020\003\"\300\001\n\020ListGame" +
-      "Response\022>\n\006worlds\030\001 \003(\0132..com.nkasenide" +
-      "s.minesweeper.proto.MAWorldProto\022\017\n\007mess" +
-      "age\030\002 \001(\t\022I\n\006status\030\003 \001(\01629.com.nkasenid" +
-      "es.minesweeper.proto.ListGameResponse.St" +
-      "atus\"\020\n\006Status\022\006\n\002OK\020\000*M\n\nDifficulty\022\023\n\017" +
-      "EASY_Difficulty\020\000\022\025\n\021MEDIUM_Difficulty\020\001" +
-      "\022\023\n\017HARD_Difficulty\020\002*\332\002\n\013RevealState\022\032\n" +
-      "\026REVEALED_8_RevealState\020\000\022\032\n\026REVEALED_7_" +
-      "RevealState\020\001\022\027\n\023FLAGGED_RevealState\020\002\022\032" +
-      "\n\026REVEALED_4_RevealState\020\003\022\032\n\026REVEALED_3" +
-      "_RevealState\020\004\022\032\n\026REVEALED_6_RevealState" +
-      "\020\005\022\032\n\026REVEALED_5_RevealState\020\006\022\032\n\026REVEAL" +
-      "ED_0_RevealState\020\007\022\027\n\023COVERED_RevealStat" +
-      "e\020\010\022\032\n\026REVEALED_2_RevealState\020\t\022\032\n\026REVEA" +
-      "LED_1_RevealState\020\n\022\035\n\031REVEALED_MINE_Rev" +
-      "ealState\020\013*p\n\tGameState\022\030\n\024ENDED_LOST_Ga" +
-      "meState\020\000\022\031\n\025NOT_STARTED_GameState\020\001\022\025\n\021" +
-      "STARTED_GameState\020\002\022\027\n\023ENDED_WON_GameSta" +
-      "te\020\003*6\n\nDirection4\022\t\n\005NORTH\020\000\022\010\n\004EAST\020\001\022" +
-      "\t\n\005SOUTH\020\002\022\010\n\004WEST\020\003*d\n\nDirection6\022\n\n\006NO" +
-      "RTH6\020\000\022\016\n\nNORTH_EAST\020\001\022\016\n\nSOUTH_EAST\020\002\022\n" +
-      "\n\006SOUTH6\020\003\022\016\n\nSOUTH_WEST\020\004\022\016\n\nNORTH_WEST" +
-      "\020\005*0\n\010Rotation\022\r\n\tCLOCKWISE\020\000\022\025\n\021COUNTER" +
-      "_CLOCKWISE\020\001*C\n\tMovement4\022\013\n\007FORWARD\020\000\022\014" +
-      "\n\010BACKWARD\020\001\022\014\n\010LEFTWARD\020\002\022\r\n\tRIGHTWARD\020" +
-      "\003*t\n\tMovement6\022\014\n\010FORWARD6\020\000\022\021\n\rFORWARD_" +
-      "RIGHT\020\001\022\022\n\016BACKWARD_RIGHT\020\002\022\r\n\tBACKWARD6" +
-      "\020\003\022\021\n\rBACKWARD_LEFT\020\004\022\020\n\014FORWARD_LEFT\020\005*" +
-      "7\n\tWorldType\022\013\n\007UNIFORM\020\000\022\017\n\013TILE_SQUARE" +
-      "\020\001\022\014\n\010TILE_HEX\020\0022\375\010\n\016MAServiceProto\022s\n\tL" +
-      "istGames\0222.com.nkasenides.minesweeper.pr" +
-      "oto.ListGamesRequest\0322.com.nkasenides.mi" +
-      "nesweeper.proto.ListGameResponse\022t\n\tStar" +
-      "tGame\0222.com.nkasenides.minesweeper.proto" +
-      ".StartGameRequest\0323.com.nkasenides.mines" +
-      "weeper.proto.StartGameResponse\022e\n\004Move\022-" +
-      ".com.nkasenides.minesweeper.proto.MoveRe" +
-      "quest\032..com.nkasenides.minesweeper.proto" +
-      ".MoveResponse\022w\n\nCreateGame\0223.com.nkasen" +
-      "ides.minesweeper.proto.CreateGameRequest" +
-      "\0324.com.nkasenides.minesweeper.proto.Crea" +
-      "teGameResponse\022n\n\007Connect\0220.com.nkasenid" +
-      "es.minesweeper.proto.ConnectRequest\0321.co" +
-      "m.nkasenides.minesweeper.proto.ConnectRe" +
-      "sponse\022q\n\010GetState\0221.com.nkasenides.mine" +
-      "sweeper.proto.GetStateRequest\0322.com.nkas" +
-      "enides.minesweeper.proto.GetStateRespons" +
-      "e\022t\n\tSubscribe\0222.com.nkasenides.mineswee" +
-      "per.proto.SubscribeRequest\0323.com.nkaseni" +
-      "des.minesweeper.proto.SubscribeResponse\022" +
-      "q\n\010JoinGame\0221.com.nkasenides.minesweeper" +
-      ".proto.JoinGameRequest\0322.com.nkasenides." +
-      "minesweeper.proto.JoinGameResponse\022g\n\004Fl" +
-      "ag\022-.com.nkasenides.minesweeper.proto.Fl" +
-      "agRequest\0320.com.nkasenides.minesweeper.p" +
-      "roto.RevealResponse\022k\n\006Reveal\022/.com.nkas" +
-      "enides.minesweeper.proto.RevealRequest\0320" +
-      ".com.nkasenides.minesweeper.proto.Reveal" +
-      "ResponseB,\n com.nkasenides.minesweeper.p" +
-      "rotoB\006MProtoP\001b\006proto3"
+      "to.UpdateStateResponse.Status\"X\n\006Status\022" +
+      "\031\n\025INVALID_WORLD_SESSION\020\000\022\027\n\023COULD_NOT_" +
+      "GET_STATE\020\001\022\022\n\016NOT_SUBSCRIBED\020\002\022\006\n\002OK\020\003\"" +
+      "\342\001\n\017ConnectResponse\022\017\n\007message\030\001 \001(\t\022I\n\013" +
+      "gameSession\030\002 \001(\01324.com.nkasenides.mines" +
+      "weeper.proto.MAGameSessionProto\022H\n\006statu" +
+      "s\030\003 \001(\01628.com.nkasenides.minesweeper.pro" +
+      "to.ConnectResponse.Status\")\n\006Status\022\027\n\023I" +
+      "NVALID_PLAYER_NAME\020\000\022\006\n\002OK\020\001\"\333\001\n\022CreateG" +
+      "ameResponse\022\017\n\007message\030\001 \001(\t\022K\n\006status\030\002" +
+      " \001(\0162;.com.nkasenides.minesweeper.proto." +
+      "CreateGameResponse.Status\"g\n\006Status\022\020\n\014S" +
+      "ERVER_ERROR\020\000\022\024\n\020INVALID_PASSWORD\020\001\022\026\n\022I" +
+      "NVALID_DIFFICULTY\020\002\022\025\n\021INVALID_GAME_SIZE" +
+      "\020\003\022\006\n\002OK\020\004\"\373\001\n\020JoinGameResponse\022K\n\014world" +
+      "Session\030\001 \001(\01325.com.nkasenides.minesweep" +
+      "er.proto.MAWorldSessionProto\022\017\n\007message\030" +
+      "\002 \001(\t\022I\n\006status\030\003 \001(\01629.com.nkasenides.m" +
+      "inesweeper.proto.JoinGameResponse.Status" +
+      "\">\n\006Status\022\017\n\013CANNOT_JOIN\020\000\022\033\n\027INVALID_G" +
+      "AME_SESSION_ID\020\001\022\006\n\002OK\020\002\"\313\001\n\021SubscribeRe" +
+      "sponse\022\017\n\007message\030\001 \001(\t\022J\n\006status\030\002 \001(\0162" +
+      ":.com.nkasenides.minesweeper.proto.Subsc" +
+      "ribeResponse.Status\"Y\n\006Status\022\034\n\030INVALID" +
+      "_WORLD_SESSION_ID\020\000\022\024\n\020CANNOT_SUBSCRIBE\020" +
+      "\001\022\023\n\017INVALID_GAME_ID\020\002\022\006\n\002OK\020\003\"\300\001\n\020ListG" +
+      "ameResponse\022>\n\006worlds\030\001 \003(\0132..com.nkasen" +
+      "ides.minesweeper.proto.MAWorldProto\022\017\n\007m" +
+      "essage\030\002 \001(\t\022I\n\006status\030\003 \001(\01629.com.nkase" +
+      "nides.minesweeper.proto.ListGameResponse" +
+      ".Status\"\020\n\006Status\022\006\n\002OK\020\000*M\n\nDifficulty\022" +
+      "\023\n\017EASY_Difficulty\020\000\022\025\n\021MEDIUM_Difficult" +
+      "y\020\001\022\023\n\017HARD_Difficulty\020\002*\332\002\n\013RevealState" +
+      "\022\032\n\026REVEALED_8_RevealState\020\000\022\032\n\026REVEALED" +
+      "_7_RevealState\020\001\022\027\n\023FLAGGED_RevealState\020" +
+      "\002\022\032\n\026REVEALED_4_RevealState\020\003\022\032\n\026REVEALE" +
+      "D_3_RevealState\020\004\022\032\n\026REVEALED_6_RevealSt" +
+      "ate\020\005\022\032\n\026REVEALED_5_RevealState\020\006\022\032\n\026REV" +
+      "EALED_0_RevealState\020\007\022\027\n\023COVERED_RevealS" +
+      "tate\020\010\022\032\n\026REVEALED_2_RevealState\020\t\022\032\n\026RE" +
+      "VEALED_1_RevealState\020\n\022\035\n\031REVEALED_MINE_" +
+      "RevealState\020\013*p\n\tGameState\022\030\n\024ENDED_LOST" +
+      "_GameState\020\000\022\031\n\025NOT_STARTED_GameState\020\001\022" +
+      "\025\n\021STARTED_GameState\020\002\022\027\n\023ENDED_WON_Game" +
+      "State\020\003*6\n\nDirection4\022\t\n\005NORTH\020\000\022\010\n\004EAST" +
+      "\020\001\022\t\n\005SOUTH\020\002\022\010\n\004WEST\020\003*d\n\nDirection6\022\n\n" +
+      "\006NORTH6\020\000\022\016\n\nNORTH_EAST\020\001\022\016\n\nSOUTH_EAST\020" +
+      "\002\022\n\n\006SOUTH6\020\003\022\016\n\nSOUTH_WEST\020\004\022\016\n\nNORTH_W" +
+      "EST\020\005*0\n\010Rotation\022\r\n\tCLOCKWISE\020\000\022\025\n\021COUN" +
+      "TER_CLOCKWISE\020\001*C\n\tMovement4\022\013\n\007FORWARD\020" +
+      "\000\022\014\n\010BACKWARD\020\001\022\014\n\010LEFTWARD\020\002\022\r\n\tRIGHTWA" +
+      "RD\020\003*t\n\tMovement6\022\014\n\010FORWARD6\020\000\022\021\n\rFORWA" +
+      "RD_RIGHT\020\001\022\022\n\016BACKWARD_RIGHT\020\002\022\r\n\tBACKWA" +
+      "RD6\020\003\022\021\n\rBACKWARD_LEFT\020\004\022\020\n\014FORWARD_LEFT" +
+      "\020\005*7\n\tWorldType\022\013\n\007UNIFORM\020\000\022\017\n\013TILE_SQU" +
+      "ARE\020\001\022\014\n\010TILE_HEX\020\0022\375\t\n\016MAServiceProto\022s" +
+      "\n\tListGames\0222.com.nkasenides.minesweeper" +
+      ".proto.ListGamesRequest\0322.com.nkasenides" +
+      ".minesweeper.proto.ListGameResponse\022t\n\tS" +
+      "tartGame\0222.com.nkasenides.minesweeper.pr" +
+      "oto.StartGameRequest\0323.com.nkasenides.mi" +
+      "nesweeper.proto.StartGameResponse\022e\n\004Mov" +
+      "e\022-.com.nkasenides.minesweeper.proto.Mov" +
+      "eRequest\032..com.nkasenides.minesweeper.pr" +
+      "oto.MoveResponse\022w\n\nCreateGame\0223.com.nka" +
+      "senides.minesweeper.proto.CreateGameRequ" +
+      "est\0324.com.nkasenides.minesweeper.proto.C" +
+      "reateGameResponse\022n\n\007Connect\0220.com.nkase" +
+      "nides.minesweeper.proto.ConnectRequest\0321" +
+      ".com.nkasenides.minesweeper.proto.Connec" +
+      "tResponse\022q\n\010GetState\0221.com.nkasenides.m" +
+      "inesweeper.proto.GetStateRequest\0322.com.n" +
+      "kasenides.minesweeper.proto.GetStateResp" +
+      "onse\022~\n\013UpdateState\0224.com.nkasenides.min" +
+      "esweeper.proto.UpdateStateRequest\0325.com." +
+      "nkasenides.minesweeper.proto.UpdateState" +
+      "Response(\0010\001\022t\n\tSubscribe\0222.com.nkasenid" +
+      "es.minesweeper.proto.SubscribeRequest\0323." +
+      "com.nkasenides.minesweeper.proto.Subscri" +
+      "beResponse\022q\n\010JoinGame\0221.com.nkasenides." +
+      "minesweeper.proto.JoinGameRequest\0322.com." +
+      "nkasenides.minesweeper.proto.JoinGameRes" +
+      "ponse\022g\n\004Flag\022-.com.nkasenides.minesweep" +
+      "er.proto.FlagRequest\0320.com.nkasenides.mi" +
+      "nesweeper.proto.RevealResponse\022k\n\006Reveal" +
+      "\022/.com.nkasenides.minesweeper.proto.Reve" +
+      "alRequest\0320.com.nkasenides.minesweeper.p" +
+      "roto.RevealResponseB,\n com.nkasenides.mi" +
+      "nesweeper.protoB\006MProtoP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
