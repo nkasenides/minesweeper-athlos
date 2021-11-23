@@ -331,6 +331,7 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
                     .build();
             responseObserver.onNext(response);
             responseObserver.onCompleted();
+            return;
         }
 
         //Check max players:
@@ -356,13 +357,12 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
             responseObserver.onCompleted();
         }
         else {
-            final MAPlayer player = DBManager.player.get(gameSession.getPlayerID());
 
             playerWorldSession = new MAWorldSession();
             playerWorldSession.setId(UUID.randomUUID().toString());
             playerWorldSession.setWorldID(world.getId());
             playerWorldSession.setPlayerID(gameSession.getPlayerID());
-            playerWorldSession.setPlayerName(player.getName());
+            playerWorldSession.setPlayerName(gameSession.getPlayerID());
             playerWorldSession.setCameraPosition(new MatrixPosition(0, 0));
             playerWorldSession.setCreatedOn(System.currentTimeMillis());
             playerWorldSession.setExpiresOn(System.currentTimeMillis() + 3600 * 24 * 5);

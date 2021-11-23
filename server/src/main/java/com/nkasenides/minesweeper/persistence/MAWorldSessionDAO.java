@@ -22,6 +22,7 @@ public class MAWorldSessionDAO implements WorldBasedDAO<MAWorldSession> {
     @Override
     public boolean create(MAWorldSession object) {
         Objectis.create(object); //NEW
+        Objectis.collection(MAWorldSession.class, object.getWorldID() + "_worldSessions").add(object);
         return true; //NEW
     }
 
@@ -34,6 +35,7 @@ public class MAWorldSessionDAO implements WorldBasedDAO<MAWorldSession> {
     @Override
     public boolean delete(MAWorldSession object) {
         Objectis.delete(object); //NEW
+        Objectis.collection(MAWorldSession.class, object.getWorldID() + "_worldSessions").delete(object);
         return true; //NEW
     }
 
@@ -78,14 +80,17 @@ public class MAWorldSessionDAO implements WorldBasedDAO<MAWorldSession> {
 
     public MAWorldSession getForPlayerAndWorld(final String playerID, final String worldID) {
         //NEW
-        return Objectis.collection(MAWorldSession.class,worldID + "_worldSessions")
+        final List<MAWorldSession> items = Objectis.collection(MAWorldSession.class, worldID + "_worldSessions")
                 .filter()
                 .whereEqualTo("worldID", worldID)
                 .whereEqualTo("playerID", playerID)
                 .limit(1)
                 .fetch()
-                .getItems()
-                .get(0);
+                .getItems();
+        if (items.isEmpty()) {
+            return null;
+        }
+        return items.get(0);
     }
 
     /**

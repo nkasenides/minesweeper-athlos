@@ -17,6 +17,7 @@ public class MAClient extends DedicatedGameClient<MAPartialStateProto, MAGameSes
 
     public static ArrayList<MAWorld> listOfWorlds;
     public static MAGameSession gameSession;
+    public static MAWorldSession worldSession;
     public final MAStubManager stubs = new MAStubManager(mainChannel);
 
     public MAClient(String ipAddress, int PORT) {
@@ -76,16 +77,25 @@ public class MAClient extends DedicatedGameClient<MAPartialStateProto, MAGameSes
         }
         System.out.println("Ok, joining first world by default...");
 
-        stubs.joinGame.sendAndWait(JoinGameRequest.newBuilder()
-                        .setGameSessionID(gameSession.getId())
-                        .setGameID(listOfWorlds.get(0).getId())
-                        .setPartialStatePreference(PartialStatePreferenceProto.newBuilder()
-                                .setHeight(10)
-                                .setWidth(10)
-                        )
-                        .setGameSessionID("x")
+        final JoinGameResponse joinGameResponse = stubs.joinGame.sendAndWait(JoinGameRequest.newBuilder()
+                .setGameSessionID(gameSession.getId())
+                .setGameID(listOfWorlds.get(0).getId())
+                .setPartialStatePreference(PartialStatePreferenceProto.newBuilder()
+                        .setHeight(10)
+                        .setWidth(10)
+                )
+                .setGameSessionID(gameSession.getId())
                 .build()
         );
+
+        if (joinGameResponse.getStatus() == JoinGameResponse.Status.OK) {
+            worldSession = joinGameResponse.getWorldSession().toObject();
+            System.out.println("Joined world " + listOfWorlds.get(0).getName() + ", world session ID: " + worldSession.getWorldID());
+        }
+        else {
+            System.err.println("Error - Failed to join world: " + joinGameResponse.getMessage());
+            return;
+        }
 
 
     }

@@ -13,8 +13,10 @@ import com.nkasenides.minesweeper.proto.*;
 import com.nkasenides.athlos.model.*;
 import com.raylabz.objectis.annotation.ObjectisObject;
 
+import java.io.Serializable;
+
 @ObjectisObject
-public class PartialStatePreference implements Transmittable<PartialStatePreferenceProto.Builder> {
+public class PartialStatePreference implements Transmittable<PartialStatePreferenceProto.Builder>, Serializable {
     private int width;    
     private int height;
 
