@@ -243,12 +243,25 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
             return;
         }
 
-        final MAPartialStateProto partialStateSnapshot = State.forWorld(world.getId()).getPartialStateSnapshot(worldSession);
+        final List<MATerrainCell> cells = Objectis.collection(MATerrainCell.class, world.getId() + "_cells").list();
+        HashMap<String, MATerrainCellProto> cellmap = new HashMap<>();
+        for (MATerrainCell cell : cells) {
+            cellmap.put(cell.getId(), cell.toProto().build());
+        }
+
+
+        MAPartialStateProto partialState = MAPartialStateProto.newBuilder()
+                .setWorldSession(worldSession.toProto())
+                .setPoints(worldSession.getPoints())
+                .setTimestamp(System.currentTimeMillis())
+                .setGameState(world.getState())
+                .putAllTerrain(cellmap)
+                .build();
 
         GetStateResponse response = GetStateResponse.newBuilder()
                 .setStatus(GetStateResponse.Status.OK)
                 .setMessage("OK")
-                .setPartialState(partialStateSnapshot)
+                .setPartialState(partialState)
                 .build();
         responseObserver.onNext(response);
         responseObserver.onCompleted();

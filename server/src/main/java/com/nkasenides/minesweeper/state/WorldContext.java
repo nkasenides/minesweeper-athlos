@@ -271,7 +271,7 @@ public class WorldContext {
     public MAPartialStateProto getPartialStateSnapshot(MAWorldSession worldSession) {
         final Collection<MAEntity> playerEntities = DBManager.entity.listForPlayerAndWorld(worldSession.getPlayerID(), worldSession.getWorldID());
         return MAPartialStateProto.newBuilder()
-                .putAllEntities(getEntities(playerEntities))
+//                .putAllEntities(getEntities(playerEntities))
                 .putAllTerrain(getTerrain(playerEntities))
                 .setTimestamp(System.currentTimeMillis())
                 .setWorldSession(worldSession.toProto())

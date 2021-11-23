@@ -11,6 +11,7 @@ import com.nkasenides.minesweeper.proto.*;
 import com.nkasenides.athlos.client.DedicatedGameClient;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 
 public class MAClient extends DedicatedGameClient<MAPartialStateProto, MAGameSession, MAWorldSession, MAPlayer, MAWorld, MAEntityProto, MATerrainCellProto> {
@@ -18,6 +19,7 @@ public class MAClient extends DedicatedGameClient<MAPartialStateProto, MAGameSes
     public static ArrayList<MAWorld> listOfWorlds;
     public static MAGameSession gameSession;
     public static MAWorldSession worldSession;
+    public static HashMap<String, MATerrainCellProto> board;
     public final MAStubManager stubs = new MAStubManager(mainChannel);
 
     public MAClient(String ipAddress, int PORT) {
@@ -97,6 +99,40 @@ public class MAClient extends DedicatedGameClient<MAPartialStateProto, MAGameSes
             return;
         }
 
+        //Get the initial state:
+        final GetStateResponse getStateResponse = stubs.getState.sendAndWait(GetStateRequest.newBuilder()
+                .setWorldSessionID(worldSession.getId())
+                .build()
+        );
+
+        if (getStateResponse.getStatus() == GetStateResponse.Status.OK) {
+            final MAPartialStateProto partialState = getStateResponse.getPartialState();
+            board = new HashMap<>(partialState.getTerrainMap());
+            //Debug only:
+            board.forEach((s, cell) -> {
+                System.out.println(cell.getPosition().getRow() + ", " + cell.getPosition().getCol() + " -- " + cell.getIsMined());
+            });
+        }
+        else {
+            System.err.println("Error - Could not retrieve initial state " + getStateResponse.getMessage());
+            return;
+        }
+
+        //Subscribe:
+        final SubscribeResponse subscribeResponse = stubs.subscribe.sendAndWait(SubscribeRequest.newBuilder()
+                .setGameID(worldSession.getWorldID())
+                .setPartialStateHeight(10)
+                .setPartialStateWidth(10)
+                .setWorldSessionID(worldSession.getId())
+                .build()
+        );
+
+        if (subscribeResponse.getStatus() == SubscribeResponse.Status.OK) {
+            //TODO - connect to update state...
+        }
+        else {
+            System.err.println("Error - Could not subscribe " + subscribeResponse.getMessage());
+        }
 
     }
 
