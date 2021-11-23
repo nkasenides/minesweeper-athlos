@@ -6,6 +6,7 @@
 -------------------------------------------------------------------------------- */
 
 package com.nkasenides.minesweeper.client;
+import com.nkasenides.minesweeper.client.ui.PlayerGameForm;
 import com.nkasenides.minesweeper.model.*;
 import com.nkasenides.minesweeper.proto.*;
 import com.nkasenides.athlos.client.DedicatedGameClient;
@@ -21,18 +22,18 @@ public class MAClient extends DedicatedGameClient<MAPartialStateProto, MAGameSes
     public static MAWorldSession worldSession;
     public static HashMap<String, MATerrainCellProto> board;
     public final MAStubManager stubs = new MAStubManager(mainChannel);
+    public static PlayerGameForm gameForm;
+    public static GameState gameState = GameState.NOT_STARTED_GameState;
+    private final String name;
 
-    public MAClient(String ipAddress, int PORT) {
+    public MAClient(String ipAddress, int PORT, String name) {
         super(ipAddress, PORT);
-    }
-
-    public static void main(String[] args) {
-        MAClient client = new MAClient("localhost", 25000);
-        client.start();
-        MAStubManager stubs = new MAStubManager(client.mainChannel);
+        this.name = name;
+        MAStubManager stubs = new MAStubManager(mainChannel);
+        gameForm = new PlayerGameForm(this, name);
 
         ConnectResponse connectResponse = stubs.connect.sendAndWait(ConnectRequest.newBuilder()
-                        .setPlayerName("player1")
+                .setPlayerName(name)
                 .build()
         );
         if (connectResponse.getStatus() == ConnectResponse.Status.OK) {
@@ -108,10 +109,12 @@ public class MAClient extends DedicatedGameClient<MAPartialStateProto, MAGameSes
         if (getStateResponse.getStatus() == GetStateResponse.Status.OK) {
             final MAPartialStateProto partialState = getStateResponse.getPartialState();
             board = new HashMap<>(partialState.getTerrainMap());
+            gameState = partialState.getGameState();
+            gameForm.initialize();
             //Debug only:
-            board.forEach((s, cell) -> {
-                System.out.println(cell.getPosition().getRow() + ", " + cell.getPosition().getCol() + " -- " + cell.getIsMined());
-            });
+//            board.forEach((s, cell) -> {
+//                System.out.println(cell.getPosition().getRow() + ", " + cell.getPosition().getCol() + " -- " + cell.getIsMined());
+//            });
         }
         else {
             System.err.println("Error - Could not retrieve initial state " + getStateResponse.getMessage());
@@ -137,6 +140,17 @@ public class MAClient extends DedicatedGameClient<MAPartialStateProto, MAGameSes
         else {
             System.err.println("Error - Could not subscribe " + subscribeResponse.getMessage());
         }
+    }
+
+    public static void main(String[] args) {
+        int clients = 2;
+        for (int i = 0 ; i < clients; i++) {
+            MAClient client = new MAClient("localhost", 25000, "player-" + (i + 1));
+            client.start();
+        }
+
+
+
 
     }
 

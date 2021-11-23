@@ -13,6 +13,8 @@ import com.nkasenides.minesweeper.model.*;
 import com.nkasenides.minesweeper.persistence.DBManager;
 import java.io.IOException;
 import java.util.*;
+
+import com.nkasenides.minesweeper.server.MServer;
 import com.raylabz.jsec.Hashing;
 import com.nkasenides.athlos.proto.Modifiable;
 import io.grpc.stub.StreamObserver;
@@ -497,8 +499,8 @@ public class State {
      * @throws IOException thrown when the update cannot be sent.
      */
     public static void broadcastUpdate(StateUpdateBuilder stateUpdateBuilder, String worldID) throws IOException {
-        final HashMap<MAWorldSession, StreamObserver<UpdateStateResponse>> observers = forWorld(worldID).getSubscribers();
-        for (StreamObserver<UpdateStateResponse> observer : observers.values()) {
+
+        for (StreamObserver<UpdateStateResponse> observer : MServer.observers) {
             observer.onNext(
                     UpdateStateResponse.newBuilder()
                             .setStatus(UpdateStateResponse.Status.OK)

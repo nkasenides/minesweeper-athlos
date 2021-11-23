@@ -8,8 +8,11 @@
 package com.nkasenides.minesweeper.client.stubs;
 
 
+import com.nkasenides.minesweeper.client.MAClient;
 import com.nkasenides.minesweeper.proto.*;
 import io.grpc.stub.StreamObserver;
+
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Collection;
 
@@ -24,7 +27,17 @@ public class UpdateState {
         sender = asyncStub.updateState(new StreamObserver<UpdateStateResponse>() {
             @Override
             public void onNext(UpdateStateResponse response) {
-                //TODO - Implement
+                if (response.getStatus() == UpdateStateResponse.Status.OK) {
+                    final MAPartialStateProto partialState = response.getStateUpdate().getPartialState();
+                    MAClient.worldSession = partialState.getWorldSession().toObject();
+                    MAClient.gameState = partialState.getGameState();
+                    MAClient.board = new HashMap<>(partialState.getTerrainMap());
+                    MAClient.gameForm.update();
+                }
+                else {
+                    System.err.println("Error - could not update state: " + response.getMessage());
+                }
+
             }
 
             @Override

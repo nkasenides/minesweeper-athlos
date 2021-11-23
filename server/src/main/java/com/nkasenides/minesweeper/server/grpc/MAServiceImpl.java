@@ -627,7 +627,7 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
                 if (worldSession != null) {
 
                     if (!subscribedWorldSessionIDs.contains(worldSession.getId())) {
-                        MServer.observers.add(responseObserver);
+                        State.forWorld(worldSession.getWorldID()).subscribe(worldSession, responseObserver);
                         subscribedWorldSessionIDs.add(worldSession.getId());
                         System.out.println("New player subscribed, " + worldSession.getId());
                     }
