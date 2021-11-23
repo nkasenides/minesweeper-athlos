@@ -32,9 +32,11 @@ public final class MAStubManager {
     public final JoinGame joinGame;    
     public final Flag flag;    
     public final Reveal reveal;    
-    public final Action action;    
+    public final Action action;
+    private final MAClient client;
 
-    public MAStubManager(Channel channel) {
+    public MAStubManager(Channel channel, MAClient client) {
+        this.client = client;
         blockingStub = MAServiceProtoGrpc.newBlockingStub(channel);
         asyncStub = MAServiceProtoGrpc.newStub(channel);
 
@@ -45,7 +47,7 @@ public final class MAStubManager {
         createGame = new CreateGame(blockingStub, asyncStub);        
         connect = new Connect(blockingStub, asyncStub);        
         getState = new GetState(blockingStub, asyncStub);        
-        updateState = new UpdateState(asyncStub);        
+        updateState = new UpdateState(asyncStub, client);
         subscribe = new Subscribe(blockingStub, asyncStub);        
         joinGame = new JoinGame(blockingStub, asyncStub);        
         flag = new Flag(blockingStub, asyncStub);        

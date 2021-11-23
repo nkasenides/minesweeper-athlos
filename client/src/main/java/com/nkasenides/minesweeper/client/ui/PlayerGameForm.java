@@ -71,7 +71,7 @@ public class PlayerGameForm extends JFrame {
     }
 
     public void update() {
-        switch (MAClient.gameState) {
+        switch (client.getGameState()) {
             case NOT_STARTED_GameState:
                 JOptionPane.showMessageDialog(null, "Game not started", "Error", JOptionPane.WARNING_MESSAGE);
                 dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
@@ -93,14 +93,14 @@ public class PlayerGameForm extends JFrame {
                 final String hash = (new MatrixPosition(row, col)).toHash();
 
                 //Set background:
-                switch (MAClient.gameState) {
+                switch (client.getGameState()) {
                     case NOT_STARTED_GameState:
                         break;
                     case STARTED_GameState:
                         buttons[row][col].setBackground(Color.LIGHT_GRAY);
                         //Set the background of blank revealed cells to a darker gray:
 
-                        if (MAClient.board.get(hash).getRevealState() == RevealState.REVEALED_0_RevealState) {
+                        if (client.getBoard().get(hash).getRevealState() == RevealState.REVEALED_0_RevealState) {
                             buttons[row][col].setBackground(Color.GRAY);
                         }
                         break;
@@ -113,7 +113,7 @@ public class PlayerGameForm extends JFrame {
                 }
 
                 //Set the icon:
-                switch (MAClient.board.get(hash).getRevealState()) {
+                switch (client.getBoard().get(hash).getRevealState()) {
                     case COVERED_RevealState:
                     case REVEALED_0_RevealState:
                         buttons[row][col].setIcon(null);

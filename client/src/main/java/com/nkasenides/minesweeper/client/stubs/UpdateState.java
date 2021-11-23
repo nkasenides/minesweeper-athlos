@@ -21,17 +21,19 @@ public class UpdateState {
 
     private final MAServiceProtoGrpc.MAServiceProtoStub asyncStub;
     private final StreamObserver<UpdateStateRequest> sender;
+    private final MAClient client;
 
-    public UpdateState(MAServiceProtoGrpc.MAServiceProtoStub asyncStub) {
+    public UpdateState(MAServiceProtoGrpc.MAServiceProtoStub asyncStub, MAClient client) {
+        this.client = client;
         this.asyncStub = asyncStub;
         sender = asyncStub.updateState(new StreamObserver<UpdateStateResponse>() {
             @Override
             public void onNext(UpdateStateResponse response) {
                 if (response.getStatus() == UpdateStateResponse.Status.OK) {
                     final MAPartialStateProto partialState = response.getStateUpdate().getPartialState();
-                    MAClient.worldSession = partialState.getWorldSession().toObject();
-                    MAClient.gameState = partialState.getGameState();
-                    MAClient.board = new HashMap<>(partialState.getTerrainMap());
+                    client.setWorldSession(partialState.getWorldSession().toObject());
+                    client.setGameState(partialState.getGameState());
+                    client.setBoard(new HashMap<>(partialState.getTerrainMap()));
                     MAClient.gameForm.update();
                 }
                 else {

@@ -19,19 +19,19 @@ import java.util.HashMap;
 
 public class MAClient extends DedicatedGameClient<MAPartialStateProto, MAGameSession, MAWorldSession, MAPlayer, MAWorld, MAEntityProto, MATerrainCellProto> {
 
-    public static ArrayList<MAWorld> listOfWorlds;
-    public static MAGameSession gameSession;
-    public static MAWorldSession worldSession;
-    public static HashMap<String, MATerrainCellProto> board;
-    public final MAStubManager stubs = new MAStubManager(mainChannel);
-    public static PlayerGameForm gameForm;
-    public static GameState gameState = GameState.NOT_STARTED_GameState;
     private final String name;
+    private ArrayList<MAWorld> listOfWorlds;
+    private MAGameSession gameSession;
+    private MAWorldSession worldSession;
+    private GameState gameState = GameState.NOT_STARTED_GameState;
+    private HashMap<String, MATerrainCellProto> board;
+    private final MAStubManager stubs;
+    public static PlayerGameForm gameForm;
 
     public MAClient(String ipAddress, int PORT, String name) {
         super(ipAddress, PORT);
         this.name = name;
-        MAStubManager stubs = new MAStubManager(mainChannel);
+        this.stubs = new MAStubManager(mainChannel, this);
         gameForm = new PlayerGameForm(this, name);
 
         ConnectResponse connectResponse = stubs.connect.sendAndWait(ConnectRequest.newBuilder()
@@ -63,9 +63,9 @@ public class MAClient extends DedicatedGameClient<MAPartialStateProto, MAGameSes
         );
         if (listGameResponse.getStatus() == ListGameResponse.Status.OK) {
             System.out.println("list ok");
-            MAClient.listOfWorlds = new ArrayList<>();
+            listOfWorlds = new ArrayList<>();
             for (MAWorldProto world : listGameResponse.getWorldsList()) {
-                MAClient.listOfWorlds.add(world.toObject());
+                listOfWorlds.add(world.toObject());
             }
         }
         else {
@@ -168,6 +168,66 @@ public class MAClient extends DedicatedGameClient<MAPartialStateProto, MAGameSes
             gameState = flagResponse.getPartialState().getGameState();
             board = new HashMap<>(flagResponse.getPartialState().getTerrainMap());
         }
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public ArrayList<MAWorld> getListOfWorlds() {
+        return listOfWorlds;
+    }
+
+    public void setListOfWorlds(ArrayList<MAWorld> listOfWorlds) {
+        this.listOfWorlds = listOfWorlds;
+    }
+
+    @Override
+    public MAGameSession getGameSession() {
+        return gameSession;
+    }
+
+    @Override
+    public void setGameSession(MAGameSession gameSession) {
+        this.gameSession = gameSession;
+    }
+
+    @Override
+    public MAWorldSession getWorldSession() {
+        return worldSession;
+    }
+
+    @Override
+    public void setWorldSession(MAWorldSession worldSession) {
+        this.worldSession = worldSession;
+    }
+
+    public GameState getGameState() {
+        return gameState;
+    }
+
+    public void setGameState(GameState gameState) {
+        this.gameState = gameState;
+    }
+
+    public HashMap<String, MATerrainCellProto> getBoard() {
+        return board;
+    }
+
+    public void setBoard(HashMap<String, MATerrainCellProto> board) {
+        this.board = board;
+    }
+
+    public MAStubManager getStubs() {
+        return stubs;
+    }
+
+    public static PlayerGameForm getGameForm() {
+        return gameForm;
+    }
+
+    public static void setGameForm(PlayerGameForm gameForm) {
+        MAClient.gameForm = gameForm;
     }
 
     public static void main(String[] args) {
