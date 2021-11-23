@@ -7,7 +7,6 @@
 
 package com.nkasenides.minesweeper.server.grpc;
 
-import com.nkasenides.minesweeper.generation.MATerrainGenerator;
 import com.nkasenides.minesweeper.model.*;
 import com.nkasenides.minesweeper.persistence.DBManager;
 import com.nkasenides.minesweeper.proto.MAServiceProtoGrpc;
@@ -16,7 +15,6 @@ import com.nkasenides.minesweeper.server.MServer;
 import com.nkasenides.minesweeper.state.State;
 import com.nkasenides.minesweeper.state.StateUpdateBuilder;
 import com.raylabz.objectis.Objectis;
-import com.sun.media.sound.MidiInDeviceProvider;
 import io.grpc.stub.StreamObserver;
 
 import com.nkasenides.minesweeper.proto.*;
@@ -451,12 +449,26 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
         }
 
         //Get the entire state:
-        final Collection<MATerrainChunk> chunksCollection = DBManager.terrainChunk.listForWorld(world.getId());
-        HashMap<String, MATerrainChunk> chunks = new HashMap<>();
-        chunksCollection.forEach(maTerrainChunk -> chunks.put(maTerrainChunk.getId(), maTerrainChunk));
+        final List<MATerrainCell> cells = Objectis.collection(MATerrainCell.class, world.getId() + "_cells").list();
 
         //Get the cell being revealed:
-        final MATerrainCell cell = retrieveCellFromChunks(chunks, request.getPosition().toObject());
+        MATerrainCell cell = null;
+        for (MATerrainCell c : cells) {
+            if (c.getId().equals(request.getPosition().toHash())) {
+                cell = c;
+                break;
+            }
+        }
+
+        if (cell == null) {
+            RevealResponse response = RevealResponse.newBuilder()
+                    .setStatus(RevealResponse.Status.INVALID_GAME)
+                    .setMessage("INVALID_CELL_COORDINATES")
+                    .build();
+            responseObserver.onNext(response);
+            responseObserver.onCompleted();
+            return;
+        }
 
         if (cell.getRevealState() != RevealState.COVERED_RevealState) {
             RevealResponse response = RevealResponse.newBuilder()
@@ -468,15 +480,14 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
             return;
         }
 
-        doFlag(world, cell);
+        doFlag(world, cells, cell);
 
         //Construct and send state update:
         StateUpdateBuilder b = new StateUpdateBuilder();
-        for (MATerrainChunk aChunk : chunks.values()) {
-            for (MATerrainCell aCell : aChunk.getCells().values()){
-                b.addUpdatedTerrain(aCell);
-            }
+        for (MATerrainCell c : cells) {
+            b.addUpdatedTerrain(c.toProto().build());
         }
+
 
         try {
             State.broadcastUpdate(b, world.getId());
@@ -550,12 +561,26 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
         }
 
         //Get the entire state:
-        final Collection<MATerrainChunk> chunksCollection = DBManager.terrainChunk.listForWorld(world.getId());
-        HashMap<String, MATerrainChunk> chunks = new HashMap<>();
-        chunksCollection.forEach(maTerrainChunk -> chunks.put(maTerrainChunk.getId(), maTerrainChunk));
+        final List<MATerrainCell> cells = Objectis.collection(MATerrainCell.class, world.getId() + "_cells").list();
 
         //Get the cell being revealed:
-        final MATerrainCell cell = retrieveCellFromChunks(chunks, request.getPosition().toObject());
+        MATerrainCell cell = null;
+        for (MATerrainCell c : cells) {
+            if (c.getId().equals(request.getPosition().toHash())) {
+                cell = c;
+                break;
+            }
+        }
+
+        if (cell == null) {
+            RevealResponse response = RevealResponse.newBuilder()
+                    .setStatus(RevealResponse.Status.INVALID_GAME)
+                    .setMessage("INVALID_CELL_COORDINATES")
+                    .build();
+            responseObserver.onNext(response);
+            responseObserver.onCompleted();
+            return;
+        }
 
         if (cell.getRevealState() != RevealState.COVERED_RevealState) {
             if (request.getPosition().getCol() >= world.getMaxCols()) {
@@ -569,7 +594,7 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
             }
         }
 
-        final RevealState revealState = doReveal(world, chunks, cell);
+        final RevealState revealState = doReveal(world, cells, cell);
         switch (revealState) {
             case REVEALED_8_RevealState:
             case REVEALED_7_RevealState:
@@ -588,16 +613,14 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
         }
 
         if (world.getState() == GameState.ENDED_LOST_GameState || world.getState() == GameState.ENDED_WON_GameState) {
-            revealAll(world, chunks);
+            revealAll(world, cells);
         }
 
 
         //Create state update:
         StateUpdateBuilder b = new StateUpdateBuilder();
-        for (MATerrainChunk aChunk : chunks.values()) {
-            for (MATerrainCell aCell : aChunk.getCells().values()){
-                b.addUpdatedTerrain(aCell);
-            }
+        for (MATerrainCell aCell : cells){
+            b.addUpdatedTerrain(aCell);
         }
 
         //Send the state update:
@@ -695,25 +718,22 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
     }
 
     //NEW
-    public MATerrainCell retrieveCellFromChunks(HashMap<String, MATerrainChunk> allChunks, MatrixPosition cellPosition) {
-        final MATerrainChunk chunk = allChunks.get(MATerrainChunk.getChunkPosition(cellPosition).toHash());
-        return chunk.getCells().get(cellPosition.toHash());
+    public MATerrainCell retrieveCellFromList(List<MATerrainCell> cells, MatrixPosition cellPosition) {
+        for (MATerrainCell cell : cells) {
+            if (cell.getId().equals(cellPosition.toHash())) {
+                return cell;
+            }
+        }
+        return null;
     }
 
     //NEW, but common
-    public void computeGameState(MAWorld world) {
-
-        //We need the entire state in this game - this is not scalable, but the game rules require it:
-        final Collection<MATerrainChunk> entireStateCollection = DBManager.terrainChunk.listForWorld(world.getId());
-        final HashMap<String, MATerrainChunk> fullState = new HashMap<>();
-        for (MATerrainChunk maTerrainChunk : entireStateCollection) {
-            fullState.put(maTerrainChunk.getId(), maTerrainChunk);
-        }
+    public void computeGameState(MAWorld world, List<MATerrainCell> cells) {
 
 
         int covered = 0;
-        final int flaggedMines = countFlaggedMines(world, fullState);
-        final int totalMines = countMines(world, fullState);
+        final int flaggedMines = countFlaggedMines(world, cells);
+        final int totalMines = countMines(world, cells);
 
         for (int row = 0; row < world.getMaxRows(); row++) {
             for (int col = 0; col < world.getMaxCols(); col++) {
@@ -725,10 +745,7 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
 //                        return;
 //                    }
 
-                final MatrixPosition chunkPosition = MATerrainChunk.getChunkPosition(row, col);
-                String chunkHash = chunkPosition.toHash();
-                final MATerrainChunk terrainChunk = fullState.get(chunkHash);
-                final MATerrainCell cell = terrainChunk.getCells().get(new MatrixPosition(row, col).toHash());
+                final MATerrainCell cell = retrieveCellFromList(cells, new MatrixPosition(row, col));
 
                 if (cell.getRevealState() == RevealState.COVERED_RevealState) {
                     covered++;
@@ -754,15 +771,12 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
         DBManager.world.update(world);
     }
 
-    private int countFlaggedMines(MAWorld world, HashMap<String, MATerrainChunk> fullState) {
+    private int countFlaggedMines(MAWorld world, List<MATerrainCell> cells) {
         int count = 0;
         for (int row = 0; row < world.getMaxRows(); row++) {
             for (int col = 0; col < world.getMaxCols(); col++) {
 
-                final MatrixPosition chunkPosition = MATerrainChunk.getChunkPosition(row, col);
-                String chunkHash = chunkPosition.toHash();
-                final MATerrainChunk terrainChunk = fullState.get(chunkHash);
-                final MATerrainCell cell = terrainChunk.getCells().get(new MatrixPosition(row, col).toHash());
+                final MATerrainCell cell = retrieveCellFromList(cells, new MatrixPosition(row, col));
 
                 if (cell.isIsMined() && cell.getRevealState() == RevealState.FLAGGED_RevealState) {
                     count++;
@@ -773,15 +787,12 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
         return count;
     }
 
-    private int countMines(MAWorld world, HashMap<String, MATerrainChunk> fullState) {
+    private int countMines(MAWorld world, List<MATerrainCell> cells) {
         int count = 0;
         for (int row = 0; row < world.getMaxRows(); row++) {
             for (int col = 0; col < world.getMaxCols(); col++) {
 
-                final MatrixPosition chunkPosition = MATerrainChunk.getChunkPosition(row, col);
-                String chunkHash = chunkPosition.toHash();
-                final MATerrainChunk terrainChunk = fullState.get(chunkHash);
-                final MATerrainCell cell = terrainChunk.getCells().get(new MatrixPosition(row, col).toHash());
+                final MATerrainCell cell = retrieveCellFromList(cells, new MatrixPosition(row, col));
 
                 if (cell.isIsMined()) {
                     count++;
@@ -792,13 +803,13 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
         return count;
     }
 
-    private RevealState doReveal(MAWorld world, HashMap<String, MATerrainChunk> chunks, MATerrainCell cell) {
+    private RevealState doReveal(MAWorld world, List<MATerrainCell> cells, MATerrainCell cell) {
 
         if (cell.getRevealState() == RevealState.COVERED_RevealState) {
             //Try to reveal the cell and update the state of the game:
             if (cell.isIsMined()) {
                 cell.setRevealState(RevealState.REVEALED_MINE_RevealState);
-                computeGameState(world);
+                computeGameState(world, cells);
                 return RevealState.REVEALED_MINE_RevealState;
             }
             else {
@@ -817,87 +828,85 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
 
                 //Top:
                 if (isValidCell(world, cellTopPosition)) {
-                    final MATerrainCell topCell = retrieveCellFromChunks(chunks, cellTopPosition);
+                    final MATerrainCell topCell = retrieveCellFromList(cells, cellTopPosition);
                     if (topCell.isIsMined()) {
-                        doReveal(world, chunks, topCell);
+                        doReveal(world, cells, topCell);
                     }
                 }
 
                 //Top right:
                 if (isValidCell(world, cellTopRightPosition)) {
-                    final MATerrainCell topRightCell = retrieveCellFromChunks(chunks, cellTopRightPosition);
+                    final MATerrainCell topRightCell = retrieveCellFromList(cells, cellTopRightPosition);
                     if (topRightCell.isIsMined()) {
-                        doReveal(world, chunks, topRightCell);
+                        doReveal(world, cells, topRightCell);
                     }
                 }
 
                 //Right:
                 if (isValidCell(world, cellRightPosition)) {
-                    final MATerrainCell rightCell = retrieveCellFromChunks(chunks, cellRightPosition);
+                    final MATerrainCell rightCell = retrieveCellFromList(cells, cellRightPosition);
                     if (rightCell.isIsMined()) {
-                        doReveal(world, chunks, rightCell);
+                        doReveal(world, cells, rightCell);
                     }
                 }
 
                 //Bottom right:
                 if (isValidCell(world, cellBottomRightPosition)) {
-                    final MATerrainCell bottomRightCell = retrieveCellFromChunks(chunks, cellBottomRightPosition);
+                    final MATerrainCell bottomRightCell = retrieveCellFromList(cells, cellBottomRightPosition);
                     if (bottomRightCell.isIsMined()) {
-                        doReveal(world, chunks, bottomRightCell);
+                        doReveal(world, cells, bottomRightCell);
                     }
                 }
 
                 //Bottom:
                 if (isValidCell(world, cellBottomPosition)) {
-                    final MATerrainCell bottomCell = retrieveCellFromChunks(chunks, cellBottomPosition);
+                    final MATerrainCell bottomCell = retrieveCellFromList(cells, cellBottomPosition);
                     if (bottomCell.isIsMined()) {
-                        doReveal(world, chunks, bottomCell);
+                        doReveal(world, cells, bottomCell);
                     }
                 }
 
                 //Bottom left:
                 if (isValidCell(world, cellBottomLeftPosition)) {
-                    final MATerrainCell bottomLeftCell = retrieveCellFromChunks(chunks, cellBottomLeftPosition);
+                    final MATerrainCell bottomLeftCell = retrieveCellFromList(cells, cellBottomLeftPosition);
                     if (bottomLeftCell.isIsMined()) {
-                        doReveal(world, chunks, bottomLeftCell);
+                        doReveal(world, cells, bottomLeftCell);
                     }
                 }
 
                 //Left:
                 if (isValidCell(world, cellLeftPosition)) {
-                    final MATerrainCell leftCell = retrieveCellFromChunks(chunks, cellLeftPosition);
+                    final MATerrainCell leftCell = retrieveCellFromList(cells, cellLeftPosition);
                     if (leftCell.isIsMined()) {
-                        doReveal(world, chunks, leftCell);
+                        doReveal(world, cells, leftCell);
                     }
                 }
 
-                computeGameState(world);
+                computeGameState(world, cells);
                 return RevealState.REVEALED_0_RevealState;
             }
         }
-        computeGameState(world);
+        computeGameState(world, cells);
         return cell.getRevealState();
     }
 
-    private void doFlag(MAWorld world, MATerrainCell cell) {
+    private void doFlag(MAWorld world, List<MATerrainCell> cells, MATerrainCell cell) {
         if (cell.getRevealState() == RevealState.COVERED_RevealState) {
             cell.setRevealState(RevealState.FLAGGED_RevealState);
         }
         else if (cell.getRevealState() == RevealState.FLAGGED_RevealState) {
             cell.setRevealState(RevealState.COVERED_RevealState);
         }
-        computeGameState(world);
+        computeGameState(world, cells);
     }
 
-    private void revealAll(MAWorld world, HashMap<String, MATerrainChunk> chunks) {
-        for (MATerrainChunk chunk : chunks.values()) {
-            for (MATerrainCell c : chunk.getCells().values()) {
-                if (c.isIsMined()) {
-                    c.setRevealState(RevealState.REVEALED_MINE_RevealState);
-                } else {
-                    int adjacentMines = countAdjacentMines(world, chunks, c);
-                    c.setRevealState(getRevealStateFromNumberOfAdjacentMines(adjacentMines));
-                }
+    private void revealAll(MAWorld world, List<MATerrainCell> cells) {
+        for (MATerrainCell c : cells) {
+            if (c.isIsMined()) {
+                c.setRevealState(RevealState.REVEALED_MINE_RevealState);
+            } else {
+                int adjacentMines = countAdjacentMines(world, cells, c);
+                c.setRevealState(getRevealStateFromNumberOfAdjacentMines(adjacentMines));
             }
         }
     }
@@ -917,7 +926,7 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
         return null;
     }
 
-    public int countAdjacentMines(MAWorld world, HashMap<String, MATerrainChunk> chunks, MATerrainCell cell) {
+    public int countAdjacentMines(MAWorld world, List<MATerrainCell> cells, MATerrainCell cell) {
         int count = 0;
 
         final MatrixPosition cellTopPosition = new MatrixPosition(cell.getPosition().getRow() - 1, cell.getPosition().getCol());
@@ -932,7 +941,7 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
 
         //Top:
         if (isValidCell(world, cellTopPosition)) {
-            final MATerrainCell topCell = retrieveCellFromChunks(chunks, cellTopPosition);
+            final MATerrainCell topCell = retrieveCellFromList(cells, cellTopPosition);
             if (topCell.isIsMined()) {
                 count++;
             }
@@ -940,7 +949,7 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
 
         //Top right:
         if (isValidCell(world, cellTopRightPosition)) {
-            final MATerrainCell topRightCell = retrieveCellFromChunks(chunks, cellTopRightPosition);
+            final MATerrainCell topRightCell = retrieveCellFromList(cells, cellTopRightPosition);
             if (topRightCell.isIsMined()) {
                 count++;
             }
@@ -948,7 +957,7 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
 
         //Right:
         if (isValidCell(world, cellRightPosition)) {
-            final MATerrainCell rightCell = retrieveCellFromChunks(chunks, cellRightPosition);
+            final MATerrainCell rightCell = retrieveCellFromList(cells, cellRightPosition);
             if (rightCell.isIsMined()) {
                 count++;
             }
@@ -956,7 +965,7 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
 
         //Bottom right:
         if (isValidCell(world, cellBottomRightPosition)) {
-            final MATerrainCell bottomRightCell = retrieveCellFromChunks(chunks, cellBottomRightPosition);
+            final MATerrainCell bottomRightCell = retrieveCellFromList(cells, cellBottomRightPosition);
             if (bottomRightCell.isIsMined()) {
                 count++;
             }
@@ -964,7 +973,7 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
 
         //Bottom:
         if (isValidCell(world, cellBottomPosition)) {
-            final MATerrainCell bottomCell = retrieveCellFromChunks(chunks, cellBottomPosition);
+            final MATerrainCell bottomCell = retrieveCellFromList(cells, cellBottomPosition);
             if (bottomCell.isIsMined()) {
                 count++;
             }
@@ -972,7 +981,7 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
 
         //Bottom left:
         if (isValidCell(world, cellBottomLeftPosition)) {
-            final MATerrainCell bottomLeftCell = retrieveCellFromChunks(chunks, cellBottomLeftPosition);
+            final MATerrainCell bottomLeftCell = retrieveCellFromList(cells, cellBottomLeftPosition);
             if (bottomLeftCell.isIsMined()) {
                 count++;
             }
@@ -980,7 +989,7 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
 
         //Left:
         if (isValidCell(world, cellLeftPosition)) {
-            final MATerrainCell leftCell = retrieveCellFromChunks(chunks, cellLeftPosition);
+            final MATerrainCell leftCell = retrieveCellFromList(cells, cellLeftPosition);
             if (leftCell.isIsMined()) {
                 count++;
             }

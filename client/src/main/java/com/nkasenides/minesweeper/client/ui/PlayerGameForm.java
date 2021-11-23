@@ -7,9 +7,7 @@ import com.nkasenides.minesweeper.proto.RevealState;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ComponentAdapter;
-import java.awt.event.ComponentEvent;
-import java.awt.event.WindowEvent;
+import java.awt.event.*;
 
 public class PlayerGameForm extends JFrame {
 
@@ -46,7 +44,20 @@ public class PlayerGameForm extends JFrame {
         gamePanel.setLayout(new GridLayout(10, 10));
         for (int row = 0; row < 10; row++) {
             for (int col = 0; col < 10; col++) {
+                final int r = row;
+                final int c = col;
                 MinesweeperButton button = new MinesweeperButton();
+                button.addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseClicked(MouseEvent e) {
+                        if (e.getButton() == MouseEvent.BUTTON1) {
+                            client.reveal(r, c);
+                        }
+                        else if (e.getButton() == MouseEvent.BUTTON3) {
+                            client.flag(r, c);
+                        }
+                    }
+                });
                 buttons[row][col] = button;
                 gamePanel.add(button);
             }

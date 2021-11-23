@@ -6,11 +6,13 @@
 -------------------------------------------------------------------------------- */
 
 package com.nkasenides.minesweeper.client;
+import com.nkasenides.minesweeper.client.stubs.Reveal;
 import com.nkasenides.minesweeper.client.ui.PlayerGameForm;
 import com.nkasenides.minesweeper.model.*;
 import com.nkasenides.minesweeper.proto.*;
 import com.nkasenides.athlos.client.DedicatedGameClient;
 
+import javax.xml.transform.OutputKeys;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -142,15 +144,38 @@ public class MAClient extends DedicatedGameClient<MAPartialStateProto, MAGameSes
         }
     }
 
+    public void reveal(int row, int col) {
+        MatrixPosition pos = new MatrixPosition(row, col);
+        final RevealResponse revealResponse = stubs.reveal.sendAndWait(RevealRequest.newBuilder()
+                .setPosition(pos.toProto())
+                .setWorldSessionID(worldSession.getId())
+                .build()
+        );
+        if (revealResponse.getStatus() == RevealResponse.Status.OK) {
+            gameState = revealResponse.getPartialState().getGameState();
+            board = new HashMap<>(revealResponse.getPartialState().getTerrainMap());
+        }
+    }
+
+    public void flag(int row, int col) {
+        MatrixPosition pos = new MatrixPosition(row, col);
+        final RevealResponse flagResponse = stubs.flag.sendAndWait(FlagRequest.newBuilder()
+                .setPosition(pos.toProto())
+                .setWorldSessionID(worldSession.getId())
+                .build()
+        );
+        if (flagResponse.getStatus() == RevealResponse.Status.OK) {
+            gameState = flagResponse.getPartialState().getGameState();
+            board = new HashMap<>(flagResponse.getPartialState().getTerrainMap());
+        }
+    }
+
     public static void main(String[] args) {
         int clients = 2;
         for (int i = 0 ; i < clients; i++) {
             MAClient client = new MAClient("localhost", 25000, "player-" + (i + 1));
             client.start();
         }
-
-
-
 
     }
 
