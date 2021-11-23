@@ -492,24 +492,36 @@ public class State {
         }
     }
 
-    /**
-     * Broadcasts an update to a given list of world sessions.
-     * @param stateUpdateBuilder The update builder.
-     * @param worldID The world ID.
-     * @throws IOException thrown when the update cannot be sent.
-     */
-    public static void broadcastUpdate(StateUpdateBuilder stateUpdateBuilder, String worldID) throws IOException {
+//    /**
+//     * Broadcasts an update to a given list of world sessions.
+//     * @param stateUpdateBuilder The update builder.
+//     * @param worldID The world ID.
+//     * @throws IOException thrown when the update cannot be sent.
+//     */
+//    public static void broadcastUpdate(StateUpdateBuilder stateUpdateBuilder, String worldID) throws IOException {
+//        for (StreamObserver<UpdateStateResponse> observer : MServer.observers) {
+//            System.out.println("broadcastUpdate()");
+//            observer.onNext(
+//                    UpdateStateResponse.newBuilder()
+//                            .setStatus(UpdateStateResponse.Status.OK)
+//                            .setMessage("OK")
+//                            .setStateUpdate(stateUpdateBuilder.build())
+//                            .build()
+//            );
+//        }
+//    }
 
+    public static void broadcastUpdate(MAStateUpdateProto stateUpdateProto) throws IOException {
         for (StreamObserver<UpdateStateResponse> observer : MServer.observers) {
+            System.out.println("broadcastUpdate()");
             observer.onNext(
                     UpdateStateResponse.newBuilder()
                             .setStatus(UpdateStateResponse.Status.OK)
                             .setMessage("OK")
-                            .setStateUpdate(stateUpdateBuilder.build())
+                            .setStateUpdate(stateUpdateProto)
                             .build()
             );
         }
     }
-
 
 }

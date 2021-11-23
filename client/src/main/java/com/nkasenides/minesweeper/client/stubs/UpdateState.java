@@ -35,6 +35,7 @@ public class UpdateState {
                     client.setGameState(partialState.getGameState());
                     client.setBoard(new HashMap<>(partialState.getTerrainMap()));
                     MAClient.gameForm.update();
+                    System.out.println(client.getName() + " update");
                 }
                 else {
                     System.err.println("Error - could not update state: " + response.getMessage());

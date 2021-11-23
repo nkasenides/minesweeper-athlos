@@ -73,7 +73,7 @@ public class PlayerGameForm extends JFrame {
     public void update() {
         switch (client.getGameState()) {
             case NOT_STARTED_GameState:
-                JOptionPane.showMessageDialog(null, "Game not started", "Error", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, client.getName() + " Game not started", "Error", JOptionPane.WARNING_MESSAGE);
                 dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
                 break;
             case STARTED_GameState:

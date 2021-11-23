@@ -433,7 +433,7 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
                     .setStatus(RevealResponse.Status.OTHER_ERROR)
                     .setMessage("INVALID_POSITION_ROW")
                     .build();
-            responseObserver.onCompleted();
+            responseObserver.onNext(response);
             responseObserver.onCompleted();
             return;
         }
@@ -483,14 +483,26 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
         doFlag(world, cells, cell);
 
         //Construct and send state update:
-        StateUpdateBuilder b = new StateUpdateBuilder();
-        for (MATerrainCell c : cells) {
-            b.addUpdatedTerrain(c.toProto().build());
+        HashMap<String, MATerrainCellProto> map = new HashMap<>();
+        for (MATerrainCell maTerrainCell : cells) {
+            map.put(maTerrainCell.getId(), maTerrainCell.toProto().build());
         }
 
 
+        MAStateUpdateProto stateUpdate = MAStateUpdateProto.newBuilder()
+                .setWorldSessionID(worldSession.getId())
+                .setTimestamp(System.currentTimeMillis())
+                .setPartialState(MAPartialStateProto.newBuilder()
+                        .setGameState(world.getState())
+                        .setTimestamp(System.currentTimeMillis())
+                        .setPoints(worldSession.getPoints())
+                        .putAllTerrain(map)
+                        .build())
+                .build();
+
+
         try {
-            State.broadcastUpdate(b, world.getId());
+            State.broadcastUpdate(stateUpdate);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -529,6 +541,7 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
             responseObserver.onCompleted();
             return;
         }
+        System.out.println(world.getState());
 
         if (world.getState() != GameState.STARTED_GameState) {
             RevealResponse response = RevealResponse.newBuilder()
@@ -618,14 +631,26 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
 
 
         //Create state update:
-        StateUpdateBuilder b = new StateUpdateBuilder();
-        for (MATerrainCell aCell : cells){
-            b.addUpdatedTerrain(aCell);
+        HashMap<String, MATerrainCellProto> map = new HashMap<>();
+        for (MATerrainCell maTerrainCell : cells) {
+            map.put(maTerrainCell.getId(), maTerrainCell.toProto().build());
         }
+
+
+        MAStateUpdateProto stateUpdate = MAStateUpdateProto.newBuilder()
+                .setWorldSessionID(worldSession.getId())
+                .setTimestamp(System.currentTimeMillis())
+                .setPartialState(MAPartialStateProto.newBuilder()
+                        .setGameState(world.getState())
+                        .setTimestamp(System.currentTimeMillis())
+                        .setPoints(worldSession.getPoints())
+                        .putAllTerrain(map)
+                        .build())
+                .build();
 
         //Send the state update:
         try {
-            State.broadcastUpdate(b, world.getId());
+            State.broadcastUpdate(stateUpdate);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -650,7 +675,7 @@ public class MAServiceImpl extends MAServiceProtoGrpc.MAServiceProtoImplBase {
                 if (worldSession != null) {
 
                     if (!subscribedWorldSessionIDs.contains(worldSession.getId())) {
-                        State.forWorld(worldSession.getWorldID()).subscribe(worldSession, responseObserver);
+                        MServer.observers.add(responseObserver);
                         subscribedWorldSessionIDs.add(worldSession.getId());
                         System.out.println("New player subscribed, " + worldSession.getId());
                     }

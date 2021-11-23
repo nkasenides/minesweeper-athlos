@@ -23,7 +23,7 @@ public class MAClient extends DedicatedGameClient<MAPartialStateProto, MAGameSes
     private ArrayList<MAWorld> listOfWorlds;
     private MAGameSession gameSession;
     private MAWorldSession worldSession;
-    private GameState gameState = GameState.NOT_STARTED_GameState;
+    private GameState gameState;
     private HashMap<String, MATerrainCellProto> board;
     private final MAStubManager stubs;
     public static PlayerGameForm gameForm;
